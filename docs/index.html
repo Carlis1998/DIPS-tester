@@ -253,6 +253,42 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 .source-badge.official{background:rgba(34,197,94,.15);color:var(--green)}
 .source-badge.secondary{background:rgba(245,158,11,.15);color:var(--orange)}
 .source-badge.community{background:rgba(167,139,250,.15);color:var(--purple)}
+
+.battery-shell{display:grid;gap:12px}
+.battery-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:10px}
+.battery-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:12px}
+.battery-stat strong{display:block;font-size:22px;color:var(--text)}
+.battery-stat span{font-size:11px;color:var(--text-dim)}
+.battery-question{background:linear-gradient(180deg,rgba(30,41,59,.96),rgba(24,34,54,.96));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:18px}
+.battery-question h3{font-size:18px;line-height:1.45;color:var(--text);margin:12px 0 10px}
+.battery-question .lead{font-size:15px;color:var(--accent);font-weight:700;line-height:1.5}
+.battery-question .outline{padding-left:20px}
+.battery-question .outline li{margin-bottom:8px;color:var(--text)}
+.answer-stack{display:grid;gap:10px;margin-top:14px}
+.answer-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:12px}
+.answer-label{font-size:11px;font-weight:800;color:var(--text-dim);text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.answer-input,.answer-textarea{width:100%;background:rgba(15,23,42,.75);border:1px solid rgba(255,255,255,.10);border-radius:12px;color:var(--text);padding:12px 14px;font-family:inherit;font-size:14px;line-height:1.5}
+.answer-textarea{min-height:98px;resize:vertical}
+.answer-input:focus,.answer-textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(59,130,246,.15)}
+.answer-grid{display:grid;gap:10px}
+.choice-grid{display:grid;gap:8px;margin-top:10px}
+.choice-option{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:12px;cursor:pointer}
+.choice-option input{margin-top:2px}
+.choice-option strong{color:var(--accent)}
+.review-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.review-btn{border:none;border-radius:999px;padding:8px 12px;font-size:11px;font-weight:800;font-family:inherit;cursor:pointer;background:rgba(255,255,255,.06);color:var(--text-dim)}
+.review-btn.sel{background:var(--accent);color:#fff}
+.review-btn[data-status=todo].sel{background:#475569}
+.review-btn[data-status=draft].sel{background:var(--orange)}
+.review-btn[data-status=done].sel{background:var(--green)}
+.review-btn[data-status=checked].sel{background:var(--purple)}
+.inline-actions{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-top:12px;flex-wrap:wrap}
+.ghost-btn{border:1px solid rgba(255,255,255,.10);background:transparent;color:var(--text-dim);border-radius:10px;padding:8px 10px;font-size:11px;font-weight:700;font-family:inherit;cursor:pointer}
+.answer-status{font-size:11px;color:var(--text-dim)}
+.details-box{margin-top:12px;padding:12px;border-radius:12px;background:rgba(255,255,255,.04);font-size:12px;color:var(--text-dim);line-height:1.6}
+.details-box summary{cursor:pointer;color:var(--accent);font-weight:700}
+.split-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+@media (max-width:640px){.battery-summary{grid-template-columns:1fr}.split-actions{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -371,6 +407,8 @@ const FC_BUCKET='dips_fc_bucket', Q_BUCKET='dips_q_bucket';
 const FC_NOTES='dips_fc_notes', Q_NOTES='dips_q_notes';
 const Q_PROGRESS='dips_q_progress', ESSAY_NOTES='dips_essay_notes';
 const MOCK_HISTORY='dips_mock_history';
+const BATTERY_RESPONSES='dips_battery_responses';
+const BATTERY_REVIEW='dips_battery_review';
 const g=k=>{try{return JSON.parse(localStorage.getItem(k))||{}}catch{return{}}};
 const s=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
 
@@ -426,20 +464,157 @@ function batteryKey(b){
 function findBatteryByKey(key){
   return (BATTERIES?.batteries||[]).find(b=>batteryKey(b)===key);
 }
-function renderBatteryQuestion(question){
+
+function getBatteryResponsesFor(key){
+  return g(BATTERY_RESPONSES)[key] || {};
+}
+function getBatteryReviewFor(key){
+  return g(BATTERY_REVIEW)[key] || {};
+}
+function batteryAnswerStateFor(batteryKeyValue, questionId){
+  return getBatteryResponsesFor(batteryKeyValue)[questionId] || {};
+}
+function batteryQuestionAnswered(question, state={}){
+  if(question.kind==='mcq') return !!state.choice;
+  if((question.subquestions||[]).length){
+    const parts = state.parts || {};
+    return Object.values(parts).some(v=>String(v||'').trim()) || !!String(state.main||'').trim();
+  }
+  return !!String(state.main||'').trim();
+}
+function batteryProgressStats(battery){
+  const responses = getBatteryResponsesFor(batteryKey(battery));
+  const review = getBatteryReviewFor(batteryKey(battery));
+  const answered = battery.questions.filter(q=>batteryQuestionAnswered(q, responses[q.id]||{})).length;
+  const done = battery.questions.filter(q=>(review[q.id]||'todo')==='done').length;
+  const checked = battery.questions.filter(q=>(review[q.id]||'todo')==='checked').length;
+  return {answered, done, checked};
+}
+function updateBatterySummaryUI(battery){
+  const stats = batteryProgressStats(battery);
+  const total = battery.questions.length || 1;
+  const mount = document.getElementById('battery-summary-stats');
+  if(!mount) return;
+  mount.innerHTML = `
+    <div class="battery-stat"><strong>${stats.answered}</strong><span>av ${battery.questions.length} besvarade</span></div>
+    <div class="battery-stat"><strong>${stats.done}</strong><span>markerade klara</span></div>
+    <div class="battery-stat"><strong>${stats.checked}</strong><span>självrättade</span></div>`;
+  const pct = document.getElementById('battery-progress-pct');
+  if(pct) pct.textContent = `${Math.round(stats.answered/total*100)}% genomarbetat`;
+}
+function persistBatteryAnswer(batteryKeyValue, questionId, mutator){
+  const store = g(BATTERY_RESPONSES);
+  store[batteryKeyValue] = store[batteryKeyValue] || {};
+  store[batteryKeyValue][questionId] = store[batteryKeyValue][questionId] || {};
+  mutator(store[batteryKeyValue][questionId]);
+  s(BATTERY_RESPONSES, store);
+}
+function setBatteryReviewState(batteryKeyValue, questionId, status){
+  const store = g(BATTERY_REVIEW);
+  store[batteryKeyValue] = store[batteryKeyValue] || {};
+  store[batteryKeyValue][questionId] = status;
+  s(BATTERY_REVIEW, store);
+}
+function renderBatteryQuestion(question, batteryKeyValue){
+  const answerState = batteryAnswerStateFor(batteryKeyValue, question.id);
+  const reviewState = getBatteryReviewFor(batteryKeyValue)[question.id] || 'todo';
   const sub = (question.subquestions||[]).map(s=>`<li><strong>${s.label})</strong> ${s.prompt}</li>`).join('');
-  const opts = (question.options||[]).map(o=>`<li><strong>${o.label})</strong> ${o.text}</li>`).join('');
   const meta = [question.kind==='mcq'?'Flervalsfråga':question.kind==='multi_part'?'Delfråga':'Öppen fråga', question.max_answers?`Max ${question.max_answers} svar`:'' ].filter(Boolean);
+  const subInputs = (question.subquestions||[]).map(s=>`
+    <div class="answer-card">
+      <div class="answer-label">Del ${s.label}</div>
+      <div style="font-size:13px;color:var(--text);margin-bottom:8px">${s.prompt}</div>
+      <textarea class="answer-textarea" data-battery="${batteryKeyValue}" data-qid="${question.id}" data-field="part" data-part="${s.label}" placeholder="Skriv ditt svar här...">${esc((answerState.parts||{})[s.label]||'')}</textarea>
+    </div>`).join('');
+  const mcq = question.kind==='mcq' && (question.options||[]).length ? `
+    <div class="choice-grid">
+      ${(question.options||[]).map(opt=>`
+        <label class="choice-option">
+          <input type="radio" name="mcq-${question.id}" value="${opt.label}" data-battery="${batteryKeyValue}" data-qid="${question.id}" data-field="choice" ${answerState.choice===opt.label?'checked':''}>
+          <div><strong>${opt.label})</strong> ${opt.text}</div>
+        </label>`).join('')}
+    </div>` : '';
+  const mainInput = question.kind==='mcq' ? '' : `
+    <div class="answer-card">
+      <div class="answer-label">Ditt svar</div>
+      <textarea class="answer-textarea" data-battery="${batteryKeyValue}" data-qid="${question.id}" data-field="main" placeholder="Skriv ditt svar här...">${esc(answerState.main||'')}</textarea>
+    </div>`;
   return `
-    <div class="section-card">
+    <div class="battery-question" data-battery-card="${question.id}">
       <div class="resource-meta">
         <span class="badge" style="background:rgba(59,130,246,.15);color:var(--accent)">Fråga ${question.number}</span>
         ${meta.map(m=>`<span class="badge" style="background:rgba(255,255,255,.06)">${m}</span>`).join('')}
       </div>
-      <h3 style="margin-top:10px">${question.prompt}</h3>
-      ${sub?`<ol class="outline" style="margin-top:10px">${sub}</ol>`:''}
-      ${opts?`<ul class="outline" style="margin-top:10px">${opts}</ul>`:''}
+      <h3>${question.prompt}</h3>
+      ${sub?`<div class="lead">Delar att besvara</div><ol class="outline">${sub}</ol>`:''}
+      <div class="answer-stack">${mcq || mainInput}${subInputs}</div>
+      <div class="review-row">
+        ${[
+          ['todo','Ej klar'],
+          ['draft','Utkast'],
+          ['done','Klar'],
+          ['checked','Självrättad']
+        ].map(([status,label])=>`<button class="review-btn ${reviewState===status?'sel':''}" data-review-btn="${status}" data-battery="${batteryKeyValue}" data-qid="${question.id}" data-status="${status}">${label}</button>`).join('')}
+      </div>
+      <div class="inline-actions">
+        <div class="answer-status">${batteryQuestionAnswered(question, answerState)?'Svar sparat lokalt i din webbläsare.':'Börja skriva för att spara lokalt.'}</div>
+        <button class="ghost-btn" data-clear-qid="${question.id}" data-battery="${batteryKeyValue}">Rensa svar</button>
+      </div>
+      <details class="details-box">
+        <summary>Visa originalformulering</summary>
+        <div style="margin-top:8px">${question.raw_text || question.prompt}</div>
+      </details>
     </div>`;
+}
+
+function bindBatteryWorkspace(battery){
+  const batteryKeyValue = batteryKey(battery);
+  const root = document.getElementById('battery-workspace');
+  if(!root) return;
+  root.addEventListener('input', (event)=>{
+    const target = event.target;
+    if(!target.matches('[data-field="main"], [data-field="part"]')) return;
+    const qid = target.dataset.qid;
+    const field = target.dataset.field;
+    persistBatteryAnswer(batteryKeyValue, qid, (entry)=>{
+      if(field==='main') entry.main = target.value;
+      if(field==='part'){
+        entry.parts = entry.parts || {};
+        entry.parts[target.dataset.part] = target.value;
+      }
+    });
+    updateBatterySummaryUI(battery);
+    const card = target.closest('.battery-question');
+    if(card) card.querySelector('.answer-status').textContent = 'Svar sparat lokalt i din webbläsare.';
+  });
+  root.addEventListener('change', (event)=>{
+    const target = event.target;
+    if(!target.matches('[data-field="choice"]')) return;
+    persistBatteryAnswer(batteryKeyValue, target.dataset.qid, (entry)=>{ entry.choice = target.value; });
+    updateBatterySummaryUI(battery);
+    const card = target.closest('.battery-question');
+    if(card) card.querySelector('.answer-status').textContent = 'Svar sparat lokalt i din webbläsare.';
+  });
+  root.addEventListener('click', (event)=>{
+    const reviewBtn = event.target.closest('[data-review-btn]');
+    if(reviewBtn){
+      setBatteryReviewState(batteryKeyValue, reviewBtn.dataset.qid, reviewBtn.dataset.status);
+      const card = reviewBtn.closest('.battery-question');
+      if(card){
+        card.querySelectorAll('[data-review-btn]').forEach(btn=>btn.classList.remove('sel'));
+        reviewBtn.classList.add('sel');
+      }
+      updateBatterySummaryUI(battery);
+      return;
+    }
+    const clearBtn = event.target.closest('[data-clear-qid]');
+    if(clearBtn){
+      const responses = g(BATTERY_RESPONSES);
+      if(responses[batteryKeyValue]) delete responses[batteryKeyValue][clearBtn.dataset.clearQid];
+      s(BATTERY_RESPONSES, responses);
+      renderBatteries(batteryKeyValue);
+    }
+  });
 }
 
 function makeNotes(id,storageKey){
@@ -1058,6 +1233,7 @@ function renderMockRun(mockId){
 }
 
 // ============ BATTERIES ============
+
 function renderBatteries(key){
   const all = BATTERIES?.batteries || [];
   const el=document.getElementById('v-batteries');
@@ -1073,38 +1249,68 @@ function renderBatteries(key){
       return;
     }
     const examUrl = examUrlForYear(battery.exam_year);
+    const stats = batteryProgressStats(battery);
     el.innerHTML=`
       <div class="top">
         <button class="back" onclick="location.hash='#batteries'">&#8592; Arkiv</button>
         <div style="flex:1">
           <div style="font-size:11px;font-weight:800;color:var(--accent);letter-spacing:1px">${battery.exam_year} · ${battery.section_id}</div>
           <h1 style="font-size:18px;margin-top:1px">${battery.title}</h1>
+          <div class="subtitle" style="margin-top:4px;margin-bottom:0">Skriv svar direkt i appen, markera status och hoppa vidare till original-PDF när du vill se provet i sitt riktiga format.</div>
         </div>
       </div>
-      <div class="banner"><strong>${battery.question_count}</strong> frågor i denna sektion.${examUrl?` &middot; ${externalLink(examUrl,'Öppna original-PDF')}`:''}</div>
-      <div class="mini-list">
-        <strong>Så använder du sektionen bäst</strong>
-        <ul>
-          <li>Läs först igenom originalfrågorna utan facit.</li>
-          <li>Jämför sedan med ditt eget svar eller använd dem som flashcard-/free response-underlag.</li>
-          <li>Öppna original-PDF:en om du vill se hela provets formatering och kontext.</li>
-        </ul>
-      </div>
-      <div class="resource-grid">${battery.questions.map(renderBatteryQuestion).join('')}</div>`;
+      <div class="battery-shell" id="battery-workspace">
+        <div class="hero">
+          <h1 style="font-size:24px">${battery.title}</h1>
+          <p>Det här är en arbetsyta för ett riktigt frågebatteri. Alla svar sparas lokalt i din webbläsare så att du kan komma tillbaka senare.</p>
+          <div class="resource-meta" style="margin-top:10px">
+            <span class="badge" style="background:rgba(255,255,255,.06)">${battery.question_count} frågor/frågeblock</span>
+            <span class="badge" style="background:rgba(255,255,255,.06)">${battery.exam_year}</span>
+            ${examUrl?`<span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)"><a href="${examUrl}" target="_blank" rel="noopener noreferrer" style="color:inherit">Öppna original-PDF</a></span>`:''}
+          </div>
+          <div class="battery-summary" id="battery-summary-stats">
+            <div class="battery-stat"><strong>${stats.answered}</strong><span>av ${battery.questions.length} besvarade</span></div>
+            <div class="battery-stat"><strong>${stats.done}</strong><span>markerade klara</span></div>
+            <div class="battery-stat"><strong>${stats.checked}</strong><span>självrättade</span></div>
+          </div>
+        </div>
+        <div class="banner split-actions">
+          <div><strong id="battery-progress-pct">${Math.round((stats.answered/(battery.questions.length||1))*100)}% genomarbetat</strong><br><span class="small">Fortsätt skriva, markera "Klar" när du är nöjd och "Självrättad" när du jämfört med källa eller eget facit.</span></div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end">
+            ${examUrl?`<a class="next-btn" style="width:auto;margin-top:0;display:inline-flex;align-items:center" href="${examUrl}" target="_blank" rel="noopener noreferrer">Öppna originalprovet</a>`:''}
+            <button class="ghost-btn" onclick="location.hash='#mock'">Till mockprov</button>
+          </div>
+        </div>
+        <div class="mini-list">
+          <strong>Så använder du sektionen bäst</strong>
+          <ul>
+            <li>Skriv dina svar direkt i varje fråga eller delfråga.</li>
+            <li>Markera <strong>Utkast</strong>, <strong>Klar</strong> eller <strong>Självrättad</strong> när du går vidare.</li>
+            <li>Använd original-PDF:en när du vill se hela provets formatering och sammanhang.</li>
+          </ul>
+        </div>
+        <div class="resource-grid">${battery.questions.map(question=>renderBatteryQuestion(question, batteryKey(battery))).join('')}</div>
+      </div>`;
+    bindBatteryWorkspace(battery);
+    updateBatterySummaryUI(battery);
     return;
   }
 
   const totalQuestions = all.reduce((sum,b)=>sum + (b.question_count||0),0);
   const years = [...new Set(all.map(b=>b.exam_year))].sort((a,b)=>b-a);
+  const startedSections = all.filter(b=>batteryProgressStats(b).answered>0).length;
   el.innerHTML=`
-    <h1>Frågebatteriarkiv</h1>
-    <div class="subtitle">Extraherade faktadelar från riktiga DIPS-prov. Härifrån kan du gå vidare till både original-PDF och varje enskild sektion.</div>
-    <div class="summary">
-      <span class="chip"><strong>${BATTERIES.exam_count||years.length}</strong> provår</span>
-      <span class="chip"><strong>${BATTERIES.battery_count||all.length}</strong> sektioner</span>
-      <span class="chip"><strong>${totalQuestions}</strong> frågor/frågeblock</span>
+    <div class="hero">
+      <h1>Frågebatteriarkiv</h1>
+      <p>Här ligger de riktiga faktadelarna från DIPS-proven. Öppna en sektion, skriv svar direkt i appen och växla över till original-PDF när du vill jämföra med det riktiga provet.</p>
+      <div class="hero-grid">
+        <div class="hero-stat"><strong>${BATTERIES.exam_count||years.length}</strong><span>provår</span></div>
+        <div class="hero-stat"><strong>${BATTERIES.battery_count||all.length}</strong><span>sektioner</span></div>
+        <div class="hero-stat"><strong>${totalQuestions}</strong><span>frågeblock</span></div>
+        <div class="hero-stat"><strong>${startedSections}</strong><span>påbörjade sektioner</span></div>
+      </div>
     </div>
-    <div class="banner"><strong>Viktig skillnad:</strong> appens vanliga quiz är fortfarande mindre än det fulla arkivet. Här ser du mer av det verkliga provmaterialet.</div>
+    <div class="banner"><strong>Viktig skillnad:</strong> appens vanliga quiz är mindre än det fulla arkivet. Här kommer du närmare hur proven faktiskt ser ut och kan skriva egna svar, inte bara klicka rätt alternativ.</div>
     <div id="batteryArchive" class="resource-grid"></div>`;
 
   const container = document.getElementById('batteryArchive');
@@ -1117,11 +1323,18 @@ function renderBatteries(key){
       <h3>${year} års prov</h3>
       <p>${sections.length} extraherade sektioner och ${sections.reduce((sum,b)=>sum+(b.question_count||0),0)} frågor/frågeblock.${exam?.url?` ${externalLink(exam.url,'Öppna original-PDF')}`:''}</p>
       <div class="audio-list">
-        ${sections.map(section=>`
+        ${sections.map(section=>{
+          const stats = batteryProgressStats(section);
+          return `
           <a class="link-card" href="#batteries/${batteryKey(section)}">
             <h3>${section.title}</h3>
             <p>${section.question_count} frågor/frågeblock · ${section.section_id}</p>
-          </a>`).join('')}
+            <div class="resource-meta">
+              <span class="badge" style="background:rgba(255,255,255,.06)">${stats.answered}/${section.questions.length} besvarade</span>
+              <span class="badge" style="background:rgba(255,255,255,.06)">${stats.checked} självrättade</span>
+            </div>
+          </a>`;
+        }).join('')}
       </div>`;
     container.appendChild(wrap);
   });

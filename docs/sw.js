@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dips-tester-v3';
+const CACHE_NAME = 'dips-tester-v4';
 const URLS_TO_CACHE = [
   './',
   './index.html',
