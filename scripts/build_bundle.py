@@ -29,6 +29,9 @@ def main():
     essays_json = load(DATA / "essays.json")
     mocks_json = load(DATA / "mocks.json")
     audio_map_json = load(DATA / "audio_map.json")
+    resources_json = load(DATA / "resources.json")
+    question_batteries_json = load(DATA / "question_batteries.json")
+    source_index_json = load(DATA / "source_index.json")
 
     # Load the main app HTML
     index_html = load(APP / "index.html")
@@ -42,7 +45,10 @@ window.DIPS_DATA = {{
   flashcards: {flashcards_json},
   essays: {essays_json},
   mocks: {mocks_json},
-  audio_map: {audio_map_json}
+  audio_map: {audio_map_json},
+  resources: {resources_json},
+  question_batteries: {question_batteries_json},
+  source_index: {source_index_json}
 }};
 window.BUNDLE_MODE = true;
 </script>"""

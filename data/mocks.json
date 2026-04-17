@@ -5,6 +5,7 @@
       "title": "DIPS Ovningsprov 1 — Fullstandigt",
       "description": "Simulerar det skriftliga provets struktur med faktafragor, kortsvar och uppsats.",
       "duration_minutes": 180,
+      "source_exam_years": [2023, 2024, 2025],
       "sections": [
         {
           "type": "mcq",
@@ -27,6 +28,7 @@
       "title": "DIPS Snabbprov — Bara fakta",
       "description": "Bara flervalsfragor for snabb ovning.",
       "duration_minutes": 30,
+      "source_exam_years": [2023, 2024, 2025],
       "sections": [
         {
           "type": "mcq",

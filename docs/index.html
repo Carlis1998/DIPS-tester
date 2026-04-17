@@ -278,8 +278,9 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 
 <script>
 // === DATA LOADING ===
-let TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES;
+let TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX;
 const TOPIC_MAP = {};
+const SOURCE_MAP = {};
 
 async function fetchJsonWithFallback(paths) {
   let lastError = null;
@@ -299,6 +300,14 @@ async function fetchJsonWithFallback(paths) {
   throw lastError || new Error(`Failed to load JSON from any of: ${paths.join(', ')}`);
 }
 
+async function fetchJsonOptional(paths, fallbackValue) {
+  try {
+    return await fetchJsonWithFallback(paths);
+  } catch {
+    return fallbackValue;
+  }
+}
+
 async function loadData() {
   if (window.BUNDLE_MODE && window.DIPS_DATA) {
     TOPICS = window.DIPS_DATA.topics;
@@ -309,8 +318,10 @@ async function loadData() {
     MOCKS = window.DIPS_DATA.mocks;
     AUDIO_MAP = window.DIPS_DATA.audio_map;
     RESOURCES = window.DIPS_DATA.resources;
+    BATTERIES = window.DIPS_DATA.question_batteries;
+    SOURCE_INDEX = window.DIPS_DATA.source_index;
   } else {
-    [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES] = await Promise.all([
+    [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX] = await Promise.all([
       fetchJsonWithFallback(['./data/topics.json', '../data/topics.json']),
       fetchJsonWithFallback(['./data/questions_sv.json', '../data/questions_sv.json']),
       fetchJsonWithFallback(['./data/questions_en.json', '../data/questions_en.json']),
@@ -319,9 +330,12 @@ async function loadData() {
       fetchJsonWithFallback(['./data/mocks.json', '../data/mocks.json']),
       fetchJsonWithFallback(['./data/audio_map.json', '../data/audio_map.json']),
       fetchJsonWithFallback(['./data/resources.json', '../data/resources.json']),
+      fetchJsonWithFallback(['./data/question_batteries.json', '../data/question_batteries.json']),
+      fetchJsonOptional(['./data/source_index.json', '../data/source_index.json'], []),
     ]);
   }
   TOPICS.topics.forEach(t => TOPIC_MAP[t.code] = t);
+  (SOURCE_INDEX || []).forEach(s => SOURCE_MAP[s.id] = s);
 }
 
 // === STORAGE ===
@@ -352,6 +366,31 @@ function pillHtml(b){return b?`<span class="b-pill ${b}">${b}</span>`:'';}
 function esc(s){return String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
 function externalLink(url,label){
   return `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label||esc(url)}</a>`;
+}
+function sourceLinkById(id,label){
+  const src=SOURCE_MAP[id];
+  if(!src?.url) return '';
+  return externalLink(src.url,label||'Oppna kalla');
+}
+function examUrlForYear(year){
+  const mapped = examSourceByYear(year);
+  if (mapped?.url) return mapped.url;
+  const fallback = {
+    2025: 'https://www.regeringen.se/contentassets/a89205d9fa2a4f6ea3a51a0fb1fc403a/skriftligt-prov-for-diplomatprogrammet-2025/',
+    2024: 'https://www.regeringen.se/contentassets/a89205d9fa2a4f6ea3a51a0fb1fc403a/skriftligt-prov-for-diplomatprogrammet-2024.pdf',
+    2023: 'https://www.regeringen.se/contentassets/a89205d9fa2a4f6ea3a51a0fb1fc403a/skriftligt-prov-for-diplomatprogrammet-2023.pdf',
+    2022: 'https://www.regeringen.se/contentassets/a89205d9fa2a4f6ea3a51a0fb1fc403a/skriftligt-prov-for-diplomatprogrammet-2022.pdf',
+    2021: 'https://www.regeringen.se/contentassets/a89205d9fa2a4f6ea3a51a0fb1fc403a/skriftligt-prov-for-diplomatprogrammet-2021.pdf',
+    2020: 'https://www.regeringen.se/contentassets/a89205d9fa2a4f6ea3a51a0fb1fc403a/skriftligt-prov-for-diplomatprogrammet-2020.pdf',
+    2019: 'https://www.regeringen.se/contentassets/a89205d9fa2a4f6ea3a51a0fb1fc403a/skriftligt-prov-for-diplomatprogrammet-2019.pdf'
+  };
+  return fallback[year] || '';
+}
+function examSourceByYear(year){
+  return (SOURCE_INDEX||[]).find(s=>s.type==='exam_pdf' && s.year===year);
+}
+function batteriesForYear(year){
+  return (BATTERIES?.batteries||[]).filter(b=>b.exam_year===year);
 }
 
 function makeNotes(id,storageKey){
@@ -485,6 +524,8 @@ function renderHome(){
   const accuracy=totalAtt?Math.round(100*totalRight/totalAtt)+'%':'—';
   const officialCount=allQ.filter(q=>q.source==='official').length;
   const audioCount=AUDIO_MAP.study_podcasts.length;
+  const fetchedExamCount=(SOURCE_INDEX||[]).filter(s=>s.type==='exam_pdf' && s.fetched).length;
+  const extractedBatteryCount=BATTERIES?.battery_count||0;
 
   document.getElementById('v-home').innerHTML=`
     <div class="hero">
@@ -497,7 +538,7 @@ function renderHome(){
         <div class="hero-stat"><strong>${audioCount}</strong><span>planerade ljudspår</span></div>
       </div>
     </div>
-    <div class="banner"><strong>Status:</strong> ${seenQ} besvarade, ${accuracy} ratt, ${totalHard} saker i svart-hinken, ${officialCount} fragor med officiell kalla.</div>
+    <div class="banner"><strong>Status:</strong> ${seenQ} besvarade, ${accuracy} ratt, ${totalHard} saker i svart-hinken, ${officialCount} fragor med officiell kalla, ${fetchedExamCount} hamtade originalprov och ${extractedBatteryCount} extraherade fragbatterier.</div>
 
     <div class="card" onclick="location.hash='#hub'" style="border-color:rgba(59,130,246,.4)">
       <h2 style="color:var(--blue)">Amnen (T01-T10)</h2>
@@ -507,7 +548,7 @@ function renderHome(){
 
     <div class="card" onclick="location.hash='#mock'" style="border-color:rgba(245,158,11,.4)">
       <h2 style="color:var(--orange)">Ovningsprov</h2>
-      <p>Simulera det riktiga provet med tidsbegransning, sektioner och poangberakning.</p>
+      <p>Simulera provet med tidsbegransning, sektioner och poangberakning. Varje mock kan ocksa peka tillbaka till originalprovet.</p>
       <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange)">${MOCKS.mocks.length} prov</span>
     </div>
 
@@ -544,6 +585,14 @@ function renderHome(){
         <li>repetition av folkratt, EU, FN, NATO och Sverige</li>
         <li>uppsatstraning med tidsram</li>
         <li>GitHub-hostad delning till nagon annan utan backend</li>
+      </ul>
+    </div>
+    <div class="mini-list">
+      <strong>Nuvarande verkliga luckor i repot</strong>
+      <ul>
+        <li>frgebatterier ar strukturellt extraherade for 2023-2025, inte for alla hamtade prov</li>
+        <li>endast en liten del ar omvandlad till riktiga app-fragor och flashcards</li>
+        <li>det finns inga facit for oppna fragor an, bara strukturerad extraction</li>
       </ul>
     </div>
   `;
@@ -798,20 +847,44 @@ function renderMock(){
   const el=document.getElementById('v-mock');
   el.innerHTML=`
     <h1>Ovningsprov</h1>
-    <div class="subtitle">Valj ett prov att kora. Strukturen speglar det riktiga DIPS-provet.</div>
+    <div class="subtitle">Valj ett prov att kora. Du kan ocksa hoppa direkt till originalproven och se vilka delar som faktiskt extraherats.</div>
+    <div class="banner"><strong>Walkthrough:</strong> repot innehaller fler originalprov an vad som redan ar omvandlat till appfragor. Mockdelen ar anvandbar nu, men exam archive nedan visar den rikare strukturen som redan finns i `question_batteries.json`.</div>
     <div id="mockList"></div>`;
   const list=document.getElementById('mockList');
   MOCKS.mocks.forEach(m=>{
     const card=document.createElement('div');card.className='card';
     card.onclick=()=>location.hash='#mock-run/'+m.id;
+    const sourceYears = m.source_exam_years || [];
     card.innerHTML=`
       <h2>${m.title}</h2>
       <p>${m.description}</p>
       <div style="margin-top:8px;font-size:11px;color:var(--text-dim)">
         ${m.sections.map(s=>`<span class="badge" style="background:rgba(255,255,255,.06);margin-right:4px">${s.title} (${s.time_minutes} min)</span>`).join('')}
       </div>
-      <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange);margin-top:8px">${m.duration_minutes} minuter</span>`;
+      <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange);margin-top:8px">${m.duration_minutes} minuter</span>
+      ${sourceYears.length?`<div class="resource-note" style="margin-top:8px">Bygger pa: ${sourceYears.map(y=>examUrlForYear(y)?externalLink(examUrlForYear(y), `originalprov ${y}`):`originalprov ${y}`).join(' &middot; ')}</div>`:''}`;
     list.appendChild(card);
+  });
+
+  const archive=document.createElement('div');
+  archive.innerHTML=`<h2 class="section-head">Exam archive och extraherade fragbatterier</h2><div id="mockArchive" class="resource-grid"></div>`;
+  list.parentNode.appendChild(archive);
+  const archiveEl=document.getElementById('mockArchive');
+  const exams=(SOURCE_INDEX||[]).filter(s=>s.type==='exam_pdf').sort((a,b)=>(b.year||0)-(a.year||0));
+  exams.forEach(exam=>{
+    const batteries=batteriesForYear(exam.year);
+    const div=document.createElement('div');div.className='link-card';
+    div.innerHTML=`
+      <h3>${exam.title}</h3>
+      <p>${exam.fetched?'Hamta original-PDF eller jamfor mot de fragbatterier som redan extraherats ur detta prov.':'Kallan finns i indexet men saknas fortfarande lokalt.'}</p>
+      <div class="resource-meta">
+        <span class="source-badge ${exam.source_class||'official'}">${exam.source_class||'official'}</span>
+        <span class="badge" style="background:rgba(255,255,255,.06)">${exam.year||'okant ar'}</span>
+        <span class="badge" style="background:rgba(255,255,255,.06)">${batteries.length} sectioner extraherade</span>
+      </div>
+      <div class="resource-note">${(exam.url||examUrlForYear(exam.year))?externalLink(exam.url||examUrlForYear(exam.year),'Oppna originalprov'):'Ingen lank'}</div>
+      ${batteries.length?`<div class="small" style="margin-top:6px">Sektioner: ${batteries.map(b=>`${b.title} (${b.question_count})`).join(' · ')}</div>`:''}`;
+    archiveEl.appendChild(div);
   });
 }
 
@@ -834,6 +907,7 @@ function renderMockRun(mockId){
         <div style="flex:1"><h1 style="font-size:16px">${mock.title}</h1>
         <div class="subtitle" style="margin-bottom:0">${sec.title}</div></div>
       </div>
+      ${mock.source_exam_years?.length?`<div class="banner"><strong>Originalprov:</strong> ${mock.source_exam_years.map(y=>examUrlForYear(y)?externalLink(examUrlForYear(y), `oppna ${y} ars PDF`):`${y}`).join(' &middot; ')}</div>`:''}
       <div class="timer" id="mr-timer">--:--</div>
       <div style="font-size:12px;color:var(--text-dim);margin-bottom:14px">${sec.description}</div>
       <div id="mr-content"></div>
@@ -1015,6 +1089,22 @@ function renderResources(){
       <div class="resource-note">${urls.map((u,i)=>externalLink(u, urls.length===1 ? 'Oppna kalla' : `Oppna lank ${i+1}`)).join(' &middot; ')}</div>`;
     testEl.appendChild(div);
   });
+
+  const exams=(SOURCE_INDEX||[]).filter(s=>s.type==='exam_pdf').sort((a,b)=>(b.year||0)-(a.year||0));
+  if(exams.length){
+    const extra=document.createElement('div');
+    extra.className='audio-block';
+    extra.innerHTML=`
+      <h3>Direkt till originalproven</h3>
+      <p>Detta ar de faktiska kalla-PDF:erna. Oppna dem nar du gor mockprov eller vill jamfora med extraherade fragbatterier.</p>
+      <div class="audio-list">${exams.map(exam=>`
+        <div class="link-card" style="margin-bottom:0">
+          <h3>${exam.year} ars prov</h3>
+          <p>${exam.title}</p>
+          <div class="resource-note">${(exam.url||examUrlForYear(exam.year))?externalLink(exam.url||examUrlForYear(exam.year),'Oppna PDF'):''}</div>
+        </div>`).join('')}</div>`;
+    testEl.prepend(extra);
+  }
 
   const podEl=document.getElementById('res-pods');
   podEl.className='resource-grid';

@@ -21,8 +21,8 @@ python3 scripts/generate_content.py --extract-batteries
 python3 scripts/generate_content.py --stats
 
 # 5. Serve the app locally
-cd app && python3 -m http.server 8080
-# Open http://localhost:8080
+./app/serve.sh
+# Open http://localhost:8080/app/
 ```
 
 ## What is new
@@ -86,6 +86,17 @@ This file is the right source for the next steps:
 4. convert selected multiple-choice items into graded `questions_sv.json`
 5. create mock exams from real historical sections
 
+## Reality Check
+
+The repository now contains more exam material than the visible app has turned into interactive questions.
+
+- fetched official exam PDFs: 2019, 2021, 2022, 2023, 2024, 2025
+- structured question batteries extracted so far: mainly 2023-2025
+- current interactive MCQ layer in the app: still much smaller than the extracted archive
+
+So yes: there is already more exam substance in the repo than the frontend currently exposes.
+The app is useful now, but the full exam archive is richer than the current `questions_sv.json` and `flashcards.json`.
+
 ## Manual files to check yourself
 
 If the fetch script misses anything, these are the most important files to verify manually:
@@ -141,10 +152,12 @@ DIPS-Tester/
 ## App notes
 
 The app can keep using the existing MCQ/flashcard JSON files, while `question_batteries.json` becomes the structured source for richer DIPS-specific training later.
+The mock and resources views should be treated as the bridge between the lightweight app layer and the actual original PDFs.
 
 ## Deploy to GitHub Pages
 
 1. Push this repo to GitHub
 2. Go to Settings -> Pages -> Deploy from branch
-3. Set branch to `main` and folder to `/app`
-4. Serve from `https://username.github.io/DIPS-Tester/`
+3. Copy `app/` into `docs/`
+4. Set branch to `main` and folder to `/docs`
+5. Serve from `https://username.github.io/DIPS-Tester/`
