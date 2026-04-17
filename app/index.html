@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="DIPS Tester">
+<meta name="theme-color" content="#0f172a">
+<link rel="manifest" href="manifest.json">
+<title>DIPS Tester</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0f172a;--surface:#1e293b;--card-bg:#334155;--text:#e2e8f0;--text-dim:#94a3b8;
+  --accent:#3b82f6;--green:#22c55e;--orange:#f59e0b;--red:#ef4444;--blue:#38bdf8;
+  --purple:#a78bfa;--radius:14px
+}
+html,body{min-height:100dvh;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  background:var(--bg);color:var(--text);line-height:1.45;-webkit-text-size-adjust:100%}
+body{padding:env(safe-area-inset-top,16px) 14px calc(env(safe-area-inset-bottom,16px) + 64px)}
+a{color:var(--accent);text-decoration:none}
+
+/* Bottom nav */
+.bnav{position:fixed;bottom:0;left:0;right:0;display:flex;background:var(--surface);
+  border-top:1px solid rgba(255,255,255,.08);padding:6px 0 env(safe-area-inset-bottom,6px);z-index:90}
+.bnav a{flex:1;text-align:center;font-size:10px;color:var(--text-dim);padding:4px 0;
+  text-decoration:none;font-weight:700;line-height:1.3;transition:.15s}
+.bnav a.active{color:var(--accent)}
+.bnav a span{display:block;font-size:18px;margin-bottom:1px}
+
+/* Shared */
+.view{display:none}.view.active{display:block}
+h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
+.subtitle{font-size:12px;color:var(--text-dim);margin-bottom:14px}
+.top{display:flex;align-items:center;gap:10px;margin:8px 0 10px}
+.back{color:var(--accent);font-size:13px;font-weight:700;cursor:pointer;background:none;border:none;font-family:inherit}
+.empty{text-align:center;padding:50px 20px;color:var(--text-dim);font-size:14px;line-height:1.6}
+
+/* Cards */
+.card{display:block;background:var(--surface);border-radius:var(--radius);padding:18px;
+  margin-bottom:12px;text-decoration:none;color:var(--text);border:1px solid rgba(255,255,255,.08);
+  cursor:pointer;transition:.15s}
+.card:active{transform:scale(.98);border-color:var(--accent)}
+.card h2{font-size:16px;font-weight:700;margin-bottom:6px;color:var(--accent)}
+.card p{font-size:13px;color:var(--text-dim);line-height:1.5}
+.badge{display:inline-block;padding:3px 8px;border-radius:6px;font-size:11px;font-weight:700;margin-top:8px}
+
+/* Filter & bucket */
+.filter-row{display:flex;gap:6px;margin-bottom:10px;flex-wrap:wrap;overflow-x:auto}
+.filter-btn{padding:7px 10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);
+  border-radius:999px;color:var(--text-dim);font-size:11px;font-weight:700;cursor:pointer;
+  font-family:inherit;white-space:nowrap}
+.filter-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.filter-btn[data-b="hard"].active{background:var(--red);border-color:var(--red)}
+.filter-btn[data-b="medium"].active{background:var(--orange);border-color:var(--orange)}
+.filter-btn[data-b="easy"].active{background:var(--green);border-color:var(--green)}
+.filter-btn .n{opacity:.75;font-weight:600;margin-left:4px}
+
+.rate-row{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;margin-top:12px}
+.rate-btn{padding:10px 2px;border:none;border-radius:10px;font-weight:800;font-size:10.5px;
+  color:#fff;cursor:pointer;font-family:inherit;line-height:1.2}
+.rate-btn.hard{background:var(--red)}
+.rate-btn.medium{background:var(--orange)}
+.rate-btn.easy{background:var(--green)}
+.rate-btn.again{background:var(--blue)}
+.rate-btn.hidden{background:#555}
+.rate-btn.sel{outline:3px solid #fff}
+.b-pill{display:inline-block;padding:2px 7px;border-radius:999px;font-size:9px;font-weight:800;text-transform:uppercase}
+.b-pill.hard{background:rgba(239,68,68,.18);color:var(--red)}
+.b-pill.medium{background:rgba(245,158,11,.18);color:var(--orange)}
+.b-pill.easy{background:rgba(78,204,163,.18);color:var(--green)}
+
+/* Question */
+.q{background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:12px;
+  border:1px solid rgba(255,255,255,.06)}
+.q-meta{display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);margin-bottom:10px;gap:8px}
+.q-diff{padding:2px 6px;border-radius:4px;font-weight:700;font-size:9px;text-transform:uppercase}
+.q-diff[data-d="1"]{background:rgba(34,197,94,.15);color:var(--green)}
+.q-diff[data-d="2"]{background:rgba(245,158,11,.15);color:var(--orange)}
+.q-diff[data-d="3"]{background:rgba(239,68,68,.15);color:var(--red)}
+.q-stem{font-size:15px;font-weight:600;line-height:1.5;margin-bottom:12px}
+.q-options{display:flex;flex-direction:column;gap:6px}
+.q-opt{display:flex;gap:10px;padding:12px;background:rgba(255,255,255,.04);
+  border:1.5px solid rgba(255,255,255,.08);border-radius:10px;cursor:pointer;font-size:13px;
+  line-height:1.4;text-align:left;color:var(--text);font-family:inherit;width:100%}
+.q-opt .letter{font-weight:800;color:var(--accent);min-width:14px;flex-shrink:0}
+.q-opt.correct{background:rgba(34,197,94,.18);border-color:var(--green)}
+.q-opt.correct .letter{color:var(--green)}
+.q-opt.wrong{background:rgba(239,68,68,.15);border-color:var(--red)}
+.q-opt:disabled{cursor:default}
+.q-fb{margin-top:10px;padding:10px;border-radius:10px;font-size:12px;line-height:1.5;display:none}
+.q-fb.show{display:block}
+.q-fb.right{background:rgba(34,197,94,.1);color:#bbf7d0}
+.q-fb.wrong{background:rgba(239,68,68,.08);color:#fecaca}
+
+/* Flashcard */
+.fc{background:var(--surface);border-radius:var(--radius);padding:18px;margin-bottom:12px;
+  border:1px solid rgba(255,255,255,.06);cursor:pointer}
+.fc-front{font-size:16px;font-weight:600;line-height:1.4;margin-bottom:10px}
+.fc-hint{font-size:11px;color:var(--text-dim);text-align:center;margin-top:8px}
+.fc-back{display:none;font-size:14px;line-height:1.55;color:#cbd5e1;
+  padding-top:12px;border-top:1px dashed rgba(255,255,255,.12)}
+.fc.flipped .fc-back{display:block}
+.fc.flipped .fc-hint{display:none}
+.fc-explanation{margin-top:10px;font-size:12px;color:var(--text-dim);font-style:italic}
+
+/* Notes */
+.notes{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08)}
+.notes textarea{width:100%;min-height:50px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:8px;color:var(--text);
+  font-family:inherit;font-size:12px;resize:vertical}
+.notes textarea:focus{outline:none;border-color:var(--accent)}
+.note-saved{color:var(--green);opacity:0;transition:.3s;font-size:10px}
+.note-saved.show{opacity:1}
+
+/* Progress */
+.progress-row{display:flex;justify-content:space-between;align-items:center;font-size:11px;
+  color:var(--text-dim);margin-bottom:8px;gap:10px}
+.pbar{flex:1;height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.pbar > div{height:100%;background:linear-gradient(90deg,var(--accent),var(--blue));transition:width .25s}
+
+.next-btn{width:100%;padding:14px;margin-top:10px;border:none;border-radius:12px;
+  background:var(--accent);color:#fff;font-weight:800;font-size:14px;cursor:pointer;font-family:inherit}
+
+/* Hub */
+.search{width:100%;padding:10px 14px;background:var(--surface);border:1px solid rgba(255,255,255,.1);
+  border-radius:10px;color:var(--text);font-size:14px;margin-bottom:8px}
+.search:focus{outline:none;border-color:var(--accent)}
+.summary{display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.chip{font-size:11px;padding:5px 10px;background:rgba(255,255,255,.06);border-radius:8px;color:var(--text-dim)}
+.chip strong{color:var(--text)}
+.block-header{font-size:11px;font-weight:800;color:var(--text-dim);text-transform:uppercase;
+  letter-spacing:1.2px;margin:18px 0 8px;padding-left:4px}
+.topic-row{display:flex;align-items:center;gap:10px;background:var(--surface);border-radius:var(--radius);
+  padding:12px 14px;margin-bottom:8px;cursor:pointer;border:1px solid rgba(255,255,255,.06);transition:.12s}
+.topic-row:active{transform:scale(.98);border-color:var(--accent)}
+.topic-row .code{font-size:13px;font-weight:800;color:var(--accent);min-width:38px}
+.topic-row .title{flex:1;font-size:14px;font-weight:600;line-height:1.3}
+.topic-row .meta{font-size:10px;color:var(--text-dim);margin-top:3px;display:flex;gap:8px}
+.topic-row .pct{font-size:11px;font-weight:700;color:var(--green)}
+.topic-row .bar{width:44px;height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.topic-row .bar-fill{height:100%;background:var(--green);transition:width .3s}
+.bdot{font-size:9px;padding:1px 5px;border-radius:999px;font-weight:700}
+.bdot.hard{background:rgba(239,68,68,.18);color:var(--red)}
+.bdot.medium{background:rgba(245,158,11,.18);color:var(--orange)}
+.bdot.easy{background:rgba(34,197,94,.18);color:var(--green)}
+.drill-banner{display:block;background:linear-gradient(135deg,rgba(239,68,68,.18),rgba(245,158,11,.1));
+  border:1px solid rgba(239,68,68,.35);border-radius:12px;padding:12px 14px;margin-bottom:14px;
+  color:var(--text);cursor:pointer;font-size:13px;font-weight:700}
+
+/* Tabs */
+.tabs{display:flex;gap:6px;margin-bottom:14px;background:var(--surface);padding:5px;border-radius:12px}
+.tab{flex:1;text-align:center;padding:9px 6px;border-radius:8px;font-size:12px;font-weight:700;
+  color:var(--text-dim);cursor:pointer;border:none;background:transparent;font-family:inherit}
+.tab.active{background:var(--accent);color:#fff}
+.tab .cnt{font-size:9px;opacity:.85;margin-left:3px}
+.pane{display:none}.pane.active{display:block}
+
+/* Swipe nav */
+.swipe-nav{display:flex;gap:8px;margin-top:6px;justify-content:space-between}
+.swipe-nav button{padding:8px 14px;border:none;border-radius:8px;background:rgba(255,255,255,.08);
+  color:var(--text);font-family:inherit;font-weight:700;font-size:12px;cursor:pointer}
+.swipe-nav button:disabled{opacity:.3;cursor:not-allowed}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;background:var(--surface);
+  border-radius:12px;padding:10px;margin-bottom:10px;font-size:11px}
+.stat{text-align:center}
+.stat-num{font-size:17px;font-weight:800;color:var(--accent);display:block}
+.stat-label{color:var(--text-dim);font-size:10px;margin-top:2px}
+.bucket-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:10px}
+.bucket-box{background:var(--surface);border-radius:10px;padding:12px 6px;text-align:center}
+.bucket-box .bn{font-size:22px;font-weight:800;display:block}
+.bucket-box .bl{font-size:10px;color:var(--text-dim);margin-top:2px}
+.bucket-box.hard{border-top:3px solid var(--red)}
+.bucket-box.medium{border-top:3px solid var(--orange)}
+.bucket-box.easy{border-top:3px solid var(--green)}
+.bucket-box.unrated{border-top:3px solid var(--text-dim)}
+
+/* Mock exam */
+.timer{font-size:28px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;
+  padding:16px;background:var(--surface);border-radius:12px;margin-bottom:14px;
+  border:2px solid rgba(255,255,255,.08)}
+.timer.warning{color:var(--orange);border-color:var(--orange)}
+.timer.danger{color:var(--red);border-color:var(--red);animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.section-card{background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:12px;
+  border:1px solid rgba(255,255,255,.06)}
+.section-card h3{font-size:14px;font-weight:700;color:var(--accent);margin-bottom:4px}
+.section-card p{font-size:12px;color:var(--text-dim)}
+
+/* Essay */
+.essay-card{background:var(--surface);border-radius:var(--radius);padding:18px;margin-bottom:14px;
+  border:1px solid rgba(255,255,255,.06)}
+.essay-card h3{font-size:15px;font-weight:700;margin-bottom:8px}
+.essay-card .themes{display:flex;flex-wrap:wrap;gap:4px;margin:8px 0}
+.essay-card .theme{font-size:10px;padding:3px 8px;background:rgba(59,130,246,.15);
+  color:var(--accent);border-radius:999px;font-weight:600}
+.essay-card .outline{font-size:12px;color:var(--text-dim);padding-left:16px;margin-top:8px}
+.essay-card .outline li{margin-bottom:4px}
+.essay-textarea{width:100%;min-height:300px;background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;color:var(--text);
+  font-family:'Georgia',serif;font-size:14px;line-height:1.7;resize:vertical}
+.essay-textarea:focus{outline:none;border-color:var(--accent)}
+
+/* Welcome */
+.welcome-header{text-align:center;padding:20px 0 10px}
+.welcome-header h1{font-size:26px;margin-bottom:4px}
+.welcome-stat{text-align:center;font-size:12px;color:var(--text-dim);margin-bottom:20px}
+.welcome-stat strong{color:var(--green)}
+
+.banner{background:linear-gradient(135deg,rgba(59,130,246,.18),rgba(56,189,248,.12));
+  border:1px solid rgba(59,130,246,.3);border-radius:12px;padding:10px 12px;margin-bottom:10px;font-size:12px}
+.banner strong{color:var(--accent)}
+
+.hero{background:
+  radial-gradient(circle at top left,rgba(59,130,246,.22),transparent 38%),
+  radial-gradient(circle at top right,rgba(167,139,250,.18),transparent 34%),
+  linear-gradient(180deg,rgba(30,41,59,.96),rgba(15,23,42,.98));
+  border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:20px 18px;margin-bottom:16px}
+.hero h1{font-size:28px;margin-bottom:6px}
+.hero p{font-size:13px;color:var(--text-dim);line-height:1.6}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:14px}
+.hero-stat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:12px}
+.hero-stat strong{display:block;font-size:22px;color:var(--text)}
+.hero-stat span{font-size:11px;color:var(--text-dim)}
+.mini-list{background:var(--surface);border-radius:12px;padding:14px;margin-top:12px;font-size:12px;color:var(--text-dim);line-height:1.7}
+.mini-list strong{color:var(--text)}
+.mini-list ul{padding-left:18px;margin-top:6px}
+.mini-list li{margin-bottom:4px}
+.subchips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.subchip{font-size:10px;padding:4px 8px;background:rgba(255,255,255,.06);border-radius:999px;color:var(--text-dim)}
+.link-card{display:block;background:var(--surface);border-radius:12px;padding:14px;margin-bottom:10px;
+  border:1px solid rgba(255,255,255,.06);color:var(--text);text-decoration:none}
+.link-card h3{font-size:13px;color:var(--accent);margin-bottom:4px}
+.link-card p{font-size:12px;color:var(--text-dim);line-height:1.55}
+.section-head{font-size:14px;color:var(--accent);margin:16px 0 8px}
+.audio-block{background:linear-gradient(135deg,rgba(59,130,246,.12),rgba(56,189,248,.08));
+  border:1px solid rgba(59,130,246,.2);border-radius:12px;padding:12px;margin:0 0 12px}
+.audio-block h3{font-size:13px;color:var(--blue);margin-bottom:4px}
+.audio-block p{font-size:12px;color:var(--text-dim);line-height:1.55}
+.audio-list{display:grid;gap:8px;margin-top:8px}
+.audio-pill{display:inline-block;padding:3px 8px;border-radius:999px;font-size:10px;font-weight:700;
+  background:rgba(59,130,246,.15);color:var(--blue);margin-right:5px}
+.resource-grid{display:grid;gap:10px}
+.resource-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.resource-note{font-size:11px;color:var(--text-dim);margin-top:6px}
+.small{font-size:11px;color:var(--text-dim)}
+
+/* Source badge */
+.source-badge{font-size:9px;padding:2px 6px;border-radius:4px;font-weight:700;text-transform:uppercase}
+.source-badge.official{background:rgba(34,197,94,.15);color:var(--green)}
+.source-badge.secondary{background:rgba(245,158,11,.15);color:var(--orange)}
+.source-badge.community{background:rgba(167,139,250,.15);color:var(--purple)}
+</style>
+</head>
+<body>
+
+<!-- Views -->
+<div id="v-home" class="view active"></div>
+<div id="v-hub" class="view"></div>
+<div id="v-topic" class="view"></div>
+<div id="v-drill" class="view"></div>
+<div id="v-mock" class="view"></div>
+<div id="v-mock-run" class="view"></div>
+<div id="v-essay" class="view"></div>
+<div id="v-resources" class="view"></div>
+
+<!-- Bottom nav -->
+<nav class="bnav">
+  <a href="#home" data-v="home"><span>&#127968;</span>Hem</a>
+  <a href="#hub" data-v="hub"><span>&#128218;</span>Amnen</a>
+  <a href="#mock" data-v="mock"><span>&#128221;</span>Prov</a>
+  <a href="#essay" data-v="essay"><span>&#9997;&#65039;</span>Uppsats</a>
+  <a href="#drill" data-v="drill"><span>&#128293;</span>Drill</a>
+</nav>
+
+<script>
+// === DATA LOADING ===
+let TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES;
+const TOPIC_MAP = {};
+
+async function fetchJsonWithFallback(paths) {
+  let lastError = null;
+  for (const path of paths) {
+    try {
+      const res = await fetch(path, { cache: 'no-store' });
+      if (!res.ok) {
+        lastError = new Error(`${path} -> HTTP ${res.status}`);
+        continue;
+      }
+      const text = await res.text();
+      return JSON.parse(text);
+    } catch (err) {
+      lastError = err;
+    }
+  }
+  throw lastError || new Error(`Failed to load JSON from any of: ${paths.join(', ')}`);
+}
+
+async function loadData() {
+  if (window.BUNDLE_MODE && window.DIPS_DATA) {
+    TOPICS = window.DIPS_DATA.topics;
+    Q_SV = window.DIPS_DATA.questions_sv;
+    Q_EN = window.DIPS_DATA.questions_en;
+    CARDS = window.DIPS_DATA.flashcards;
+    ESSAYS = window.DIPS_DATA.essays;
+    MOCKS = window.DIPS_DATA.mocks;
+    AUDIO_MAP = window.DIPS_DATA.audio_map;
+    RESOURCES = window.DIPS_DATA.resources;
+  } else {
+    [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES] = await Promise.all([
+      fetchJsonWithFallback(['./data/topics.json', '../data/topics.json']),
+      fetchJsonWithFallback(['./data/questions_sv.json', '../data/questions_sv.json']),
+      fetchJsonWithFallback(['./data/questions_en.json', '../data/questions_en.json']),
+      fetchJsonWithFallback(['./data/flashcards.json', '../data/flashcards.json']),
+      fetchJsonWithFallback(['./data/essays.json', '../data/essays.json']),
+      fetchJsonWithFallback(['./data/mocks.json', '../data/mocks.json']),
+      fetchJsonWithFallback(['./data/audio_map.json', '../data/audio_map.json']),
+      fetchJsonWithFallback(['./data/resources.json', '../data/resources.json']),
+    ]);
+  }
+  TOPICS.topics.forEach(t => TOPIC_MAP[t.code] = t);
+}
+
+// === STORAGE ===
+const FC_BUCKET='dips_fc_bucket', Q_BUCKET='dips_q_bucket';
+const FC_NOTES='dips_fc_notes', Q_NOTES='dips_q_notes';
+const Q_PROGRESS='dips_q_progress', ESSAY_NOTES='dips_essay_notes';
+const MOCK_HISTORY='dips_mock_history';
+const g=k=>{try{return JSON.parse(localStorage.getItem(k))||{}}catch{return{}}};
+const s=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
+
+// === SHARED HELPERS ===
+const FILTERS=[{k:'all',label:'Alla'},{k:'unrated',label:'Nya'},{k:'hard',label:'Svart'},
+  {k:'medium',label:'Medel'},{k:'easy',label:'Latt'},{k:'hidden',label:'Dolda'}];
+
+function bucketCounts(items,bmap,idFn){
+  const c={all:0,unrated:0,hard:0,medium:0,easy:0,again:0,hidden:0};
+  items.forEach(it=>{const id=idFn?idFn(it):it.id;const b=bmap[id];
+    if(['hard','medium','easy','again','hidden'].includes(b))c[b]++;else c.unrated++;
+    if(b!=='hidden')c.all++;});
+  return c;
+}
+function filterByBucket(items,fk,bmap,idFn){
+  if(fk==='all')return items.filter(i=>(bmap[idFn?idFn(i):i.id])!=='hidden');
+  if(fk==='unrated')return items.filter(i=>!bmap[idFn?idFn(i):i.id]);
+  return items.filter(i=>(bmap[idFn?idFn(i):i.id])===fk);
+}
+function pillHtml(b){return b?`<span class="b-pill ${b}">${b}</span>`:'';}
+function esc(s){return String(s||'').replace(/[&<>"]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]));}
+function externalLink(url,label){
+  return `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${label||esc(url)}</a>`;
+}
+
+function makeNotes(id,storageKey){
+  const notes=g(storageKey);const div=document.createElement('div');div.className='notes';
+  div.innerHTML=`<div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);margin-bottom:4px"><span>Anteckningar</span><span class="note-saved">sparad</span></div>
+    <textarea placeholder="Mnemonic, samband, vad du missade...">${notes[id]||''}</textarea>`;
+  const ta=div.querySelector('textarea'),saved=div.querySelector('.note-saved');let t;
+  ta.addEventListener('input',()=>{clearTimeout(t);t=setTimeout(()=>{
+    const n=g(storageKey);if(ta.value.trim())n[id]=ta.value;else delete n[id];s(storageKey,n);
+    saved.classList.add('show');setTimeout(()=>saved.classList.remove('show'),1200);},400);});
+  ta.addEventListener('click',e=>e.stopPropagation());
+  return div;
+}
+
+function makeQ(q,opts={}){
+  const qp=g(Q_PROGRESS),bm=g(Q_BUCKET),state=qp[q.id],bucket=bm[q.id];
+  const div=document.createElement('div');div.className='q';
+  const srcBadge=q.source?`<span class="source-badge ${q.source}">${q.source}</span>`:'';
+  div.innerHTML=`
+    <div class="q-meta">
+      <span>${q.id}${state?.seen?` · ${state.lastCorrect?'&#10004;':'&#10008;'} (${state.correct||0}/${state.attempts||0})`:''} ${pillHtml(bucket)} ${srcBadge}</span>
+      <span class="q-diff" data-d="${q.difficulty}">L${q.difficulty}</span>
+    </div>
+    <div class="q-stem">${q.stem}</div>
+    <div class="q-options">${Object.entries(q.options).map(([k,v])=>`<button class="q-opt" data-l="${k}"><span class="letter">${k}.</span><span>${v}</span></button>`).join('')}</div>
+    <div class="q-fb"></div>
+    <div class="rate-row" style="display:none">
+      <button class="rate-btn hard ${bucket==='hard'?'sel':''}" data-b="hard">Svart</button>
+      <button class="rate-btn medium ${bucket==='medium'?'sel':''}" data-b="medium">Medel</button>
+      <button class="rate-btn easy ${bucket==='easy'?'sel':''}" data-b="easy">Latt</button>
+      <button class="rate-btn again ${bucket==='again'?'sel':''}" data-b="again">Igen</button>
+      <button class="rate-btn hidden ${bucket==='hidden'?'sel':''}" data-b="hidden">Dolj</button>
+    </div>`;
+  div.appendChild(makeNotes(q.id,Q_NOTES));
+  const fb=div.querySelector('.q-fb'),rate=div.querySelector('.rate-row');
+  div.querySelectorAll('.q-opt').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      if(btn.disabled)return;const picked=btn.dataset.l,correct=picked===q.answer;
+      div.querySelectorAll('.q-opt').forEach(o=>{o.disabled=true;
+        if(o.dataset.l===q.answer)o.classList.add('correct');
+        else if(o.dataset.l===picked)o.classList.add('wrong');});
+      fb.className='q-fb show '+(correct?'right':'wrong');
+      fb.innerHTML=`<strong>${correct?'Ratt!':'Fel. Ratt svar: '+q.answer}</strong> ${q.explanation}`;
+      rate.style.display='grid';
+      const qp2=g(Q_PROGRESS);const st=qp2[q.id]||{seen:false,attempts:0,correct:0};
+      st.seen=true;st.attempts=(st.attempts||0)+1;if(correct)st.correct=(st.correct||0)+1;
+      st.lastCorrect=correct;st.lastAt=Date.now();qp2[q.id]=st;s(Q_PROGRESS,qp2);
+      if(opts.onAnswer)opts.onAnswer(correct);
+    });
+  });
+  rate.querySelectorAll('.rate-btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const b=btn.dataset.b;const bm2=g(Q_BUCKET);bm2[q.id]=b;s(Q_BUCKET,bm2);
+      rate.querySelectorAll('.rate-btn').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel');
+      if(opts.onRate)opts.onRate(b);if(opts.updateCounts)opts.updateCounts();
+    });
+  });
+  return div;
+}
+
+function makeCard(card,opts={}){
+  const bm=g(FC_BUCKET),bucket=bm[card.id];
+  const div=document.createElement('div');div.className='fc';
+  div.innerHTML=`
+    <div style="display:flex;justify-content:space-between;font-size:10px;color:var(--text-dim);margin-bottom:10px">
+      <span>${card.id} ${pillHtml(bucket)}</span><span>${TOPIC_MAP[card.topic]?.title||card.topic}</span>
+    </div>
+    <div class="fc-front">${card.front}</div>
+    <div class="fc-hint">Tryck for att visa svar</div>
+    <div class="fc-back"><div>${card.back}</div>${card.explanation?`<div class="fc-explanation">${card.explanation}</div>`:''}</div>
+    <div class="rate-row" style="display:none">
+      <button class="rate-btn hard ${bucket==='hard'?'sel':''}" data-b="hard">Svart</button>
+      <button class="rate-btn medium ${bucket==='medium'?'sel':''}" data-b="medium">Medel</button>
+      <button class="rate-btn easy ${bucket==='easy'?'sel':''}" data-b="easy">Latt</button>
+      <button class="rate-btn again ${bucket==='again'?'sel':''}" data-b="again">Igen</button>
+      <button class="rate-btn hidden ${bucket==='hidden'?'sel':''}" data-b="hidden">Dolj</button>
+    </div>`;
+  div.appendChild(makeNotes(card.id,FC_NOTES));
+  const rate=div.querySelector('.rate-row');
+  div.addEventListener('click',e=>{
+    if(e.target.closest('.rate-row')||e.target.closest('.notes'))return;
+    if(!div.classList.contains('flipped')){div.classList.add('flipped');rate.style.display='grid';}
+  });
+  rate.querySelectorAll('.rate-btn').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.stopPropagation();const b=btn.dataset.b;
+      const bm2=g(FC_BUCKET);bm2[card.id]=b;s(FC_BUCKET,bm2);
+      rate.querySelectorAll('.rate-btn').forEach(x=>x.classList.remove('sel'));btn.classList.add('sel');
+      if(opts.onRate)setTimeout(()=>opts.onRate(b),180);if(opts.updateCounts)opts.updateCounts();
+    });
+  });
+  return div;
+}
+
+// === ROUTING ===
+function navigate(hash){
+  if(!hash||hash==='#')hash='#home';
+  const parts=hash.replace('#','').split('/');
+  const view=parts[0],param=parts[1]||null;
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.bnav a').forEach(a=>a.classList.remove('active'));
+  const el=document.getElementById('v-'+view);
+  if(el)el.classList.add('active');else document.getElementById('v-home').classList.add('active');
+  const nav=document.querySelector(`.bnav a[data-v="${view}"]`);
+  if(nav)nav.classList.add('active');
+  else document.querySelector('.bnav a[data-v="home"]')?.classList.add('active');
+  window.scrollTo(0,0);
+  if(view==='home')renderHome();
+  else if(view==='hub')renderHub();
+  else if(view==='topic')renderTopic(param||'T01');
+  else if(view==='drill')renderDrill();
+  else if(view==='mock')renderMock();
+  else if(view==='mock-run')renderMockRun(param);
+  else if(view==='essay')renderEssay(param);
+  else if(view==='resources')renderResources();
+  else renderHome();
+}
+window.addEventListener('hashchange',()=>navigate(location.hash));
+
+// ============ HOME ============
+function renderHome(){
+  const qp=g(Q_PROGRESS),qb=g(Q_BUCKET),cb=g(FC_BUCKET);
+  const allQ=[...Q_SV.questions,...Q_EN.questions];
+  const totalQ=allQ.length,totalC=CARDS.length;
+  const seenQ=allQ.filter(q=>qp[q.id]?.seen).length;
+  const hardQ=allQ.filter(q=>qb[q.id]==='hard').length;
+  const hardC=CARDS.filter(c=>cb[c.id]==='hard').length;
+  const totalHard=hardQ+hardC;
+  const totalAtt=allQ.reduce((a,q)=>a+(qp[q.id]?.attempts||0),0);
+  const totalRight=allQ.reduce((a,q)=>a+(qp[q.id]?.correct||0),0);
+  const accuracy=totalAtt?Math.round(100*totalRight/totalAtt)+'%':'—';
+  const officialCount=allQ.filter(q=>q.source==='official').length;
+  const audioCount=AUDIO_MAP.study_podcasts.length;
+
+  document.getElementById('v-home').innerHTML=`
+    <div class="hero">
+      <h1>DIPS Tester</h1>
+      <p>Ett GitHub Pages-redo studieverktyg for diplomatprogrammets skriftliga prov. Byggt for snabb faktaovning, uppsatstraning, hard-bucket drill och direkt access till officiella kallor.</p>
+      <div class="hero-grid">
+        <div class="hero-stat"><strong>${totalQ}</strong><span>fragor</span></div>
+        <div class="hero-stat"><strong>${totalC}</strong><span>flashcards</span></div>
+        <div class="hero-stat"><strong>${TOPICS.topics.length}</strong><span>amnen</span></div>
+        <div class="hero-stat"><strong>${audioCount}</strong><span>planerade ljudspår</span></div>
+      </div>
+    </div>
+    <div class="banner"><strong>Status:</strong> ${seenQ} besvarade, ${accuracy} ratt, ${totalHard} saker i svart-hinken, ${officialCount} fragor med officiell kalla.</div>
+
+    <div class="card" onclick="location.hash='#hub'" style="border-color:rgba(59,130,246,.4)">
+      <h2 style="color:var(--blue)">Amnen (T01-T10)</h2>
+      <p>Studera per amne med blandade fragor, flashcards, statistik, subtopics och matchande ljudspår.</p>
+      <span class="badge" style="background:rgba(59,130,246,.15);color:var(--blue)">${TOPICS.topics.length} amnen</span>
+    </div>
+
+    <div class="card" onclick="location.hash='#mock'" style="border-color:rgba(245,158,11,.4)">
+      <h2 style="color:var(--orange)">Ovningsprov</h2>
+      <p>Simulera det riktiga provet med tidsbegransning, sektioner och poangberakning.</p>
+      <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange)">${MOCKS.mocks.length} prov</span>
+    </div>
+
+    <div class="card" onclick="location.hash='#essay'">
+      <h2>Uppsatsovning</h2>
+      <p>Ovningsfraagor med PM-struktur, timer och dispositionsmallar.</p>
+      <span class="badge" style="background:rgba(167,139,250,.15);color:var(--purple)">${ESSAYS.essays.length} uppgifter</span>
+    </div>
+
+    <div class="card" onclick="location.hash='#drill'" style="border-color:rgba(239,68,68,.4)">
+      <h2 style="color:var(--red)">Drill svart-hinken</h2>
+      <p>Bara det du markerat som svart. Korn tills allt sitter.</p>
+      <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">${totalHard} svara</span>
+    </div>
+
+    <div class="card" onclick="location.hash='#resources'" style="border-color:rgba(167,139,250,.4)">
+      <h2 style="color:var(--purple)">Kallor och podcasts</h2>
+      <p>Direktlankar till gamla prov, traktater, policytexter, podcasts och databaser.</p>
+    </div>
+
+    <div class="mini-list">
+      <strong>Borja har</strong>
+      <ul>
+        <li>Ga till <strong>Amnen</strong> och kor T01-T04 for att fa fart snabbt.</li>
+        <li>Markera saker som <strong>Svart</strong>, <strong>Medel</strong> eller <strong>Latt</strong>.</li>
+        <li>Kor <strong>Drill</strong> regelbundet tills svart-hinken krymper.</li>
+        <li>Avsluta veckan med ett <strong>Ovningsprov</strong> och en <strong>Uppsats</strong>.</li>
+      </ul>
+    </div>
+    <div class="mini-list">
+      <strong>Vad detta faktiskt ar bra for</strong>
+      <ul>
+        <li>snabb allmanbildningsdrill</li>
+        <li>repetition av folkratt, EU, FN, NATO och Sverige</li>
+        <li>uppsatstraning med tidsram</li>
+        <li>GitHub-hostad delning till nagon annan utan backend</li>
+      </ul>
+    </div>
+  `;
+}
+
+// ============ HUB ============
+function renderHub(){
+  const qp=g(Q_PROGRESS),qb=g(Q_BUCKET),cb=g(FC_BUCKET);
+  const allQ=[...Q_SV.questions,...Q_EN.questions];
+  let totalHard=0;
+  const counts={};
+  TOPICS.topics.forEach(T=>{
+    const tQs=allQ.filter(q=>q.topics.includes(T.code));
+    const tCs=CARDS.filter(c=>c.topic===T.code);
+    const qSeen=tQs.filter(q=>qp[q.id]?.seen).length;
+    const hard=tQs.filter(q=>qb[q.id]==='hard').length+tCs.filter(c=>cb[c.id]==='hard').length;
+    const medium=tQs.filter(q=>qb[q.id]==='medium').length+tCs.filter(c=>cb[c.id]==='medium').length;
+    const easy=tQs.filter(q=>qb[q.id]==='easy').length+tCs.filter(c=>cb[c.id]==='easy').length;
+    totalHard+=hard;
+    counts[T.code]={qs:tQs.length,qSeen,cards:tCs.length,hard,medium,easy};
+  });
+
+  const totalQs=Object.values(counts).reduce((a,c)=>a+c.qs,0);
+  const totalCards=Object.values(counts).reduce((a,c)=>a+c.cards,0);
+  const totalSeen=Object.values(counts).reduce((a,c)=>a+c.qSeen,0);
+
+  const el=document.getElementById('v-hub');
+  el.innerHTML=`
+    <h1>Amnen</h1>
+    <div class="subtitle">Varje amne har fragor + flashcards med framsteg</div>
+    <input class="search" id="topicSearch" type="search" placeholder="Sok amne (t.ex. EU, folkratt, klimat)" autocomplete="off">
+    <div class="summary">
+      <span class="chip"><strong>${TOPICS.topics.length}</strong> amnen</span>
+      <span class="chip"><strong>${totalQs}</strong> fragor</span>
+      <span class="chip"><strong>${totalCards}</strong> kort</span>
+      <span class="chip"><strong>${totalSeen}</strong> besvarade</span>
+    </div>
+    ${totalHard>0?`<div class="drill-banner" onclick="location.hash='#drill'"><div style="color:var(--red)">Drill svart-hinken</div><div style="font-size:11px;color:var(--text-dim);font-weight:500;margin-top:2px">${totalHard} saker markerade som svara</div></div>`:''}
+    <div id="topicList"></div>
+  `;
+
+  function render(filter){
+    const list=document.getElementById('topicList');list.innerHTML='';
+    let curBlock=null;
+    const filtered=TOPICS.topics.filter(T=>!filter||
+      T.code.toLowerCase().includes(filter)||T.title.toLowerCase().includes(filter)||
+      T.block.toLowerCase().includes(filter));
+    filtered.forEach(T=>{
+      if(T.block!==curBlock){curBlock=T.block;
+        const h=document.createElement('div');h.className='block-header';h.textContent=T.block;list.appendChild(h);}
+      const c=counts[T.code];const total=c.qs+c.cards;const seen=c.qSeen;
+      const pct=total>0?Math.round(100*seen/total):0;
+      const row=document.createElement('div');row.className='topic-row';
+      row.onclick=()=>location.hash='#topic/'+T.code;
+      row.innerHTML=`
+        <div class="code">${T.code}</div>
+        <div style="flex:1;min-width:0">
+          <div class="title">${T.title}</div>
+          <div class="meta"><span>${c.qs} fragor</span><span>${c.cards} kort</span>
+            ${c.qSeen?`<span style="color:var(--green)">${c.qSeen} besv.</span>`:''}</div>
+          ${(c.hard+c.medium+c.easy)>0?`<div style="display:flex;gap:3px;margin-top:4px">
+            ${c.hard?`<span class="bdot hard">${c.hard} sv</span>`:''}
+            ${c.medium?`<span class="bdot medium">${c.medium} med</span>`:''}
+            ${c.easy?`<span class="bdot easy">${c.easy} latt</span>`:''}
+          </div>`:''}
+        </div>
+        <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;min-width:48px">
+          <div class="pct">${pct}%</div>
+          <div class="bar"><div class="bar-fill" style="width:${pct}%"></div></div>
+        </div>`;
+      list.appendChild(row);
+    });
+  }
+  render('');
+  document.getElementById('topicSearch').addEventListener('input',e=>render(e.target.value.trim().toLowerCase()));
+}
+
+// ============ TOPIC ============
+function renderTopic(code){
+  const T=TOPIC_MAP[code];
+  if(!T){document.getElementById('v-topic').innerHTML=`<div class="empty">Amne ${code} hittades inte.</div>`;return;}
+  const allQ=[...Q_SV.questions,...Q_EN.questions];
+  const myQs=allQ.filter(q=>q.topics.includes(code));
+  const myCards=CARDS.filter(c=>c.topic===code);
+  let qFilter='all',cFilter='all',swipeIdx=0,swipePool=[];
+
+  const el=document.getElementById('v-topic');
+  el.innerHTML=`
+    <div class="top">
+      <button class="back" onclick="location.hash='#hub'">&#8592; Alla</button>
+      <div style="flex:1;min-width:0">
+        <div style="font-size:11px;font-weight:800;color:var(--accent);letter-spacing:1px">${code}</div>
+        <h1 style="font-size:18px;margin-top:1px">${T.title}</h1>
+        <div class="subchips">${(T.subtopics||[]).slice(0,6).map(s=>`<span class="subchip">${s}</span>`).join('')}</div>
+      </div>
+    </div>
+    <div id="tp-audio"></div>
+    <div class="tabs">
+      <button class="tab active" data-p="quiz">Fragor <span class="cnt">(${myQs.length})</span></button>
+      <button class="tab" data-p="cards">Kort <span class="cnt">(${myCards.length})</span></button>
+      <button class="tab" data-p="stats">Statistik</button>
+    </div>
+    <div class="pane active" id="tp-quiz"><div class="filter-row" id="tp-qfilt"></div><div id="tp-qlist"></div></div>
+    <div class="pane" id="tp-cards">
+      <div class="filter-row" id="tp-cfilt"></div>
+      <div class="progress-row"><span id="tp-spos">—</span><div class="pbar"><div id="tp-sbar" style="width:0%"></div></div><span id="tp-stot">—</span></div>
+      <div id="tp-cstage"></div>
+      <div class="swipe-nav"><button id="tp-prev">&#8592; Forega</button><button id="tp-skip">Hoppa &#8594;</button></div>
+    </div>
+    <div class="pane" id="tp-stats"><div class="stats-grid" id="tp-statsbox"></div>
+      <div style="margin-top:14px"><h3 style="font-size:12px;color:var(--text-dim);text-transform:uppercase;margin-bottom:8px">Fragehinkar</h3><div class="bucket-grid" id="tp-qbuck"></div></div>
+      <div style="margin-top:14px"><h3 style="font-size:12px;color:var(--text-dim);text-transform:uppercase;margin-bottom:8px">Korthinkar</h3><div class="bucket-grid" id="tp-cbuck"></div></div>
+    </div>`;
+
+  el.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+    el.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
+    el.querySelectorAll('.pane').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');document.getElementById('tp-'+t.dataset.p).classList.add('active');
+    if(t.dataset.p==='stats')renderStats();if(t.dataset.p==='cards')renderSwipe();
+  }));
+
+  function buildFilt(rowId,kind){
+    const row=document.getElementById(rowId);
+    row.innerHTML=FILTERS.map(f=>`<button class="filter-btn ${f.k==='all'?'active':''}" data-b="${f.k}">${f.label}<span class="n" id="${kind}n-${f.k}"></span></button>`).join('');
+    row.querySelectorAll('.filter-btn').forEach(b=>b.addEventListener('click',()=>{
+      row.querySelectorAll('.filter-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+      if(kind==='tq'){qFilter=b.dataset.b;renderQuiz();}else{cFilter=b.dataset.b;renderSwipe();}
+    }));
+    updateCounts(kind);
+  }
+  function updateCounts(kind){
+    const items=kind==='tq'?myQs:myCards,map=kind==='tq'?g(Q_BUCKET):g(FC_BUCKET);
+    const c=bucketCounts(items,map);
+    FILTERS.forEach(f=>{const e=document.getElementById(`${kind}n-${f.k}`);if(e)e.textContent=` (${c[f.k]})`;});
+  }
+
+  function renderQuiz(){
+    updateCounts('tq');const list=document.getElementById('tp-qlist');
+    if(!myQs.length){list.innerHTML=`<div class="empty">Inga fragor for detta amne an.</div>`;return;}
+    const pool=filterByBucket(myQs,qFilter,g(Q_BUCKET));
+    if(!pool.length){list.innerHTML=`<div class="empty">Tomt i denna hink.</div>`;return;}
+    list.innerHTML='';pool.forEach(q=>list.appendChild(makeQ(q,{updateCounts:()=>updateCounts('tq')})));
+  }
+
+  function renderSwipe(){
+    updateCounts('tc');const stage=document.getElementById('tp-cstage');
+    if(!myCards.length){stage.innerHTML=`<div class="empty">Inga kort for detta amne.</div>`;
+      document.getElementById('tp-spos').textContent='0';document.getElementById('tp-stot').textContent='0';return;}
+    swipePool=filterByBucket(myCards,cFilter,g(FC_BUCKET));
+    if(!swipePool.length){stage.innerHTML=`<div class="empty">Inga kort i denna hink.</div>`;
+      document.getElementById('tp-spos').textContent='0';document.getElementById('tp-stot').textContent='0';return;}
+    if(swipeIdx>=swipePool.length)swipeIdx=0;showCard();
+  }
+  function showCard(){
+    const stage=document.getElementById('tp-cstage');stage.innerHTML='';
+    stage.appendChild(makeCard(swipePool[swipeIdx],{onRate:()=>{
+      if(swipeIdx<swipePool.length-1){swipeIdx++;showCard();}
+      else stage.innerHTML=`<div class="empty">Slut pa korten. Byt filter eller ga tillbaka.</div>`;
+    },updateCounts:()=>updateCounts('tc')}));
+    document.getElementById('tp-spos').textContent=swipeIdx+1;
+    document.getElementById('tp-stot').textContent=swipePool.length;
+    document.getElementById('tp-sbar').style.width=((swipeIdx+1)/swipePool.length*100)+'%';
+    document.getElementById('tp-prev').disabled=swipeIdx===0;
+  }
+  document.getElementById('tp-prev').addEventListener('click',()=>{if(swipeIdx>0){swipeIdx--;showCard();}});
+  document.getElementById('tp-skip').addEventListener('click',()=>{if(swipeIdx<swipePool.length-1){swipeIdx++;showCard();}});
+
+  function renderStats(){
+    const qp=g(Q_PROGRESS),qb=g(Q_BUCKET),cb=g(FC_BUCKET);
+    const qSeen=myQs.filter(q=>qp[q.id]?.seen).length;
+    const totalAtt=myQs.reduce((a,q)=>a+(qp[q.id]?.attempts||0),0);
+    const totalRight=myQs.reduce((a,q)=>a+(qp[q.id]?.correct||0),0);
+    const acc=totalAtt?Math.round(100*totalRight/totalAtt):0;
+    document.getElementById('tp-statsbox').innerHTML=`
+      <div class="stat"><span class="stat-num">${qSeen}/${myQs.length}</span><span class="stat-label">Besvarade</span></div>
+      <div class="stat"><span class="stat-num">${acc}%</span><span class="stat-label">Ratt</span></div>
+      <div class="stat"><span class="stat-num">${myQs.filter(q=>qb[q.id]).length}/${myQs.length}</span><span class="stat-label">Bedomda</span></div>
+      <div class="stat"><span class="stat-num">${myCards.filter(c=>cb[c.id]).length}/${myCards.length}</span><span class="stat-label">Kort bed.</span></div>`;
+    const qc=bucketCounts(myQs,qb),cc=bucketCounts(myCards,cb);
+    document.getElementById('tp-qbuck').innerHTML=
+      `<div class="bucket-box hard"><span class="bn">${qc.hard}</span><span class="bl">Svart</span></div>
+       <div class="bucket-box medium"><span class="bn">${qc.medium}</span><span class="bl">Medel</span></div>
+       <div class="bucket-box easy"><span class="bn">${qc.easy}</span><span class="bl">Latt</span></div>
+       <div class="bucket-box unrated"><span class="bn">${qc.unrated}</span><span class="bl">Ny</span></div>`;
+    document.getElementById('tp-cbuck').innerHTML=
+      `<div class="bucket-box hard"><span class="bn">${cc.hard}</span><span class="bl">Svart</span></div>
+       <div class="bucket-box medium"><span class="bn">${cc.medium}</span><span class="bl">Medel</span></div>
+       <div class="bucket-box easy"><span class="bn">${cc.easy}</span><span class="bl">Latt</span></div>
+       <div class="bucket-box unrated"><span class="bn">${cc.unrated}</span><span class="bl">Ny</span></div>`;
+  }
+
+  const tpAudio=(AUDIO_MAP.study_podcasts||[]).filter(a=>a.topic===code);
+  const audioEl=document.getElementById('tp-audio');
+  if(tpAudio.length){
+    audioEl.innerHTML=`
+      <div class="audio-block">
+        <h3>Matchande ljudspår</h3>
+        <p>Korta repetitionsspår kopplade till detta amne. Perfekta att lyssna pa innan du kor fragor eller efter ett mockprov.</p>
+        <div class="audio-list">
+          ${tpAudio.map(a=>`
+            <div class="link-card" style="margin-bottom:0;cursor:default">
+              <h3>${a.id}: ${a.title}</h3>
+              <p>${a.description}</p>
+              <div class="resource-meta">
+                <span class="audio-pill">~${a.target_duration_min} min</span>
+                <span class="badge" style="background:rgba(255,255,255,.06)">${(a.lang||[]).join(' / ')}</span>
+                <span class="badge" style="background:rgba(255,255,255,.06)">${a.status}</span>
+              </div>
+            </div>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  buildFilt('tp-qfilt','tq');buildFilt('tp-cfilt','tc');
+  renderQuiz();renderSwipe();
+}
+
+// ============ DRILL ============
+function renderDrill(){
+  const cb=g(FC_BUCKET),qb=g(Q_BUCKET);
+  const allQ=[...Q_SV.questions,...Q_EN.questions];
+  const hardQs=allQ.filter(q=>qb[q.id]==='hard').map(q=>({kind:'q',item:q}));
+  const hardCs=CARDS.filter(c=>cb[c.id]==='hard').map(c=>({kind:'c',item:c}));
+  let pool=[...hardQs,...hardCs];
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+  let dIdx=0;
+
+  const el=document.getElementById('v-drill');
+  el.innerHTML=`
+    <div class="top"><button class="back" onclick="location.hash='#hub'">&#8592; Amnen</button><h1 style="flex:1">Drill svart-hinken</h1></div>
+    <div class="banner" id="dr-banner" style="background:linear-gradient(135deg,rgba(239,68,68,.18),rgba(245,158,11,.1));border-color:rgba(239,68,68,.3)"></div>
+    <div style="font-size:11px;color:var(--text-dim);text-align:right;margin-bottom:8px" id="dr-prog"></div>
+    <div id="dr-stage"></div>`;
+  document.getElementById('dr-banner').innerHTML=pool.length?
+    `<strong>${pool.length}</strong> sak${pool.length===1?'':'er'} markerade som svara. Bedöm om for att flytta dem.`:
+    'Inget i svart-hinken an!';
+
+  function show(){
+    document.getElementById('dr-prog').textContent=pool.length?`${dIdx+1} / ${pool.length}`:'';
+    const stage=document.getElementById('dr-stage');
+    if(!pool.length){stage.innerHTML=`<div class="empty">Inget i din svart-hink.<br><br>Ga till <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#hub'">Amnen</span> och borja betygsatta.</div>`;return;}
+    if(dIdx>=pool.length){stage.innerHTML=`<div class="empty">Klart! <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#drill'">Korn om</span> eller <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#hub'">tillbaka</span>.</div>`;return;}
+    const cur=pool[dIdx];stage.innerHTML='';
+    if(cur.kind==='q')stage.appendChild(makeQ(cur.item,{onRate:()=>{dIdx++;show();}}));
+    else stage.appendChild(makeCard(cur.item,{onRate:()=>{dIdx++;show();}}));
+  }
+  show();
+}
+
+// ============ MOCK EXAM ============
+function renderMock(){
+  const el=document.getElementById('v-mock');
+  el.innerHTML=`
+    <h1>Ovningsprov</h1>
+    <div class="subtitle">Valj ett prov att kora. Strukturen speglar det riktiga DIPS-provet.</div>
+    <div id="mockList"></div>`;
+  const list=document.getElementById('mockList');
+  MOCKS.mocks.forEach(m=>{
+    const card=document.createElement('div');card.className='card';
+    card.onclick=()=>location.hash='#mock-run/'+m.id;
+    card.innerHTML=`
+      <h2>${m.title}</h2>
+      <p>${m.description}</p>
+      <div style="margin-top:8px;font-size:11px;color:var(--text-dim)">
+        ${m.sections.map(s=>`<span class="badge" style="background:rgba(255,255,255,.06);margin-right:4px">${s.title} (${s.time_minutes} min)</span>`).join('')}
+      </div>
+      <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange);margin-top:8px">${m.duration_minutes} minuter</span>`;
+    list.appendChild(card);
+  });
+}
+
+function renderMockRun(mockId){
+  const mock=MOCKS.mocks.find(m=>m.id===mockId);
+  if(!mock){document.getElementById('v-mock-run').innerHTML=`<div class="empty">Provet hittades inte.</div>`;return;}
+
+  let sectionIdx=0, timeLeft=mock.sections[0].time_minutes*60, timerInterval=null, answers={}, score=0;
+
+  const el=document.getElementById('v-mock-run');
+
+  function renderSection(){
+    const sec=mock.sections[sectionIdx];
+    if(!sec){renderResults();return;}
+    timeLeft=sec.time_minutes*60;
+
+    el.innerHTML=`
+      <div class="top">
+        <button class="back" onclick="if(confirm('Avbryta provet?'))location.hash='#mock'">&#8592; Avbryt</button>
+        <div style="flex:1"><h1 style="font-size:16px">${mock.title}</h1>
+        <div class="subtitle" style="margin-bottom:0">${sec.title}</div></div>
+      </div>
+      <div class="timer" id="mr-timer">--:--</div>
+      <div style="font-size:12px;color:var(--text-dim);margin-bottom:14px">${sec.description}</div>
+      <div id="mr-content"></div>
+      <button class="next-btn" id="mr-next">${sectionIdx<mock.sections.length-1?'Nasta sektion &#8594;':'Avsluta prov'}</button>`;
+
+    if(sec.type==='mcq'){
+      const content=document.getElementById('mr-content');
+      const qIds=sec.question_ids||[];
+      const pool=Q_SV.questions.filter(q=>qIds.includes(q.id));
+      pool.forEach(q=>{
+        content.appendChild(makeQ(q,{onAnswer:correct=>{
+          answers[q.id]=correct;if(correct)score++;
+        }}));
+      });
+    } else if(sec.type==='essay'){
+      const content=document.getElementById('mr-content');
+      const eIds=sec.essay_ids||[];
+      const pool=ESSAYS.essays.filter(e=>eIds.includes(e.id));
+      pool.forEach(e=>{
+        const div=document.createElement('div');div.className='essay-card';
+        div.innerHTML=`
+          <h3>${e.prompt}</h3>
+          <div class="themes">${e.themes.map(t=>`<span class="theme">${t}</span>`).join('')}</div>
+          <div class="outline"><strong style="color:var(--text);font-size:11px">Foreslagen disposition:</strong><ol>${e.outline.map(o=>`<li>${o}</li>`).join('')}</ol></div>
+          <textarea class="essay-textarea" placeholder="Skriv ditt PM har..." style="margin-top:12px"></textarea>`;
+        content.appendChild(div);
+      });
+    }
+
+    document.getElementById('mr-next').addEventListener('click',()=>{
+      clearInterval(timerInterval);sectionIdx++;renderSection();
+    });
+
+    // Timer
+    clearInterval(timerInterval);
+    updateTimer();
+    timerInterval=setInterval(()=>{
+      timeLeft--;
+      if(timeLeft<=0){clearInterval(timerInterval);timeLeft=0;}
+      updateTimer();
+    },1000);
+  }
+
+  function updateTimer(){
+    const el=document.getElementById('mr-timer');if(!el)return;
+    const m=Math.floor(timeLeft/60),sec=timeLeft%60;
+    el.textContent=`${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+    el.className='timer'+(timeLeft<300?' danger':timeLeft<600?' warning':'');
+  }
+
+  function renderResults(){
+    clearInterval(timerInterval);
+    const totalQ=Object.keys(answers).length;
+    const pct=totalQ?Math.round(100*score/totalQ):0;
+    el.innerHTML=`
+      <div class="welcome-header"><h1>Provresultat</h1></div>
+      <div style="text-align:center;padding:20px">
+        <div style="font-size:48px;font-weight:800;color:${pct>=70?'var(--green)':'var(--orange)'}">${pct}%</div>
+        <div style="font-size:14px;color:var(--text-dim);margin-top:8px">${score} av ${totalQ} ratt pa flervalsfragorna</div>
+      </div>
+      <div style="background:var(--surface);border-radius:12px;padding:14px;font-size:12px;color:var(--text-dim);line-height:1.7">
+        Uppsatsdelen bedoms inte automatiskt. Jamfor din text med dispositionsforslaget och bedom sjalv.<br><br>
+        <strong style="color:var(--text)">Tips:</strong> Ga tillbaka till amnessidorna och drilla fragor du fick fel pa.
+      </div>
+      <button class="next-btn" onclick="location.hash='#mock'" style="margin-top:16px">Tillbaka till provlistan</button>`;
+
+    // Save mock history
+    const hist=g(MOCK_HISTORY);
+    hist[mockId]=hist[mockId]||[];
+    hist[mockId].push({date:Date.now(),score,total:totalQ,pct});
+    s(MOCK_HISTORY,hist);
+  }
+
+  renderSection();
+}
+
+// ============ ESSAY ============
+function renderEssay(essayId){
+  const el=document.getElementById('v-essay');
+  if(essayId){
+    const essay=ESSAYS.essays.find(e=>e.id===essayId);
+    if(!essay){el.innerHTML=`<div class="empty">Uppsatsuppgift hittades inte.</div>`;return;}
+    const notes=g(ESSAY_NOTES);
+    let timeLeft=(essay.time_minutes||45)*60,timerInterval=null;
+
+    el.innerHTML=`
+      <div class="top">
+        <button class="back" onclick="location.hash='#essay'">&#8592; Alla</button>
+        <h1 style="font-size:16px;flex:1">${essay.id} — Uppsatsovning</h1>
+      </div>
+      <div class="timer" id="es-timer">--:--</div>
+      <div class="essay-card">
+        <h3>${essay.prompt}</h3>
+        <div class="themes">${essay.themes.map(t=>`<span class="theme">${t}</span>`).join('')}</div>
+        <div class="outline"><strong style="color:var(--text);font-size:11px">Foreslagen disposition:</strong>
+          <ol>${essay.outline.map(o=>`<li>${o}</li>`).join('')}</ol>
+        </div>
+      </div>
+      <textarea class="essay-textarea" id="es-text" placeholder="Skriv ditt PM har...">${notes[essay.id]||''}</textarea>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button class="next-btn" id="es-start" style="flex:1;background:var(--green)">Starta timer</button>
+        <button class="next-btn" id="es-reset" style="flex:1;background:var(--surface);border:1px solid rgba(255,255,255,.1)">Nollstall</button>
+      </div>`;
+
+    // Auto-save essay text
+    const ta=document.getElementById('es-text');let saveTimer;
+    ta.addEventListener('input',()=>{clearTimeout(saveTimer);saveTimer=setTimeout(()=>{
+      const n=g(ESSAY_NOTES);n[essay.id]=ta.value;s(ESSAY_NOTES,n);},500);});
+
+    function updateTimer(){
+      const el=document.getElementById('es-timer');if(!el)return;
+      const m=Math.floor(timeLeft/60),sec=timeLeft%60;
+      el.textContent=`${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
+      el.className='timer'+(timeLeft<300?' danger':timeLeft<600?' warning':'');
+    }
+    updateTimer();
+
+    document.getElementById('es-start').addEventListener('click',()=>{
+      if(timerInterval){clearInterval(timerInterval);timerInterval=null;document.getElementById('es-start').textContent='Starta timer';return;}
+      document.getElementById('es-start').textContent='Pausa';
+      timerInterval=setInterval(()=>{timeLeft--;if(timeLeft<=0){clearInterval(timerInterval);timeLeft=0;}updateTimer();},1000);
+    });
+    document.getElementById('es-reset').addEventListener('click',()=>{
+      clearInterval(timerInterval);timerInterval=null;timeLeft=(essay.time_minutes||45)*60;
+      updateTimer();document.getElementById('es-start').textContent='Starta timer';
+    });
+    return;
+  }
+
+  // Essay list
+  el.innerHTML=`
+    <h1>Uppsatsovning</h1>
+    <div class="subtitle">Ova pa PM-skrivning med timer och dispositionsmallar</div>
+    <div id="essayList"></div>`;
+  const list=document.getElementById('essayList');
+  ESSAYS.essays.forEach(e=>{
+    const card=document.createElement('div');card.className='card';
+    card.onclick=()=>location.hash='#essay/'+e.id;
+    const langBadge=e.lang==='sv'?'Svenska':'English';
+    card.innerHTML=`
+      <h2>${e.prompt.slice(0,80)}${e.prompt.length>80?'...':''}</h2>
+      <div class="themes" style="margin-top:6px">${e.themes.map(t=>`<span class="theme">${t}</span>`).join('')}</div>
+      <span class="badge" style="background:rgba(167,139,250,.15);color:var(--purple);margin-top:6px">${langBadge} &middot; ${e.time_minutes} min</span>`;
+    list.appendChild(card);
+  });
+}
+
+// ============ RESOURCES ============
+function renderResources(){
+  const resources = RESOURCES?.resources || {};
+  const testItems = resources.test_material?.items || [];
+  const podItems = resources.study_podcasts?.items || [];
+  const dbItems = resources.databases?.items || [];
+  const el=document.getElementById('v-resources');
+  el.innerHTML=`
+    <h1>Kallor och podcasts</h1>
+    <div class="subtitle">Direkta kallor for provet, bra bakgrundspoddar och databaser for fortsatt fordjupning.</div>
+
+    <h2 class="section-head">Provmaterial och officiella kallor</h2>
+    <div id="res-test"></div>
+
+    <h2 class="section-head">Podcasts och studieaudio</h2>
+    <div id="res-pods"></div>
+
+    <h2 class="section-head">Databaser och uppslagsverk</h2>
+    <div id="res-db"></div>`;
+
+  const testEl=document.getElementById('res-test');
+  testEl.className='resource-grid';
+  testItems.forEach(item=>{
+    const urls = item.urls || (item.url ? [item.url] : []);
+    const div=document.createElement('div');div.className='link-card';
+    div.innerHTML=`
+      <h3>${item.title}</h3>
+      <p>${item.purpose||''}</p>
+      <div class="resource-meta">
+        <span class="source-badge ${item.source_class||'official'}">${item.source_class||'official'}</span>
+      </div>
+      <div class="resource-note">${urls.map((u,i)=>externalLink(u, urls.length===1 ? 'Oppna kalla' : `Oppna lank ${i+1}`)).join(' &middot; ')}</div>`;
+    testEl.appendChild(div);
+  });
+
+  const podEl=document.getElementById('res-pods');
+  podEl.className='resource-grid';
+  podItems.forEach(item=>{
+    const div=document.createElement('div');div.className='link-card';
+    div.innerHTML=`
+      <h3>${item.title}</h3>
+      <p>${item.purpose||''}</p>
+      <div class="resource-meta">
+        <span class="badge" style="background:rgba(59,130,246,.15);color:var(--accent)">${item.lang||'sv'}</span>
+        <span class="badge" style="background:rgba(255,255,255,.06)">${item.frequency||'irregular'}</span>
+      </div>
+      <div class="resource-note">${item.url?externalLink(item.url,'Oppna'):item.rss?externalLink(item.rss,'RSS'):''}</div>`;
+    podEl.appendChild(div);
+  });
+
+  const builtAudio=(AUDIO_MAP.study_podcasts||[]).slice(0,3);
+  if(builtAudio.length){
+    const extra=document.createElement('div');
+    extra.className='audio-block';
+    extra.innerHTML=`
+      <h3>Intern studieaudio i appen</h3>
+      <p>Planerade korta ljudspår som kan kopplas till respektive amne eller mockprov nar du senare genererar ljudfilerna.</p>
+      <div class="audio-list">${builtAudio.map(a=>`
+        <div class="link-card" style="margin-bottom:0;cursor:default">
+          <h3>${a.id}: ${a.title}</h3>
+          <p>${a.description}</p>
+          <div class="resource-meta">
+            <span class="audio-pill">~${a.target_duration_min} min</span>
+            <span class="badge" style="background:rgba(255,255,255,.06)">${a.status}</span>
+          </div>
+        </div>`).join('')}</div>`;
+    podEl.prepend(extra);
+  }
+
+  const dbEl=document.getElementById('res-db');
+  dbEl.className='resource-grid';
+  dbItems.forEach(item=>{
+    const div=document.createElement('div');div.className='link-card';
+    div.innerHTML=`
+      <h3>${item.title}</h3>
+      <p>${item.note||'Referensdatabas for snabb faktakoll och fortsatt repetition.'}</p>
+      <div class="resource-note">${externalLink(item.url,'Oppna databas')}</div>`;
+    dbEl.appendChild(div);
+  });
+}
+
+// === BOOT ===
+loadData().then(()=>{
+  navigate(location.hash||'#home');
+}).catch(err=>{
+  document.getElementById('v-home').innerHTML=`<div class="empty" style="color:var(--red)">Kunde inte ladda data: ${err.message}<br><br>Kontrollera att JSON-filerna finns i <code>app/data/</code> eller <code>../data/</code>.</div>`;
+  document.getElementById('v-home').classList.add('active');
+});
+
+// Register service worker
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>

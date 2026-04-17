@@ -1,0 +1,85 @@
+{
+  "essays": [
+    {
+      "id": "E001",
+      "lang": "sv",
+      "topic": "T04",
+      "prompt": "Diskutera hur det sakerhetspolitiska laget i Europa har forändrats sedan Rysslands fullskaliga invasion av Ukraina 2022. Vilka konsekvenser har detta fatt for svensk utrikes- och sakerhetspolitik?",
+      "themes": ["Ukraina", "NATO", "sakerhetspolitik", "Sverige"],
+      "outline": [
+        "Inledning med bakgrund: vad haende 24 feb 2022",
+        "Analys: forandrad europeisk sakerhetsordning",
+        "Sveriges svar: NATO-ansoekan, upprustad forsvar, bistand",
+        "Utmaningar och avvaegningar",
+        "Avslutning: blick framat"
+      ],
+      "time_minutes": 45,
+      "source_class": "official"
+    },
+    {
+      "id": "E002",
+      "lang": "sv",
+      "topic": "T02",
+      "prompt": "Analysera EU:s roll som global aktoer. Vilka styrkor och svagheter har EU i utrikespolitiska fraagor?",
+      "themes": ["EU", "utrikespolitik", "GUSP", "handelsavtal"],
+      "outline": [
+        "EU:s utrikespolitiska verktyg (GUSP, sanktioner, handel)",
+        "Styrkor: ekonomisk makt, normsattande, bistand",
+        "Svagheter: enhallighet, brist pa militar kapacitet",
+        "Fallstudier: Ryssland-sanktioner, Kina-relationer",
+        "Slutsats"
+      ],
+      "time_minutes": 45,
+      "source_class": "official"
+    },
+    {
+      "id": "E003",
+      "lang": "en",
+      "topic": "T08",
+      "prompt": "Assess the effectiveness of international climate diplomacy from the Kyoto Protocol to the Paris Agreement. What are the main obstacles to achieving the 1.5-degree target?",
+      "themes": ["climate", "Paris Agreement", "COP", "diplomacy"],
+      "outline": [
+        "Historical context: Kyoto to Paris",
+        "Key achievements and mechanisms",
+        "Implementation gaps and free-rider problems",
+        "Geopolitical obstacles",
+        "Recommendations"
+      ],
+      "time_minutes": 45,
+      "source_class": "official"
+    },
+    {
+      "id": "E004",
+      "lang": "sv",
+      "topic": "T03",
+      "prompt": "Diskutera forhallandet mellan staters suveranitet och internationella manskliga rattigheter. Nar kan det vara berattigat att ingripa i en stats inre angelagenheter?",
+      "themes": ["suveranitet", "R2P", "MR", "folkratt"],
+      "outline": [
+        "Suveranitetsprincipen i folkratten",
+        "Manskliga rattigheters utveckling",
+        "Responsibility to Protect (R2P)",
+        "Fallstudier: Libyen 2011, Syrien",
+        "Balansering och slutsats"
+      ],
+      "time_minutes": 45,
+      "source_class": "official"
+    },
+    {
+      "id": "E005",
+      "lang": "sv",
+      "topic": "T10",
+      "prompt": "Redogor for hur Sverige bor prioritera sina utrikespolitiska relationer under de kommande fem aren. Motivera dina val.",
+      "themes": ["prioritering", "strategi", "Sverige", "utrikespolitik"],
+      "outline": [
+        "Utgangspunkt: Sveriges intressen och vaerderingar",
+        "Transatlantiska relationen",
+        "EU-samarbetet",
+        "Norden och Baltikum",
+        "Globala syd och utvecklingspolitik",
+        "Slutsats med prioriteringsordning"
+      ],
+      "time_minutes": 60,
+      "source_class": "official"
+    }
+  ]
+}

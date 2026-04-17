@@ -1,0 +1,74 @@
+{
+  "topics": [
+    {
+      "code": "T01",
+      "title": "Sverige - statsskick och institutioner",
+      "title_en": "Sweden - Government and Institutions",
+      "block": "Grundkunskap",
+      "subtopics": ["Riksdagen", "Regeringen", "Grundlagarna", "Myndigheter", "Kommuner och regioner", "Val och partier"]
+    },
+    {
+      "code": "T02",
+      "title": "EU, FN, NATO och multilaterala organisationer",
+      "title_en": "EU, UN, NATO and Multilateral Organizations",
+      "block": "Internationellt",
+      "subtopics": ["EU-institutioner", "FN-systemet", "NATO", "OSSE", "Europaradet", "WTO", "Varldsbanken", "IMF"]
+    },
+    {
+      "code": "T03",
+      "title": "Folkratt och manskliga rattigheter",
+      "title_en": "International Law and Human Rights",
+      "block": "Internationellt",
+      "subtopics": ["Wienkonventionerna", "FN-stadgan", "Europakonventionen", "ICJ", "ICC", "Humanitar ratt", "Flyktingratt"]
+    },
+    {
+      "code": "T04",
+      "title": "Aktuella konflikter och sakerhetspolitik",
+      "title_en": "Current Conflicts and Security Policy",
+      "block": "Aktuellt",
+      "subtopics": ["Ukraina", "Mellanostern", "Afrika", "Kina/Indo-Stilla havet", "Cybersakerhet", "Terrorism", "Svensk sakerhetsstrategi"]
+    },
+    {
+      "code": "T05",
+      "title": "Svensk och internationell ekonomi",
+      "title_en": "Swedish and International Economy",
+      "block": "Grundkunskap",
+      "subtopics": ["BNP", "Handelspartners", "Exportvaror", "Bistand", "Riksbanken", "EU:s ekonomiska politik", "Frihandelsavtal"]
+    },
+    {
+      "code": "T06",
+      "title": "Historia och geografi",
+      "title_en": "History and Geography",
+      "block": "Grundkunskap",
+      "subtopics": ["Svensk historia", "Varldskrig", "Kalla kriget", "Avkolonisering", "Europeisk integration", "Huvudstader", "Kartor"]
+    },
+    {
+      "code": "T07",
+      "title": "Kultur, Nobel, litteratur och sprak",
+      "title_en": "Culture, Nobel, Literature and Language",
+      "block": "Allmanbildning",
+      "subtopics": ["Nobelpristagare", "Svensk litteratur", "Konst och musik", "Sport", "Svenska hogtider", "Kulturpolitik"]
+    },
+    {
+      "code": "T08",
+      "title": "Klimat och miljo",
+      "title_en": "Climate and Environment",
+      "block": "Internationellt",
+      "subtopics": ["Parisavtalet", "COP-forhandlingar", "Svensk klimatpolitik", "Hallbar utveckling", "Agenda 2030", "Biologisk mangfald"]
+    },
+    {
+      "code": "T09",
+      "title": "Diplomatisk ordkunskap och begrepp",
+      "title_en": "Diplomatic Vocabulary and Concepts",
+      "block": "Allmanbildning",
+      "subtopics": ["Diplomatiska termer", "Latinska uttryck", "FN-terminologi", "EU-jargong", "Folkrattsliga begrepp", "Forvaltningssprak"]
+    },
+    {
+      "code": "T10",
+      "title": "Uppsatsskrivning och argumentation",
+      "title_en": "Essay Writing and Argumentation",
+      "block": "Fardigheter",
+      "subtopics": ["PM-struktur", "Argumentationsanalys", "Avvagningar", "Akademiskt sprak", "Tidsplanering"]
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "mocks": [
+    {
+      "id": "MOCK2026A",
+      "title": "DIPS Ovningsprov 1 — Fullstandigt",
+      "description": "Simulerar det skriftliga provets struktur med faktafragor, kortsvar och uppsats.",
+      "duration_minutes": 180,
+      "sections": [
+        {
+          "type": "mcq",
+          "title": "Del 1: Faktafragor (flervalsfragor)",
+          "description": "30 fragor, 60 minuter. Alla amnesomraden.",
+          "time_minutes": 60,
+          "question_ids": ["SV001", "SV002", "SV003", "SV004", "SV005", "SV006", "SV007", "SV008", "SV009", "SV010"]
+        },
+        {
+          "type": "essay",
+          "title": "Del 2: Uppsatsdel",
+          "description": "Valj en av tre uppsatsfraagor. Skriv ett PM pa 2-3 sidor.",
+          "time_minutes": 90,
+          "essay_ids": ["E001", "E002", "E004"]
+        }
+      ]
+    },
+    {
+      "id": "MOCK2026B",
+      "title": "DIPS Snabbprov — Bara fakta",
+      "description": "Bara flervalsfragor for snabb ovning.",
+      "duration_minutes": 30,
+      "sections": [
+        {
+          "type": "mcq",
+          "title": "Faktafraagor",
+          "description": "10 fragor, blandade amnen.",
+          "time_minutes": 30,
+          "question_ids": ["SV001", "SV003", "SV005", "SV007", "SV008", "SV009", "SV010"]
+        }
+      ]
+    }
+  ]
+}
