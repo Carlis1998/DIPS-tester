@@ -4,11 +4,16 @@
       "id": "E001",
       "lang": "sv",
       "topic": "T04",
-      "prompt": "Diskutera hur det sakerhetspolitiska laget i Europa har forändrats sedan Rysslands fullskaliga invasion av Ukraina 2022. Vilka konsekvenser har detta fatt for svensk utrikes- och sakerhetspolitik?",
-      "themes": ["Ukraina", "NATO", "sakerhetspolitik", "Sverige"],
+      "prompt": "Diskutera hur det säkerhetspolitiska laget i Europa har forändrats sedan Rysslands fullskaliga invasion av Ukraina 2022. Vilka konsekvenser har detta fatt för svensk utrikes- och säkerhetspolitik?",
+      "themes": [
+        "Ukraina",
+        "NATO",
+        "säkerhetspolitik",
+        "Sverige"
+      ],
       "outline": [
         "Inledning med bakgrund: vad haende 24 feb 2022",
-        "Analys: forandrad europeisk sakerhetsordning",
+        "Analys: forandrad europeisk säkerhetsordning",
         "Sveriges svar: NATO-ansoekan, upprustad forsvar, bistand",
         "Utmaningar och avvaegningar",
         "Avslutning: blick framat"
@@ -20,12 +25,17 @@
       "id": "E002",
       "lang": "sv",
       "topic": "T02",
-      "prompt": "Analysera EU:s roll som global aktoer. Vilka styrkor och svagheter har EU i utrikespolitiska fraagor?",
-      "themes": ["EU", "utrikespolitik", "GUSP", "handelsavtal"],
+      "prompt": "Analysera EU:s roll som global aktoer. Vilka styrkor och svagheter har EU i utrikespolitiska frågor?",
+      "themes": [
+        "EU",
+        "utrikespolitik",
+        "GUSP",
+        "handelsavtal"
+      ],
       "outline": [
         "EU:s utrikespolitiska verktyg (GUSP, sanktioner, handel)",
         "Styrkor: ekonomisk makt, normsattande, bistand",
-        "Svagheter: enhallighet, brist pa militar kapacitet",
+        "Svagheter: enhallighet, brist på militar kapacitet",
         "Fallstudier: Ryssland-sanktioner, Kina-relationer",
         "Slutsats"
       ],
@@ -37,7 +47,12 @@
       "lang": "en",
       "topic": "T08",
       "prompt": "Assess the effectiveness of international climate diplomacy from the Kyoto Protocol to the Paris Agreement. What are the main obstacles to achieving the 1.5-degree target?",
-      "themes": ["climate", "Paris Agreement", "COP", "diplomacy"],
+      "themes": [
+        "climate",
+        "Paris Agreement",
+        "COP",
+        "diplomacy"
+      ],
       "outline": [
         "Historical context: Kyoto to Paris",
         "Key achievements and mechanisms",
@@ -52,11 +67,16 @@
       "id": "E004",
       "lang": "sv",
       "topic": "T03",
-      "prompt": "Diskutera forhallandet mellan staters suveranitet och internationella manskliga rattigheter. Nar kan det vara berattigat att ingripa i en stats inre angelagenheter?",
-      "themes": ["suveranitet", "R2P", "MR", "folkratt"],
+      "prompt": "Diskutera forhallandet mellan staters suveranitet och internationella mänskliga rättigheter. Nar kan det vara berattigat att ingripa i en stats inre angelagenheter?",
+      "themes": [
+        "suveranitet",
+        "R2P",
+        "MR",
+        "folkrätt"
+      ],
       "outline": [
-        "Suveranitetsprincipen i folkratten",
-        "Manskliga rattigheters utveckling",
+        "Suveranitetsprincipen i folkrätten",
+        "Mänskliga rättigheters utveckling",
         "Responsibility to Protect (R2P)",
         "Fallstudier: Libyen 2011, Syrien",
         "Balansering och slutsats"
@@ -68,8 +88,13 @@
       "id": "E005",
       "lang": "sv",
       "topic": "T10",
-      "prompt": "Redogor for hur Sverige bor prioritera sina utrikespolitiska relationer under de kommande fem aren. Motivera dina val.",
-      "themes": ["prioritering", "strategi", "Sverige", "utrikespolitik"],
+      "prompt": "Redogor för hur Sverige bor prioritera sina utrikespolitiska relationer under de kommande fem aren. Motivera dina val.",
+      "themes": [
+        "prioritering",
+        "strategi",
+        "Sverige",
+        "utrikespolitik"
+      ],
       "outline": [
         "Utgangspunkt: Sveriges intressen och vaerderingar",
         "Transatlantiska relationen",

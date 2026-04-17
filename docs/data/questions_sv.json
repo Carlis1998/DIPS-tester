@@ -2,9 +2,11 @@
   "questions": [
     {
       "id": "SV001",
-      "topics": ["T01"],
+      "topics": [
+        "T01"
+      ],
       "difficulty": 1,
-      "stem": "Hur manga ledamoter har Sveriges riksdag?",
+      "stem": "Hur många ledamöter har Sveriges riksdag?",
       "options": {
         "A": "299",
         "B": "349",
@@ -12,14 +14,16 @@
         "D": "451"
       },
       "answer": "B",
-      "explanation": "Riksdagen har 349 ledamoter fordelade pa 29 valkretsar.",
+      "explanation": "Riksdagen har 349 ledamöter fördelade på 29 valkretsar.",
       "source": "official",
       "source_id": "grundlag_rf",
       "exam_year": null
     },
     {
       "id": "SV002",
-      "topics": ["T01"],
+      "topics": [
+        "T01"
+      ],
       "difficulty": 1,
       "stem": "Vilka ar Sveriges fyra grundlagar?",
       "options": {
@@ -36,9 +40,11 @@
     },
     {
       "id": "SV003",
-      "topics": ["T02"],
+      "topics": [
+        "T02"
+      ],
       "difficulty": 1,
-      "stem": "Hur manga medlemsstater har EU (2026)?",
+      "stem": "Hur många medlemsstater har EU (2026)?",
       "options": {
         "A": "25",
         "B": "27",
@@ -46,14 +52,16 @@
         "D": "30"
       },
       "answer": "B",
-      "explanation": "EU har 27 medlemsstater sedan Storbritanniens uttrde 2020.",
+      "explanation": "EU har 27 medlemsstater sedan Storbritanniens utträde 2020.",
       "source": "official",
       "source_id": "eu_treaty_teu",
       "exam_year": null
     },
     {
       "id": "SV004",
-      "topics": ["T02"],
+      "topics": [
+        "T02"
+      ],
       "difficulty": 2,
       "stem": "Vilken artikel i FN-stadgan reglerar Sakerhetsradets ratt att auktorisera militart vald?",
       "options": {
@@ -63,14 +71,16 @@
         "D": "Artikel 51"
       },
       "answer": "C",
-      "explanation": "Artikel 42 ger Sakerhetsradet ratt att vidta militara atgarder. Artikel 51 handlar om sjalvforsvarsratten. Artikel 39 faststaller att ett hot mot freden foreligger.",
+      "explanation": "Artikel 42 ger Sakerhetsradet ratt att vidta militara atgarder. Artikel 51 handlar om självförsvarsrätten. Artikel 39 faststaller att ett hot mot freden foreligger.",
       "source": "official",
       "source_id": "un_charter",
       "exam_year": null
     },
     {
       "id": "SV005",
-      "topics": ["T03"],
+      "topics": [
+        "T03"
+      ],
       "difficulty": 2,
       "stem": "Wienkonventionen om diplomatiska forbindelser antogs ar:",
       "options": {
@@ -87,7 +97,9 @@
     },
     {
       "id": "SV006",
-      "topics": ["T03"],
+      "topics": [
+        "T03"
+      ],
       "difficulty": 2,
       "stem": "Vilken internationell domstol handlagger tvister mellan stater?",
       "options": {
@@ -104,7 +116,9 @@
     },
     {
       "id": "SV007",
-      "topics": ["T06"],
+      "topics": [
+        "T06"
+      ],
       "difficulty": 1,
       "stem": "Vilket ar ar Sverige officiellt medlem i NATO?",
       "options": {
@@ -121,24 +135,28 @@
     },
     {
       "id": "SV008",
-      "topics": ["T08"],
+      "topics": [
+        "T08"
+      ],
       "difficulty": 2,
-      "stem": "Parisavtalet syftar till att begransa den globala uppvarmningen till:",
+      "stem": "Parisavtalet syftar till att begransa den globala uppvärmningen till:",
       "options": {
-        "A": "1,0 grader over forindustriell niva",
-        "B": "1,5 grader over forindustriell niva",
-        "C": "2,0 grader over forindustriell niva",
-        "D": "2,5 grader over forindustriell niva"
+        "A": "1,0 grader over förindustriell niva",
+        "B": "1,5 grader over förindustriell niva",
+        "C": "2,0 grader over förindustriell niva",
+        "D": "2,5 grader over förindustriell niva"
       },
       "answer": "B",
-      "explanation": "Parisavtalet (2015) syftar till att halla uppvarmningen val under 2 grader och strava mot 1,5 grader over forindustriell niva.",
+      "explanation": "Parisavtalet (2015) syftar till att halla uppvärmningen val under 2 grader och strava mot 1,5 grader over förindustriell niva.",
       "source": "official",
       "source_id": "paris_agreement",
       "exam_year": null
     },
     {
       "id": "SV009",
-      "topics": ["T05"],
+      "topics": [
+        "T05"
+      ],
       "difficulty": 1,
       "stem": "Vilken ar Sveriges storsta enskilda handelspartner (export)?",
       "options": {
@@ -148,16 +166,18 @@
         "D": "Finland"
       },
       "answer": "C",
-      "explanation": "Tyskland ar Sveriges storsta handelspartner bade for export och import, foljt av Norge och USA.",
+      "explanation": "Tyskland ar Sveriges storsta handelspartner bade för export och import, foljt av Norge och USA.",
       "source": "secondary",
       "source_id": null,
       "exam_year": null
     },
     {
       "id": "SV010",
-      "topics": ["T04"],
+      "topics": [
+        "T04"
+      ],
       "difficulty": 2,
-      "stem": "Vilket FN-organ har huvudansvar for internationell fred och sakerhet?",
+      "stem": "Vilket FN-organ har huvudansvar för internationell fred och säkerhet?",
       "options": {
         "A": "Generalforsamlingen",
         "B": "Sakerhetsradet",
@@ -165,7 +185,7 @@
         "D": "Generalsekreteraren"
       },
       "answer": "B",
-      "explanation": "FN:s sakerhetsrad har enligt FN-stadgan huvudansvar for upprätthallande av internationell fred och sakerhet. Radet har 5 permanenta och 10 roterande medlemmar.",
+      "explanation": "FN:s säkerhetsrad har enligt FN-stadgan huvudansvar för upprätthallande av internationell fred och säkerhet. Radet har 5 permanenta och 10 roterande medlemmar.",
       "source": "official",
       "source_id": "un_charter",
       "exam_year": null

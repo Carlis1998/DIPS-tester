@@ -2,7 +2,9 @@
   "questions": [
     {
       "id": "EN001",
-      "topics": ["T02"],
+      "topics": [
+        "T02"
+      ],
       "difficulty": 2,
       "stem": "Which body within the EU has the sole right to propose legislation?",
       "options": {
@@ -19,7 +21,9 @@
     },
     {
       "id": "EN002",
-      "topics": ["T03"],
+      "topics": [
+        "T03"
+      ],
       "difficulty": 2,
       "stem": "Under the Vienna Convention on Diplomatic Relations (1961), which of the following is NOT a category of diplomatic agent?",
       "options": {
@@ -36,7 +40,9 @@
     },
     {
       "id": "EN003",
-      "topics": ["T08"],
+      "topics": [
+        "T08"
+      ],
       "difficulty": 2,
       "stem": "Which UN conference framework oversees global climate negotiations?",
       "options": {
@@ -53,7 +59,9 @@
     },
     {
       "id": "EN004",
-      "topics": ["T02"],
+      "topics": [
+        "T02"
+      ],
       "difficulty": 1,
       "stem": "How many permanent members does the UN Security Council have?",
       "options": {
@@ -70,14 +78,16 @@
     },
     {
       "id": "EN005",
-      "topics": ["T04"],
+      "topics": [
+        "T04"
+      ],
       "difficulty": 2,
       "stem": "Article 5 of the North Atlantic Treaty establishes:",
       "options": {
         "A": "The right of member states to maintain nuclear arsenals",
         "B": "The principle of collective defense",
         "C": "The structure of NATO's military command",
-        "D": "The procedure for admitting new members"
+        "D": "The procedure för admitting new members"
       },
       "answer": "B",
       "explanation": "Article 5 states that an armed attack against one member is considered an attack against all members — the collective defense clause. Article 10 covers membership admission.",

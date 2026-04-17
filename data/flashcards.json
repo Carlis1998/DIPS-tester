@@ -3,8 +3,8 @@
     "id": "FC001",
     "type": "definition",
     "topic": "T01",
-    "front": "Hur manga ledamoter har Sveriges riksdag?",
-    "back": "349 ledamoter, fordelade pa 29 valkretsar.",
+    "front": "Hur många ledamöter har Sveriges riksdag?",
+    "back": "349 ledamöter, fördelade på 29 valkretsar.",
     "explanation": "Riksdagen ar Sveriges lagstiftande forsamling. Mandatperioden ar fyra ar."
   },
   {
@@ -13,7 +13,7 @@
     "topic": "T01",
     "front": "Vilka ar Sveriges fyra grundlagar?",
     "back": "Regeringsformen (RF), Successionsordningen (SO), Tryckfrihetsforordningen (TF), Yttrandefrihetsgrundlagen (YGL).",
-    "explanation": "Grundlagarna har hogre rattslig status an vanlig lag och kraver tva riksdagsbeslut med mellanliggande val for andring."
+    "explanation": "Grundlagarna har hogre rattslig status an vanlig lag och kraver två riksdagsbeslut med mellanliggande val för andring."
   },
   {
     "id": "FC003",
@@ -21,13 +21,13 @@
     "topic": "T01",
     "front": "Vad ar offentlighetsprincipen?",
     "back": "Principen att allmanhetens handlingar hos myndigheter ar offentliga om inte sekretess galler.",
-    "explanation": "Grundad i tryckfrihetsforordningen. Unik for Sverige och Finland i denna starka form."
+    "explanation": "Grundad i tryckfrihetsforordningen. Unik för Sverige och Finland i denna starka form."
   },
   {
     "id": "FC004",
     "type": "fact",
     "topic": "T02",
-    "front": "Vilka ar FN:s sakerhetsrads fem permanenta medlemmar (P5)?",
+    "front": "Vilka ar FN:s säkerhetsrads fem permanenta medlemmar (P5)?",
     "back": "USA, Ryssland, Kina, Frankrike, Storbritannien.",
     "explanation": "Varje P5-land har vetorätt — ett enda veto kan blockera en resolution."
   },
@@ -44,7 +44,7 @@
     "type": "definition",
     "topic": "T03",
     "front": "Vad reglerar Wienkonventionen om diplomatiska forbindelser (1961)?",
-    "back": "Diplomatisk immunitet, beskickningars okranbarhet, diplomatiska agenters rattigheter och skyldigheter.",
+    "back": "Diplomatisk immunitet, beskickningars okränkbarhet, diplomatiska agenters rättigheter och skyldigheter.",
     "explanation": "Personlig okranbarhet: en diplomat far inte gripas eller haaktas. Lokalernas okranbarhet: vaerdstatens tjänsteman far inte beträda beskickningen utan tillstand."
   },
   {
@@ -52,7 +52,7 @@
     "type": "fact",
     "topic": "T03",
     "front": "Vad ar skillnaden mellan ICJ och ICC?",
-    "back": "ICJ (Internationella domstolen) avgör tvister mellan stater. ICC (Internationella brottmalsdomstolen) ataalar individer for folkmord, krigsbrott och brott mot manskligheten.",
+    "back": "ICJ (Internationella domstolen) avgör tvister mellan stater. ICC (Internationella brottmalsdomstolen) ataalar individer för folkmord, krigsbrott och brott mot manskligheten.",
     "explanation": "ICJ ar FN-organ (alla FN-stater ar parter). ICC grundades genom Romstadgan 2002."
   },
   {
@@ -60,8 +60,8 @@
     "type": "fact",
     "topic": "T04",
     "front": "Vad innebar NATO:s artikel 5?",
-    "back": "Kollektivt forsvar — ett vaaepnat angrepp mot en medlem betraktas som ett angrepp mot alla.",
-    "explanation": "Har aktiverats en gang: efter 11 september 2001. Sverige blev NATO-medlem 7 mars 2024."
+    "back": "Kollektivt försvar — ett väpnat angrepp mot en medlem betraktas som ett angrepp mot alla.",
+    "explanation": "Har aktiverats en gång: efter 11 september 2001. Sverige blev NATO-medlem 7 mars 2024."
   },
   {
     "id": "FC009",
@@ -69,7 +69,7 @@
     "topic": "T06",
     "front": "Vad ar Huvudstaden i Etiopien?",
     "back": "Addis Abeba.",
-    "explanation": "Ocksa sate for Afrikanska unionen (AU)."
+    "explanation": "Ocksa sate för Afrikanska unionen (AU)."
   },
   {
     "id": "FC010",
@@ -83,7 +83,7 @@
     "id": "FC011",
     "type": "fact",
     "topic": "T05",
-    "front": "Vilka ar Sveriges tre storsta exportvaror (varugrupper)?",
+    "front": "Vilka ar Sveriges tre storsta exportvåror (varugrupper)?",
     "back": "Maskiner, fordon, och kemiska produkter (inklusive lakemedel).",
     "explanation": "Sverige ar en liten oppen ekonomi som ar starkt beroende av export."
   },
@@ -92,7 +92,7 @@
     "type": "fact",
     "topic": "T08",
     "front": "Vad ar Agenda 2030?",
-    "back": "FN:s handlingsplan med 17 globala mal for hallbar utveckling, antagen 2015.",
+    "back": "FN:s handlingsplan med 17 globala mal för hallbar utveckling, antagen 2015.",
     "explanation": "Malen spaänner fran fattigdomsbekaempning till klimat, fred och rattvisa."
   }
 ]

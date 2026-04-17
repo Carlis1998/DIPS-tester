@@ -266,12 +266,13 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 <div id="v-mock-run" class="view"></div>
 <div id="v-essay" class="view"></div>
 <div id="v-resources" class="view"></div>
+<div id="v-batteries" class="view"></div>
 
 <!-- Bottom nav -->
 <nav class="bnav">
   <a href="#home" data-v="home"><span>&#127968;</span>Hem</a>
-  <a href="#hub" data-v="hub"><span>&#128218;</span>Amnen</a>
-  <a href="#mock" data-v="mock"><span>&#128221;</span>Prov</a>
+  <a href="#hub" data-v="hub"><span>&#128218;</span>Ämnen</a>
+  <a href="#mock" data-v="mock"><span>&#128221;</span>Mockprov</a>
   <a href="#essay" data-v="essay"><span>&#9997;&#65039;</span>Uppsats</a>
   <a href="#drill" data-v="drill"><span>&#128293;</span>Drill</a>
 </nav>
@@ -334,8 +335,35 @@ async function loadData() {
       fetchJsonOptional(['./data/source_index.json', '../data/source_index.json'], []),
     ]);
   }
+  [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX] = [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX].map(normalizeDisplayData);
   TOPICS.topics.forEach(t => TOPIC_MAP[t.code] = t);
   (SOURCE_INDEX || []).forEach(s => SOURCE_MAP[s.id] = s);
+}
+
+
+function normalizeDisplayText(value){
+  if(typeof value !== 'string') return value;
+  const replacements = [
+    ['Samhallsorientering','Samhällsorientering'],['Ordforstaelse','Ordförståelse'],['Ovningsprov','Övningsprov'],
+    ['Amnen','Ämnen'],['Kallor','Källor'],['Lätt','Lätt'],['fordelade','fördelade'],['forindustriell','förindustriell'],
+    ['uppvarmningen','uppvärmningen'],['ledamoter','ledamöter'],['manga','många'],['fragor','frågor'],['fraga','fråga'],
+    ['amnen','ämnen'],['folkrätt','folkrätt'],['Folkrätt','Folkrätt'],['manskliga rättigheter','mänskliga rättigheter'],
+    ['uttrde','utträde'],['sakerhetspolitik','säkerhetspolitik'],['sakerhetsstrategi','säkerhetsstrategi'],['sakerhets','säkerhets'],
+    ['sakerhet','säkerhet'],['varldens','världens'],['hogskola','högskola'],['hogtider','högtider'],['fardigheter','färdigheter'],
+    ['forsta','första'],['tva','två'],['valj','välj']
+  ];
+  let out = value;
+  replacements.forEach(([from,to])=>{ out = out.replaceAll(from,to); });
+  return out;
+}
+function normalizeDisplayData(obj){
+  if(Array.isArray(obj)) return obj.map(normalizeDisplayData);
+  if(obj && typeof obj === 'object'){
+    const next={};
+    Object.entries(obj).forEach(([k,v])=>next[k]=normalizeDisplayData(v));
+    return next;
+  }
+  return normalizeDisplayText(obj);
 }
 
 // === STORAGE ===
@@ -347,8 +375,7 @@ const g=k=>{try{return JSON.parse(localStorage.getItem(k))||{}}catch{return{}}};
 const s=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
 
 // === SHARED HELPERS ===
-const FILTERS=[{k:'all',label:'Alla'},{k:'unrated',label:'Nya'},{k:'hard',label:'Svart'},
-  {k:'medium',label:'Medel'},{k:'easy',label:'Latt'},{k:'hidden',label:'Dolda'}];
+const FILTERS=[{k:'all',label:'Alla'},{k:'unrated',label:'Nya'},{k:'hard',label:'Svår'},{k:'medium',label:'Medel'},{k:'easy',label:'Lätt'},{k:'hidden',label:'Dolda'}];
 
 function bucketCounts(items,bmap,idFn){
   const c={all:0,unrated:0,hard:0,medium:0,easy:0,again:0,hidden:0};
@@ -370,7 +397,7 @@ function externalLink(url,label){
 function sourceLinkById(id,label){
   const src=SOURCE_MAP[id];
   if(!src?.url) return '';
-  return externalLink(src.url,label||'Oppna kalla');
+  return externalLink(src.url,label||'Öppna källa');
 }
 function examUrlForYear(year){
   const mapped = examSourceByYear(year);
@@ -391,6 +418,28 @@ function examSourceByYear(year){
 }
 function batteriesForYear(year){
   return (BATTERIES?.batteries||[]).filter(b=>b.exam_year===year);
+}
+
+function batteryKey(b){
+  return `${b.exam_year}-${b.section_id}`;
+}
+function findBatteryByKey(key){
+  return (BATTERIES?.batteries||[]).find(b=>batteryKey(b)===key);
+}
+function renderBatteryQuestion(question){
+  const sub = (question.subquestions||[]).map(s=>`<li><strong>${s.label})</strong> ${s.prompt}</li>`).join('');
+  const opts = (question.options||[]).map(o=>`<li><strong>${o.label})</strong> ${o.text}</li>`).join('');
+  const meta = [question.kind==='mcq'?'Flervalsfråga':question.kind==='multi_part'?'Delfråga':'Öppen fråga', question.max_answers?`Max ${question.max_answers} svar`:'' ].filter(Boolean);
+  return `
+    <div class="section-card">
+      <div class="resource-meta">
+        <span class="badge" style="background:rgba(59,130,246,.15);color:var(--accent)">Fråga ${question.number}</span>
+        ${meta.map(m=>`<span class="badge" style="background:rgba(255,255,255,.06)">${m}</span>`).join('')}
+      </div>
+      <h3 style="margin-top:10px">${question.prompt}</h3>
+      ${sub?`<ol class="outline" style="margin-top:10px">${sub}</ol>`:''}
+      ${opts?`<ul class="outline" style="margin-top:10px">${opts}</ul>`:''}
+    </div>`;
 }
 
 function makeNotes(id,storageKey){
@@ -418,11 +467,11 @@ function makeQ(q,opts={}){
     <div class="q-options">${Object.entries(q.options).map(([k,v])=>`<button class="q-opt" data-l="${k}"><span class="letter">${k}.</span><span>${v}</span></button>`).join('')}</div>
     <div class="q-fb"></div>
     <div class="rate-row" style="display:none">
-      <button class="rate-btn hard ${bucket==='hard'?'sel':''}" data-b="hard">Svart</button>
+      <button class="rate-btn hard ${bucket==='hard'?'sel':''}" data-b="hard">Svår</button>
       <button class="rate-btn medium ${bucket==='medium'?'sel':''}" data-b="medium">Medel</button>
-      <button class="rate-btn easy ${bucket==='easy'?'sel':''}" data-b="easy">Latt</button>
+      <button class="rate-btn easy ${bucket==='easy'?'sel':''}" data-b="easy">Lätt</button>
       <button class="rate-btn again ${bucket==='again'?'sel':''}" data-b="again">Igen</button>
-      <button class="rate-btn hidden ${bucket==='hidden'?'sel':''}" data-b="hidden">Dolj</button>
+      <button class="rate-btn hidden ${bucket==='hidden'?'sel':''}" data-b="hidden">Dölj</button>
     </div>`;
   div.appendChild(makeNotes(q.id,Q_NOTES));
   const fb=div.querySelector('.q-fb'),rate=div.querySelector('.rate-row');
@@ -433,7 +482,7 @@ function makeQ(q,opts={}){
         if(o.dataset.l===q.answer)o.classList.add('correct');
         else if(o.dataset.l===picked)o.classList.add('wrong');});
       fb.className='q-fb show '+(correct?'right':'wrong');
-      fb.innerHTML=`<strong>${correct?'Ratt!':'Fel. Ratt svar: '+q.answer}</strong> ${q.explanation}`;
+      fb.innerHTML=`<strong>${correct?'Rätt!':'Fel. Rätt svar: '+q.answer}</strong> ${q.explanation}`;
       rate.style.display='grid';
       const qp2=g(Q_PROGRESS);const st=qp2[q.id]||{seen:false,attempts:0,correct:0};
       st.seen=true;st.attempts=(st.attempts||0)+1;if(correct)st.correct=(st.correct||0)+1;
@@ -459,14 +508,14 @@ function makeCard(card,opts={}){
       <span>${card.id} ${pillHtml(bucket)}</span><span>${TOPIC_MAP[card.topic]?.title||card.topic}</span>
     </div>
     <div class="fc-front">${card.front}</div>
-    <div class="fc-hint">Tryck for att visa svar</div>
+    <div class="fc-hint">Tryck för att visa svar</div>
     <div class="fc-back"><div>${card.back}</div>${card.explanation?`<div class="fc-explanation">${card.explanation}</div>`:''}</div>
     <div class="rate-row" style="display:none">
-      <button class="rate-btn hard ${bucket==='hard'?'sel':''}" data-b="hard">Svart</button>
+      <button class="rate-btn hard ${bucket==='hard'?'sel':''}" data-b="hard">Svår</button>
       <button class="rate-btn medium ${bucket==='medium'?'sel':''}" data-b="medium">Medel</button>
-      <button class="rate-btn easy ${bucket==='easy'?'sel':''}" data-b="easy">Latt</button>
+      <button class="rate-btn easy ${bucket==='easy'?'sel':''}" data-b="easy">Lätt</button>
       <button class="rate-btn again ${bucket==='again'?'sel':''}" data-b="again">Igen</button>
-      <button class="rate-btn hidden ${bucket==='hidden'?'sel':''}" data-b="hidden">Dolj</button>
+      <button class="rate-btn hidden ${bucket==='hidden'?'sel':''}" data-b="hidden">Dölj</button>
     </div>`;
   div.appendChild(makeNotes(card.id,FC_NOTES));
   const rate=div.querySelector('.rate-row');
@@ -506,13 +555,14 @@ function navigate(hash){
   else if(view==='mock-run')renderMockRun(param);
   else if(view==='essay')renderEssay(param);
   else if(view==='resources')renderResources();
+  else if(view==='batteries')renderBatteries(param);
   else renderHome();
 }
 window.addEventListener('hashchange',()=>navigate(location.hash));
 
 // ============ HOME ============
 function renderHome(){
-  const qp=g(Q_PROGRESS),qb=g(Q_BUCKET),cb=g(FC_BUCKET);
+  const qp=g(Q_PROGRESS),qb=g(Q_BUCKET),cb=g(FC_BUCKET),hist=g(MOCK_HISTORY);
   const allQ=[...Q_SV.questions,...Q_EN.questions];
   const totalQ=allQ.length,totalC=CARDS.length;
   const seenQ=allQ.filter(q=>qp[q.id]?.seen).length;
@@ -522,77 +572,71 @@ function renderHome(){
   const totalAtt=allQ.reduce((a,q)=>a+(qp[q.id]?.attempts||0),0);
   const totalRight=allQ.reduce((a,q)=>a+(qp[q.id]?.correct||0),0);
   const accuracy=totalAtt?Math.round(100*totalRight/totalAtt)+'%':'—';
-  const officialCount=allQ.filter(q=>q.source==='official').length;
-  const audioCount=AUDIO_MAP.study_podcasts.length;
-  const fetchedExamCount=(SOURCE_INDEX||[]).filter(s=>s.type==='exam_pdf' && s.fetched).length;
-  const extractedBatteryCount=BATTERIES?.battery_count||0;
+  const latestMock = Object.values(hist).flat().sort((a,b)=>b.date-a.date)[0];
 
   document.getElementById('v-home').innerHTML=`
     <div class="hero">
       <h1>DIPS Tester</h1>
-      <p>Ett GitHub Pages-redo studieverktyg for diplomatprogrammets skriftliga prov. Byggt for snabb faktaovning, uppsatstraning, hard-bucket drill och direkt access till officiella kallor.</p>
+      <p>Byggd för att göra en sak bra: hjälpa någon att snabbt komma igång med mockprov, faktafrågor, uppsatsträning och repetition utan att behöva förstå repo-strukturen först.</p>
       <div class="hero-grid">
-        <div class="hero-stat"><strong>${totalQ}</strong><span>fragor</span></div>
+        <div class="hero-stat"><strong>${totalQ}</strong><span>quizfrågor</span></div>
         <div class="hero-stat"><strong>${totalC}</strong><span>flashcards</span></div>
-        <div class="hero-stat"><strong>${TOPICS.topics.length}</strong><span>amnen</span></div>
-        <div class="hero-stat"><strong>${audioCount}</strong><span>planerade ljudspår</span></div>
+        <div class="hero-stat"><strong>${TOPICS.topics.length}</strong><span>ämnen</span></div>
+        <div class="hero-stat"><strong>${totalHard}</strong><span>svåra nu</span></div>
       </div>
     </div>
-    <div class="banner"><strong>Status:</strong> ${seenQ} besvarade, ${accuracy} ratt, ${totalHard} saker i svart-hinken, ${officialCount} fragor med officiell kalla, ${fetchedExamCount} hamtade originalprov och ${extractedBatteryCount} extraherade fragbatterier.</div>
 
-    <div class="card" onclick="location.hash='#hub'" style="border-color:rgba(59,130,246,.4)">
-      <h2 style="color:var(--blue)">Amnen (T01-T10)</h2>
-      <p>Studera per amne med blandade fragor, flashcards, statistik, subtopics och matchande ljudspår.</p>
-      <span class="badge" style="background:rgba(59,130,246,.15);color:var(--blue)">${TOPICS.topics.length} amnen</span>
+    <div class="banner"><strong>Läge just nu:</strong> ${seenQ} besvarade frågor, ${accuracy} rätt totalt${latestMock?`, senaste mockprov ${latestMock.pct}%`:''}.</div>
+
+    <div class="section-head">Börja här</div>
+
+    <div class="card" onclick="location.hash='#mock'" style="border-color:rgba(245,158,11,.45)">
+      <h2 style="color:var(--orange)">1. Starta mockprov</h2>
+      <p>Det enklaste sättet att använda appen. Välj ett prov och kör direkt med timer, sektioner och resultatvy.</p>
+      <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange)">${MOCKS.mocks.length} mockprov</span>
     </div>
 
-    <div class="card" onclick="location.hash='#mock'" style="border-color:rgba(245,158,11,.4)">
-      <h2 style="color:var(--orange)">Ovningsprov</h2>
-      <p>Simulera provet med tidsbegransning, sektioner och poangberakning. Varje mock kan ocksa peka tillbaka till originalprovet.</p>
-      <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange)">${MOCKS.mocks.length} prov</span>
+    <div class="card" onclick="location.hash='#drill'" style="border-color:rgba(239,68,68,.45)">
+      <h2 style="color:var(--red)">2. Repetera svåra</h2>
+      <p>Allt du markerat som svårt samlas här. Bra direkt efter ett mockprov.</p>
+      <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">${totalHard} i svår-hinken</span>
     </div>
 
-    <div class="card" onclick="location.hash='#essay'">
-      <h2>Uppsatsovning</h2>
-      <p>Ovningsfraagor med PM-struktur, timer och dispositionsmallar.</p>
+    <div class="card" onclick="location.hash='#batteries'" style="border-color:rgba(34,197,94,.42)">
+      <h2 style="color:var(--green)">3. Öppna riktiga frågebatterier</h2>
+      <p>Bläddra i extraherade sektioner från originalproven 2023-2025 och hoppa direkt vidare till PDF:erna.</p>
+      <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)">${BATTERIES.battery_count} sektioner</span>
+    </div>
+
+    <div class="card" onclick="location.hash='#hub'" style="border-color:rgba(59,130,246,.45)">
+      <h2 style="color:var(--blue)">4. Plugga per ämne</h2>
+      <p>Gå ämnesvis om du vill fylla luckor i Sverige, EU/FN/NATO, folkrätt, historia, kultur eller klimat.</p>
+      <span class="badge" style="background:rgba(59,130,246,.15);color:var(--blue)">${TOPICS.topics.length} ämnen</span>
+    </div>
+
+    <div class="card" onclick="location.hash='#essay'" style="border-color:rgba(167,139,250,.45)">
+      <h2 style="color:var(--purple)">5. Kör uppsats</h2>
+      <p>Välj en prompt, starta timer och skriv direkt i appen.</p>
       <span class="badge" style="background:rgba(167,139,250,.15);color:var(--purple)">${ESSAYS.essays.length} uppgifter</span>
     </div>
 
-    <div class="card" onclick="location.hash='#drill'" style="border-color:rgba(239,68,68,.4)">
-      <h2 style="color:var(--red)">Drill svart-hinken</h2>
-      <p>Bara det du markerat som svart. Korn tills allt sitter.</p>
-      <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">${totalHard} svara</span>
-    </div>
-
-    <div class="card" onclick="location.hash='#resources'" style="border-color:rgba(167,139,250,.4)">
-      <h2 style="color:var(--purple)">Kallor och podcasts</h2>
-      <p>Direktlankar till gamla prov, traktater, policytexter, podcasts och databaser.</p>
-    </div>
-
     <div class="mini-list">
-      <strong>Borja har</strong>
+      <strong>En bra standardrutin</strong>
       <ul>
-        <li>Ga till <strong>Amnen</strong> och kor T01-T04 for att fa fart snabbt.</li>
-        <li>Markera saker som <strong>Svart</strong>, <strong>Medel</strong> eller <strong>Latt</strong>.</li>
-        <li>Kor <strong>Drill</strong> regelbundet tills svart-hinken krymper.</li>
-        <li>Avsluta veckan med ett <strong>Ovningsprov</strong> och en <strong>Uppsats</strong>.</li>
+        <li>Kör ett mockprov först för att se nuläget.</li>
+        <li>Öppna sedan <strong>Repetera svåra</strong>.</li>
+        <li>Om ett område känns tunt, gå till <strong>Ämnen</strong>.</li>
+        <li>Avsluta med en uppsats eller ett kort ljudspår.</li>
       </ul>
     </div>
+
     <div class="mini-list">
-      <strong>Vad detta faktiskt ar bra for</strong>
+      <strong>Vad som redan finns i repo:t</strong>
       <ul>
-        <li>snabb allmanbildningsdrill</li>
-        <li>repetition av folkratt, EU, FN, NATO och Sverige</li>
-        <li>uppsatstraning med tidsram</li>
-        <li>GitHub-hostad delning till nagon annan utan backend</li>
-      </ul>
-    </div>
-    <div class="mini-list">
-      <strong>Nuvarande verkliga luckor i repot</strong>
-      <ul>
-        <li>frgebatterier ar strukturellt extraherade for 2023-2025, inte for alla hamtade prov</li>
-        <li>endast en liten del ar omvandlad till riktiga app-fragor och flashcards</li>
-        <li>det finns inga facit for oppna fragor an, bara strukturerad extraction</li>
+        <li>strukturerade frågor och flashcards</li>
+        <li>extraherade frågebatterier från gamla prov</li>
+        <li>mockprov och uppsatsläge</li>
+        <li>källor, originalprov och planerade ljudspår</li>
       </ul>
     </div>
   `;
@@ -621,16 +665,16 @@ function renderHub(){
 
   const el=document.getElementById('v-hub');
   el.innerHTML=`
-    <h1>Amnen</h1>
-    <div class="subtitle">Varje amne har fragor + flashcards med framsteg</div>
-    <input class="search" id="topicSearch" type="search" placeholder="Sok amne (t.ex. EU, folkratt, klimat)" autocomplete="off">
+    <h1>Ämnen</h1>
+    <div class="subtitle">Varje ämne har frågor + flashcards med framsteg</div>
+    <input class="search" id="topicSearch" type="search" placeholder="Sök ämne (t.ex. EU, folkrätt, klimat)" autocomplete="off">
     <div class="summary">
-      <span class="chip"><strong>${TOPICS.topics.length}</strong> amnen</span>
-      <span class="chip"><strong>${totalQs}</strong> fragor</span>
+      <span class="chip"><strong>${TOPICS.topics.length}</strong> ämnen</span>
+      <span class="chip"><strong>${totalQs}</strong> frågor</span>
       <span class="chip"><strong>${totalCards}</strong> kort</span>
       <span class="chip"><strong>${totalSeen}</strong> besvarade</span>
     </div>
-    ${totalHard>0?`<div class="drill-banner" onclick="location.hash='#drill'"><div style="color:var(--red)">Drill svart-hinken</div><div style="font-size:11px;color:var(--text-dim);font-weight:500;margin-top:2px">${totalHard} saker markerade som svara</div></div>`:''}
+    ${totalHard>0?`<div class="drill-banner" onclick="location.hash='#drill'"><div style="color:var(--red)">Drill svåra</div><div style="font-size:11px;color:var(--text-dim);font-weight:500;margin-top:2px">${totalHard} saker markerade som svåra</div></div>`:''}
     <div id="topicList"></div>
   `;
 
@@ -651,12 +695,12 @@ function renderHub(){
         <div class="code">${T.code}</div>
         <div style="flex:1;min-width:0">
           <div class="title">${T.title}</div>
-          <div class="meta"><span>${c.qs} fragor</span><span>${c.cards} kort</span>
+          <div class="meta"><span>${c.qs} frågor</span><span>${c.cards} kort</span>
             ${c.qSeen?`<span style="color:var(--green)">${c.qSeen} besv.</span>`:''}</div>
           ${(c.hard+c.medium+c.easy)>0?`<div style="display:flex;gap:3px;margin-top:4px">
             ${c.hard?`<span class="bdot hard">${c.hard} sv</span>`:''}
             ${c.medium?`<span class="bdot medium">${c.medium} med</span>`:''}
-            ${c.easy?`<span class="bdot easy">${c.easy} latt</span>`:''}
+            ${c.easy?`<span class="bdot easy">${c.easy} lätt</span>`:''}
           </div>`:''}
         </div>
         <div style="display:flex;flex-direction:column;align-items:flex-end;gap:3px;min-width:48px">
@@ -673,7 +717,7 @@ function renderHub(){
 // ============ TOPIC ============
 function renderTopic(code){
   const T=TOPIC_MAP[code];
-  if(!T){document.getElementById('v-topic').innerHTML=`<div class="empty">Amne ${code} hittades inte.</div>`;return;}
+  if(!T){document.getElementById('v-topic').innerHTML=`<div class="empty">Ämne ${code} hittades inte.</div>`;return;}
   const allQ=[...Q_SV.questions,...Q_EN.questions];
   const myQs=allQ.filter(q=>q.topics.includes(code));
   const myCards=CARDS.filter(c=>c.topic===code);
@@ -691,7 +735,7 @@ function renderTopic(code){
     </div>
     <div id="tp-audio"></div>
     <div class="tabs">
-      <button class="tab active" data-p="quiz">Fragor <span class="cnt">(${myQs.length})</span></button>
+      <button class="tab active" data-p="quiz">Frågor <span class="cnt">(${myQs.length})</span></button>
       <button class="tab" data-p="cards">Kort <span class="cnt">(${myCards.length})</span></button>
       <button class="tab" data-p="stats">Statistik</button>
     </div>
@@ -700,10 +744,10 @@ function renderTopic(code){
       <div class="filter-row" id="tp-cfilt"></div>
       <div class="progress-row"><span id="tp-spos">—</span><div class="pbar"><div id="tp-sbar" style="width:0%"></div></div><span id="tp-stot">—</span></div>
       <div id="tp-cstage"></div>
-      <div class="swipe-nav"><button id="tp-prev">&#8592; Forega</button><button id="tp-skip">Hoppa &#8594;</button></div>
+      <div class="swipe-nav"><button id="tp-prev">&#8592; Föreg.</button><button id="tp-skip">Hoppa &#8594;</button></div>
     </div>
     <div class="pane" id="tp-stats"><div class="stats-grid" id="tp-statsbox"></div>
-      <div style="margin-top:14px"><h3 style="font-size:12px;color:var(--text-dim);text-transform:uppercase;margin-bottom:8px">Fragehinkar</h3><div class="bucket-grid" id="tp-qbuck"></div></div>
+      <div style="margin-top:14px"><h3 style="font-size:12px;color:var(--text-dim);text-transform:uppercase;margin-bottom:8px">Frågehinkar</h3><div class="bucket-grid" id="tp-qbuck"></div></div>
       <div style="margin-top:14px"><h3 style="font-size:12px;color:var(--text-dim);text-transform:uppercase;margin-bottom:8px">Korthinkar</h3><div class="bucket-grid" id="tp-cbuck"></div></div>
     </div>`;
 
@@ -731,7 +775,7 @@ function renderTopic(code){
 
   function renderQuiz(){
     updateCounts('tq');const list=document.getElementById('tp-qlist');
-    if(!myQs.length){list.innerHTML=`<div class="empty">Inga fragor for detta amne an.</div>`;return;}
+    if(!myQs.length){list.innerHTML=`<div class="empty">Inga frågor för detta ämne än.</div>`;return;}
     const pool=filterByBucket(myQs,qFilter,g(Q_BUCKET));
     if(!pool.length){list.innerHTML=`<div class="empty">Tomt i denna hink.</div>`;return;}
     list.innerHTML='';pool.forEach(q=>list.appendChild(makeQ(q,{updateCounts:()=>updateCounts('tq')})));
@@ -739,7 +783,7 @@ function renderTopic(code){
 
   function renderSwipe(){
     updateCounts('tc');const stage=document.getElementById('tp-cstage');
-    if(!myCards.length){stage.innerHTML=`<div class="empty">Inga kort for detta amne.</div>`;
+    if(!myCards.length){stage.innerHTML=`<div class="empty">Inga kort för detta ämne.</div>`;
       document.getElementById('tp-spos').textContent='0';document.getElementById('tp-stot').textContent='0';return;}
     swipePool=filterByBucket(myCards,cFilter,g(FC_BUCKET));
     if(!swipePool.length){stage.innerHTML=`<div class="empty">Inga kort i denna hink.</div>`;
@@ -750,7 +794,7 @@ function renderTopic(code){
     const stage=document.getElementById('tp-cstage');stage.innerHTML='';
     stage.appendChild(makeCard(swipePool[swipeIdx],{onRate:()=>{
       if(swipeIdx<swipePool.length-1){swipeIdx++;showCard();}
-      else stage.innerHTML=`<div class="empty">Slut pa korten. Byt filter eller ga tillbaka.</div>`;
+      else stage.innerHTML=`<div class="empty">Slut på korten. Byt filter eller gå tillbaka.</div>`;
     },updateCounts:()=>updateCounts('tc')}));
     document.getElementById('tp-spos').textContent=swipeIdx+1;
     document.getElementById('tp-stot').textContent=swipePool.length;
@@ -768,19 +812,19 @@ function renderTopic(code){
     const acc=totalAtt?Math.round(100*totalRight/totalAtt):0;
     document.getElementById('tp-statsbox').innerHTML=`
       <div class="stat"><span class="stat-num">${qSeen}/${myQs.length}</span><span class="stat-label">Besvarade</span></div>
-      <div class="stat"><span class="stat-num">${acc}%</span><span class="stat-label">Ratt</span></div>
-      <div class="stat"><span class="stat-num">${myQs.filter(q=>qb[q.id]).length}/${myQs.length}</span><span class="stat-label">Bedomda</span></div>
+      <div class="stat"><span class="stat-num">${acc}%</span><span class="stat-label">Rätt</span></div>
+      <div class="stat"><span class="stat-num">${myQs.filter(q=>qb[q.id]).length}/${myQs.length}</span><span class="stat-label">Bedömda</span></div>
       <div class="stat"><span class="stat-num">${myCards.filter(c=>cb[c.id]).length}/${myCards.length}</span><span class="stat-label">Kort bed.</span></div>`;
     const qc=bucketCounts(myQs,qb),cc=bucketCounts(myCards,cb);
     document.getElementById('tp-qbuck').innerHTML=
-      `<div class="bucket-box hard"><span class="bn">${qc.hard}</span><span class="bl">Svart</span></div>
+      `<div class="bucket-box hard"><span class="bn">${qc.hard}</span><span class="bl">Svår</span></div>
        <div class="bucket-box medium"><span class="bn">${qc.medium}</span><span class="bl">Medel</span></div>
-       <div class="bucket-box easy"><span class="bn">${qc.easy}</span><span class="bl">Latt</span></div>
+       <div class="bucket-box easy"><span class="bn">${qc.easy}</span><span class="bl">Lätt</span></div>
        <div class="bucket-box unrated"><span class="bn">${qc.unrated}</span><span class="bl">Ny</span></div>`;
     document.getElementById('tp-cbuck').innerHTML=
-      `<div class="bucket-box hard"><span class="bn">${cc.hard}</span><span class="bl">Svart</span></div>
+      `<div class="bucket-box hard"><span class="bn">${cc.hard}</span><span class="bl">Svår</span></div>
        <div class="bucket-box medium"><span class="bn">${cc.medium}</span><span class="bl">Medel</span></div>
-       <div class="bucket-box easy"><span class="bn">${cc.easy}</span><span class="bl">Latt</span></div>
+       <div class="bucket-box easy"><span class="bn">${cc.easy}</span><span class="bl">Lätt</span></div>
        <div class="bucket-box unrated"><span class="bn">${cc.unrated}</span><span class="bl">Ny</span></div>`;
   }
 
@@ -790,7 +834,7 @@ function renderTopic(code){
     audioEl.innerHTML=`
       <div class="audio-block">
         <h3>Matchande ljudspår</h3>
-        <p>Korta repetitionsspår kopplade till detta amne. Perfekta att lyssna pa innan du kor fragor eller efter ett mockprov.</p>
+        <p>Korta repetitionsspår kopplade till detta ämne. Perfekta att lyssna på innan du kör frågor eller efter ett mockprov.</p>
         <div class="audio-list">
           ${tpAudio.map(a=>`
             <div class="link-card" style="margin-bottom:0;cursor:default">
@@ -822,19 +866,19 @@ function renderDrill(){
 
   const el=document.getElementById('v-drill');
   el.innerHTML=`
-    <div class="top"><button class="back" onclick="location.hash='#hub'">&#8592; Amnen</button><h1 style="flex:1">Drill svart-hinken</h1></div>
+    <div class="top"><button class="back" onclick="location.hash='#hub'">&#8592; Ämnen</button><h1 style="flex:1">Drill svåra</h1></div>
     <div class="banner" id="dr-banner" style="background:linear-gradient(135deg,rgba(239,68,68,.18),rgba(245,158,11,.1));border-color:rgba(239,68,68,.3)"></div>
     <div style="font-size:11px;color:var(--text-dim);text-align:right;margin-bottom:8px" id="dr-prog"></div>
     <div id="dr-stage"></div>`;
   document.getElementById('dr-banner').innerHTML=pool.length?
-    `<strong>${pool.length}</strong> sak${pool.length===1?'':'er'} markerade som svara. Bedöm om for att flytta dem.`:
-    'Inget i svart-hinken an!';
+    `<strong>${pool.length}</strong> sak${pool.length===1?'':'er'} markerade som svåra. Bedöm om för att flytta dem.`:
+    'Inget i svår-hinken än!';
 
   function show(){
     document.getElementById('dr-prog').textContent=pool.length?`${dIdx+1} / ${pool.length}`:'';
     const stage=document.getElementById('dr-stage');
-    if(!pool.length){stage.innerHTML=`<div class="empty">Inget i din svart-hink.<br><br>Ga till <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#hub'">Amnen</span> och borja betygsatta.</div>`;return;}
-    if(dIdx>=pool.length){stage.innerHTML=`<div class="empty">Klart! <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#drill'">Korn om</span> eller <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#hub'">tillbaka</span>.</div>`;return;}
+    if(!pool.length){stage.innerHTML=`<div class="empty">Inget i din svår-hink.<br><br>Gå till <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#hub'">Ämnen</span> och börja betygsätta.</div>`;return;}
+    if(dIdx>=pool.length){stage.innerHTML=`<div class="empty">Klart! <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#drill'">Kör om</span> eller <span style="cursor:pointer;color:var(--accent)" onclick="location.hash='#hub'">tillbaka</span>.</div>`;return;}
     const cur=pool[dIdx];stage.innerHTML='';
     if(cur.kind==='q')stage.appendChild(makeQ(cur.item,{onRate:()=>{dIdx++;show();}}));
     else stage.appendChild(makeCard(cur.item,{onRate:()=>{dIdx++;show();}}));
@@ -845,30 +889,47 @@ function renderDrill(){
 // ============ MOCK EXAM ============
 function renderMock(){
   const el=document.getElementById('v-mock');
+  const mockHistory=g(MOCK_HISTORY);
   el.innerHTML=`
-    <h1>Ovningsprov</h1>
-    <div class="subtitle">Valj ett prov att kora. Du kan ocksa hoppa direkt till originalproven och se vilka delar som faktiskt extraherats.</div>
-    <div class="banner"><strong>Walkthrough:</strong> repot innehaller fler originalprov an vad som redan ar omvandlat till appfragor. Mockdelen ar anvandbar nu, men exam archive nedan visar den rikare strukturen som redan finns i `question_batteries.json`.</div>
-    <div id="mockList"></div>`;
+    <h1>Mockprov</h1>
+    <div class="subtitle">Här ska det vara enkelt: välj ett prov, se tidsåtgång, kör. Under finns originalproven och extraherade frågebatterier för vidare jämförelse.</div>
+    <div class="banner"><strong>Tips:</strong> börja med snabbprovet om du vill komma igång fort. Kör sedan fullängdsprovet när du vill simulera riktig press.</div>
+    <div class="card" onclick="location.hash='#batteries'" style="border-color:rgba(34,197,94,.32)">
+      <h2 style="color:var(--green)">Bläddra riktiga frågebatterier</h2>
+      <p>Här hittar du extraherade sektioner från 2023-2025 års faktadelar. Bra för att träna med originalformuleringar, inte bara appens egna quizfrågor.</p>
+      <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)">Öppna batteriarkivet</span>
+    </div>
+    <div id="mockList"></div>
+    <h2 class="section-head">Originalprov och extraherade batterier</h2>
+    <div id="mockArchive" class="resource-grid"></div>`;
+
   const list=document.getElementById('mockList');
-  MOCKS.mocks.forEach(m=>{
-    const card=document.createElement('div');card.className='card';
-    card.onclick=()=>location.hash='#mock-run/'+m.id;
-    const sourceYears = m.source_exam_years || [];
+  MOCKS.mocks.forEach(mock=>{
+    const card=document.createElement('div');
+    card.className='card';
+    card.style.borderColor='rgba(245,158,11,.28)';
+    const attempts=(mockHistory[mock.id]||[]).slice().sort((a,b)=>b.date-a.date);
+    const last=attempts[0];
     card.innerHTML=`
-      <h2>${m.title}</h2>
-      <p>${m.description}</p>
-      <div style="margin-top:8px;font-size:11px;color:var(--text-dim)">
-        ${m.sections.map(s=>`<span class="badge" style="background:rgba(255,255,255,.06);margin-right:4px">${s.title} (${s.time_minutes} min)</span>`).join('')}
+      <h2 style="color:var(--orange)">${mock.title}</h2>
+      <p>${mock.description}</p>
+      <div class="summary" style="margin-top:10px;margin-bottom:10px">
+        <span class="chip"><strong>${mock.duration_minutes}</strong> min</span>
+        <span class="chip"><strong>${mock.sections.length}</strong> sektioner</span>
+        ${last?`<span class="chip"><strong>${last.pct}%</strong> senaste resultat</span>`:''}
       </div>
-      <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange);margin-top:8px">${m.duration_minutes} minuter</span>
-      ${sourceYears.length?`<div class="resource-note" style="margin-top:8px">Bygger pa: ${sourceYears.map(y=>examUrlForYear(y)?externalLink(examUrlForYear(y), `originalprov ${y}`):`originalprov ${y}`).join(' &middot; ')}</div>`:''}`;
+      <div style="display:grid;gap:8px;margin-top:8px">
+        ${mock.sections.map(sec=>`<div class="section-card" style="margin-bottom:0;padding:12px"><h3>${sec.title}</h3><p>${sec.description}</p></div>`).join('')}
+      </div>
+      <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
+        <button class="next-btn" style="flex:1;min-width:200px;margin-top:0" data-run="${mock.id}">Starta ${mock.title}</button>
+        ${mock.source_exam_years?.length?`<div class="small" style="display:flex;align-items:center">Baseras på ${mock.source_exam_years.map(y=>sourceLinkById(`dips_exam_${y}`, `${y}`)).join(' · ')}</div>`:''}
+      </div>`;
     list.appendChild(card);
+    card.querySelector('[data-run]').addEventListener('click', ev=>{ ev.stopPropagation(); location.hash='#mock-run/'+mock.id; });
+    card.addEventListener('click',()=>location.hash='#mock-run/'+mock.id);
   });
 
-  const archive=document.createElement('div');
-  archive.innerHTML=`<h2 class="section-head">Exam archive och extraherade fragbatterier</h2><div id="mockArchive" class="resource-grid"></div>`;
-  list.parentNode.appendChild(archive);
   const archiveEl=document.getElementById('mockArchive');
   const exams=(SOURCE_INDEX||[]).filter(s=>s.type==='exam_pdf').sort((a,b)=>(b.year||0)-(a.year||0));
   exams.forEach(exam=>{
@@ -876,14 +937,14 @@ function renderMock(){
     const div=document.createElement('div');div.className='link-card';
     div.innerHTML=`
       <h3>${exam.title}</h3>
-      <p>${exam.fetched?'Hamta original-PDF eller jamfor mot de fragbatterier som redan extraherats ur detta prov.':'Kallan finns i indexet men saknas fortfarande lokalt.'}</p>
+      <p>${exam.fetched?'Öppna originalprovet eller använd de extraherade sektionerna som rå träningsdata.':'Källan finns i indexet men saknas fortfarande lokalt.'}</p>
       <div class="resource-meta">
         <span class="source-badge ${exam.source_class||'official'}">${exam.source_class||'official'}</span>
-        <span class="badge" style="background:rgba(255,255,255,.06)">${exam.year||'okant ar'}</span>
-        <span class="badge" style="background:rgba(255,255,255,.06)">${batteries.length} sectioner extraherade</span>
+        <span class="badge" style="background:rgba(255,255,255,.06)">${exam.year||'okänt år'}</span>
+        <span class="badge" style="background:rgba(255,255,255,.06)">${batteries.length} extraherade sektioner</span>
       </div>
-      <div class="resource-note">${(exam.url||examUrlForYear(exam.year))?externalLink(exam.url||examUrlForYear(exam.year),'Oppna originalprov'):'Ingen lank'}</div>
-      ${batteries.length?`<div class="small" style="margin-top:6px">Sektioner: ${batteries.map(b=>`${b.title} (${b.question_count})`).join(' · ')}</div>`:''}`;
+      <div class="resource-note">${exam.url?externalLink(exam.url,'Öppna originalprov'):''}${batteries.length?` &middot; <a href="#batteries">Bläddra batterier</a>`:''}</div>
+      ${batteries.length?`<div class="small" style="margin-top:6px">${batteries.map(b=>`<a href="#batteries/${batteryKey(b)}">${b.title} (${b.question_count})</a>`).join(' · ')}</div>`:''}`;
     archiveEl.appendChild(div);
   });
 }
@@ -907,11 +968,11 @@ function renderMockRun(mockId){
         <div style="flex:1"><h1 style="font-size:16px">${mock.title}</h1>
         <div class="subtitle" style="margin-bottom:0">${sec.title}</div></div>
       </div>
-      ${mock.source_exam_years?.length?`<div class="banner"><strong>Originalprov:</strong> ${mock.source_exam_years.map(y=>examUrlForYear(y)?externalLink(examUrlForYear(y), `oppna ${y} ars PDF`):`${y}`).join(' &middot; ')}</div>`:''}
+      ${mock.source_exam_years?.length?`<div class="banner"><strong>Originalprov:</strong> ${mock.source_exam_years.map(y=>examUrlForYear(y)?externalLink(examUrlForYear(y), `öppna ${y} års PDF`):`${y}`).join(' &middot; ')}${mock.source_exam_years.flatMap(y=>batteriesForYear(y)).length?`<br><span class="small">Extraherade batterier: ${mock.source_exam_years.flatMap(y=>batteriesForYear(y)).map(b=>`<a href="#batteries/${b.exam_year}-${b.section_id}">${b.exam_year} · ${b.title}</a>`).join(' &middot; ')}</span>`:''}</div>`:''}
       <div class="timer" id="mr-timer">--:--</div>
       <div style="font-size:12px;color:var(--text-dim);margin-bottom:14px">${sec.description}</div>
       <div id="mr-content"></div>
-      <button class="next-btn" id="mr-next">${sectionIdx<mock.sections.length-1?'Nasta sektion &#8594;':'Avsluta prov'}</button>`;
+      <button class="next-btn" id="mr-next">${sectionIdx<mock.sections.length-1?'Nästa sektion &#8594;':'Avsluta prov'}</button>`;
 
     if(sec.type==='mcq'){
       const content=document.getElementById('mr-content');
@@ -931,8 +992,8 @@ function renderMockRun(mockId){
         div.innerHTML=`
           <h3>${e.prompt}</h3>
           <div class="themes">${e.themes.map(t=>`<span class="theme">${t}</span>`).join('')}</div>
-          <div class="outline"><strong style="color:var(--text);font-size:11px">Foreslagen disposition:</strong><ol>${e.outline.map(o=>`<li>${o}</li>`).join('')}</ol></div>
-          <textarea class="essay-textarea" placeholder="Skriv ditt PM har..." style="margin-top:12px"></textarea>`;
+          <div class="outline"><strong style="color:var(--text);font-size:11px">Föreslagen disposition:</strong><ol>${e.outline.map(o=>`<li>${o}</li>`).join('')}</ol></div>
+          <textarea class="essay-textarea" placeholder="Skriv ditt PM här..." style="margin-top:12px"></textarea>`;
         content.appendChild(div);
       });
     }
@@ -966,11 +1027,11 @@ function renderMockRun(mockId){
       <div class="welcome-header"><h1>Provresultat</h1></div>
       <div style="text-align:center;padding:20px">
         <div style="font-size:48px;font-weight:800;color:${pct>=70?'var(--green)':'var(--orange)'}">${pct}%</div>
-        <div style="font-size:14px;color:var(--text-dim);margin-top:8px">${score} av ${totalQ} ratt pa flervalsfragorna</div>
+        <div style="font-size:14px;color:var(--text-dim);margin-top:8px">${score} av ${totalQ} rätt på flervalsfrågorna</div>
       </div>
       <div style="background:var(--surface);border-radius:12px;padding:14px;font-size:12px;color:var(--text-dim);line-height:1.7">
-        Uppsatsdelen bedoms inte automatiskt. Jamfor din text med dispositionsforslaget och bedom sjalv.<br><br>
-        <strong style="color:var(--text)">Tips:</strong> Ga tillbaka till amnessidorna och drilla fragor du fick fel pa.
+        Uppsatsdelen bedöms inte automatiskt. Jämför din text med dispositionsförslaget och bedöm själv.<br><br>
+        <strong style="color:var(--text)">Tips:</strong> Gå tillbaka till ämnessidorna och drilla frågor du fick fel på.
       </div>
       <button class="next-btn" onclick="location.hash='#mock'" style="margin-top:16px">Tillbaka till provlistan</button>`;
 
@@ -982,6 +1043,76 @@ function renderMockRun(mockId){
   }
 
   renderSection();
+}
+
+// ============ BATTERIES ============
+function renderBatteries(key){
+  const all = BATTERIES?.batteries || [];
+  const el=document.getElementById('v-batteries');
+  if(!all.length){
+    el.innerHTML=`<div class="empty">Inga extraherade frågebatterier hittades.</div>`;
+    return;
+  }
+
+  if(key){
+    const battery = findBatteryByKey(key);
+    if(!battery){
+      el.innerHTML=`<div class="empty">Frågebatteriet hittades inte. <a href="#batteries">Tillbaka till arkivet</a>.</div>`;
+      return;
+    }
+    const examUrl = examUrlForYear(battery.exam_year);
+    el.innerHTML=`
+      <div class="top">
+        <button class="back" onclick="location.hash='#batteries'">&#8592; Arkiv</button>
+        <div style="flex:1">
+          <div style="font-size:11px;font-weight:800;color:var(--accent);letter-spacing:1px">${battery.exam_year} · ${battery.section_id}</div>
+          <h1 style="font-size:18px;margin-top:1px">${battery.title}</h1>
+        </div>
+      </div>
+      <div class="banner"><strong>${battery.question_count}</strong> frågor i denna sektion.${examUrl?` &middot; ${externalLink(examUrl,'Öppna original-PDF')}`:''}</div>
+      <div class="mini-list">
+        <strong>Så använder du sektionen bäst</strong>
+        <ul>
+          <li>Läs först igenom originalfrågorna utan facit.</li>
+          <li>Jämför sedan med ditt eget svar eller använd dem som flashcard-/free response-underlag.</li>
+          <li>Öppna original-PDF:en om du vill se hela provets formatering och kontext.</li>
+        </ul>
+      </div>
+      <div class="resource-grid">${battery.questions.map(renderBatteryQuestion).join('')}</div>`;
+    return;
+  }
+
+  const totalQuestions = all.reduce((sum,b)=>sum + (b.question_count||0),0);
+  const years = [...new Set(all.map(b=>b.exam_year))].sort((a,b)=>b-a);
+  el.innerHTML=`
+    <h1>Frågebatteriarkiv</h1>
+    <div class="subtitle">Extraherade faktadelar från riktiga DIPS-prov. Härifrån kan du gå vidare till både original-PDF och varje enskild sektion.</div>
+    <div class="summary">
+      <span class="chip"><strong>${BATTERIES.exam_count||years.length}</strong> provår</span>
+      <span class="chip"><strong>${BATTERIES.battery_count||all.length}</strong> sektioner</span>
+      <span class="chip"><strong>${totalQuestions}</strong> frågor/frågeblock</span>
+    </div>
+    <div class="banner"><strong>Viktig skillnad:</strong> appens vanliga quiz är fortfarande mindre än det fulla arkivet. Här ser du mer av det verkliga provmaterialet.</div>
+    <div id="batteryArchive" class="resource-grid"></div>`;
+
+  const container = document.getElementById('batteryArchive');
+  years.forEach(year=>{
+    const exam = examSourceByYear(year);
+    const sections = all.filter(b=>b.exam_year===year);
+    const wrap = document.createElement('div');
+    wrap.className='audio-block';
+    wrap.innerHTML=`
+      <h3>${year} års prov</h3>
+      <p>${sections.length} extraherade sektioner och ${sections.reduce((sum,b)=>sum+(b.question_count||0),0)} frågor/frågeblock.${exam?.url?` ${externalLink(exam.url,'Öppna original-PDF')}`:''}</p>
+      <div class="audio-list">
+        ${sections.map(section=>`
+          <a class="link-card" href="#batteries/${batteryKey(section)}">
+            <h3>${section.title}</h3>
+            <p>${section.question_count} frågor/frågeblock · ${section.section_id}</p>
+          </a>`).join('')}
+      </div>`;
+    container.appendChild(wrap);
+  });
 }
 
 // ============ ESSAY ============
@@ -996,20 +1127,20 @@ function renderEssay(essayId){
     el.innerHTML=`
       <div class="top">
         <button class="back" onclick="location.hash='#essay'">&#8592; Alla</button>
-        <h1 style="font-size:16px;flex:1">${essay.id} — Uppsatsovning</h1>
+        <h1 style="font-size:16px;flex:1">${essay.id} — Uppsatsövning</h1>
       </div>
       <div class="timer" id="es-timer">--:--</div>
       <div class="essay-card">
         <h3>${essay.prompt}</h3>
         <div class="themes">${essay.themes.map(t=>`<span class="theme">${t}</span>`).join('')}</div>
-        <div class="outline"><strong style="color:var(--text);font-size:11px">Foreslagen disposition:</strong>
+        <div class="outline"><strong style="color:var(--text);font-size:11px">Föreslagen disposition:</strong>
           <ol>${essay.outline.map(o=>`<li>${o}</li>`).join('')}</ol>
         </div>
       </div>
-      <textarea class="essay-textarea" id="es-text" placeholder="Skriv ditt PM har...">${notes[essay.id]||''}</textarea>
+      <textarea class="essay-textarea" id="es-text" placeholder="Skriv ditt PM här...">${notes[essay.id]||''}</textarea>
       <div style="display:flex;gap:8px;margin-top:8px">
         <button class="next-btn" id="es-start" style="flex:1;background:var(--green)">Starta timer</button>
-        <button class="next-btn" id="es-reset" style="flex:1;background:var(--surface);border:1px solid rgba(255,255,255,.1)">Nollstall</button>
+        <button class="next-btn" id="es-reset" style="flex:1;background:var(--surface);border:1px solid rgba(255,255,255,.1)">Nollställ</button>
       </div>`;
 
     // Auto-save essay text
@@ -1039,8 +1170,8 @@ function renderEssay(essayId){
 
   // Essay list
   el.innerHTML=`
-    <h1>Uppsatsovning</h1>
-    <div class="subtitle">Ova pa PM-skrivning med timer och dispositionsmallar</div>
+    <h1>Uppsatsövning</h1>
+    <div class="subtitle">Öva på PM-skrivning med timer och dispositionsmallar</div>
     <div id="essayList"></div>`;
   const list=document.getElementById('essayList');
   ESSAYS.essays.forEach(e=>{
@@ -1063,10 +1194,14 @@ function renderResources(){
   const dbItems = resources.databases?.items || [];
   const el=document.getElementById('v-resources');
   el.innerHTML=`
-    <h1>Kallor och podcasts</h1>
-    <div class="subtitle">Direkta kallor for provet, bra bakgrundspoddar och databaser for fortsatt fordjupning.</div>
+    <h1>Källor och podcasts</h1>
+    <div class="subtitle">Direkta källor för provet, bra bakgrundspoddar och databaser för fortsatt fördjupning.</div>
 
-    <h2 class="section-head">Provmaterial och officiella kallor</h2>
+    <h2 class="section-head">Provmaterial och officiella källor</h2>
+    <div class="card" onclick="location.hash='#batteries'" style="border-color:rgba(34,197,94,.32)">
+      <h2 style="color:var(--green)">Bläddra frågebatterier</h2>
+      <p>Gå direkt till de extraherade faktaavsnitten från riktiga prov och jämför sedan mot original-PDF:en.</p>
+    </div>
     <div id="res-test"></div>
 
     <h2 class="section-head">Podcasts och studieaudio</h2>
@@ -1086,7 +1221,7 @@ function renderResources(){
       <div class="resource-meta">
         <span class="source-badge ${item.source_class||'official'}">${item.source_class||'official'}</span>
       </div>
-      <div class="resource-note">${urls.map((u,i)=>externalLink(u, urls.length===1 ? 'Oppna kalla' : `Oppna lank ${i+1}`)).join(' &middot; ')}</div>`;
+      <div class="resource-note">${urls.map((u,i)=>externalLink(u, urls.length===1 ? 'Öppna källa' : `Öppna länk ${i+1}`)).join(' &middot; ')}</div>`;
     testEl.appendChild(div);
   });
 
@@ -1096,12 +1231,12 @@ function renderResources(){
     extra.className='audio-block';
     extra.innerHTML=`
       <h3>Direkt till originalproven</h3>
-      <p>Detta ar de faktiska kalla-PDF:erna. Oppna dem nar du gor mockprov eller vill jamfora med extraherade fragbatterier.</p>
+      <p>Detta är de faktiska käll-PDF:erna. Öppna dem när du gör mockprov eller vill jämföra med extraherade frågebatterier.</p>
       <div class="audio-list">${exams.map(exam=>`
         <div class="link-card" style="margin-bottom:0">
-          <h3>${exam.year} ars prov</h3>
+          <h3>${exam.year} års prov</h3>
           <p>${exam.title}</p>
-          <div class="resource-note">${(exam.url||examUrlForYear(exam.year))?externalLink(exam.url||examUrlForYear(exam.year),'Oppna PDF'):''}</div>
+          <div class="resource-note">${(exam.url||examUrlForYear(exam.year))?externalLink(exam.url||examUrlForYear(exam.year),'Öppna PDF'):''}</div>
         </div>`).join('')}</div>`;
     testEl.prepend(extra);
   }
@@ -1117,7 +1252,7 @@ function renderResources(){
         <span class="badge" style="background:rgba(59,130,246,.15);color:var(--accent)">${item.lang||'sv'}</span>
         <span class="badge" style="background:rgba(255,255,255,.06)">${item.frequency||'irregular'}</span>
       </div>
-      <div class="resource-note">${item.url?externalLink(item.url,'Oppna'):item.rss?externalLink(item.rss,'RSS'):''}</div>`;
+      <div class="resource-note">${item.url?externalLink(item.url,'Öppna'):item.rss?externalLink(item.rss,'RSS'):''}</div>`;
     podEl.appendChild(div);
   });
 
@@ -1127,7 +1262,7 @@ function renderResources(){
     extra.className='audio-block';
     extra.innerHTML=`
       <h3>Intern studieaudio i appen</h3>
-      <p>Planerade korta ljudspår som kan kopplas till respektive amne eller mockprov nar du senare genererar ljudfilerna.</p>
+      <p>Planerade korta ljudspår som kan kopplas till respektive ämne eller mockprov nar du senare genererar ljudfilerna.</p>
       <div class="audio-list">${builtAudio.map(a=>`
         <div class="link-card" style="margin-bottom:0;cursor:default">
           <h3>${a.id}: ${a.title}</h3>
@@ -1146,8 +1281,8 @@ function renderResources(){
     const div=document.createElement('div');div.className='link-card';
     div.innerHTML=`
       <h3>${item.title}</h3>
-      <p>${item.note||'Referensdatabas for snabb faktakoll och fortsatt repetition.'}</p>
-      <div class="resource-note">${externalLink(item.url,'Oppna databas')}</div>`;
+      <p>${item.note||'Referensdatabas för snabb faktakoll och fortsatt repetition.'}</p>
+      <div class="resource-note">${externalLink(item.url,'Öppna databas')}</div>`;
     dbEl.appendChild(div);
   });
 }

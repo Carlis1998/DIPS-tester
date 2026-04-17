@@ -8,7 +8,7 @@
           "title": "Gamla skriftliga prov (2019-2025)",
           "url": "https://www.regeringen.se/jobba-hos-oss/praktik/skriftliga-prov-for-diplomatprogrammet/",
           "source_class": "official",
-          "purpose": "Direkt ovning pa gamla prov, essay prompts och faktadelar."
+          "purpose": "Direkt övning på gamla prov, essay prompts och faktadelar."
         },
         {
           "id": "res_qa",
@@ -142,7 +142,7 @@
           "title": "Studio Ett",
           "lang": "sv",
           "rss": "https://api.sr.se/api/rss/pod/3795",
-          "purpose": "Daglig nyhetsfordjupning for aktuella amnen.",
+          "purpose": "Daglig nyhetsfördjupning för aktuella ämnen.",
           "frequency": "daily"
         },
         {

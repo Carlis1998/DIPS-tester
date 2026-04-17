@@ -1,7 +1,7 @@
 {
   "resources": {
     "test_material": {
-      "description": "Sources used directly for test questions, flashcards, and exam preparation",
+      "description": "Sources used directly för test questions, flashcards, and exam preparation",
       "items": [
         {
           "id": "res_exams",
@@ -13,7 +13,7 @@
         {
           "id": "res_qa",
           "title": "Officiell Q&A om diplomatprogrammet",
-          "url": "https://www.regeringen.se/globalassets/regeringen/dokument/utrikesdepartementet/qa---vanliga-fragor-om-diplomatprogrammet.pdf",
+          "url": "https://www.regeringen.se/globalassets/regeringen/dokument/utrikesdepartementet/qa---vanliga-frågor-om-diplomatprogrammet.pdf",
           "source_class": "official",
           "purpose": "Exam format info, what to expect, official guidance"
         },
@@ -58,9 +58,9 @@
           "purpose": "Sweden's current foreign policy priorities — directly testable"
         },
         {
-          "id": "res_sakerhetsstrategi",
-          "title": "Nationell sakerhetsstrategi 2024",
-          "url": "https://www.regeringen.se/informationsmaterial/2024/07/nationell-sakerhetsstrategi/",
+          "id": "res_säkerhetsstrategi",
+          "title": "Nationell säkerhetsstrategi 2024",
+          "url": "https://www.regeringen.se/informationsmaterial/2024/07/nationell-säkerhetsstrategi/",
           "source_class": "official",
           "purpose": "Sweden's security doctrine — NATO, defense, resilience"
         },
@@ -95,14 +95,14 @@
       ]
     },
     "study_podcasts": {
-      "description": "Podcasts for building allmanbildning — categorized by language",
+      "description": "Podcasts för building allmanbildning — categorized by language",
       "items": [
         {
           "id": "pod_konflikt",
           "title": "SR Konflikt",
           "lang": "sv",
           "rss": "https://api.sr.se/api/rss/pod/3970",
-          "purpose": "Deep dives on current conflicts — directly relevant for T04",
+          "purpose": "Deep dives on current conflicts — directly relevant för T04",
           "frequency": "weekly"
         },
         {
@@ -142,7 +142,7 @@
           "title": "SR Studio Ett",
           "lang": "sv",
           "rss": "https://api.sr.se/api/rss/pod/3795",
-          "purpose": "Daily Swedish news depth — current affairs for T04/T05",
+          "purpose": "Daily Swedish news depth — current affairs för T04/T05",
           "frequency": "daily"
         },
         {
@@ -180,15 +180,44 @@
       ]
     },
     "databases": {
-      "description": "Reference databases for ongoing study and fact-checking",
+      "description": "Reference databases för ongoing study and fact-checking",
       "items": [
-        {"id": "db_landguiden", "title": "UI Landguiden", "url": "https://www.ui.se/landguiden/", "note": "Requires library subscription"},
-        {"id": "db_sakerhetspolitik", "title": "Sakerhetspolitik.se", "url": "https://www.sakerhetspolitik.se/"},
-        {"id": "db_globalis", "title": "Globalis.se (FN)", "url": "https://www.globalis.se/"},
-        {"id": "db_sipri", "title": "SIPRI Databases", "url": "https://www.sipri.org/databases"},
-        {"id": "db_freedomhouse", "title": "Freedom House Scores", "url": "https://freedomhouse.org/countries/freedom-world/scores"},
-        {"id": "db_owid", "title": "Our World in Data", "url": "https://ourworldindata.org/"},
-        {"id": "db_sieps", "title": "SIEPS Publications", "url": "https://www.sieps.se/publikationer/"}
+        {
+          "id": "db_landguiden",
+          "title": "UI Landguiden",
+          "url": "https://www.ui.se/landguiden/",
+          "note": "Requires library subscription"
+        },
+        {
+          "id": "db_säkerhetspolitik",
+          "title": "Sakerhetspolitik.se",
+          "url": "https://www.säkerhetspolitik.se/"
+        },
+        {
+          "id": "db_globalis",
+          "title": "Globalis.se (FN)",
+          "url": "https://www.globalis.se/"
+        },
+        {
+          "id": "db_sipri",
+          "title": "SIPRI Databases",
+          "url": "https://www.sipri.org/databases"
+        },
+        {
+          "id": "db_freedomhouse",
+          "title": "Freedom House Scores",
+          "url": "https://freedomhouse.org/countries/freedom-world/scores"
+        },
+        {
+          "id": "db_owid",
+          "title": "Our World in Data",
+          "url": "https://ourworldindata.org/"
+        },
+        {
+          "id": "db_sieps",
+          "title": "SIEPS Publications",
+          "url": "https://www.sieps.se/publikationer/"
+        }
       ]
     }
   }

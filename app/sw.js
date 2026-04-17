@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dips-tester-v1';
+const CACHE_NAME = 'dips-tester-v2';
 const URLS_TO_CACHE = [
   './',
   './index.html',
@@ -11,6 +11,8 @@ const URLS_TO_CACHE = [
   './data/mocks.json',
   './data/audio_map.json',
   './data/resources.json',
+  './data/question_batteries.json',
+  './data/source_index.json',
   '../data/topics.json',
   '../data/questions_sv.json',
   '../data/questions_en.json',
@@ -18,7 +20,9 @@ const URLS_TO_CACHE = [
   '../data/essays.json',
   '../data/mocks.json',
   '../data/audio_map.json',
-  '../data/resources.json'
+  '../data/resources.json',
+  '../data/question_batteries.json',
+  '../data/source_index.json'
 ];
 
 self.addEventListener('install', event => {
