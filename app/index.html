@@ -303,7 +303,7 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 <nav class="bnav">
   <a href="#home" data-v="home"><span>&#127968;</span>Hem</a>
   <a href="#hub" data-v="hub"><span>&#128218;</span>Ämnen</a>
-  <a href="#mock" data-v="mock"><span>&#128221;</span>Mockprov</a>
+  <a href="#batteries" data-v="batteries"><span>&#128209;</span>Provarkiv</a>
   <a href="#essay" data-v="essay"><span>&#9997;&#65039;</span>Uppsats</a>
   <a href="#drill" data-v="drill"><span>&#128293;</span>Drill</a>
 </nav>
@@ -477,7 +477,37 @@ function batteryQuestionAnswered(question, state={}){
   }
   return !!String(state.main||'').trim();
 }
+function sanitizeBatteryQuestions(questions){
+  const noisyShortAnswers = new Set(['3 procent','5 procent','4 miljoner','9 miljoner','1milj.','6milj.']);
+  const grouped = new Map();
+  (questions || []).forEach((q, idx) => {
+    const prompt = String(q.prompt || '').trim();
+    if (q.kind === 'short_answer' && (noisyShortAnswers.has(prompt) || /^\d+[\d, ]*(procent|milj\.?|miljoner)$/i.test(prompt))) {
+      return;
+    }
+    const key = q.id || `idx-${idx}`;
+    const score = (prompt.length) + ((q.subquestions || []).length * 120) + ((q.options || []).length * 80) + (q.kind === 'multi_part' ? 40 : 0);
+    const current = grouped.get(key);
+    if (!current || score > current._score) {
+      grouped.set(key, { ...q, _score: score });
+    }
+  });
+  return Array.from(grouped.values())
+    .sort((a, b) => (a.number || 0) - (b.number || 0))
+    .map(({ _score, ...rest }) => rest);
+}
+
+function sanitizeBattery(battery){
+  const questions = sanitizeBatteryQuestions(battery.questions || []);
+  return { ...battery, questions, question_count: questions.length };
+}
+
+function allSanitizedBatteries(){
+  return (BATTERIES?.batteries || []).map(sanitizeBattery);
+}
+
 function batteryProgressStats(battery){
+  battery = sanitizeBattery(battery);
   const responses = getBatteryResponsesFor(batteryKey(battery));
   const review = getBatteryReviewFor(batteryKey(battery));
   const answered = battery.questions.filter(q=>batteryQuestionAnswered(q, responses[q.id]||{})).length;
@@ -744,84 +774,59 @@ window.addEventListener('hashchange',()=>navigate(location.hash));
 
 // ============ HOME ============
 function renderHome(){
-  const qp=g(Q_PROGRESS),qb=g(Q_BUCKET),cb=g(FC_BUCKET),hist=g(MOCK_HISTORY);
-  const allQ=[...Q_SV.questions,...Q_EN.questions];
-  const totalQ=allQ.length,totalC=CARDS.length;
-  const seenQ=allQ.filter(q=>qp[q.id]?.seen).length;
-  const hardQ=allQ.filter(q=>qb[q.id]==='hard').length;
-  const hardC=CARDS.filter(c=>cb[c.id]==='hard').length;
-  const totalHard=hardQ+hardC;
-  const totalAtt=allQ.reduce((a,q)=>a+(qp[q.id]?.attempts||0),0);
-  const totalRight=allQ.reduce((a,q)=>a+(qp[q.id]?.correct||0),0);
-  const accuracy=totalAtt?Math.round(100*totalRight/totalAtt)+'%':'—';
-  const latestMock = Object.values(hist).reduce((acc, arr) => acc.concat(arr || []), []).sort((a,b)=>b.date-a.date)[0];
-
-  document.getElementById('v-home').innerHTML=`
+  const allBatteries = allSanitizedBatteries();
+  const totalBlocksRaw = (BATTERIES?.batteries || []).reduce((sum, b) => sum + ((b.questions || []).length), 0);
+  const totalBlocksVisible = allBatteries.reduce((sum, b) => sum + (b.question_count || 0), 0);
+  const startedSections = allBatteries.filter(b=>batteryProgressStats(b).answered>0).length;
+  const years = [...new Set(allBatteries.map(b=>b.exam_year))].sort((a,b)=>b-a);
+  const el = document.getElementById('v-home');
+  el.innerHTML = `
     <div class="hero">
-      <h1>DIPS Tester</h1>
-      <p>Byggd för att göra en sak bra: hjälpa någon att snabbt komma igång med mockprov, faktafrågor, uppsatsträning och repetition utan att behöva förstå repo-strukturen först.</p>
+      <h1>DIPS provarkiv</h1>
+      <p>Det här är nu huvudingången till appen: riktiga extraherade frågebatterier från DIPS-proven. Öppna en sektion, skriv svar direkt i appen och växla över till original-PDF när du vill se exakt provformulering.</p>
       <div class="hero-grid">
-        <div class="hero-stat"><strong>${totalQ}</strong><span>quizfrågor</span></div>
-        <div class="hero-stat"><strong>${totalC}</strong><span>flashcards</span></div>
-        <div class="hero-stat"><strong>${TOPICS.topics.length}</strong><span>ämnen</span></div>
-        <div class="hero-stat"><strong>${totalHard}</strong><span>svåra nu</span></div>
+        <div class="hero-stat"><strong>${totalBlocksRaw}</strong><span>extraherade frågeblock</span></div>
+        <div class="hero-stat"><strong>${totalBlocksVisible}</strong><span>rensade visningsblock</span></div>
+        <div class="hero-stat"><strong>${allBatteries.length}</strong><span>sektioner</span></div>
+        <div class="hero-stat"><strong>${startedSections}</strong><span>påbörjade sektioner</span></div>
       </div>
     </div>
-
-    <div class="banner"><strong>Läge just nu:</strong> ${seenQ} besvarade frågor, ${accuracy} rätt totalt${latestMock?`, senaste mockprov ${latestMock.pct}%`:''}.</div>
-
-    <div class="section-head">Börja här</div>
-
-    <div class="card" onclick="location.hash='#mock'" style="border-color:rgba(245,158,11,.45)">
-      <h2 style="color:var(--orange)">1. Starta mockprov</h2>
-      <p>Det enklaste sättet att använda appen. Välj ett prov och arbeta lugnt sektion för sektion, med resultatvy och länkar till originalprov.</p>
-      <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange)">${MOCKS.mocks.length} mockprov</span>
-    </div>
-
-    <div class="card" onclick="location.hash='#drill'" style="border-color:rgba(239,68,68,.45)">
-      <h2 style="color:var(--red)">2. Repetera svåra</h2>
-      <p>Allt du markerat som svårt samlas här. Bra direkt efter ett mockprov.</p>
-      <span class="badge" style="background:rgba(239,68,68,.15);color:var(--red)">${totalHard} i svår-hinken</span>
-    </div>
-
-    <div class="card" onclick="location.hash='#batteries'" style="border-color:rgba(34,197,94,.42)">
-      <h2 style="color:var(--green)">3. Öppna riktiga frågebatterier</h2>
-      <p>Bläddra i extraherade sektioner från originalproven 2023-2025 och hoppa direkt vidare till PDF:erna.</p>
-      <span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)">${BATTERIES.battery_count} sektioner</span>
-    </div>
-
-    <div class="card" onclick="location.hash='#hub'" style="border-color:rgba(59,130,246,.45)">
-      <h2 style="color:var(--blue)">4. Plugga per ämne</h2>
-      <p>Gå ämnesvis om du vill fylla luckor i Sverige, EU/FN/NATO, folkrätt, historia, kultur eller klimat.</p>
-      <span class="badge" style="background:rgba(59,130,246,.15);color:var(--blue)">${TOPICS.topics.length} ämnen</span>
-    </div>
-
-    <div class="card" onclick="location.hash='#essay'" style="border-color:rgba(167,139,250,.45)">
-      <h2 style="color:var(--purple)">5. Kör uppsats</h2>
-      <p>Välj en prompt och skriv direkt i appen med språkstöd och dispositionshjälp.</p>
-      <span class="badge" style="background:rgba(167,139,250,.15);color:var(--purple)">${ESSAYS.essays.length} uppgifter</span>
-    </div>
-
+    <div class="banner"><strong>Start här:</strong> välj ett provår nedan. Mockprov är inte längre huvudspåret; det riktiga frågebatteriarkivet står i centrum.</div>
     <div class="mini-list">
-      <strong>En bra standardrutin</strong>
+      <strong>Hur appen är tänkt att användas nu</strong>
       <ul>
-        <li>Kör ett mockprov först för att se nuläget.</li>
-        <li>Öppna sedan <strong>Repetera svåra</strong>.</li>
-        <li>Om ett område känns tunt, gå till <strong>Ämnen</strong>.</li>
-        <li>Avsluta med en uppsats eller ett kort ljudspår.</li>
+        <li>Öppna ett riktigt frågebatteri från 2023, 2024 eller 2025.</li>
+        <li>Skriv svar direkt i appen och markera <strong>Utkast</strong>, <strong>Klar</strong> eller <strong>Självrättad</strong>.</li>
+        <li>Öppna original-PDF när du vill jämföra formulering, layout och helhetskänsla.</li>
       </ul>
     </div>
+    <div id="home-battery-archive" class="resource-grid"></div>`;
 
-    <div class="mini-list">
-      <strong>Vad som redan finns i repo:t</strong>
-      <ul>
-        <li>strukturerade frågor och flashcards</li>
-        <li>extraherade frågebatterier från gamla prov</li>
-        <li>mockprov och uppsatsläge</li>
-        <li>källor, originalprov och planerade ljudspår</li>
-      </ul>
-    </div>
-  `;
+  const container = document.getElementById('home-battery-archive');
+  years.forEach(year=>{
+    const exam = examSourceByYear(year);
+    const sections = allBatteries.filter(b=>b.exam_year===year);
+    const wrap = document.createElement('div');
+    wrap.className='audio-block';
+    wrap.innerHTML=`
+      <h3>${year} års prov</h3>
+      <p>${sections.length} sektioner och ${sections.reduce((sum,b)=>sum+(b.question_count||0),0)} visningsbara frågeblock.${exam?.url?` ${externalLink(exam.url,'Öppna original-PDF')}`:''}</p>
+      <div class="audio-list">
+        ${sections.map(section=>{
+          const stats = batteryProgressStats(section);
+          return `
+          <a class="link-card" href="#batteries/${batteryKey(section)}">
+            <h3>${section.title}</h3>
+            <p>${section.question_count} frågor · ${section.section_id}</p>
+            <div class="resource-meta">
+              <span class="badge" style="background:rgba(255,255,255,.06)">${stats.answered}/${section.questions.length} besvarade</span>
+              <span class="badge" style="background:rgba(255,255,255,.06)">${stats.checked} självrättade</span>
+            </div>
+          </a>`;
+        }).join('')}
+      </div>`;
+    container.appendChild(wrap);
+  });
 }
 
 // ============ HUB ============
@@ -1073,8 +1078,8 @@ function renderMock(){
   const el=document.getElementById('v-mock');
   const mockHistory=g(MOCK_HISTORY);
   el.innerHTML=`
-    <h1>Mockprov</h1>
-    <div class="subtitle">Här ska det vara enkelt: välj ett prov, arbeta sektion för sektion och jämför mot originalproven när du vill.</div>
+    <h1>Övningsprov</h1>
+    <div class="subtitle">Detta är nu ett sidospår. Huvudflödet i appen är de riktiga frågebatterierna i provarkivet.</div>
     <div class="banner"><strong>Tips:</strong> börja med snabbprovet om du vill komma igång fort. Kör sedan fullängdsprovet när du vill simulera riktig press.</div>
     <div class="card" onclick="location.hash='#batteries'" style="border-color:rgba(34,197,94,.32)">
       <h2 style="color:var(--green)">Bläddra riktiga frågebatterier</h2>
@@ -1203,7 +1208,7 @@ function renderMockRun(mockId){
 // ============ BATTERIES ============
 
 function renderBatteries(key){
-  const all = BATTERIES?.batteries || [];
+  const all = allSanitizedBatteries();
   const el=document.getElementById('v-batteries');
   if(!all.length){
     el.innerHTML=`<div class="empty">Inga extraherade frågebatterier hittades.</div>`;
@@ -1211,7 +1216,7 @@ function renderBatteries(key){
   }
 
   if(key){
-    const battery = findBatteryByKey(key);
+    const battery = sanitizeBattery(findBatteryByKey(key));
     if(!battery){
       el.innerHTML=`<div class="empty">Frågebatteriet hittades inte. <a href="#batteries">Tillbaka till arkivet</a>.</div>`;
       return;
@@ -1224,7 +1229,7 @@ function renderBatteries(key){
         <div style="flex:1">
           <div style="font-size:11px;font-weight:800;color:var(--accent);letter-spacing:1px">${battery.exam_year} · ${battery.section_id}</div>
           <h1 style="font-size:18px;margin-top:1px">${battery.title}</h1>
-          <div class="subtitle" style="margin-top:4px;margin-bottom:0">Skriv svar direkt i appen, markera status och hoppa vidare till original-PDF när du vill se provet i sitt riktiga format.</div>
+          <div class="subtitle" style="margin-top:4px;margin-bottom:0">Skriv svar direkt i appen, markera status och öppna original-PDF när du vill se provet i sitt riktiga format.</div>
         </div>
       </div>
       <div class="battery-shell" id="battery-workspace">
@@ -1246,7 +1251,7 @@ function renderBatteries(key){
           <div><strong id="battery-progress-pct">${Math.round((stats.answered/(battery.questions.length||1))*100)}% genomarbetat</strong><br><span class="small">Fortsätt skriva, markera "Klar" när du är nöjd och "Självrättad" när du jämfört med källa eller eget facit.</span></div>
           <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:flex-start;justify-content:flex-end">
             ${examUrl?`<a class="next-btn" style="width:auto;margin-top:0;display:inline-flex;align-items:center" href="${examUrl}" target="_blank" rel="noopener noreferrer">Öppna originalprovet</a>`:''}
-            <button class="ghost-btn" onclick="location.hash='#mock'">Till mockprov</button>
+            <button class="ghost-btn" onclick="location.hash='#home'">Till provarkivet</button>
           </div>
         </div>
         <div class="mini-list">
