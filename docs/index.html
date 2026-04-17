@@ -776,24 +776,27 @@ window.addEventListener('hashchange',()=>navigate(location.hash));
 function renderHome(){
   const allBatteries = allSanitizedBatteries();
   const totalBlocksRaw = (BATTERIES?.batteries || []).reduce((sum, b) => sum + ((b.questions || []).length), 0);
-  const totalBlocksVisible = allBatteries.reduce((sum, b) => sum + (b.question_count || 0), 0);
   const startedSections = allBatteries.filter(b=>batteryProgressStats(b).answered>0).length;
   const years = [...new Set(allBatteries.map(b=>b.exam_year))].sort((a,b)=>b-a);
   const el = document.getElementById('v-home');
   el.innerHTML = `
     <div class="hero">
       <h1>DIPS provarkiv</h1>
-      <p>Det här är nu huvudingången till appen: riktiga extraherade frågebatterier från DIPS-proven. Öppna en sektion, skriv svar direkt i appen och växla över till original-PDF när du vill se exakt provformulering.</p>
+      <p>Det här är nu appens startsida: de riktiga extraherade frågebatterierna från DIPS-proven ligger först. Öppna en sektion, skriv svar direkt i appen och hoppa vidare till original-PDF när du vill se exakt provformulering.</p>
       <div class="hero-grid">
         <div class="hero-stat"><strong>${totalBlocksRaw}</strong><span>extraherade frågeblock</span></div>
-        <div class="hero-stat"><strong>${totalBlocksVisible}</strong><span>rensade visningsblock</span></div>
         <div class="hero-stat"><strong>${allBatteries.length}</strong><span>sektioner</span></div>
+        <div class="hero-stat"><strong>${years.length}</strong><span>provår</span></div>
         <div class="hero-stat"><strong>${startedSections}</strong><span>påbörjade sektioner</span></div>
       </div>
+      <div class="cta-row" style="margin-top:14px">
+        <a class="btn primary" href="#batteries">Öppna hela provarkivet</a>
+        <a class="btn" href="#resources">Se original-PDF och källor</a>
+      </div>
     </div>
-    <div class="banner"><strong>Start här:</strong> välj ett provår nedan. Mockprov är inte längre huvudspåret; det riktiga frågebatteriarkivet står i centrum.</div>
+    <div class="banner"><strong>Start här:</strong> välj ett provår nedan. Mockprov är nu ett sidospår; det verkliga frågebatteriarkivet står i centrum.</div>
     <div class="mini-list">
-      <strong>Hur appen är tänkt att användas nu</strong>
+      <strong>Så använder du appen bäst</strong>
       <ul>
         <li>Öppna ett riktigt frågebatteri från 2023, 2024 eller 2025.</li>
         <li>Skriv svar direkt i appen och markera <strong>Utkast</strong>, <strong>Klar</strong> eller <strong>Självrättad</strong>.</li>
@@ -806,11 +809,17 @@ function renderHome(){
   years.forEach(year=>{
     const exam = examSourceByYear(year);
     const sections = allBatteries.filter(b=>b.exam_year===year);
+    const answered = sections.reduce((sum, section)=>sum+batteryProgressStats(section).answered, 0);
+    const totalVisible = sections.reduce((sum,b)=>sum+(b.question_count||0),0);
     const wrap = document.createElement('div');
     wrap.className='audio-block';
     wrap.innerHTML=`
       <h3>${year} års prov</h3>
-      <p>${sections.length} sektioner och ${sections.reduce((sum,b)=>sum+(b.question_count||0),0)} visningsbara frågeblock.${exam?.url?` ${externalLink(exam.url,'Öppna original-PDF')}`:''}</p>
+      <p>${sections.length} sektioner att arbeta igenom.${exam?.url?` ${externalLink(exam.url,'Öppna original-PDF')}`:''}</p>
+      <div class="resource-meta" style="margin-bottom:12px">
+        <span class="badge" style="background:rgba(255,255,255,.06)">${totalVisible} visade frågeblock</span>
+        <span class="badge" style="background:rgba(255,255,255,.06)">${answered} besvarade</span>
+      </div>
       <div class="audio-list">
         ${sections.map(section=>{
           const stats = batteryProgressStats(section);
