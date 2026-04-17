@@ -5,7 +5,7 @@ year: 1969
 lang: en
 source_class: official
 source_url: https://legal.un.org/ilc/texts/instruments/english/conventions/1_1_1969.pdf
-normalized_at: 2026-04-17T15:09:45.524584
+normalized_at: 2026-04-17T15:32:28.956368
 ---
 
 # Vienna Convention on the Law of Treaties 1969

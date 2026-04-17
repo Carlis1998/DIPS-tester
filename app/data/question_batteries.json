@@ -1,0 +1,4368 @@
+{
+  "generated_from": "normalized exam markdown",
+  "exam_count": 3,
+  "battery_count": 14,
+  "batteries": [
+    {
+      "id": "battery_2023_sverige",
+      "exam_id": "dips_exam_2023",
+      "exam_year": 2023,
+      "section_id": "sverige",
+      "title": "Samhallsorientering - Sverige",
+      "topic_hint": "T01",
+      "heading": "Samhällsorientering - Sverige (1 poäng per rätt svar/delsvar, max 30",
+      "question_count": 13,
+      "questions": [
+        {
+          "id": "B2023_sverige_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Ange vem som är svensk",
+          "raw_text": "Ange vem som är svensk a) Utrikesminister b) bistånds och utrikeshandelsminister c) EU-minister",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Utrikesminister"
+            },
+            {
+              "label": "b",
+              "prompt": "bistånds och utrikeshandelsminister"
+            },
+            {
+              "label": "c",
+              "prompt": "EU-minister"
+            }
+          ]
+        },
+        {
+          "id": "B2023_sverige_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Vad betyder följande förkortningar:",
+          "raw_text": "Vad betyder följande förkortningar: a) SKR b) MSB c) JO",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "SKR"
+            },
+            {
+              "label": "b",
+              "prompt": "MSB"
+            },
+            {
+              "label": "c",
+              "prompt": "JO"
+            }
+          ]
+        },
+        {
+          "id": "B2023_sverige_Q03",
+          "number": 3,
+          "kind": "short_answer",
+          "prompt": "Ange nuvarande ordförande/språkrör i ungdomsförbunden för tre riksdagspartier.",
+          "raw_text": "Ange nuvarande ordförande/språkrör i ungdomsförbunden för tre riksdagspartier."
+        },
+        {
+          "id": "B2023_sverige_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Vem är vd i",
+          "raw_text": "Vem är vd i a) Volvo Cars? b) Handelsbanken? c) Nobelstiftelsen?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Volvo Cars?"
+            },
+            {
+              "label": "b",
+              "prompt": "Handelsbanken?"
+            },
+            {
+              "label": "c",
+              "prompt": "Nobelstiftelsen?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_sverige_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Vilken huvudsaklig yrkeskategori organiserar vart och ett av följande fackförbund:",
+          "raw_text": "Vilken huvudsaklig yrkeskategori organiserar vart och ett av följande fackförbund: a) DIK b) IF Metall c) Vision",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "DIK"
+            },
+            {
+              "label": "b",
+              "prompt": "IF Metall"
+            },
+            {
+              "label": "c",
+              "prompt": "Vision"
+            }
+          ]
+        },
+        {
+          "id": "B2023_sverige_Q06",
+          "number": 6,
+          "kind": "short_answer",
+          "prompt": "Vad heter Sveriges nuvarande EU-kommissionär och vilka frågor är han/hon ansvarig för?",
+          "raw_text": "Vad heter Sveriges nuvarande EU-kommissionär och vilka frågor är han/hon ansvarig för?"
+        },
+        {
+          "id": "B2023_sverige_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Vem är",
+          "raw_text": "Vem är a) chef för Riksbanken? b) riksgäldsdirektör?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "chef för Riksbanken?"
+            },
+            {
+              "label": "b",
+              "prompt": "riksgäldsdirektör?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_sverige_Q08",
+          "number": 8,
+          "kind": "short_answer",
+          "prompt": "Vem var Sveriges första kvinnliga utrikesminister och vilket parti tillhörde hon?",
+          "raw_text": "Vem var Sveriges första kvinnliga utrikesminister och vilket parti tillhörde hon?"
+        },
+        {
+          "id": "B2023_sverige_Q09",
+          "number": 9,
+          "kind": "short_answer",
+          "prompt": "Det finns fem officiella och lagskyddade minoritetsspråk i Sverige. Ange tre av dessa för full poäng. OBS svaret ska bestå av max tre språk!",
+          "raw_text": "Det finns fem officiella och lagskyddade minoritetsspråk i Sverige. Ange tre av dessa för full poäng. OBS svaret ska bestå av max tre språk!"
+        },
+        {
+          "id": "B2023_sverige_Q10",
+          "number": 10,
+          "kind": "short_answer",
+          "prompt": "Sverige har fyra grundlagar. En av dem är Regeringsformen. Vilka är övriga tre?",
+          "raw_text": "Sverige har fyra grundlagar. En av dem är Regeringsformen. Vilka är övriga tre?"
+        },
+        {
+          "id": "B2023_sverige_Q11",
+          "number": 11,
+          "kind": "mcq",
+          "prompt": "Hur stor är Sveriges BNP? Ringa in rätt svarsalternativ.",
+          "raw_text": "Hur stor är Sveriges BNP? Ringa in rätt svarsalternativ. a) Ca 5 400 miljarder kronor b) Ca 2 500 miljarder kronor c) Ca 1 600 miljarder kronor d) Ca 3000 miljarder kronor",
+          "options": [
+            {
+              "label": "A",
+              "text": "Ca 5 400 miljarder kronor"
+            },
+            {
+              "label": "B",
+              "text": "Ca 2 500 miljarder kronor"
+            },
+            {
+              "label": "C",
+              "text": "Ca 1 600 miljarder kronor"
+            },
+            {
+              "label": "D",
+              "text": "Ca 3000 miljarder kronor"
+            }
+          ]
+        },
+        {
+          "id": "B2023_sverige_Q12",
+          "number": 12,
+          "kind": "short_answer",
+          "prompt": "De militära begreppen bataljon, brigad och kompani betecknar olika stridsenheter. Vilken är störst?",
+          "raw_text": "De militära begreppen bataljon, brigad och kompani betecknar olika stridsenheter. Vilken är störst?"
+        },
+        {
+          "id": "B2023_sverige_Q13",
+          "number": 13,
+          "kind": "short_answer",
+          "prompt": "Vad heter Sveriges överbefälhavare?",
+          "raw_text": "Vad heter Sveriges överbefälhavare?"
+        }
+      ],
+      "fingerprint": "6e2a8989b1c8"
+    },
+    {
+      "id": "battery_2023_globalt",
+      "exam_id": "dips_exam_2023",
+      "exam_year": 2023,
+      "section_id": "globalt",
+      "title": "Samhallsorientering - Globalt",
+      "topic_hint": "T02",
+      "heading": "Samhällsorientering - Globalt (1 poäng per rätt svar/delsvar, max 30",
+      "question_count": 13,
+      "questions": [
+        {
+          "id": "B2023_globalt_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Vad heter",
+          "raw_text": "Vad heter a) FN:s generalsekreterare? b) WHO:s generaldirektör? c) NATO:s generalsekreterare?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "FN:s generalsekreterare?"
+            },
+            {
+              "label": "b",
+              "prompt": "WHO:s generaldirektör?"
+            },
+            {
+              "label": "c",
+              "prompt": "NATO:s generalsekreterare?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Vem är regeringschef eller motsvarande i",
+          "raw_text": "Vem är regeringschef eller motsvarande i a) Tyskland? b) Danmark? c) Sydafrika?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Tyskland?"
+            },
+            {
+              "label": "b",
+              "prompt": "Danmark?"
+            },
+            {
+              "label": "c",
+              "prompt": "Sydafrika?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Klimatfrågan.",
+          "raw_text": "Klimatfrågan. a) Hur mycket ska utsläppen av växthusgaser minska inom EU mellan åren 1990 och 2030? b) När ska EU vara klimatneutralt? c) Vad står förkortningen IPCC för?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Hur mycket ska utsläppen av växthusgaser minska inom EU mellan åren 1990 och 2030?"
+            },
+            {
+              "label": "b",
+              "prompt": "När ska EU vara klimatneutralt?"
+            },
+            {
+              "label": "c",
+              "prompt": "Vad står förkortningen IPCC för?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Vilka regionala och mellanstatliga sammanslutningar döljer sig bakom följande förkortningar?",
+          "raw_text": "Vilka regionala och mellanstatliga sammanslutningar döljer sig bakom följande förkortningar? a) AU b) ANZUS",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "AU"
+            },
+            {
+              "label": "b",
+              "prompt": "ANZUS"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q05",
+          "number": 5,
+          "kind": "list",
+          "prompt": "Ange tre av de fem länderna varifrån flest människor var på flykt 2021? OBS ange max tre länder!",
+          "raw_text": "Ange tre av de fem länderna varifrån flest människor var på flykt 2021? OBS ange max tre länder!",
+          "max_answers": 3
+        },
+        {
+          "id": "B2023_globalt_Q06",
+          "number": 6,
+          "kind": "mcq",
+          "prompt": "Vad innebär principen om non-refoulement? Ringa in rätt svarsalternativ.",
+          "raw_text": "Vad innebär principen om non-refoulement? Ringa in rätt svarsalternativ. a) Principen om icke-inblandning i länders inre angelägenheter b) Princip som förbjuder utvisning av asylsökande till länder där de riskerar att utsättas för vissa typer av förföljelse c) Principen om skydd av civila i konflikter",
+          "options": [
+            {
+              "label": "A",
+              "text": "Principen om icke-inblandning i länders inre angelägenheter"
+            },
+            {
+              "label": "B",
+              "text": "Princip som förbjuder utvisning av asylsökande till länder där de riskerar att utsättas för vissa typer av förföljelse"
+            },
+            {
+              "label": "C",
+              "text": "Principen om skydd av civila i konflikter"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Vilket år",
+          "raw_text": "Vilket år a) upplöstes Sovjetunionen? b) tillträdde Vladimir Putin första gången posten som Rysslands president",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "upplöstes Sovjetunionen?"
+            },
+            {
+              "label": "b",
+              "prompt": "tillträdde Vladimir Putin första gången posten som Rysslands president"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Vad heter",
+          "raw_text": "Vad heter a) talmannen i det amerikanska representanthuset? b) vicepresidenten i USA?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "talmannen i det amerikanska representanthuset?"
+            },
+            {
+              "label": "b",
+              "prompt": "vicepresidenten i USA?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q09",
+          "number": 9,
+          "kind": "mcq",
+          "prompt": "Ungefär hur många muslimer finns det i världen? Ringa in rätt svar.",
+          "raw_text": "Ungefär hur många muslimer finns det i världen? Ringa in rätt svar. a) Ca 800 miljoner b) Ca 1,6 miljarder c) Ca 2,8 miljarder d) Ca 3,4 miljarder",
+          "options": [
+            {
+              "label": "A",
+              "text": "Ca 800 miljoner"
+            },
+            {
+              "label": "B",
+              "text": "Ca 1,6 miljarder"
+            },
+            {
+              "label": "C",
+              "text": "Ca 2,8 miljarder"
+            },
+            {
+              "label": "D",
+              "text": "Ca 3,4 miljarder"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "Indien",
+          "raw_text": "Indien a) Vad heter Indiens premiärminister? b) Vilket parti representerar han/hon? (förkortningen)",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vad heter Indiens premiärminister?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vilket parti representerar han/hon? (förkortningen)"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q11",
+          "number": 11,
+          "kind": "multi_part",
+          "prompt": "Vad heter valutan i",
+          "raw_text": "Vad heter valutan i a) Japan? b) Ungern? c) Danmark?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Japan?"
+            },
+            {
+              "label": "b",
+              "prompt": "Ungern?"
+            },
+            {
+              "label": "c",
+              "prompt": "Danmark?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q12",
+          "number": 12,
+          "kind": "multi_part",
+          "prompt": "Media",
+          "raw_text": "Media a) Vilken är Nordens till upplagan största dagstidning? b) Vad heter Finlands största svenskspråkiga dagstidning?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vilken är Nordens till upplagan största dagstidning?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vad heter Finlands största svenskspråkiga dagstidning?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_globalt_Q13",
+          "number": 13,
+          "kind": "multi_part",
+          "prompt": "Vilka färger ingår i",
+          "raw_text": "Vilka färger ingår i a) Irans flagga? b) Irlands flagga? c) Danmarks flagga?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Irans flagga?"
+            },
+            {
+              "label": "b",
+              "prompt": "Irlands flagga?"
+            },
+            {
+              "label": "c",
+              "prompt": "Danmarks flagga?"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "618fd0be9feb"
+    },
+    {
+      "id": "battery_2023_historia_geografi",
+      "exam_id": "dips_exam_2023",
+      "exam_year": 2023,
+      "section_id": "historia_geografi",
+      "title": "Historia, geografi",
+      "topic_hint": "T06",
+      "heading": "Historia, Geografi mm (1 poäng för varje rätt svar/delsvar, max 30 poäng)",
+      "question_count": 12,
+      "questions": [
+        {
+          "id": "B2023_historia_geografi_Q01",
+          "number": 1,
+          "kind": "short_answer",
+          "prompt": "Ange tre svenska regenter som regerade i Sverige på 1500-talet?",
+          "raw_text": "Ange tre svenska regenter som regerade i Sverige på 1500-talet?"
+        },
+        {
+          "id": "B2023_historia_geografi_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Ange vilket år",
+          "raw_text": "Ange vilket år a) kvinnor för första gången fick rösta i riksdagsvalet i Sverige b) Westfaliska freden slöts c) Sverige blev medlem i EU",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "kvinnor för första gången fick rösta i riksdagsvalet i Sverige"
+            },
+            {
+              "label": "b",
+              "prompt": "Westfaliska freden slöts"
+            },
+            {
+              "label": "c",
+              "prompt": "Sverige blev medlem i EU"
+            }
+          ]
+        },
+        {
+          "id": "B2023_historia_geografi_Q03",
+          "number": 3,
+          "kind": "list",
+          "prompt": "Ange tre medlemsländer i ECOWAS. OBS ange max tre länder!",
+          "raw_text": "Ange tre medlemsländer i ECOWAS. OBS ange max tre länder!",
+          "max_answers": 3
+        },
+        {
+          "id": "B2023_historia_geografi_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Ange residensstad i",
+          "raw_text": "Ange residensstad i a) Hallands län b) Norrbottens län c) Södermanlands län",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Hallands län"
+            },
+            {
+              "label": "b",
+              "prompt": "Norrbottens län"
+            },
+            {
+              "label": "c",
+              "prompt": "Södermanlands län"
+            }
+          ]
+        },
+        {
+          "id": "B2023_historia_geografi_Q05",
+          "number": 5,
+          "kind": "mcq",
+          "prompt": "Uppskatta det ungefärliga befolkningsantalet 2022 i (Ringa in rätt svarsalternativ.)",
+          "raw_text": "Uppskatta det ungefärliga befolkningsantalet 2022 i (Ringa in rätt svarsalternativ.) a) Sverige: i) 8,5 milj, ii) 9,5 milj, iii) 10,5 milj, iv) 11,5 milj. b) EU: i) 300 milj, ii) 500 milj, iii) 700 milj, iv) 900 milj. c) Världen: i) 2 mrd, ii) 4 mrd, iii) 6 mrd, iv) 8 mrd.",
+          "options": [
+            {
+              "label": "A",
+              "text": "Sverige: i) 8,5 milj, ii) 9,5 milj, iii) 10,5 milj, iv) 11,5 milj."
+            },
+            {
+              "label": "B",
+              "text": "EU: i) 300 milj, ii) 500 milj, iii) 700 milj, iv) 900 milj."
+            },
+            {
+              "label": "C",
+              "text": "Världen: i) 2 mrd, ii) 4 mrd, iii) 6 mrd, iv) 8 mrd."
+            }
+          ]
+        },
+        {
+          "id": "B2023_historia_geografi_Q06",
+          "number": 6,
+          "kind": "mcq",
+          "prompt": "Vilket år avslutades det svenska styret över Finland? Ringa in rätt svarsalternativ.",
+          "raw_text": "Vilket år avslutades det svenska styret över Finland? Ringa in rätt svarsalternativ. a) 1905 b) 1809 c) 1721",
+          "options": [
+            {
+              "label": "A",
+              "text": "1905 b) 1809 c) 1721"
+            }
+          ]
+        },
+        {
+          "id": "B2023_historia_geografi_Q07",
+          "number": 7,
+          "kind": "list",
+          "prompt": "Kina delar landgräns med 14 länder. OBS ange max sex länder! (0,5 poäng/land).",
+          "raw_text": "Kina delar landgräns med 14 länder. OBS ange max sex länder! (0,5 poäng/land).",
+          "max_answers": 6
+        },
+        {
+          "id": "B2023_historia_geografi_Q08",
+          "number": 8,
+          "kind": "mcq",
+          "prompt": "Vad är Abrahamavtalen? Ringa in rätt svarsalternativ.",
+          "raw_text": "Vad är Abrahamavtalen? Ringa in rätt svarsalternativ. a) Fredsavtal mellan Egypten och Israel från 1978 b) Normaliseringsavtal mellan Israel och bland andra Förenade Arabemiraten och Bahrain från 2020 c)Fredsavtal mellan Israel och Palestina från 1993",
+          "options": [
+            {
+              "label": "A",
+              "text": "Fredsavtal mellan Egypten och Israel från 1978"
+            },
+            {
+              "label": "B",
+              "text": "Normaliseringsavtal mellan Israel och bland andra Förenade Arabemiraten och Bahrain från 2020"
+            },
+            {
+              "label": "C",
+              "text": "Fredsavtal mellan Israel och Palestina från 1993"
+            }
+          ]
+        },
+        {
+          "id": "B2023_historia_geografi_Q09",
+          "number": 9,
+          "kind": "list",
+          "prompt": "Arktiska rådet är ett forum för samarbete mellan åtta länder (och sex organisationer). Ange sex av dessa länder. (0,5 poäng/land) OBS ange max sex länder!",
+          "raw_text": "Arktiska rådet är ett forum för samarbete mellan åtta länder (och sex organisationer). Ange sex av dessa länder. (0,5 poäng/land) OBS ange max sex länder!",
+          "max_answers": 6
+        },
+        {
+          "id": "B2023_historia_geografi_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "Den mur som delade Berlin i ett Väst- och ett Östberlin öppnades 1989 vilket kom att markera slutet på det s k Kalla kriget och ledde till att de två tyska staterna DDR och BRD återförenades.",
+          "raw_text": "Den mur som delade Berlin i ett Väst- och ett Östberlin öppnades 1989 vilket kom att markera slutet på det s k Kalla kriget och ledde till att de två tyska staterna DDR och BRD återförenades. a) Vilket år byggdes muren? b) Hur uttyds förkortningen DDR? (svaret kan ges på tyska eller svenska) c) Vad hette huvudstaden i det dåvarande Västtyskland?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vilket år byggdes muren?"
+            },
+            {
+              "label": "b",
+              "prompt": "Hur uttyds förkortningen DDR? (svaret kan ges på tyska eller svenska)"
+            },
+            {
+              "label": "c",
+              "prompt": "Vad hette huvudstaden i det dåvarande Västtyskland?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_historia_geografi_Q11",
+          "number": 11,
+          "kind": "short_answer",
+          "prompt": "Nordkorea har sedan bildandet 1948 haft tre på varandra följande ledare. Vad heter de?",
+          "raw_text": "Nordkorea har sedan bildandet 1948 haft tre på varandra följande ledare. Vad heter de?"
+        },
+        {
+          "id": "B2023_historia_geografi_Q12",
+          "number": 12,
+          "kind": "short_answer",
+          "prompt": "Vilket är till folkmängden Afrikas största land?",
+          "raw_text": "Vilket är till folkmängden Afrikas största land?"
+        }
+      ],
+      "fingerprint": "5bc9408dd367"
+    },
+    {
+      "id": "battery_2023_kultur",
+      "exam_id": "dips_exam_2023",
+      "exam_year": 2023,
+      "section_id": "kultur",
+      "title": "Kultur",
+      "topic_hint": "T07",
+      "heading": "Kultur mm (1 poäng för varje rätt svar/delsvar, max 30 poäng)",
+      "question_count": 17,
+      "questions": [
+        {
+          "id": "B2023_kultur_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Svenska Akademien",
+          "raw_text": "Svenska Akademien a) Vem grundade Svenska Akademien? b) Hur många ledamöter har Svenska Akademien? c) Vad heter Akademiens ständige sekreterare?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vem grundade Svenska Akademien?"
+            },
+            {
+              "label": "b",
+              "prompt": "Hur många ledamöter har Svenska Akademien?"
+            },
+            {
+              "label": "c",
+              "prompt": "Vad heter Akademiens ständige sekreterare?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_kultur_Q02",
+          "number": 2,
+          "kind": "short_answer",
+          "prompt": "Vad heter Sveriges ärkebiskop?",
+          "raw_text": "Vad heter Sveriges ärkebiskop?"
+        },
+        {
+          "id": "B2023_kultur_Q03",
+          "number": 3,
+          "kind": "list",
+          "prompt": "Sedan 2013 har fem kvinnliga författare fått Nobelpriset i litteratur, senast Annie Ernaux. Nämn tre av övriga fyra. OBS ange max tre personer!",
+          "raw_text": "Sedan 2013 har fem kvinnliga författare fått Nobelpriset i litteratur, senast Annie Ernaux. Nämn tre av övriga fyra. OBS ange max tre personer!",
+          "max_answers": 3
+        },
+        {
+          "id": "B2023_kultur_Q04",
+          "number": 4,
+          "kind": "mcq",
+          "prompt": "Vilken av följande artister fick Polarpriset 2022? Ringa in rätt svarsalternativ.",
+          "raw_text": "Vilken av följande artister fick Polarpriset 2022? Ringa in rätt svarsalternativ. a) Iggy Pop b) Björn Ulvaeus c) Paul McCartney d) Emmy Lou",
+          "options": [
+            {
+              "label": "A",
+              "text": "Iggy Pop"
+            },
+            {
+              "label": "B",
+              "text": "Björn Ulvaeus"
+            },
+            {
+              "label": "C",
+              "text": "Paul McCartney"
+            },
+            {
+              "label": "D",
+              "text": "Emmy Lou"
+            }
+          ]
+        },
+        {
+          "id": "B2023_kultur_Q05",
+          "number": 5,
+          "kind": "short_answer",
+          "prompt": "Augustpriset 2022 - ange efternamn på vinnaren eller titeln på vinnarboken i kategorin skönlitteratur.",
+          "raw_text": "Augustpriset 2022 - ange efternamn på vinnaren eller titeln på vinnarboken i kategorin skönlitteratur."
+        },
+        {
+          "id": "B2023_kultur_Q06",
+          "number": 6,
+          "kind": "short_answer",
+          "prompt": "En aktuell serie på SvT heter ”Händelser vid vatten”. Den bygger på en svensk roman. Vem skrev romanen?",
+          "raw_text": "En aktuell serie på SvT heter ”Händelser vid vatten”. Den bygger på en svensk roman. Vem skrev romanen?"
+        },
+        {
+          "id": "B2023_kultur_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Den svenska operan Aniara, som hade premiär 1959, bygger på ett diktepos av en svensk författare och poet.",
+          "raw_text": "Den svenska operan Aniara, som hade premiär 1959, bygger på ett diktepos av en svensk författare och poet. a) Vad heter författaren? b) Vem har skrivit musiken till operan?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vad heter författaren?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vem har skrivit musiken till operan?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_kultur_Q08",
+          "number": 8,
+          "kind": "mcq",
+          "prompt": "Skellefteå har ett internationellt prisbelönat kulturhus, beläget i ett av världens högsta trähus. Vad heter kulturhuset? Ringa in rätt svarsalternativ.",
+          "raw_text": "Skellefteå har ett internationellt prisbelönat kulturhus, beläget i ett av världens högsta trähus. Vad heter kulturhuset? Ringa in rätt svarsalternativ. a) Skellefteå kulturhus b) Sara kulturhus c) Kulturhuset trappan d) Kulturhuset batteriet",
+          "options": [
+            {
+              "label": "A",
+              "text": "Skellefteå kulturhus"
+            },
+            {
+              "label": "B",
+              "text": "Sara kulturhus"
+            },
+            {
+              "label": "C",
+              "text": "Kulturhuset trappan"
+            },
+            {
+              "label": "D",
+              "text": "Kulturhuset batteriet"
+            }
+          ]
+        },
+        {
+          "id": "B2023_kultur_Q09",
+          "number": 9,
+          "kind": "short_answer",
+          "prompt": "Vem har skapat följande konstverk? Mona Lisa (La Joconde)? Non-Violence? Guernica?",
+          "raw_text": "Vem har skapat följande konstverk? Mona Lisa (La Joconde)? Non-Violence? Guernica?"
+        },
+        {
+          "id": "B2023_kultur_Q10",
+          "number": 10,
+          "kind": "short_answer",
+          "prompt": "Inom vilken inriktning av måleri är följande konstnärer framstående? Carolina Alexandra Falkholt Inge Schiöler Claude Monet",
+          "raw_text": "Inom vilken inriktning av måleri är följande konstnärer framstående? Carolina Alexandra Falkholt Inge Schiöler Claude Monet"
+        },
+        {
+          "id": "B2023_kultur_Q11",
+          "number": 11,
+          "kind": "short_answer",
+          "prompt": "Filmpriset Guldbaggen instiftades 1964. Då gick priset för bästa film till filmen Tystnaden. Vem regisserade den? Vid årets Guldbaggegala gick priset för bästa manus till filmen Boy from Heaven. Vem skrev både manus och regisserade filmen?",
+          "raw_text": "Filmpriset Guldbaggen instiftades 1964. Då gick priset för bästa film till filmen Tystnaden. Vem regisserade den? Vid årets Guldbaggegala gick priset för bästa manus till filmen Boy from Heaven. Vem skrev både manus och regisserade filmen?"
+        },
+        {
+          "id": "B2023_kultur_Q12",
+          "number": 12,
+          "kind": "multi_part",
+          "prompt": "Vilka yrken har följande personer:",
+          "raw_text": "Vilka yrken har följande personer: a) Edouard Louis? b) Alexander Ekman? c) Björn Frantzén?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Edouard Louis?"
+            },
+            {
+              "label": "b",
+              "prompt": "Alexander Ekman?"
+            },
+            {
+              "label": "c",
+              "prompt": "Björn Frantzén?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_kultur_Q13",
+          "number": 13,
+          "kind": "mcq",
+          "prompt": "Vilken svensk kompositör tilldelades en Oscar 2019 för musiken till filmen Black Panther? Ringa in rätt svarsalternativ.",
+          "raw_text": "Vilken svensk kompositör tilldelades en Oscar 2019 för musiken till filmen Black Panther? Ringa in rätt svarsalternativ. a) Ludwig Göransson b) Max Martin c) Tim Bergling",
+          "options": [
+            {
+              "label": "A",
+              "text": "Ludwig Göransson"
+            },
+            {
+              "label": "B",
+              "text": "Max Martin"
+            },
+            {
+              "label": "C",
+              "text": "Tim Bergling"
+            }
+          ]
+        },
+        {
+          "id": "B2023_kultur_Q04",
+          "number": 4,
+          "kind": "short_answer",
+          "prompt": "Zara Larsson",
+          "raw_text": "Zara Larsson"
+        },
+        {
+          "id": "B2023_kultur_Q14",
+          "number": 14,
+          "kind": "multi_part",
+          "prompt": "2022 spelades VM i fotboll för herrar och EM i fotboll för damer.",
+          "raw_text": "2022 spelades VM i fotboll för herrar och EM i fotboll för damer. a) I vilket land ägde VM rum? b) Vilket land vann VM? c) Hur långt gick Sverige i EM?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "I vilket land ägde VM rum?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vilket land vann VM?"
+            },
+            {
+              "label": "c",
+              "prompt": "Hur långt gick Sverige i EM?"
+            }
+          ]
+        },
+        {
+          "id": "B2023_kultur_Q15",
+          "number": 15,
+          "kind": "mcq",
+          "prompt": "Vilken av följande barnbokskaraktärer har skapats av författaren och konstnären Gunilla Bergström? Ringa in rätt svarsalternativ.",
+          "raw_text": "Vilken av följande barnbokskaraktärer har skapats av författaren och konstnären Gunilla Bergström? Ringa in rätt svarsalternativ. a) Pettsson och Findus b) Greta Gris c) Lasse Majas detektivbyrå d) Alfons Åberg",
+          "options": [
+            {
+              "label": "A",
+              "text": "Pettsson och Findus"
+            },
+            {
+              "label": "B",
+              "text": "Greta Gris"
+            },
+            {
+              "label": "C",
+              "text": "Lasse Majas detektivbyrå"
+            },
+            {
+              "label": "D",
+              "text": "Alfons Åberg"
+            }
+          ]
+        },
+        {
+          "id": "B2023_kultur_Q16",
+          "number": 16,
+          "kind": "mcq",
+          "prompt": "Vilket eller vilka av följande nordiska länder har en så kallad kulturkanon? Ringa in rätt svarsalternativ.",
+          "raw_text": "Vilket eller vilka av följande nordiska länder har en så kallad kulturkanon? Ringa in rätt svarsalternativ. a) Danmark b) Danmark och Norge c) Finland och Norge d) Sverige och Danmark",
+          "options": [
+            {
+              "label": "A",
+              "text": "Danmark"
+            },
+            {
+              "label": "B",
+              "text": "Danmark och Norge"
+            },
+            {
+              "label": "C",
+              "text": "Finland och Norge"
+            },
+            {
+              "label": "D",
+              "text": "Sverige och Danmark"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "7ed25eb97fba"
+    },
+    {
+      "id": "battery_2023_ordforstaelse",
+      "exam_id": "dips_exam_2023",
+      "exam_year": 2023,
+      "section_id": "ordforstaelse",
+      "title": "Ordforstaelse",
+      "topic_hint": "T09",
+      "heading": "Ordförståelse mm (2 poäng för varje rätt svar, max 30 poäng)",
+      "question_count": 15,
+      "questions": [
+        {
+          "id": "B2023_ordforstaelse_Q01",
+          "number": 1,
+          "kind": "mcq",
+          "prompt": "Ratificera",
+          "raw_text": "Ratificera A) avgiftsbelägga, B) godkänna, C) klassificera, D) sterilisera",
+          "options": [
+            {
+              "label": "A",
+              "text": "avgiftsbelägga"
+            },
+            {
+              "label": "B",
+              "text": "godkänna"
+            },
+            {
+              "label": "C",
+              "text": "klassificera"
+            },
+            {
+              "label": "D",
+              "text": "sterilisera"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q02",
+          "number": 2,
+          "kind": "mcq",
+          "prompt": "Annullera",
+          "raw_text": "Annullera A) åldersbestämma, B) framföra ursäkt, C) presentera, D) ogiltigförklara",
+          "options": [
+            {
+              "label": "A",
+              "text": "åldersbestämma"
+            },
+            {
+              "label": "B",
+              "text": "framföra ursäkt"
+            },
+            {
+              "label": "C",
+              "text": "presentera"
+            },
+            {
+              "label": "D",
+              "text": "ogiltigförklara"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q03",
+          "number": 3,
+          "kind": "mcq",
+          "prompt": "Tariff",
+          "raw_text": "Tariff A) taxa, B) diplomatisk skriftväxling, C) diplomatisk titel, D) avtal",
+          "options": [
+            {
+              "label": "A",
+              "text": "taxa"
+            },
+            {
+              "label": "B",
+              "text": "diplomatisk skriftväxling"
+            },
+            {
+              "label": "C",
+              "text": "diplomatisk titel"
+            },
+            {
+              "label": "D",
+              "text": "avtal"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q04",
+          "number": 4,
+          "kind": "mcq",
+          "prompt": "OSA strukturanalys, D) oroväckande säkerhetsavvikelse",
+          "raw_text": "OSA A) officiell skriftlig ansökan, B) om svar anhålles, C) organisatorisk strukturanalys, D) oroväckande säkerhetsavvikelse",
+          "options": [
+            {
+              "label": "A",
+              "text": "officiell skriftlig ansökan"
+            },
+            {
+              "label": "B",
+              "text": "om svar anhålles"
+            },
+            {
+              "label": "C",
+              "text": "organisatorisk"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q05",
+          "number": 5,
+          "kind": "mcq",
+          "prompt": "Depreciering territoriellt anspråk",
+          "raw_text": "Depreciering A) nedskrivning, B) uppskrivning, C) territoriellt avstående, D) territoriellt anspråk",
+          "options": [
+            {
+              "label": "A",
+              "text": "nedskrivning"
+            },
+            {
+              "label": "B",
+              "text": "uppskrivning"
+            },
+            {
+              "label": "C",
+              "text": "territoriellt avstående"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q06",
+          "number": 6,
+          "kind": "mcq",
+          "prompt": "Parafera",
+          "raw_text": "Parafera A) framföra, B) deklarera, C) inofficiellt föreslå, D) signera",
+          "options": [
+            {
+              "label": "A",
+              "text": "framföra"
+            },
+            {
+              "label": "B",
+              "text": "deklarera"
+            },
+            {
+              "label": "C",
+              "text": "inofficiellt föreslå"
+            },
+            {
+              "label": "D",
+              "text": "signera"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q07",
+          "number": 7,
+          "kind": "mcq",
+          "prompt": "Inhibera",
+          "raw_text": "Inhibera A) ställa in, B) försvåra, C) befria, D) bekräfta",
+          "options": [
+            {
+              "label": "A",
+              "text": "ställa in"
+            },
+            {
+              "label": "B",
+              "text": "försvåra"
+            },
+            {
+              "label": "C",
+              "text": "befria"
+            },
+            {
+              "label": "D",
+              "text": "bekräfta"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q08",
+          "number": 8,
+          "kind": "mcq",
+          "prompt": "En framställan förklaring",
+          "raw_text": "En framställan A) en avbildning, B) en begäran, C) att skjuta upp något, D) en förklaring",
+          "options": [
+            {
+              "label": "A",
+              "text": "en avbildning"
+            },
+            {
+              "label": "B",
+              "text": "en begäran"
+            },
+            {
+              "label": "C",
+              "text": "att skjuta upp något"
+            },
+            {
+              "label": "D",
+              "text": "en"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q09",
+          "number": 9,
+          "kind": "mcq",
+          "prompt": "Generisk",
+          "raw_text": "Generisk A) ovanlig, B) allmängiltig, C) inneboende, D) sjuklig",
+          "options": [
+            {
+              "label": "A",
+              "text": "ovanlig"
+            },
+            {
+              "label": "B",
+              "text": "allmängiltig"
+            },
+            {
+              "label": "C",
+              "text": "inneboende"
+            },
+            {
+              "label": "D",
+              "text": "sjuklig"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q10",
+          "number": 10,
+          "kind": "mcq",
+          "prompt": "Gross",
+          "raw_text": "Gross A) 12, B) 20, C) 144, D) 240.",
+          "options": [
+            {
+              "label": "A",
+              "text": "12"
+            },
+            {
+              "label": "B",
+              "text": "20"
+            },
+            {
+              "label": "C",
+              "text": "144"
+            },
+            {
+              "label": "D",
+              "text": "240."
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q11",
+          "number": 11,
+          "kind": "mcq",
+          "prompt": "Interpellation",
+          "raw_text": "Interpellation A) en internationell arresteringsorder, B) ett förslag till en ny lag eller lagändring som regeringen lämnar till riksdagen, C) en fråga från en riksdagsledamot till ett statsråd, som besvaras muntligt. D) ett förslag till beslut som läggs fram av en eller flera riksdagsledamöter",
+          "options": [
+            {
+              "label": "A",
+              "text": "en internationell arresteringsorder,"
+            },
+            {
+              "label": "B",
+              "text": "ett förslag till en ny lag eller lagändring som regeringen lämnar till riksdagen,"
+            },
+            {
+              "label": "C",
+              "text": "en fråga från en riksdagsledamot till ett statsråd, som besvaras muntligt."
+            },
+            {
+              "label": "D",
+              "text": "ett förslag till beslut som läggs fram av en eller flera riksdagsledamöter"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q12",
+          "number": 12,
+          "kind": "mcq",
+          "prompt": "Vetorätt rätt att vägra godkännande",
+          "raw_text": "Vetorätt A) inresetillstånd, B) rätt att delta i omröstning, C) importrättighet, D) rätt att vägra godkännande",
+          "options": [
+            {
+              "label": "A",
+              "text": "inresetillstånd"
+            },
+            {
+              "label": "B",
+              "text": "rätt att delta i omröstning"
+            },
+            {
+              "label": "C",
+              "text": "importrättighet"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q13",
+          "number": 13,
+          "kind": "mcq",
+          "prompt": "Ministär regeringsperiod",
+          "raw_text": "Ministär ministerstab, B) ministrarna i en regering, C) ministermandat, D) regeringsperiod",
+          "options": [
+            {
+              "label": "B",
+              "text": "ministrarna i en regering"
+            },
+            {
+              "label": "C",
+              "text": "ministermandat"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q14",
+          "number": 14,
+          "kind": "mcq",
+          "prompt": "Hovstat mellan hovet och regeringen, D) konselj",
+          "raw_text": "Hovstat A) monarki, B) hovets organisation och budget, C) samverkansorgan mellan hovet och regeringen, D) konselj",
+          "options": [
+            {
+              "label": "A",
+              "text": "monarki"
+            },
+            {
+              "label": "B",
+              "text": "hovets organisation och budget"
+            },
+            {
+              "label": "C",
+              "text": "samverkansorgan"
+            }
+          ]
+        },
+        {
+          "id": "B2023_ordforstaelse_Q15",
+          "number": 15,
+          "kind": "mcq",
+          "prompt": "Vilket av följande ord ingick inte i nyordlistan 2022? Frågebatteri UD-test Svar anges direkt i frågeformuläret. OBS: Vid frågor om personnamn räcker det att efternamnet anges.",
+          "raw_text": "Vilket av följande ord ingick inte i nyordlistan 2022? A) Putinpris, B) smygflation, C) returmissbrukare, D) mikrofiche. Frågebatteri UD-test Svar anges direkt i frågeformuläret. OBS: Vid frågor om personnamn räcker det att efternamnet anges.",
+          "options": [
+            {
+              "label": "A",
+              "text": "Putinpris"
+            },
+            {
+              "label": "B",
+              "text": "smygflation"
+            },
+            {
+              "label": "C",
+              "text": "returmissbrukare"
+            },
+            {
+              "label": "D",
+              "text": "mikrofiche."
+            }
+          ]
+        }
+      ],
+      "fingerprint": "ceafcb8ea70e"
+    },
+    {
+      "id": "battery_2024_sverige",
+      "exam_id": "dips_exam_2024",
+      "exam_year": 2024,
+      "section_id": "sverige",
+      "title": "Samhallsorientering - Sverige",
+      "topic_hint": "T01",
+      "heading": "Samhällsorientering - Sverige (1 poäng per rätt svar/delsvar, max 39 poäng)",
+      "question_count": 13,
+      "questions": [
+        {
+          "id": "B2024_sverige_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Ange vem som är",
+          "raw_text": "Ange vem som är a) utrikesminister b) försvarsminister c) skolminister",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "utrikesminister"
+            },
+            {
+              "label": "b",
+              "prompt": "försvarsminister"
+            },
+            {
+              "label": "c",
+              "prompt": "skolminister"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Några frågor om Sveriges riksdag.",
+          "raw_text": "Några frågor om Sveriges riksdag. a) Hur många ledamöter har riksdagen? b) Vem är ordförande i utrikesutskottet? c) Vilket parti tillhör hon/han?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Hur många ledamöter har riksdagen?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vem är ordförande i utrikesutskottet?"
+            },
+            {
+              "label": "c",
+              "prompt": "Vilket parti tillhör hon/han?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Möjligheten att anordna rådgivande nationella folkomröstningar infördes i Sverige 1922. Sedan dess har sex sådana genomförts. Ange tre ämnesområden som varit föremål för sådana omröstningar.",
+          "raw_text": "Möjligheten att anordna rådgivande nationella folkomröstningar infördes i Sverige 1922. Sedan dess har sex sådana genomförts. Ange tre ämnesområden som varit föremål för sådana omröstningar. a) b) c)"
+        },
+        {
+          "id": "B2024_sverige_Q04",
+          "number": 4,
+          "kind": "mcq",
+          "prompt": "Sverige är indelat i 21 regioner och ett antal kommuner.",
+          "raw_text": "Sverige är indelat i 21 regioner och ett antal kommuner. a) Hur många kommuner? Ringa in rätt svarsalternativ. i) 140, ii) 210, iii) 290, iv) 320 b) Vad heter en kommuns högsta beslutande organ? c) Vilket år äger nästa kommunval rum?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Hur många kommuner? Ringa in rätt svarsalternativ."
+            },
+            {
+              "label": "I",
+              "text": "140, ii) 210, iii) 290, iv) 320"
+            },
+            {
+              "label": "B",
+              "text": "Vad heter en kommuns högsta beslutande organ?"
+            },
+            {
+              "label": "C",
+              "text": "Vilket år äger nästa kommunval rum?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Sverige och EU.",
+          "raw_text": "Sverige och EU. a) Vilket år blev Sverige medlem i EU? b) Vem är ordförande i Riksdagens EU-nämnd? c) Sverige har varit ordförande i EU:s ministerråd tre gånger, senast våren 2023. Vilka årtal var Sveriges tidigare EU-ordförandeskap?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vilket år blev Sverige medlem i EU?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vem är ordförande i Riksdagens EU-nämnd?"
+            },
+            {
+              "label": "c",
+              "prompt": "Sverige har varit ordförande i EU:s ministerråd tre gånger, senast våren 2023. Vilka årtal var Sveriges tidigare EU-ordförandeskap?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Ange vem som är:",
+          "raw_text": "Ange vem som är: a) GD för Universitetskanslersämbetet b) ordförande för SFS c) rikspolischef",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "GD för Universitetskanslersämbetet"
+            },
+            {
+              "label": "b",
+              "prompt": "ordförande för SFS"
+            },
+            {
+              "label": "c",
+              "prompt": "rikspolischef"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "I vilka massmedier är följande journalister verksamma?",
+          "raw_text": "I vilka massmedier är följande journalister verksamma? a) Amanda Sokolnicki b) Anna Hedenmo c) Lisa Irenius",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Amanda Sokolnicki"
+            },
+            {
+              "label": "b",
+              "prompt": "Anna Hedenmo"
+            },
+            {
+              "label": "c",
+              "prompt": "Lisa Irenius"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q08",
+          "number": 8,
+          "kind": "mcq",
+          "prompt": "Sveriges handel.",
+          "raw_text": "Sveriges handel. a) Nämn två av Sveriges tre största exportmarknader för varor 2022. b) Hur stor var Sveriges totala varu- och tjänsteexport 2022? Ringa in rätt svarsalternativ. i) 3 140 miljarder SEK, ii) 5 140 miljarder SEK, iii) ca 9 000 miljarder SEK",
+          "options": [
+            {
+              "label": "A",
+              "text": "Nämn två av Sveriges tre största exportmarknader för varor 2022."
+            },
+            {
+              "label": "B",
+              "text": "Hur stor var Sveriges totala varu- och tjänsteexport 2022? Ringa in rätt svarsalternativ."
+            },
+            {
+              "label": "I",
+              "text": "3 140 miljarder SEK, ii) 5 140 miljarder SEK, iii) ca 9 000 miljarder SEK"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Inom vilken bransch är följande svenska företag verksamma/vad tillverkar företaget?",
+          "raw_text": "Inom vilken bransch är följande svenska företag verksamma/vad tillverkar företaget? a) Mojang b) LKAB... c) Altris ...",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Mojang"
+            },
+            {
+              "label": "b",
+              "prompt": "LKAB..."
+            },
+            {
+              "label": "c",
+              "prompt": "Altris ..."
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "Inom vilka områden verkar följande organisationer:",
+          "raw_text": "Inom vilka områden verkar följande organisationer: a) IM b) SULF , c) Fridays For Future",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "IM"
+            },
+            {
+              "label": "b",
+              "prompt": "SULF ,"
+            },
+            {
+              "label": "c",
+              "prompt": "Fridays For Future"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q11",
+          "number": 11,
+          "kind": "multi_part",
+          "prompt": "Samerna är Sveriges enda ursprungsbefolkning.",
+          "raw_text": "Samerna är Sveriges enda ursprungsbefolkning. a) Vad kallas samernas folkvalda församling? b) Till vilken språkgrupp hör det samiska språket? c) I vilken ort är svenska fjäll- och samemuseet Ajtte beläget?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vad kallas samernas folkvalda församling?"
+            },
+            {
+              "label": "b",
+              "prompt": "Till vilken språkgrupp hör det samiska språket?"
+            },
+            {
+              "label": "c",
+              "prompt": "I vilken ort är svenska fjäll- och samemuseet Ajtte beläget?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_sverige_Q12",
+          "number": 12,
+          "kind": "short_answer",
+          "prompt": "Ca 20 procent av Sveriges befolkning är födda i ett annat land, vilka är de tre vanligaste ursprungsländerna (utan inbördes ordning)?",
+          "raw_text": "Ca 20 procent av Sveriges befolkning är födda i ett annat land, vilka är de tre vanligaste ursprungsländerna (utan inbördes ordning)?"
+        },
+        {
+          "id": "B2024_sverige_Q13",
+          "number": 13,
+          "kind": "multi_part",
+          "prompt": "Vilka fick årets Nobelpris i följande kategorier:",
+          "raw_text": "Vilka fick årets Nobelpris i följande kategorier: a) Litteratur b) Fred c) Ekonomi* * Sveriges Riksbanks pris i ekonomisk vetenskap till Alfred Nobels minne.",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Litteratur"
+            },
+            {
+              "label": "b",
+              "prompt": "Fred"
+            },
+            {
+              "label": "c",
+              "prompt": "Ekonomi* * Sveriges Riksbanks pris i ekonomisk vetenskap till Alfred Nobels minne."
+            }
+          ]
+        }
+      ],
+      "fingerprint": "4243b35b61c6"
+    },
+    {
+      "id": "battery_2024_globalt",
+      "exam_id": "dips_exam_2024",
+      "exam_year": 2024,
+      "section_id": "globalt",
+      "title": "Samhallsorientering - Globalt",
+      "topic_hint": "T02",
+      "heading": "Samhällsorientering - Globalt (1 poäng per rätt svar/delsvar, max 39 poäng)",
+      "question_count": 13,
+      "questions": [
+        {
+          "id": "B2024_globalt_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Vad heter",
+          "raw_text": "Vad heter a) Europeiska rådets ordförande? b) Europeiska kommissionens ordförande? c) EU:s utrikeschef (Unionens höga representant för utrikesfrågor och säkerhetspolitik)?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Europeiska rådets ordförande?"
+            },
+            {
+              "label": "b",
+              "prompt": "Europeiska kommissionens ordförande?"
+            },
+            {
+              "label": "c",
+              "prompt": "EU:s utrikeschef (Unionens höga representant för utrikesfrågor och säkerhetspolitik)?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Lite mer om EU.",
+          "raw_text": "Lite mer om EU. a) 1992 slöts det fördrag med vilket Ekonomiska europeiska gemenskapen (EG) omvandlades till en politisk union, Europeiska unionen (EU). Vad heter fördraget? b) När hålls nästa val till Europaparlamentet (år och månad)? c) Vad heter Europaparlamentets talman?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "1992 slöts det fördrag med vilket Ekonomiska europeiska gemenskapen (EG) omvandlades till en politisk union, Europeiska unionen (EU). Vad heter fördraget?"
+            },
+            {
+              "label": "b",
+              "prompt": "När hålls nästa val till Europaparlamentet (år och månad)?"
+            },
+            {
+              "label": "c",
+              "prompt": "Vad heter Europaparlamentets talman?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Vilka sex länder ingick i den europeiska kol- och stålgemenskapen som bildades 1951 och som är ursprunget till dagens EU? (0,5 poäng per rätt svar)",
+          "raw_text": "Vilka sex länder ingick i den europeiska kol- och stålgemenskapen som bildades 1951 och som är ursprunget till dagens EU? (0,5 poäng per rätt svar) a) b) c) d) e) f)"
+        },
+        {
+          "id": "B2024_globalt_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Vad heter utrikesministern i",
+          "raw_text": "Vad heter utrikesministern i a) Finland? b) Frankrike? d) Storbritannien?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Finland?"
+            },
+            {
+              "label": "b",
+              "prompt": "Frankrike?"
+            },
+            {
+              "label": "d",
+              "prompt": "Storbritannien?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Vad heter presidenten i",
+          "raw_text": "Vad heter presidenten i a) Tyskland? b) Brasilien? c) Egypten?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Tyskland?"
+            },
+            {
+              "label": "b",
+              "prompt": "Brasilien?"
+            },
+            {
+              "label": "c",
+              "prompt": "Egypten?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Vad kallas parlamenten i",
+          "raw_text": "Vad kallas parlamenten i a) Ryssland? b) Island? c) Norge?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Ryssland?"
+            },
+            {
+              "label": "b",
+              "prompt": "Island?"
+            },
+            {
+              "label": "c",
+              "prompt": "Norge?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "I vilket land har följande organisationer sitt säte:",
+          "raw_text": "I vilket land har följande organisationer sitt säte: a) KfW och GIZ b) Médecins Sans Frontières c) Asian Development Bank",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "KfW och GIZ"
+            },
+            {
+              "label": "b",
+              "prompt": "Médecins Sans Frontières"
+            },
+            {
+              "label": "c",
+              "prompt": "Asian Development Bank"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Ange tre regioner i Ukraina som Ryssland 2022 utropade som ryska:",
+          "raw_text": "Ange tre regioner i Ukraina som Ryssland 2022 utropade som ryska: a) b) c)"
+        },
+        {
+          "id": "B2024_globalt_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Ange geografisk hemvist för följande grupper:",
+          "raw_text": "Ange geografisk hemvist för följande grupper: a) Hizbollah b) Proud boys c) Jemaah Islamiyah",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Hizbollah"
+            },
+            {
+              "label": "b",
+              "prompt": "Proud boys"
+            },
+            {
+              "label": "c",
+              "prompt": "Jemaah Islamiyah"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "Den 18 maj 2022 ansökte Sverige om medlemskap i Nato.",
+          "raw_text": "Den 18 maj 2022 ansökte Sverige om medlemskap i Nato. a) Vilket år bildades Nato? b) Vad står förkortningen Nato för? c) Vad är SHAPE inom Nato?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vilket år bildades Nato?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vad står förkortningen Nato för?"
+            },
+            {
+              "label": "c",
+              "prompt": "Vad är SHAPE inom Nato?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q11",
+          "number": 11,
+          "kind": "multi_part",
+          "prompt": "Några frågor om de Globala målen, SDG.",
+          "raw_text": "Några frågor om de Globala målen, SDG. a) Hur många är huvudmålen? b) När ska målen vara uppfyllda? c) Vad kallades målsättningarna som föregick SDG?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Hur många är huvudmålen?"
+            },
+            {
+              "label": "b",
+              "prompt": "När ska målen vara uppfyllda?"
+            },
+            {
+              "label": "c",
+              "prompt": "Vad kallades målsättningarna som föregick SDG?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q12",
+          "number": 12,
+          "kind": "multi_part",
+          "prompt": "Det nordiska samarbetet lär vara världens äldsta i sitt slag.",
+          "raw_text": "Det nordiska samarbetet lär vara världens äldsta i sitt slag. a) Vad heter samarbetsorganet för parlamentariker? b) Vad heter samarbetsorganet för regeringarna? c) Vad är NB8?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vad heter samarbetsorganet för parlamentariker?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vad heter samarbetsorganet för regeringarna?"
+            },
+            {
+              "label": "c",
+              "prompt": "Vad är NB8?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_globalt_Q13",
+          "number": 13,
+          "kind": "mcq",
+          "prompt": "Några frågor om världens religioner.",
+          "raw_text": "Några frågor om världens religioner. a) Vad heter den högtid som avslutar den muslimska fastemånaden Ramadan? b) Vad uppmärksammas vid den judiska högtiden Jom Kippur? c) Ungefär hur många kristna finns det i världen? Ringa in rätt svarsalternativ. i) ca 1,3 miljarder, ii) ca 2,6 miljarder, iii) 3,5 miljarder",
+          "options": [
+            {
+              "label": "A",
+              "text": "Vad heter den högtid som avslutar den muslimska fastemånaden Ramadan?"
+            },
+            {
+              "label": "B",
+              "text": "Vad uppmärksammas vid den judiska högtiden Jom Kippur?"
+            },
+            {
+              "label": "C",
+              "text": "Ungefär hur många kristna finns det i världen? Ringa in rätt svarsalternativ."
+            },
+            {
+              "label": "I",
+              "text": "ca 1,3 miljarder, ii) ca 2,6 miljarder, iii) 3,5 miljarder"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "9477256591d0"
+    },
+    {
+      "id": "battery_2024_historia_geografi",
+      "exam_id": "dips_exam_2024",
+      "exam_year": 2024,
+      "section_id": "historia_geografi",
+      "title": "Historia, geografi",
+      "topic_hint": "T06",
+      "heading": "Historia, Geografi mm (1 poäng för varje rätt svar/delsvar, max 39 poäng)",
+      "question_count": 13,
+      "questions": [
+        {
+          "id": "B2024_historia_geografi_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Vilket decennium blev följande länder självständiga:",
+          "raw_text": "Vilket decennium blev följande länder självständiga: a) Indien b) Zimbabwe c) Brasilien",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Indien"
+            },
+            {
+              "label": "b",
+              "prompt": "Zimbabwe"
+            },
+            {
+              "label": "c",
+              "prompt": "Brasilien"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Några frågor kring det s k Kalla kriget.",
+          "raw_text": "Några frågor kring det s k Kalla kriget. a) Vad var Warszawapakten? b) Vilket år dog Stalin? c) Vilket år inträffade Kubakrisen?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vad var Warszawapakten?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vilket år dog Stalin?"
+            },
+            {
+              "label": "c",
+              "prompt": "Vilket år inträffade Kubakrisen?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Var finns följande antika monument?",
+          "raw_text": "Var finns följande antika monument? a) Parthenon, i vilken stad? b) Pantheon, i vilken stad? c) Hadrianus mur, i vilket land?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Parthenon, i vilken stad?"
+            },
+            {
+              "label": "b",
+              "prompt": "Pantheon, i vilken stad?"
+            },
+            {
+              "label": "c",
+              "prompt": "Hadrianus mur, i vilket land?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Vad hette ledarna i följande länder 1962:",
+          "raw_text": "Vad hette ledarna i följande länder 1962: a) Kina b) USA c) Frankrike",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Kina"
+            },
+            {
+              "label": "b",
+              "prompt": "USA"
+            },
+            {
+              "label": "c",
+              "prompt": "Frankrike"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "I vilka länder ligger följande uddar?",
+          "raw_text": "I vilka länder ligger följande uddar? a) Godahoppsudden b) Kap Farvel c) Kap Horn",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Godahoppsudden"
+            },
+            {
+              "label": "b",
+              "prompt": "Kap Farvel"
+            },
+            {
+              "label": "c",
+              "prompt": "Kap Horn"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "I vilken stad hölls följande möten?",
+          "raw_text": "I vilken stad hölls följande möten? a) FNs miljökonferens 1972 b) Avtal 1923 för att fastställa Turkiets gränser c) Platsen där Sveriges första riksdag sägs ha hållits 1435",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "FNs miljökonferens 1972"
+            },
+            {
+              "label": "b",
+              "prompt": "Avtal 1923 för att fastställa Turkiets gränser"
+            },
+            {
+              "label": "c",
+              "prompt": "Platsen där Sveriges första riksdag sägs ha hållits 1435"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Ryssland är Europas till ytan största land. Vilka tre länder kommer därefter? Anges i fallande ordning.",
+          "raw_text": "Ryssland är Europas till ytan största land. Vilka tre länder kommer därefter? Anges i fallande ordning. a) b) c)"
+        },
+        {
+          "id": "B2024_historia_geografi_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Vad heter jordens",
+          "raw_text": "Vad heter jordens a) längsta flod? b) största havsdjup? c) till ytan minsta land?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "längsta flod?"
+            },
+            {
+              "label": "b",
+              "prompt": "största havsdjup?"
+            },
+            {
+              "label": "c",
+              "prompt": "till ytan minsta land?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "I vilken stad har följande FN-organ sina huvudsäten:",
+          "raw_text": "I vilken stad har följande FN-organ sina huvudsäten: a) UNEP (miljö) b) UNESCO c) IAEA",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "UNEP (miljö)"
+            },
+            {
+              "label": "b",
+              "prompt": "UNESCO"
+            },
+            {
+              "label": "c",
+              "prompt": "IAEA"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q10",
+          "number": 10,
+          "kind": "mcq",
+          "prompt": "Nordisk historia:",
+          "raw_text": "Nordisk historia: a) Vilka tre länder ingick Kalmarunionen? b) Vilket år upplöstes unionen mellan Sverige och Norge? c) Finland har två officiella språk - finska och svenska. Ungefär hur stor andel av den finska befolkningen har svenska som modersmål? Ringa in rätt svarsalternativ. i) 5 procent, ii) 8 procent, iii) 13 procent",
+          "options": [
+            {
+              "label": "A",
+              "text": "Vilka tre länder ingick Kalmarunionen?"
+            },
+            {
+              "label": "B",
+              "text": "Vilket år upplöstes unionen mellan Sverige och Norge?"
+            },
+            {
+              "label": "C",
+              "text": "Finland har två officiella språk - finska och svenska. Ungefär hur stor andel av den finska befolkningen har svenska som modersmål? Ringa in rätt svarsalternativ."
+            },
+            {
+              "label": "I",
+              "text": "5 procent, ii) 8 procent, iii) 13 procent"
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q11",
+          "number": 11,
+          "kind": "multi_part",
+          "prompt": "Vad heter huvudstäderna i följande länder: (0,5 poäng per rätt svar)",
+          "raw_text": "Vad heter huvudstäderna i följande länder: (0,5 poäng per rätt svar) a) Senegal b) Nordmakedonien c) Belarus d) Nigeria e) Bolivia f) Malaysia ,...",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Senegal"
+            },
+            {
+              "label": "b",
+              "prompt": "Nordmakedonien"
+            },
+            {
+              "label": "c",
+              "prompt": "Belarus"
+            },
+            {
+              "label": "d",
+              "prompt": "Nigeria"
+            },
+            {
+              "label": "e",
+              "prompt": "Bolivia"
+            },
+            {
+              "label": "f",
+              "prompt": "Malaysia ,..."
+            }
+          ]
+        },
+        {
+          "id": "B2024_historia_geografi_Q12",
+          "number": 12,
+          "kind": "multi_part",
+          "prompt": "Fem länder gränsar till Kaspiska havet. Ange tre av dem för full poäng.",
+          "raw_text": "Fem länder gränsar till Kaspiska havet. Ange tre av dem för full poäng. a) b) c)"
+        },
+        {
+          "id": "B2024_historia_geografi_Q13",
+          "number": 13,
+          "kind": "multi_part",
+          "prompt": "Några frågor om världens historia:",
+          "raw_text": "Några frågor om världens historia: a) Vilket år utropades Folkrepubliken Kina? b) Vad hette Indiens första premiärminister? c) I vilken stad antogs den amerikanska Självständighetsförklaringen?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vilket år utropades Folkrepubliken Kina?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vad hette Indiens första premiärminister?"
+            },
+            {
+              "label": "c",
+              "prompt": "I vilken stad antogs den amerikanska Självständighetsförklaringen?"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "d5f950a84e89"
+    },
+    {
+      "id": "battery_2024_kultur",
+      "exam_id": "dips_exam_2024",
+      "exam_year": 2024,
+      "section_id": "kultur",
+      "title": "Kultur",
+      "topic_hint": "T07",
+      "heading": "Kultur, utbildning, sport mm (1 poäng för varje rätt svar/delsvar, max 39 poäng)",
+      "question_count": 18,
+      "questions": [
+        {
+          "id": "B2024_kultur_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "I vilket land finner Du följande universitet/högskolor:",
+          "raw_text": "I vilket land finner Du följande universitet/högskolor: a) MIT b) Erasmus-universitetet c) LSE",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "MIT"
+            },
+            {
+              "label": "b",
+              "prompt": "Erasmus-universitetet"
+            },
+            {
+              "label": "c",
+              "prompt": "LSE"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Kulturredaktörer mm.",
+          "raw_text": "Kulturredaktörer mm. a) Vem leder TV-programmet Babel? b) Vem är kulturchef för DN? c) I vilken svensk stad ligger Marinmuseum?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vem leder TV-programmet Babel?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vem är kulturchef för DN?"
+            },
+            {
+              "label": "c",
+              "prompt": "I vilken svensk stad ligger Marinmuseum?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Vad heter författaren till",
+          "raw_text": "Vad heter författaren till a) Den gudomliga komedin? b) Fursten? c) Trojanskorna?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Den gudomliga komedin?"
+            },
+            {
+              "label": "b",
+              "prompt": "Fursten?"
+            },
+            {
+              "label": "c",
+              "prompt": "Trojanskorna?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Koppla ihop följande författare med rätt verk. (0,5 poäng per rätt svar.)",
+          "raw_text": "Koppla ihop följande författare med rätt verk. (0,5 poäng per rätt svar.) a) Franz Kafka b) Michael Houellebecq c) Karl Ove Knaustgård d) Jelena Kostiutjenko e) Jonas Hassen Khemiri , f) Lena Andersson",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Franz Kafka"
+            },
+            {
+              "label": "b",
+              "prompt": "Michael Houellebecq"
+            },
+            {
+              "label": "c",
+              "prompt": "Karl Ove Knaustgård"
+            },
+            {
+              "label": "d",
+              "prompt": "Jelena Kostiutjenko"
+            },
+            {
+              "label": "e",
+              "prompt": "Jonas Hassen Khemiri ,"
+            },
+            {
+              "label": "f",
+              "prompt": "Lena Andersson"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q01",
+          "number": 1,
+          "kind": "short_answer",
+          "prompt": "Allt jag inte minns, 2) Underkastelse, 3) Förvandlingen,",
+          "raw_text": "Allt jag inte minns, 2) Underkastelse, 3) Förvandlingen,"
+        },
+        {
+          "id": "B2024_kultur_Q04",
+          "number": 4,
+          "kind": "short_answer",
+          "prompt": "Morgonstjärnan, 5) Mitt älskade land, 6) Studier i mänskligt beteende",
+          "raw_text": "Morgonstjärnan, 5) Mitt älskade land, 6) Studier i mänskligt beteende"
+        },
+        {
+          "id": "B2024_kultur_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Vilka konstnärer står bakom följande verk:",
+          "raw_text": "Vilka konstnärer står bakom följande verk: a) Nimis b) Batavernas trohetsed c) Girl with balloon",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Nimis"
+            },
+            {
+              "label": "b",
+              "prompt": "Batavernas trohetsed"
+            },
+            {
+              "label": "c",
+              "prompt": "Girl with balloon"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Vilka arkitekter har ritat följande byggnader:",
+          "raw_text": "Vilka arkitekter har ritat följande byggnader: a) Stockholms slott b) Operahuset i Sydney c) Sagrada Familia i Barcelona",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Stockholms slott"
+            },
+            {
+              "label": "b",
+              "prompt": "Operahuset i Sydney"
+            },
+            {
+              "label": "c",
+              "prompt": "Sagrada Familia i Barcelona"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Olympiska sommarspel hålls vart fjärde år.",
+          "raw_text": "Olympiska sommarspel hålls vart fjärde år. a) I vilken stad arrangeras spelen 2024? b) Stockholm har varit värd för spelen en gång. Vilket år? c) De första moderna spelen hölls 1896. I vilken stad?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "I vilken stad arrangeras spelen 2024?"
+            },
+            {
+              "label": "b",
+              "prompt": "Stockholm har varit värd för spelen en gång. Vilket år?"
+            },
+            {
+              "label": "c",
+              "prompt": "De första moderna spelen hölls 1896. I vilken stad?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Inom vilka sporter är följande idrottare aktiva:",
+          "raw_text": "Inom vilka sporter är följande idrottare aktiva: a) Sara Hector b) Daniel Ståhl c) Kosovare Asllani",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Sara Hector"
+            },
+            {
+              "label": "b",
+              "prompt": "Daniel Ståhl"
+            },
+            {
+              "label": "c",
+              "prompt": "Kosovare Asllani"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Vilka landslag vann följande tävlingar i år:",
+          "raw_text": "Vilka landslag vann följande tävlingar i år: a) Fotbolls-VM för damer b) Hockey-VM för herrar c) Lag-EM i hästhoppning",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Fotbolls-VM för damer"
+            },
+            {
+              "label": "b",
+              "prompt": "Hockey-VM för herrar"
+            },
+            {
+              "label": "c",
+              "prompt": "Lag-EM i hästhoppning"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q10",
+          "number": 10,
+          "kind": "mcq",
+          "prompt": "Lite filmkunskap.",
+          "raw_text": "Lite filmkunskap. a) Vilket är Sveriges bidrag till nästa års Oscarsgala? Ringa in rätt svarsalternativ. i) Paradiset brinner, ii) Tillsammans 99, iii) Motståndaren b) Vad kallas priset för bästa film vid filmfestivalen i Cannes?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Vilket är Sveriges bidrag till nästa års Oscarsgala? Ringa in rätt svarsalternativ."
+            },
+            {
+              "label": "I",
+              "text": "Paradiset brinner, ii) Tillsammans 99, iii) Motståndaren"
+            },
+            {
+              "label": "B",
+              "text": "Vad kallas priset för bästa film vid filmfestivalen i Cannes?"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q11",
+          "number": 11,
+          "kind": "multi_part",
+          "prompt": "Instrumenten i en symfoniorkester är uppdelade i flera instrument-grupper: Stråk, träblås, bleckblås (brass), slagverk, piano och harpa. Stråksektionen innehåller fyra instrument. Ett av dem är fiol. Vilka är övriga tre?",
+          "raw_text": "Instrumenten i en symfoniorkester är uppdelade i flera instrument-grupper: Stråk, träblås, bleckblås (brass), slagverk, piano och harpa. Stråksektionen innehåller fyra instrument. Ett av dem är fiol. Vilka är övriga tre? a) b) c)"
+        },
+        {
+          "id": "B2024_kultur_Q12",
+          "number": 12,
+          "kind": "multi_part",
+          "prompt": "Koppla ihop följande tonsättare med rätt verk. (0,5 poäng per rätt svar.)",
+          "raw_text": "Koppla ihop följande tonsättare med rätt verk. (0,5 poäng per rätt svar.) a) Sjostakovitj b) Beethoven c) Mozart d) Schubert e) Bernstein f) Lars-Erik Larsson",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Sjostakovitj"
+            },
+            {
+              "label": "b",
+              "prompt": "Beethoven"
+            },
+            {
+              "label": "c",
+              "prompt": "Mozart"
+            },
+            {
+              "label": "d",
+              "prompt": "Schubert"
+            },
+            {
+              "label": "e",
+              "prompt": "Bernstein"
+            },
+            {
+              "label": "f",
+              "prompt": "Lars-Erik Larsson"
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q01",
+          "number": 1,
+          "kind": "short_answer",
+          "prompt": "Forellen, 2) Förklädd gud, 3) West Side Story,",
+          "raw_text": "Forellen, 2) Förklädd gud, 3) West Side Story,"
+        },
+        {
+          "id": "B2024_kultur_Q04",
+          "number": 4,
+          "kind": "short_answer",
+          "prompt": "Ödessymfonin, 5) Leningradsymfonin, 6) Trollflöjten.",
+          "raw_text": "Ödessymfonin, 5) Leningradsymfonin, 6) Trollflöjten."
+        },
+        {
+          "id": "B2024_kultur_Q13",
+          "number": 13,
+          "kind": "mcq",
+          "prompt": "Hiphopen fyller 50 år i år och är idag en av världens största musikgenrer.",
+          "raw_text": "Hiphopen fyller 50 år i år och är idag en av världens största musikgenrer. a) Den svenska hiphopartisten Jonathan Leandor Håstad hade 2022 världens mest spelade låt på TikTok. Under vilket artistnamn är han känd? Ringa in rätt svarsalternativ. i) Lil’Peep, ii) Yung lean, iii) Central Cee, iv) Bladee. b) Vilken amerikansk hiphop-artist har fått Polarpriset? Ringa in rätt svarsalternativ. i) NAS, ii) Grandmaster Flash, iii) LL Cool J, iv) Dr. Dre.",
+          "options": [
+            {
+              "label": "A",
+              "text": "Den svenska hiphopartisten Jonathan Leandor Håstad hade 2022 världens mest spelade låt på TikTok. Under vilket artistnamn är han känd? Ringa in rätt svarsalternativ."
+            },
+            {
+              "label": "I",
+              "text": "Lil’Peep, ii) Yung lean, iii) Central Cee, iv) Bladee."
+            },
+            {
+              "label": "B",
+              "text": "Vilken amerikansk hiphop-artist har fått Polarpriset? Ringa in rätt svarsalternativ."
+            },
+            {
+              "label": "I",
+              "text": "NAS, ii) Grandmaster Flash, iii) LL Cool J, iv) Dr. Dre."
+            }
+          ]
+        },
+        {
+          "id": "B2024_kultur_Q14",
+          "number": 14,
+          "kind": "multi_part",
+          "prompt": "The Rolling Stones firade 60 år på scenen förra året med att släppa ett album med ny musik för första gången sedan 2005.",
+          "raw_text": "The Rolling Stones firade 60 år på scenen förra året med att släppa ett album med ny musik för första gången sedan 2005. a) Vad heter albumet? b) Vad heter sångaren i Rolling Stones?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vad heter albumet?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vad heter sångaren i Rolling Stones?"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "4c2141eade7a"
+    },
+    {
+      "id": "battery_2024_ordforstaelse",
+      "exam_id": "dips_exam_2024",
+      "exam_year": 2024,
+      "section_id": "ordforstaelse",
+      "title": "Ordforstaelse",
+      "topic_hint": "T09",
+      "heading": "Ordförståelse mm (2 poäng för varje rätt svar, max 38 poäng)",
+      "question_count": 19,
+      "questions": [
+        {
+          "id": "B2024_ordforstaelse_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Bibliofil",
+          "raw_text": "Bibliofil a) bokälskare b) bibliotekarie c) bokbindare d) lektör",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "bokälskare"
+            },
+            {
+              "label": "b",
+              "prompt": "bibliotekarie"
+            },
+            {
+              "label": "c",
+              "prompt": "bokbindare"
+            },
+            {
+              "label": "d",
+              "prompt": "lektör"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Folklivsforskning",
+          "raw_text": "Folklivsforskning a) etiologi b) etologi c) etnologi d) otologi",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "etiologi"
+            },
+            {
+              "label": "b",
+              "prompt": "etologi"
+            },
+            {
+              "label": "c",
+              "prompt": "etnologi"
+            },
+            {
+              "label": "d",
+              "prompt": "otologi"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Term inom diplomatin för ”icke önskvärd person”",
+          "raw_text": "Term inom diplomatin för ”icke önskvärd person” a) Persona non accepta b) Persona non odium c) Persona non grata d) Persona non abigere",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Persona non accepta"
+            },
+            {
+              "label": "b",
+              "prompt": "Persona non odium"
+            },
+            {
+              "label": "c",
+              "prompt": "Persona non grata"
+            },
+            {
+              "label": "d",
+              "prompt": "Persona non abigere"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Reciprocitet",
+          "raw_text": "Reciprocitet a) återtagande b) ömsesidighet c) övervåld d) folkrättsligt hävdvunnen rättighet",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "återtagande"
+            },
+            {
+              "label": "b",
+              "prompt": "ömsesidighet"
+            },
+            {
+              "label": "c",
+              "prompt": "övervåld"
+            },
+            {
+              "label": "d",
+              "prompt": "folkrättsligt hävdvunnen rättighet"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Apartheid",
+          "raw_text": "Apartheid a) rasförtryck b) rasåtskillnad c) rashierarki d) rasmotstånd",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "rasförtryck"
+            },
+            {
+              "label": "b",
+              "prompt": "rasåtskillnad"
+            },
+            {
+              "label": "c",
+              "prompt": "rashierarki"
+            },
+            {
+              "label": "d",
+              "prompt": "rasmotstånd"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Typograf",
+          "raw_text": "Typograf a) metereologiskt instrument b) radient c) stillbildsvisning d) sättare",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "metereologiskt instrument"
+            },
+            {
+              "label": "b",
+              "prompt": "radient"
+            },
+            {
+              "label": "c",
+              "prompt": "stillbildsvisning"
+            },
+            {
+              "label": "d",
+              "prompt": "sättare"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Occidenten",
+          "raw_text": "Occidenten a) motsats till zenit b) västerlandet c) Mindre asien d) Sydostasien",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "motsats till zenit"
+            },
+            {
+              "label": "b",
+              "prompt": "västerlandet"
+            },
+            {
+              "label": "c",
+              "prompt": "Mindre asien"
+            },
+            {
+              "label": "d",
+              "prompt": "Sydostasien"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Oktagon",
+          "raw_text": "Oktagon a) ockuperat område b) getto c) portal d) åttkanting",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "ockuperat område"
+            },
+            {
+              "label": "b",
+              "prompt": "getto"
+            },
+            {
+              "label": "c",
+              "prompt": "portal"
+            },
+            {
+              "label": "d",
+              "prompt": "åttkanting"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Ambulerande",
+          "raw_text": "Ambulerande a) brådskande b) kringresande c) blinkande d) förvirrande",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "brådskande"
+            },
+            {
+              "label": "b",
+              "prompt": "kringresande"
+            },
+            {
+              "label": "c",
+              "prompt": "blinkande"
+            },
+            {
+              "label": "d",
+              "prompt": "förvirrande"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "Chimär",
+          "raw_text": "Chimär a) en grekisk krigsgud b) råsilke c) svårighet d) illusion",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "en grekisk krigsgud"
+            },
+            {
+              "label": "b",
+              "prompt": "råsilke"
+            },
+            {
+              "label": "c",
+              "prompt": "svårighet"
+            },
+            {
+              "label": "d",
+              "prompt": "illusion"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q11",
+          "number": 11,
+          "kind": "multi_part",
+          "prompt": "Generisk",
+          "raw_text": "Generisk a) genetisk b) allmän c) generationsöverskridande d) allvarlig",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "genetisk"
+            },
+            {
+              "label": "b",
+              "prompt": "allmän"
+            },
+            {
+              "label": "c",
+              "prompt": "generationsöverskridande"
+            },
+            {
+              "label": "d",
+              "prompt": "allvarlig"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q12",
+          "number": 12,
+          "kind": "multi_part",
+          "prompt": "Lapsus",
+          "raw_text": "Lapsus a) fel b) brist c) koja d) språng",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "fel"
+            },
+            {
+              "label": "b",
+              "prompt": "brist"
+            },
+            {
+              "label": "c",
+              "prompt": "koja"
+            },
+            {
+              "label": "d",
+              "prompt": "språng"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q13",
+          "number": 13,
+          "kind": "multi_part",
+          "prompt": "Adekvat",
+          "raw_text": "Adekvat a) överlägsen b) tråkig c) fullt motsvarig c) orimlig",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "överlägsen"
+            },
+            {
+              "label": "b",
+              "prompt": "tråkig"
+            },
+            {
+              "label": "c",
+              "prompt": "fullt motsvarig"
+            },
+            {
+              "label": "c",
+              "prompt": "orimlig"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q14",
+          "number": 14,
+          "kind": "multi_part",
+          "prompt": "Tradera",
+          "raw_text": "Tradera a) föra vidare c) köpslå b) parodiera c) kassera",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "föra vidare"
+            },
+            {
+              "label": "c",
+              "prompt": "köpslå"
+            },
+            {
+              "label": "b",
+              "prompt": "parodiera"
+            },
+            {
+              "label": "c",
+              "prompt": "kassera"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q15",
+          "number": 15,
+          "kind": "multi_part",
+          "prompt": "Härröra",
+          "raw_text": "Härröra a) form av militär reträtt b) finsk maträtt c) ha sitt ursprung i d) ort i Småland",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "form av militär reträtt"
+            },
+            {
+              "label": "b",
+              "prompt": "finsk maträtt"
+            },
+            {
+              "label": "c",
+              "prompt": "ha sitt ursprung i"
+            },
+            {
+              "label": "d",
+              "prompt": "ort i Småland"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q16",
+          "number": 16,
+          "kind": "multi_part",
+          "prompt": "Kodifiera.",
+          "raw_text": "Kodifiera. a) avsluta b) ge skriftlig form åt c) hemlighålla d) pryda",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "avsluta"
+            },
+            {
+              "label": "b",
+              "prompt": "ge skriftlig form åt"
+            },
+            {
+              "label": "c",
+              "prompt": "hemlighålla"
+            },
+            {
+              "label": "d",
+              "prompt": "pryda"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q17",
+          "number": 17,
+          "kind": "multi_part",
+          "prompt": "Predikament",
+          "raw_text": "Predikament a) besvärlig situation b) tjat c) ordbok d) lösningsmedel",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "besvärlig situation"
+            },
+            {
+              "label": "b",
+              "prompt": "tjat"
+            },
+            {
+              "label": "c",
+              "prompt": "ordbok"
+            },
+            {
+              "label": "d",
+              "prompt": "lösningsmedel"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q18",
+          "number": 18,
+          "kind": "multi_part",
+          "prompt": "Summarisk",
+          "raw_text": "Summarisk a) riskabel b) kortfattad c) från Samarien d) numerisk",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "riskabel"
+            },
+            {
+              "label": "b",
+              "prompt": "kortfattad"
+            },
+            {
+              "label": "c",
+              "prompt": "från Samarien"
+            },
+            {
+              "label": "d",
+              "prompt": "numerisk"
+            }
+          ]
+        },
+        {
+          "id": "B2024_ordforstaelse_Q19",
+          "number": 19,
+          "kind": "multi_part",
+          "prompt": "Regalier",
+          "raw_text": "Regalier a) typ av allergi b) kungliga värdighetstecken c) regelverk d) likgiltiga saker",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "typ av allergi"
+            },
+            {
+              "label": "b",
+              "prompt": "kungliga värdighetstecken"
+            },
+            {
+              "label": "c",
+              "prompt": "regelverk"
+            },
+            {
+              "label": "d",
+              "prompt": "likgiltiga saker"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "cda8d1542508"
+    },
+    {
+      "id": "battery_2025_sverige",
+      "exam_id": "dips_exam_2025",
+      "exam_year": 2025,
+      "section_id": "sverige",
+      "title": "Samhallsorientering - Sverige",
+      "topic_hint": "T01",
+      "heading": "Samhällsorientering - Sverige",
+      "question_count": 18,
+      "questions": [
+        {
+          "id": "B2025_sverige_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Ange vem som är Sveriges",
+          "raw_text": "Ange vem som är Sveriges a) utrikesminister b) klimat- och miljöminister c) minister för civil beredskap",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "utrikesminister"
+            },
+            {
+              "label": "b",
+              "prompt": "klimat- och miljöminister"
+            },
+            {
+              "label": "c",
+              "prompt": "minister för civil beredskap"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Ange vem som är Sveriges",
+          "raw_text": "Ange vem som är Sveriges a) riksbankschef b) överbefälhavare c) ärkebiskop",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "riksbankschef"
+            },
+            {
+              "label": "b",
+              "prompt": "överbefälhavare"
+            },
+            {
+              "label": "c",
+              "prompt": "ärkebiskop"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Vad heter de svenska statliga myndigheter som ansvarar för nedanstående områden?",
+          "raw_text": "Vad heter de svenska statliga myndigheter som ansvarar för nedanstående områden? a) Geografisk information och fastighetsindelning b) Utrikeshandel c) Indrivning av fordringar",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Geografisk information och fastighetsindelning"
+            },
+            {
+              "label": "b",
+              "prompt": "Utrikeshandel"
+            },
+            {
+              "label": "c",
+              "prompt": "Indrivning av fordringar"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Något om svensk ekonomi. Markera rätt svarsalternativ.",
+          "raw_text": "Något om svensk ekonomi. Markera rätt svarsalternativ. a) Ungefär hur stor är Sveriges BNP i miljarder kronor (31 dec 2024)? 4 500 miljarder 6 300 miljarder 7 500 miljarder b) Ungefär hur många procent utgör den svenska statsskulden av BNP? (31 dec 2024) 18 procent 27 procent 40 procent c) Ungefär hur hög är den svenska arbetslösheten i dagsläget?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Ungefär hur stor är Sveriges BNP i miljarder kronor (31 dec 2024)? 4 500 miljarder 6 300 miljarder 7 500 miljarder"
+            },
+            {
+              "label": "b",
+              "prompt": "Ungefär hur många procent utgör den svenska statsskulden av BNP? (31 dec 2024) 18 procent 27 procent 40 procent"
+            },
+            {
+              "label": "c",
+              "prompt": "Ungefär hur hög är den svenska arbetslösheten i dagsläget?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q06",
+          "number": 6,
+          "kind": "short_answer",
+          "prompt": "3 procent",
+          "raw_text": "3 procent"
+        },
+        {
+          "id": "B2025_sverige_Q08",
+          "number": 8,
+          "kind": "short_answer",
+          "prompt": "5 procent",
+          "raw_text": "5 procent"
+        },
+        {
+          "id": "B2025_sverige_Q09",
+          "number": 9,
+          "kind": "short_answer",
+          "prompt": "3 procent",
+          "raw_text": "3 procent"
+        },
+        {
+          "id": "B2025_sverige_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Inom vilka branscher verkar nedanstående företag idag (en bransch per företag).",
+          "raw_text": "Inom vilka branscher verkar nedanstående företag idag (en bransch per företag). a) Embracer Group b) SSAB c) Hägglunds",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Embracer Group"
+            },
+            {
+              "label": "b",
+              "prompt": "SSAB"
+            },
+            {
+              "label": "c",
+              "prompt": "Hägglunds"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Vilket år blev Sverige medlem i",
+          "raw_text": "Vilket år blev Sverige medlem i a) FN? b) EU? c) Nato?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "FN?"
+            },
+            {
+              "label": "b",
+              "prompt": "EU?"
+            },
+            {
+              "label": "c",
+              "prompt": "Nato?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Klimat och energi.",
+          "raw_text": "Klimat och energi. a) Riksdagen har beslutat om ett klimatmål för Sverige. När ska Sverige ha noll nettoutsläpp av växthusgaser enligt detta? Markera rätt svarsalternativ. 2030 2040 2045 b) Hur stor andel av Sveriges elproduktion är idag fossilfri? Markera rätt svarsalternativ 66 procent 89 procent 99 procent c) Samarbetsprojektet Hybrit inleddes 2017 men pausades delvis 2024. Vad är syftet med Hybrit? Markera rätt svarsalternativ. Utvinning av jordartsmetaller Fossilfri stålproduktion Tillverkning av bilbatterier",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Riksdagen har beslutat om ett klimatmål för Sverige. När ska Sverige ha noll nettoutsläpp av växthusgaser enligt detta? Markera rätt svarsalternativ. 2030 2040 2045"
+            },
+            {
+              "label": "b",
+              "prompt": "Hur stor andel av Sveriges elproduktion är idag fossilfri? Markera rätt svarsalternativ 66 procent 89 procent 99 procent"
+            },
+            {
+              "label": "c",
+              "prompt": "Samarbetsprojektet Hybrit inleddes 2017 men pausades delvis 2024. Vad är syftet med Hybrit? Markera rätt svarsalternativ. Utvinning av jordartsmetaller Fossilfri stålproduktion Tillverkning av bilbatterier"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Något om Sveriges befolkning. Markera rätt svarsalternativ.",
+          "raw_text": "Något om Sveriges befolkning. Markera rätt svarsalternativ. a) Ungefär hur många svenskar utvandrade till Nordamerika 1860-1930? 900 000",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Ungefär hur många svenskar utvandrade till Nordamerika 1860-1930? 900 000"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q01",
+          "number": 1,
+          "kind": "short_answer",
+          "prompt": "4 miljoner",
+          "raw_text": "4 miljoner"
+        },
+        {
+          "id": "B2025_sverige_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "9 miljoner",
+          "raw_text": "9 miljoner b) Ungefär hur stor var Sveriges folkmängd 2024?",
+          "subquestions": [
+            {
+              "label": "b",
+              "prompt": "Ungefär hur stor var Sveriges folkmängd 2024?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q10",
+          "number": 10,
+          "kind": "short_answer",
+          "prompt": "1milj.",
+          "raw_text": "1milj."
+        },
+        {
+          "id": "B2025_sverige_Q10",
+          "number": 10,
+          "kind": "short_answer",
+          "prompt": "6milj.",
+          "raw_text": "6milj."
+        },
+        {
+          "id": "B2025_sverige_Q11",
+          "number": 11,
+          "kind": "multi_part",
+          "prompt": "1milj.",
+          "raw_text": "1milj. c) Ungefär hur stor andel av Sveriges befolkning var utrikesfödda 2024? 16 procent 20 procent 24 procent",
+          "subquestions": [
+            {
+              "label": "c",
+              "prompt": "Ungefär hur stor andel av Sveriges befolkning var utrikesfödda 2024? 16 procent 20 procent 24 procent"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Svensk export och främjande.",
+          "raw_text": "Svensk export och främjande. a) Vilket land exporterade Sverige mest till 2024 mätt i svenska kronor? b) Business Sweden stöder och främjar svensk export och investeringar i Sverige. Vem utöver staten är Business Swedens huvudman/ägare? c) Svenska institutet (SI) arbetar för Sverige genom att skapa relationer och samarbeten med andra länder. SI har ett kulturhus utomlands. I vilken stad ligger det?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vilket land exporterade Sverige mest till 2024 mätt i svenska kronor?"
+            },
+            {
+              "label": "b",
+              "prompt": "Business Sweden stöder och främjar svensk export och investeringar i Sverige. Vem utöver staten är Business Swedens huvudman/ägare?"
+            },
+            {
+              "label": "c",
+              "prompt": "Svenska institutet (SI) arbetar för Sverige genom att skapa relationer och samarbeten med andra länder. SI har ett kulturhus utomlands. I vilken stad ligger det?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_sverige_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "Rättsväsendet. Hur tituleras",
+          "raw_text": "Rättsväsendet. Hur tituleras a) domarna i Högsta domstolen? b) chefen för en hovrätt? c) chefen för en tingsrätt?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "domarna i Högsta domstolen?"
+            },
+            {
+              "label": "b",
+              "prompt": "chefen för en hovrätt?"
+            },
+            {
+              "label": "c",
+              "prompt": "chefen för en tingsrätt?"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "ba7ed795bec3"
+    },
+    {
+      "id": "battery_2025_globalt",
+      "exam_id": "dips_exam_2025",
+      "exam_year": 2025,
+      "section_id": "globalt",
+      "title": "Samhallsorientering - Globalt",
+      "topic_hint": "T02",
+      "heading": "Samhällsorientering - Globalt",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "B2025_globalt_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Vad heter",
+          "raw_text": "Vad heter a) USA:s vicepresident? b) Italiens premiärminister? c) Kanadas premiärminister?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "USA:s vicepresident?"
+            },
+            {
+              "label": "b",
+              "prompt": "Italiens premiärminister?"
+            },
+            {
+              "label": "c",
+              "prompt": "Kanadas premiärminister?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Vad heter",
+          "raw_text": "Vad heter a) FN:s generalsekreterare? b) Natos generalsekreterare? c) ECB:s chef?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "FN:s generalsekreterare?"
+            },
+            {
+              "label": "b",
+              "prompt": "Natos generalsekreterare?"
+            },
+            {
+              "label": "c",
+              "prompt": "ECB:s chef?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Vad heter statscheferna i nedanstående länder?",
+          "raw_text": "Vad heter statscheferna i nedanstående länder? a) Sydafrika b) Argentina c) Australien",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Sydafrika"
+            },
+            {
+              "label": "b",
+              "prompt": "Argentina"
+            },
+            {
+              "label": "c",
+              "prompt": "Australien"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Vad heter valutan i",
+          "raw_text": "Vad heter valutan i a) Sydkorea? b) Brasilien? c) Slovenien?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Sydkorea?"
+            },
+            {
+              "label": "b",
+              "prompt": "Brasilien?"
+            },
+            {
+              "label": "c",
+              "prompt": "Slovenien?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Vad heter sammanslutningarna/avtalen mellan nedanstående länder?",
+          "raw_text": "Vad heter sammanslutningarna/avtalen mellan nedanstående länder? a) Tullunion i Sydamerika mellan Brasilien, Argentina, Paraguay med flera länder b) Norges, Islands och Liechtensteins avtal med EU c) Kinas globala infrastrukturinitiativ på engelska",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Tullunion i Sydamerika mellan Brasilien, Argentina, Paraguay med flera länder"
+            },
+            {
+              "label": "b",
+              "prompt": "Norges, Islands och Liechtensteins avtal med EU"
+            },
+            {
+              "label": "c",
+              "prompt": "Kinas globala infrastrukturinitiativ på engelska"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Kristendomen är en av de tre abrahamitiska religionerna. Vilka är de två andra?",
+          "raw_text": "Kristendomen är en av de tre abrahamitiska religionerna. Vilka är de två andra? a) b) c) Varför kallas de abrahamitiska?",
+          "subquestions": [
+            {
+              "label": "c",
+              "prompt": "Varför kallas de abrahamitiska?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Påven Franciskus avled den 21 april i år.",
+          "raw_text": "Påven Franciskus avled den 21 april i år. a) Från vilket land kom han? b) Vad kallas den process i vilken ny påve väljs? c) Katolska kyrkan har i dag 252 kardinaler. En är svensk. Vad heter han?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Från vilket land kom han?"
+            },
+            {
+              "label": "b",
+              "prompt": "Vad kallas den process i vilken ny påve väljs?"
+            },
+            {
+              "label": "c",
+              "prompt": "Katolska kyrkan har i dag 252 kardinaler. En är svensk. Vad heter han?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Vad kallas parlamenten i",
+          "raw_text": "Vad kallas parlamenten i a) USA? b) Kina? c) Danmark?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "USA?"
+            },
+            {
+              "label": "b",
+              "prompt": "Kina?"
+            },
+            {
+              "label": "c",
+              "prompt": "Danmark?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Några frågor om EU.",
+          "raw_text": "Några frågor om EU. a) 1995 fick EU tre nya medlemsländer, Sverige, Finland och ett till. Vilket? b) Hur många medlemsstater hade EU efter de tre ländernas inträde? c) Hur många medlemsstater har EU i dag?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "1995 fick EU tre nya medlemsländer, Sverige, Finland och ett till. Vilket?"
+            },
+            {
+              "label": "b",
+              "prompt": "Hur många medlemsstater hade EU efter de tre ländernas inträde?"
+            },
+            {
+              "label": "c",
+              "prompt": "Hur många medlemsstater har EU i dag?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_globalt_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "I vilka städer ligger",
+          "raw_text": "I vilka städer ligger a) Europeiska centralbanken? b) EU-domstolen? c) Europaparlamentet har sitt säte i Bryssel och i ytterligare en stad. Vilken?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Europeiska centralbanken?"
+            },
+            {
+              "label": "b",
+              "prompt": "EU-domstolen?"
+            },
+            {
+              "label": "c",
+              "prompt": "Europaparlamentet har sitt säte i Bryssel och i ytterligare en stad. Vilken?"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "ae0bbe180e17"
+    },
+    {
+      "id": "battery_2025_historia_geografi",
+      "exam_id": "dips_exam_2025",
+      "exam_year": 2025,
+      "section_id": "historia_geografi",
+      "title": "Historia, geografi",
+      "topic_hint": "T06",
+      "heading": "Historia, geografi m.m.",
+      "question_count": 10,
+      "questions": [
+        {
+          "id": "B2025_historia_geografi_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Vad kallas nedanstående ”gränslinjer”",
+          "raw_text": "Vad kallas nedanstående ”gränslinjer” a) mellan norra och södra Cypern? b) mellan Nordkorea och Sydkorea, anm. breddgrad? c) fransk försvarslinje byggd på 20- och 30-talen?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "mellan norra och södra Cypern?"
+            },
+            {
+              "label": "b",
+              "prompt": "mellan Nordkorea och Sydkorea, anm. breddgrad?"
+            },
+            {
+              "label": "c",
+              "prompt": "fransk försvarslinje byggd på 20- och 30-talen?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_historia_geografi_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Vad heter huvudstäderna i nedanstående länder?",
+          "raw_text": "Vad heter huvudstäderna i nedanstående länder? a) Colombia b) Montenegro c) Liberia",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Colombia"
+            },
+            {
+              "label": "b",
+              "prompt": "Montenegro"
+            },
+            {
+              "label": "c",
+              "prompt": "Liberia"
+            }
+          ]
+        },
+        {
+          "id": "B2025_historia_geografi_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Tre huvudstäder, men vilka länder?",
+          "raw_text": "Tre huvudstäder, men vilka länder? a) Baku b) Lilongwe c) Vientiane",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Baku"
+            },
+            {
+              "label": "b",
+              "prompt": "Lilongwe"
+            },
+            {
+              "label": "c",
+              "prompt": "Vientiane"
+            }
+          ]
+        },
+        {
+          "id": "B2025_historia_geografi_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Hur benämns nedanstående fredsförhandlingar/överenskommelser?",
+          "raw_text": "Hur benämns nedanstående fredsförhandlingar/överenskommelser? a) 1814/1815, efter Napoleonkrigen b) 1919, efter första världskriget c) 1945 på Krim, uppdelning av Europa",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "1814/1815, efter Napoleonkrigen"
+            },
+            {
+              "label": "b",
+              "prompt": "1919, efter första världskriget"
+            },
+            {
+              "label": "c",
+              "prompt": "1945 på Krim, uppdelning av Europa"
+            }
+          ]
+        },
+        {
+          "id": "B2025_historia_geografi_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Vem var statsminister i Sverige",
+          "raw_text": "Vem var statsminister i Sverige a) 1943? b) 1963? c) 1993?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "1943?"
+            },
+            {
+              "label": "b",
+              "prompt": "1963?"
+            },
+            {
+              "label": "c",
+              "prompt": "1993?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_historia_geografi_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Vilken är till ytan",
+          "raw_text": "Vilken är till ytan a) Sveriges största sjö? b) Europas största sjö? c) världens största sjö?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Sveriges största sjö?"
+            },
+            {
+              "label": "b",
+              "prompt": "Europas största sjö?"
+            },
+            {
+              "label": "c",
+              "prompt": "världens största sjö?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_historia_geografi_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "I vilka världshav ligger nedanstående öar?",
+          "raw_text": "I vilka världshav ligger nedanstående öar? a) Madagaskar b) Madeira c) Oahu",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Madagaskar"
+            },
+            {
+              "label": "b",
+              "prompt": "Madeira"
+            },
+            {
+              "label": "c",
+              "prompt": "Oahu"
+            }
+          ]
+        },
+        {
+          "id": "B2025_historia_geografi_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Ukraina har landgräns mot sju länder. Ett av dem är Ryssland. Vilka är de övriga sex?",
+          "raw_text": "Ukraina har landgräns mot sju länder. Ett av dem är Ryssland. Vilka är de övriga sex? a) b) c) d) e) f)"
+        },
+        {
+          "id": "B2025_historia_geografi_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Vilka regenter efterträdde nedanstående kungar på den svenska tronen?",
+          "raw_text": "Vilka regenter efterträdde nedanstående kungar på den svenska tronen? a) Gustav II Adolf b) Karl XII c) Gustav VI Adolf",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Gustav II Adolf"
+            },
+            {
+              "label": "b",
+              "prompt": "Karl XII"
+            },
+            {
+              "label": "c",
+              "prompt": "Gustav VI Adolf"
+            }
+          ]
+        },
+        {
+          "id": "B2025_historia_geografi_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "Några historiska händelser i USA",
+          "raw_text": "Några historiska händelser i USA a) En specifik händelse (politisk protest) 1773 i Nordamerika sägs ha varit den utlösande faktorn för det nordamerikanska frihetskriget genom vilket USA bildades och blev en självständig stat. Vad kallas händelsen? b) Under vilket årtionde avskaffades slaveriet i USA? c) Den amerikanske astronauten Neil Armstrong var den första människan som satte sin fot på månen. Vilket år skedde det?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "En specifik händelse (politisk protest) 1773 i Nordamerika sägs ha varit den utlösande faktorn för det nordamerikanska frihetskriget genom vilket USA bildades och blev en självständig stat. Vad kallas händelsen?"
+            },
+            {
+              "label": "b",
+              "prompt": "Under vilket årtionde avskaffades slaveriet i USA?"
+            },
+            {
+              "label": "c",
+              "prompt": "Den amerikanske astronauten Neil Armstrong var den första människan som satte sin fot på månen. Vilket år skedde det?"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "6f9e8e97f722"
+    },
+    {
+      "id": "battery_2025_kultur",
+      "exam_id": "dips_exam_2025",
+      "exam_year": 2025,
+      "section_id": "kultur",
+      "title": "Kultur",
+      "topic_hint": "T07",
+      "heading": "Kultur och utbildning",
+      "question_count": 40,
+      "questions": [
+        {
+          "id": "B2025_kultur_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Kulturpersonligheter. Vem är",
+          "raw_text": "Kulturpersonligheter. Vem är a) Svenska akademins ständige sekreterare? b) regissör till filmen ”The Nile Hilton incident”? c) arkitekten bakom Skogskyrkogården i Stockholm och Stockholms stadsbibliotek?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Svenska akademins ständige sekreterare?"
+            },
+            {
+              "label": "b",
+              "prompt": "regissör till filmen ”The Nile Hilton incident”?"
+            },
+            {
+              "label": "c",
+              "prompt": "arkitekten bakom Skogskyrkogården i Stockholm och Stockholms stadsbibliotek?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "I vilka massmedier är nedanstående personer verksamma?",
+          "raw_text": "I vilka massmedier är nedanstående personer verksamma? a) Nathan Shachar b) Göran Greider c) Eva Beckman",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Nathan Shachar"
+            },
+            {
+              "label": "b",
+              "prompt": "Göran Greider"
+            },
+            {
+              "label": "c",
+              "prompt": "Eva Beckman"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Vad heter författarna till nedanstående verk?",
+          "raw_text": "Vad heter författarna till nedanstående verk? a) Candide b) Antigone c) Iliaden och Odysséen",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Candide"
+            },
+            {
+              "label": "b",
+              "prompt": "Antigone"
+            },
+            {
+              "label": "c",
+              "prompt": "Iliaden och Odysséen"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Vilka kända operor associeras med",
+          "raw_text": "Vilka kända operor associeras med a) Vad kall ni är om handen (che gelida manina)? b) Papageno? c) Triumfmarschen?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Vad kall ni är om handen (che gelida manina)?"
+            },
+            {
+              "label": "b",
+              "prompt": "Papageno?"
+            },
+            {
+              "label": "c",
+              "prompt": "Triumfmarschen?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Lite filmkunskap. Vad kallas det främsta priset vid filmfestivalen i",
+          "raw_text": "Lite filmkunskap. Vad kallas det främsta priset vid filmfestivalen i a) Berlin? b) Cannes? c) Stockholm?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Berlin?"
+            },
+            {
+              "label": "b",
+              "prompt": "Cannes?"
+            },
+            {
+              "label": "c",
+              "prompt": "Stockholm?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Inom vilka kulturområden delas nedanstående priser ut?",
+          "raw_text": "Inom vilka kulturområden delas nedanstående priser ut? a) Kasper Salinpriset b) Alma-priset c) Urhunden och Adamssonstatyetten",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Kasper Salinpriset"
+            },
+            {
+              "label": "b",
+              "prompt": "Alma-priset"
+            },
+            {
+              "label": "c",
+              "prompt": "Urhunden och Adamssonstatyetten"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Kombinera nedanstående sex nobelpristagare i litteratur med rätt verk. Sätt siffran för de uppräknade titlarna efter rätt författare",
+          "raw_text": "Kombinera nedanstående sex nobelpristagare i litteratur med rätt verk. Sätt siffran för de uppräknade titlarna efter rätt författare a) Annie Ernaux b) Eyvind Johnson c) Alexandr Solzjenitsyn d) Toni Morrison e) Thomas Mann f) Albert Camus",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Annie Ernaux"
+            },
+            {
+              "label": "b",
+              "prompt": "Eyvind Johnson"
+            },
+            {
+              "label": "c",
+              "prompt": "Alexandr Solzjenitsyn"
+            },
+            {
+              "label": "d",
+              "prompt": "Toni Morrison"
+            },
+            {
+              "label": "e",
+              "prompt": "Thomas Mann"
+            },
+            {
+              "label": "f",
+              "prompt": "Albert Camus"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q01",
+          "number": 1,
+          "kind": "short_answer",
+          "prompt": "Hans nådes tid",
+          "raw_text": "Hans nådes tid"
+        },
+        {
+          "id": "B2025_kultur_Q02",
+          "number": 2,
+          "kind": "short_answer",
+          "prompt": "Pesten",
+          "raw_text": "Pesten"
+        },
+        {
+          "id": "B2025_kultur_Q03",
+          "number": 3,
+          "kind": "short_answer",
+          "prompt": "Huset Buddenbrook",
+          "raw_text": "Huset Buddenbrook"
+        },
+        {
+          "id": "B2025_kultur_Q04",
+          "number": 4,
+          "kind": "short_answer",
+          "prompt": "Sinnenas tid",
+          "raw_text": "Sinnenas tid"
+        },
+        {
+          "id": "B2025_kultur_Q05",
+          "number": 5,
+          "kind": "short_answer",
+          "prompt": "Cancerkliniken",
+          "raw_text": "Cancerkliniken"
+        },
+        {
+          "id": "B2025_kultur_Q06",
+          "number": 6,
+          "kind": "short_answer",
+          "prompt": "Älskade",
+          "raw_text": "Älskade"
+        },
+        {
+          "id": "B2025_kultur_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Nämn tre s k Ivy League-universitet i USA",
+          "raw_text": "Nämn tre s k Ivy League-universitet i USA a) b) c)"
+        },
+        {
+          "id": "B2025_kultur_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Med vilken genre förknippas nedanstående artister?",
+          "raw_text": "Med vilken genre förknippas nedanstående artister? a) Maja Francis b) BB King c) 50 Cent",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Maja Francis"
+            },
+            {
+              "label": "b",
+              "prompt": "BB King"
+            },
+            {
+              "label": "c",
+              "prompt": "50 Cent"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "I vilka städer ligger nedanstående teater- och operascener?",
+          "raw_text": "I vilka städer ligger nedanstående teater- och operascener? a) La Scala b) The globe c) Bolsjoj Sport och idrott",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "La Scala"
+            },
+            {
+              "label": "b",
+              "prompt": "The globe"
+            },
+            {
+              "label": "c",
+              "prompt": "Bolsjoj Sport och idrott"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q01",
+          "number": 1,
+          "kind": "multi_part",
+          "prompt": "Vilken sport utövas av nedanstående idrottare?",
+          "raw_text": "Vilken sport utövas av nedanstående idrottare? a) Peder Fredriksson b) Niklas Edin c) Tara Babulfath",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Peder Fredriksson"
+            },
+            {
+              "label": "b",
+              "prompt": "Niklas Edin"
+            },
+            {
+              "label": "c",
+              "prompt": "Tara Babulfath"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q02",
+          "number": 2,
+          "kind": "multi_part",
+          "prompt": "Vid OS i Paris 2024 lyckades Sveriges olympier väl genom att ta fyra guldmedaljer. I vilka tre idrottsgrenar togs guldmedaljerna?",
+          "raw_text": "Vid OS i Paris 2024 lyckades Sveriges olympier väl genom att ta fyra guldmedaljer. I vilka tre idrottsgrenar togs guldmedaljerna? a) b) c)"
+        },
+        {
+          "id": "B2025_kultur_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "Sveriges damlandslag i längdskidåkning var mycket framgångsrikt vid VM i Trondheim i mars. Tre svenskor tog tillsammans alla sex guldmedaljer. Vad heter de?",
+          "raw_text": "Sveriges damlandslag i längdskidåkning var mycket framgångsrikt vid VM i Trondheim i mars. Tre svenskor tog tillsammans alla sex guldmedaljer. Vad heter de? a) b) c)"
+        },
+        {
+          "id": "B2025_kultur_Q04",
+          "number": 4,
+          "kind": "multi_part",
+          "prompt": "Lite historiska OS-kunskaper. Vilka städer stod värd för olympiaden",
+          "raw_text": "Lite historiska OS-kunskaper. Vilka städer stod värd för olympiaden a) 1912? b) 1936? c) 2016?",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "1912?"
+            },
+            {
+              "label": "b",
+              "prompt": "1936?"
+            },
+            {
+              "label": "c",
+              "prompt": "2016?"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Vilka tre länder delar värdskapet för VM i fotboll 2026?",
+          "raw_text": "Vilka tre länder delar värdskapet för VM i fotboll 2026? a) b) c) Ordkunskap Markera rätt svarsalternativ.",
+          "subquestions": [
+            {
+              "label": "c",
+              "prompt": "Ordkunskap Markera rätt svarsalternativ."
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q01",
+          "number": 1,
+          "kind": "short_answer",
+          "prompt": "Ajournering a. uppehåll i ett sammanträde b. uppdatering c. avräkning för övertid d. daglig notering i en myndighets diarium",
+          "raw_text": "Ajournering a. uppehåll i ett sammanträde b. uppdatering c. avräkning för övertid d. daglig notering i en myndighets diarium"
+        },
+        {
+          "id": "B2025_kultur_Q02",
+          "number": 2,
+          "kind": "short_answer",
+          "prompt": "Stagflation a. militär framryckning b. militärt tillbakadragande c. kombination av deflation och ekonomisk stagnation d. kombination av inflation och ekonomisk stagnation",
+          "raw_text": "Stagflation a. militär framryckning b. militärt tillbakadragande c. kombination av deflation och ekonomisk stagnation d. kombination av inflation och ekonomisk stagnation"
+        },
+        {
+          "id": "B2025_kultur_Q03",
+          "number": 3,
+          "kind": "multi_part",
+          "prompt": "En trad a. kopia på internationell överenskommelse b. handelsuppgörelse c. marknadspotential d. sjötrafikled 4 Etymologi",
+          "raw_text": "En trad a. kopia på internationell överenskommelse b. handelsuppgörelse c. marknadspotential d. sjötrafikled 4 Etymologi a) läran om ords ursprung b) läran om myters ursprung c) folklivsforskning d) läran om dofter",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "läran om ords ursprung"
+            },
+            {
+              "label": "b",
+              "prompt": "läran om myters ursprung"
+            },
+            {
+              "label": "c",
+              "prompt": "folklivsforskning"
+            },
+            {
+              "label": "d",
+              "prompt": "läran om dofter"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q05",
+          "number": 5,
+          "kind": "multi_part",
+          "prompt": "Demarkationslinje",
+          "raw_text": "Demarkationslinje a) En av FN fastslagen gräns b) En icke erkänd statsgräns c) En gräns/linje som parter inte får överträda med trupp d. En preliminär utstakning av gräns mellan två länder",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "En av FN fastslagen gräns"
+            },
+            {
+              "label": "b",
+              "prompt": "En icke erkänd statsgräns"
+            },
+            {
+              "label": "c",
+              "prompt": "En gräns/linje som parter inte får överträda med trupp d. En preliminär utstakning av gräns mellan två länder"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q06",
+          "number": 6,
+          "kind": "multi_part",
+          "prompt": "Fallera",
+          "raw_text": "Fallera a) ramla b) avvika c) genera d) misslyckas",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "ramla"
+            },
+            {
+              "label": "b",
+              "prompt": "avvika"
+            },
+            {
+              "label": "c",
+              "prompt": "genera"
+            },
+            {
+              "label": "d",
+              "prompt": "misslyckas"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q07",
+          "number": 7,
+          "kind": "multi_part",
+          "prompt": "Ratificera",
+          "raw_text": "Ratificera a) Upprätta ett avtal b) Bryta mot ett avtal c) Göra en avsiktsförklaring d) Binda sig att följa en överenskommelse",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Upprätta ett avtal"
+            },
+            {
+              "label": "b",
+              "prompt": "Bryta mot ett avtal"
+            },
+            {
+              "label": "c",
+              "prompt": "Göra en avsiktsförklaring"
+            },
+            {
+              "label": "d",
+              "prompt": "Binda sig att följa en överenskommelse"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q08",
+          "number": 8,
+          "kind": "multi_part",
+          "prompt": "Traktera",
+          "raw_text": "Traktera a) signera internationella avtal b) bjuda på måltid c) attrahera d) spåra",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "signera internationella avtal"
+            },
+            {
+              "label": "b",
+              "prompt": "bjuda på måltid"
+            },
+            {
+              "label": "c",
+              "prompt": "attrahera"
+            },
+            {
+              "label": "d",
+              "prompt": "spåra"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q09",
+          "number": 9,
+          "kind": "multi_part",
+          "prompt": "Blottlägga",
+          "raw_text": "Blottlägga a) förlora b) röja c) lägga i blöt d) styckdetalj",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "förlora"
+            },
+            {
+              "label": "b",
+              "prompt": "röja"
+            },
+            {
+              "label": "c",
+              "prompt": "lägga i blöt"
+            },
+            {
+              "label": "d",
+              "prompt": "styckdetalj"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q10",
+          "number": 10,
+          "kind": "multi_part",
+          "prompt": "Avant-garde",
+          "raw_text": "Avant-garde a) förtrupp b) konstinriktning c) fäktposition d) fransk stad",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "förtrupp"
+            },
+            {
+              "label": "b",
+              "prompt": "konstinriktning"
+            },
+            {
+              "label": "c",
+              "prompt": "fäktposition"
+            },
+            {
+              "label": "d",
+              "prompt": "fransk stad"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q11",
+          "number": 11,
+          "kind": "multi_part",
+          "prompt": "Cynisk",
+          "raw_text": "Cynisk a) Visionär b) Syntetisk c) Känslokall d) Överlägsen",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Visionär"
+            },
+            {
+              "label": "b",
+              "prompt": "Syntetisk"
+            },
+            {
+              "label": "c",
+              "prompt": "Känslokall"
+            },
+            {
+              "label": "d",
+              "prompt": "Överlägsen"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q12",
+          "number": 12,
+          "kind": "multi_part",
+          "prompt": "Municipal",
+          "raw_text": "Municipal a) Oskolad b) Kommunal c) Hierarkisk d) Tandimplantat",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Oskolad"
+            },
+            {
+              "label": "b",
+              "prompt": "Kommunal"
+            },
+            {
+              "label": "c",
+              "prompt": "Hierarkisk"
+            },
+            {
+              "label": "d",
+              "prompt": "Tandimplantat"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q13",
+          "number": 13,
+          "kind": "multi_part",
+          "prompt": "Démarche",
+          "raw_text": "Démarche a) Återtåg b) Utanför marginalen c) Diplomatisk hänvändelse d) Fransk efterrätt",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Återtåg"
+            },
+            {
+              "label": "b",
+              "prompt": "Utanför marginalen"
+            },
+            {
+              "label": "c",
+              "prompt": "Diplomatisk hänvändelse"
+            },
+            {
+              "label": "d",
+              "prompt": "Fransk efterrätt"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q14",
+          "number": 14,
+          "kind": "multi_part",
+          "prompt": "Obsolet",
+          "raw_text": "Obsolet a) Hätsk b) Trasig c) Föråldrad d) Opraktisk",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Hätsk"
+            },
+            {
+              "label": "b",
+              "prompt": "Trasig"
+            },
+            {
+              "label": "c",
+              "prompt": "Föråldrad"
+            },
+            {
+              "label": "d",
+              "prompt": "Opraktisk"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q15",
+          "number": 15,
+          "kind": "multi_part",
+          "prompt": "Reciprok",
+          "raw_text": "Reciprok a) Ömsesidig b) Hämndgrundad c) Växande d) Uppläst",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Ömsesidig"
+            },
+            {
+              "label": "b",
+              "prompt": "Hämndgrundad"
+            },
+            {
+              "label": "c",
+              "prompt": "Växande"
+            },
+            {
+              "label": "d",
+              "prompt": "Uppläst"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q16",
+          "number": 16,
+          "kind": "multi_part",
+          "prompt": "Fortifikation",
+          "raw_text": "Fortifikation a) Hastverk b) Fortskaffningsmedel c) Befästning d) Framfusighet",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Hastverk"
+            },
+            {
+              "label": "b",
+              "prompt": "Fortskaffningsmedel"
+            },
+            {
+              "label": "c",
+              "prompt": "Befästning"
+            },
+            {
+              "label": "d",
+              "prompt": "Framfusighet"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q17",
+          "number": 17,
+          "kind": "multi_part",
+          "prompt": "Ciceron",
+          "raw_text": "Ciceron a) Domare b) Vägvisare c) Boktryckarstil d) Främling",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Domare"
+            },
+            {
+              "label": "b",
+              "prompt": "Vägvisare"
+            },
+            {
+              "label": "c",
+              "prompt": "Boktryckarstil"
+            },
+            {
+              "label": "d",
+              "prompt": "Främling"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q18",
+          "number": 18,
+          "kind": "multi_part",
+          "prompt": "Framsynt",
+          "raw_text": "Framsynt a) Förutseende b) Långsynt c) Klaviaturinstrument d) Förhastad",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Förutseende"
+            },
+            {
+              "label": "b",
+              "prompt": "Långsynt"
+            },
+            {
+              "label": "c",
+              "prompt": "Klaviaturinstrument"
+            },
+            {
+              "label": "d",
+              "prompt": "Förhastad"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q19",
+          "number": 19,
+          "kind": "multi_part",
+          "prompt": "Hymn",
+          "raw_text": "Hymn a) Högmod b) Lovsång c) Hudflik d) Gästhamn",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Högmod"
+            },
+            {
+              "label": "b",
+              "prompt": "Lovsång"
+            },
+            {
+              "label": "c",
+              "prompt": "Hudflik"
+            },
+            {
+              "label": "d",
+              "prompt": "Gästhamn"
+            }
+          ]
+        },
+        {
+          "id": "B2025_kultur_Q20",
+          "number": 20,
+          "kind": "multi_part",
+          "prompt": "Aversion",
+          "raw_text": "Aversion a) Utkast b) Luftslott c) Avvikelse d) Motvilja",
+          "subquestions": [
+            {
+              "label": "a",
+              "prompt": "Utkast"
+            },
+            {
+              "label": "b",
+              "prompt": "Luftslott"
+            },
+            {
+              "label": "c",
+              "prompt": "Avvikelse"
+            },
+            {
+              "label": "d",
+              "prompt": "Motvilja"
+            }
+          ]
+        }
+      ],
+      "fingerprint": "d2fe81fa3a51"
+    }
+  ]
+}

@@ -5,7 +5,7 @@ year: 2024
 lang: sv
 source_class: official
 source_url: https://www.regeringen.se/contentassets/a89205d9fa2a4f6ea3a51a0fb1fc403a/skriftligt-prov-for-diplomatprogrammet-2024.pdf
-normalized_at: 2026-04-17T15:09:44.989067
+normalized_at: 2026-04-17T15:32:28.475366
 ---
 
 # Skriftligt prov for diplomatprogrammet 2024

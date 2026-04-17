@@ -69,7 +69,7 @@
     "local_path": "raw/exams/dips_exam_2020.pdf",
     "source_class": "official",
     "fetched": false,
-    "fetch_error": "Failed at 2026-04-17T15:09:14.079900"
+    "fetch_error": "Failed at 2026-04-17T15:32:25.773775"
   },
   {
     "id": "dips_exam_2019",
@@ -129,7 +129,7 @@
     "local_path": "raw/official/nationell_sakerhetsstrategi_2024.pdf",
     "source_class": "official",
     "fetched": false,
-    "fetch_error": "Failed at 2026-04-17T15:03:13.900066"
+    "fetch_error": "Failed at 2026-04-17T15:32:27.279613"
   },
   {
     "id": "un_charter",

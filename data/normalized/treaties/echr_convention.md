@@ -5,7 +5,7 @@ year: 1950
 lang: en
 source_class: official
 source_url: https://www.echr.coe.int/documents/d/echr/convention_eng
-normalized_at: 2026-04-17T15:09:45.602421
+normalized_at: 2026-04-17T15:32:29.021271
 ---
 
 # European Convention on Human Rights

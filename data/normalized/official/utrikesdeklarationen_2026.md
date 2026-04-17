@@ -5,7 +5,7 @@ year: 2026
 lang: sv
 source_class: official
 source_url: https://www.regeringen.se/tal/2026/02/utrikesdeklarationen-2026/
-normalized_at: 2026-04-17T15:09:45.158305
+normalized_at: 2026-04-17T15:32:28.637198
 ---
 
 # Utrikesdeklarationen 2026

@@ -5,7 +5,7 @@ year: 2025
 lang: sv
 source_class: official
 source_url: https://www.regeringen.se/tal/2025/02/utrikesdeklarationen-2025/
-normalized_at: 2026-04-17T15:09:45.162362
+normalized_at: 2026-04-17T15:32:28.640819
 ---
 
 # Utrikesdeklarationen 2025

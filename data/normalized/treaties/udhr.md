@@ -5,7 +5,7 @@ year: 1948
 lang: en
 source_class: official
 source_url: https://www.un.org/en/about-us/universal-declaration-of-human-rights
-normalized_at: 2026-04-17T15:09:45.172252
+normalized_at: 2026-04-17T15:32:28.646511
 ---
 
 # Universal Declaration of Human Rights

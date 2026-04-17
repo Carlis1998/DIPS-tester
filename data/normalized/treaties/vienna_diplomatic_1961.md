@@ -5,7 +5,7 @@ year: 1961
 lang: en
 source_class: official
 source_url: https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1961.pdf
-normalized_at: 2026-04-17T15:09:45.289828
+normalized_at: 2026-04-17T15:32:28.744260
 ---
 
 # Vienna Convention on Diplomatic Relations 1961

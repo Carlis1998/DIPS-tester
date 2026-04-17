@@ -5,7 +5,7 @@ year: 1963
 lang: en
 source_class: official
 source_url: https://legal.un.org/ilc/texts/instruments/english/conventions/9_2_1963.pdf
-normalized_at: 2026-04-17T15:09:45.487402
+normalized_at: 2026-04-17T15:32:28.918801
 ---
 
 # Vienna Convention on Consular Relations 1963

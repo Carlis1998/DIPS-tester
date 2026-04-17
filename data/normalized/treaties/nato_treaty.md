@@ -5,7 +5,7 @@ year: 1949
 lang: en
 source_class: official
 source_url: https://www.nato.int/cps/en/natohq/official_texts_17120.htm
-normalized_at: 2026-04-17T15:09:45.529795
+normalized_at: 2026-04-17T15:32:28.961988
 ---
 
 # The North Atlantic Treaty

@@ -5,7 +5,7 @@ year: 1945
 lang: en
 source_class: official
 source_url: https://www.un.org/en/about-us/un-charter/full-text
-normalized_at: 2026-04-17T15:09:45.167184
+normalized_at: 2026-04-17T15:32:28.644511
 ---
 
 # Charter of the United Nations

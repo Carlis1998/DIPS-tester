@@ -5,7 +5,7 @@ year: 2026
 lang: sv
 source_class: official
 source_url: https://www.regeringen.se/globalassets/regeringen/dokument/utrikesdepartementet/qa---vanliga-fragor-om-diplomatprogrammet.pdf
-normalized_at: 2026-04-17T15:09:45.149551
+normalized_at: 2026-04-17T15:32:28.632717
 ---
 
 # Q&A - Vanliga fragor om diplomatprogrammet
