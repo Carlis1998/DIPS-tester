@@ -21,13 +21,13 @@
           "id": "res_grundlagar",
           "title": "Sveriges grundlagar (riksdagen.se)",
           "urls": [
-            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/kungorelse-1974152-om-beslutad-ny-regeringsform_sfs-1974-152/",
-            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/successionsordning-181026_sfs-1810-0926/",
-            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/tryckfrihetsforordning-19491105_sfs-1949-105/",
-            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/yttrandefrihetsgrundlag-19911469_sfs-1991-1469/"
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfåttningssamling/kungorelse-1974152-om-beslutad-ny-regeringsform_sfs-1974-152/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfåttningssamling/successionsordning-181026_sfs-1810-0926/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfåttningssamling/tryckfrihetsforordning-19491105_sfs-1949-105/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfåttningssamling/yttrandefrihetsgrundlag-19911469_sfs-1991-1469/"
           ],
           "source_class": "official",
-          "purpose": "Direkt testbar svensk statsratt och offentlighetsratt."
+          "purpose": "Direkt testbar svensk statsrätt och offentlighetsrätt."
         },
         {
           "id": "res_un_charter",
@@ -45,7 +45,7 @@
             "https://legal.un.org/ilc/texts/instruments/english/conventions/1_1_1969.pdf"
           ],
           "source_class": "official",
-          "purpose": "Karnmaterial for diplomatisk och folkrattslig begreppsforstaelse."
+          "purpose": "Karnmaterial for diplomatisk och folkrättslig begreppsforstaelse."
         },
         {
           "id": "res_utrikesdeklarationen",
@@ -62,7 +62,7 @@
           "title": "Nationell sakerhetsstrategi 2024",
           "url": "https://www.regeringen.se/informationsmaterial/2024/07/nationell-sakerhetsstrategi/",
           "source_class": "official",
-          "purpose": "Svensk sakerhetsdoktrin, totalforsvar, motstandskraft."
+          "purpose": "Svensk sakerhetsdoktrin, totalförsvar, motstandskraft."
         },
         {
           "id": "res_paris",
@@ -76,7 +76,7 @@
           "title": "North Atlantic Treaty",
           "url": "https://www.nato.int/cps/en/natohq/official_texts_17120.htm",
           "source_class": "official",
-          "purpose": "Artikel 5, medlemskap och kollektivt forsvar."
+          "purpose": "Artikel 5, medlemskap och kollektivt försvar."
         },
         {
           "id": "res_eu_treaties",
@@ -90,7 +90,7 @@
           "title": "Europakonventionen",
           "url": "https://www.echr.coe.int/documents/d/echr/convention_eng",
           "source_class": "official",
-          "purpose": "Europaradets MR-system och grundlaggande rattigheter."
+          "purpose": "Europarådets MR-system och grundlaggande rättigheter."
         }
       ]
     },
@@ -110,7 +110,7 @@
           "title": "Godmorgon, varlden!",
           "lang": "sv",
           "rss": "https://api.sr.se/api/rss/pod/4490",
-          "purpose": "Bred veckovis utrikesoversikt med god DIPS-nytta.",
+          "purpose": "Bred veckovis utrikesöversikt med god DIPS-nytta.",
           "frequency": "weekly"
         },
         {
@@ -126,7 +126,7 @@
           "title": "UD-podden",
           "lang": "sv",
           "url": "https://www.regeringen.se/sveriges-regering/utrikesdepartementet/ud-podden/",
-          "purpose": "Nara diplomatyrket och UD:s eget perspektiv.",
+          "purpose": "Nära diplomatyrket och UD:s eget perspektiv.",
           "frequency": "irregular"
         },
         {

@@ -161,3 +161,39 @@ The mock and resources views should be treated as the bridge between the lightwe
 3. Copy `app/` into `docs/`
 4. Set branch to `main` and folder to `/docs`
 5. Serve from `https://username.github.io/DIPS-Tester/`
+
+
+## NotebookLM (Spanish audio overviews)
+
+The repo now includes a practical NotebookLM production package:
+
+- `notebooklm/PRODUCTION_SPEC.md`
+- `prompts/dips_notebooklm_es.py`
+- `scripts/build_notebooklm_packets.py`
+
+Build the packet files:
+
+```bash
+python3 scripts/build_notebooklm_packets.py
+```
+
+This writes:
+
+- `out/notebooklm/es_packets/notebooks_es.json`
+- one Markdown packet per notebook in `out/notebooklm/es_packets/`
+
+Each packet contains:
+- upload order
+- source URLs / local paths
+- a full Spanish-audio Customize prompt
+
+Recommended workflow:
+1. Run `python3 scripts/build_notebooklm_packets.py`
+2. Open one packet, e.g. `out/notebooklm/es_packets/N01.md`
+3. Create a NotebookLM notebook
+4. Upload the listed sources in order
+5. Paste the generated prompt into Customize
+6. Set NotebookLM output language to Spanish
+7. Generate the audio overview
+
+This package is intentionally lighter and cleaner than the old TOGAF prompt style: fewer sources, less vocabulary coaching, more emphasis on structure and analytical usefulness.

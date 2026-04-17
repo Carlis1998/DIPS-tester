@@ -24,9 +24,9 @@
         "FN-systemet",
         "NATO",
         "OSSE",
-        "Europaradet",
+        "Europarådet",
         "WTO",
-        "Varldsbanken",
+        "Världsbanken",
         "IMF"
       ]
     },
@@ -41,8 +41,8 @@
         "Europakonventionen",
         "ICJ",
         "ICC",
-        "Humanitar ratt",
-        "Flyktingratt"
+        "Humanitär rätt",
+        "Flyktingrätt"
       ]
     },
     {
@@ -52,7 +52,7 @@
       "block": "Aktuellt",
       "subtopics": [
         "Ukraina",
-        "Mellanostern",
+        "Mellanöstern",
         "Afrika",
         "Kina/Indo-Stilla havet",
         "Cybersäkerhet",
@@ -67,8 +67,8 @@
       "block": "Grundkunskap",
       "subtopics": [
         "BNP",
-        "Handelspartners",
-        "Exportvåror",
+        "Handelspartner",
+        "Exportvaror",
         "Bistand",
         "Riksbanken",
         "EU:s ekonomiska politik",
@@ -86,7 +86,7 @@
         "Kalla kriget",
         "Avkolonisering",
         "Europeisk integration",
-        "Huvudstader",
+        "Huvudstäder",
         "Kartor"
       ]
     },
@@ -94,11 +94,11 @@
       "code": "T07",
       "title": "Kultur, Nobel, litteratur och språk",
       "title_en": "Culture, Nobel, Literature and Language",
-      "block": "Allmanbildning",
+      "block": "Allmänbildning",
       "subtopics": [
         "Nobelpristagare",
         "Svensk litteratur",
-        "Konst och musik",
+        "Konst och musiksik",
         "Sport",
         "Svenska högtider",
         "Kulturpolitik"
@@ -122,7 +122,7 @@
       "code": "T09",
       "title": "Diplomatisk ordkunskap och begrepp",
       "title_en": "Diplomatic Vocabulary and Concepts",
-      "block": "Allmanbildning",
+      "block": "Allmänbildning",
       "subtopics": [
         "Diplomatiska termer",
         "Latinska uttryck",

@@ -179,12 +179,7 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 .bucket-box.unrated{border-top:3px solid var(--text-dim)}
 
 /* Mock exam */
-.timer{font-size:28px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;
-  padding:16px;background:var(--surface);border-radius:12px;margin-bottom:14px;
-  border:2px solid rgba(255,255,255,.08)}
-.timer.warning{color:var(--orange);border-color:var(--orange)}
-.timer.danger{color:var(--red);border-color:var(--red);animation:pulse 1s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.6}}
+.timer{font-size:16px;font-weight:700;text-align:left;padding:14px;background:var(--surface);border-radius:12px;margin-bottom:14px;border:1px solid rgba(255,255,255,.08);color:var(--text-dim)}
 .section-card{background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:12px;
   border:1px solid rgba(255,255,255,.06)}
 .section-card h3{font-size:14px;font-weight:700;color:var(--accent);margin-bottom:4px}
@@ -779,7 +774,7 @@ function renderHome(){
 
     <div class="card" onclick="location.hash='#mock'" style="border-color:rgba(245,158,11,.45)">
       <h2 style="color:var(--orange)">1. Starta mockprov</h2>
-      <p>Det enklaste sättet att använda appen. Välj ett prov och kör direkt med timer, sektioner och resultatvy.</p>
+      <p>Det enklaste sättet att använda appen. Välj ett prov och arbeta lugnt sektion för sektion, med resultatvy och länkar till originalprov.</p>
       <span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange)">${MOCKS.mocks.length} mockprov</span>
     </div>
 
@@ -803,7 +798,7 @@ function renderHome(){
 
     <div class="card" onclick="location.hash='#essay'" style="border-color:rgba(167,139,250,.45)">
       <h2 style="color:var(--purple)">5. Kör uppsats</h2>
-      <p>Välj en prompt, starta timer och skriv direkt i appen.</p>
+      <p>Välj en prompt och skriv direkt i appen med språkstöd och dispositionshjälp.</p>
       <span class="badge" style="background:rgba(167,139,250,.15);color:var(--purple)">${ESSAYS.essays.length} uppgifter</span>
     </div>
 
@@ -1079,7 +1074,7 @@ function renderMock(){
   const mockHistory=g(MOCK_HISTORY);
   el.innerHTML=`
     <h1>Mockprov</h1>
-    <div class="subtitle">Här ska det vara enkelt: välj ett prov, se tidsåtgång, kör. Under finns originalproven och extraherade frågebatterier för vidare jämförelse.</div>
+    <div class="subtitle">Här ska det vara enkelt: välj ett prov, arbeta sektion för sektion och jämför mot originalproven när du vill.</div>
     <div class="banner"><strong>Tips:</strong> börja med snabbprovet om du vill komma igång fort. Kör sedan fullängdsprovet när du vill simulera riktig press.</div>
     <div class="card" onclick="location.hash='#batteries'" style="border-color:rgba(34,197,94,.32)">
       <h2 style="color:var(--green)">Bläddra riktiga frågebatterier</h2>
@@ -1140,14 +1135,12 @@ function renderMockRun(mockId){
   const mock=MOCKS.mocks.find(m=>m.id===mockId);
   if(!mock){document.getElementById('v-mock-run').innerHTML=`<div class="empty">Provet hittades inte.</div>`;return;}
 
-  let sectionIdx=0, timeLeft=mock.sections[0].time_minutes*60, timerInterval=null, answers={}, score=0;
-
+  let sectionIdx=0, answers={}, score=0;
   const el=document.getElementById('v-mock-run');
 
   function renderSection(){
     const sec=mock.sections[sectionIdx];
     if(!sec){renderResults();return;}
-    timeLeft=sec.time_minutes*60;
 
     el.innerHTML=`
       <div class="top">
@@ -1156,7 +1149,7 @@ function renderMockRun(mockId){
         <div class="subtitle" style="margin-bottom:0">${sec.title}</div></div>
       </div>
       ${mock.source_exam_years?.length?`<div class="banner"><strong>Originalprov:</strong> ${mock.source_exam_years.map(y=>examUrlForYear(y)?externalLink(examUrlForYear(y), `öppna ${y} års PDF`):`${y}`).join(' &middot; ')}${mock.source_exam_years.flatMap(y=>batteriesForYear(y)).length?`<br><span class="small">Extraherade batterier: ${mock.source_exam_years.flatMap(y=>batteriesForYear(y)).map(b=>`<a href="#batteries/${b.exam_year}-${b.section_id}">${b.exam_year} · ${b.title}</a>`).join(' &middot; ')}</span>`:''}</div>`:''}
-      <div class="timer" id="mr-timer">--:--</div>
+      <div class="timer"><strong>Rekommenderat arbetssätt:</strong> arbeta i din egen takt, fokusera på kvalitet och använd originalprovet om du vill se exakt formulering.</div>
       <div style="font-size:12px;color:var(--text-dim);margin-bottom:14px">${sec.description}</div>
       <div id="mr-content"></div>
       <button class="next-btn" id="mr-next">${sectionIdx<mock.sections.length-1?'Nästa sektion &#8594;':'Avsluta prov'}</button>`;
@@ -1166,9 +1159,7 @@ function renderMockRun(mockId){
       const qIds=sec.question_ids||[];
       const pool=Q_SV.questions.filter(q=>qIds.includes(q.id));
       pool.forEach(q=>{
-        content.appendChild(makeQ(q,{onAnswer:correct=>{
-          answers[q.id]=correct;if(correct)score++;
-        }}));
+        content.appendChild(makeQ(q,{onAnswer:correct=>{answers[q.id]=correct;if(correct)score++;}}));
       });
     } else if(sec.type==='essay'){
       const content=document.getElementById('mr-content');
@@ -1179,35 +1170,16 @@ function renderMockRun(mockId){
         div.innerHTML=`
           <h3>${e.prompt}</h3>
           <div class="themes">${e.themes.map(t=>`<span class="theme">${t}</span>`).join('')}</div>
-          <div class="outline"><strong style="color:var(--text);font-size:11px">Föreslagen disposition:</strong><ol>${e.outline.map(o=>`<li>${o}</li>`).join('')}</ol></div>
-          <textarea class="essay-textarea" placeholder="Skriv ditt PM här..." style="margin-top:12px"></textarea>`;
+          <div class="outline"><strong style="color:var(--text);font-size:11px">Förslag på disposition:</strong><ol>${e.outline.map(o=>`<li>${o}</li>`).join('')}</ol></div>
+          <textarea class="essay-textarea" placeholder="Skriv ditt svar här..." style="margin-top:12px"></textarea>`;
         content.appendChild(div);
       });
     }
 
-    document.getElementById('mr-next').addEventListener('click',()=>{
-      clearInterval(timerInterval);sectionIdx++;renderSection();
-    });
-
-    // Timer
-    clearInterval(timerInterval);
-    updateTimer();
-    timerInterval=setInterval(()=>{
-      timeLeft--;
-      if(timeLeft<=0){clearInterval(timerInterval);timeLeft=0;}
-      updateTimer();
-    },1000);
-  }
-
-  function updateTimer(){
-    const el=document.getElementById('mr-timer');if(!el)return;
-    const m=Math.floor(timeLeft/60),sec=timeLeft%60;
-    el.textContent=`${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
-    el.className='timer'+(timeLeft<300?' danger':timeLeft<600?' warning':'');
+    document.getElementById('mr-next').addEventListener('click',()=>{sectionIdx++;renderSection();});
   }
 
   function renderResults(){
-    clearInterval(timerInterval);
     const totalQ=Object.keys(answers).length;
     const pct=totalQ?Math.round(100*score/totalQ):0;
     el.innerHTML=`
@@ -1217,16 +1189,12 @@ function renderMockRun(mockId){
         <div style="font-size:14px;color:var(--text-dim);margin-top:8px">${score} av ${totalQ} rätt på flervalsfrågorna</div>
       </div>
       <div style="background:var(--surface);border-radius:12px;padding:14px;font-size:12px;color:var(--text-dim);line-height:1.7">
-        Uppsatsdelen bedöms inte automatiskt. Jämför din text med dispositionsförslaget och bedöm själv.<br><br>
-        <strong style="color:var(--text)">Tips:</strong> Gå tillbaka till ämnessidorna och drilla frågor du fick fel på.
+        Uppsatsdelen bedöms inte automatiskt. Jämför din text med dispositionsförslaget och förbättra den i lugn takt.<br><br>
+        <strong style="color:var(--text)">Tips:</strong> Gå tillbaka till ämnessidorna eller frågebatterierna och arbeta vidare där du hade luckor.
       </div>
       <button class="next-btn" onclick="location.hash='#mock'" style="margin-top:16px">Tillbaka till provlistan</button>`;
 
-    // Save mock history
-    const hist=g(MOCK_HISTORY);
-    hist[mockId]=hist[mockId]||[];
-    hist[mockId].push({date:Date.now(),score,total:totalQ,pct});
-    s(MOCK_HISTORY,hist);
+    const hist=g(MOCK_HISTORY); hist[mockId]=hist[mockId]||[]; hist[mockId].push({date:Date.now(),score,total:totalQ,pct}); s(MOCK_HISTORY,hist);
   }
 
   renderSection();
@@ -1347,56 +1315,32 @@ function renderEssay(essayId){
     const essay=ESSAYS.essays.find(e=>e.id===essayId);
     if(!essay){el.innerHTML=`<div class="empty">Uppsatsuppgift hittades inte.</div>`;return;}
     const notes=g(ESSAY_NOTES);
-    let timeLeft=(essay.time_minutes||45)*60,timerInterval=null;
 
     el.innerHTML=`
       <div class="top">
         <button class="back" onclick="location.hash='#essay'">&#8592; Alla</button>
         <h1 style="font-size:16px;flex:1">${essay.id} — Uppsatsövning</h1>
       </div>
-      <div class="timer" id="es-timer">--:--</div>
+      <div class="timer"><strong>Arbetssätt:</strong> skriv i lugn takt, fokusera på tydlighet, struktur och argumentation. Ingen timer används här.</div>
       <div class="essay-card">
         <h3>${essay.prompt}</h3>
         <div class="themes">${essay.themes.map(t=>`<span class="theme">${t}</span>`).join('')}</div>
-        <div class="outline"><strong style="color:var(--text);font-size:11px">Föreslagen disposition:</strong>
+        <div class="outline"><strong style="color:var(--text);font-size:11px">Förslag på disposition:</strong>
           <ol>${essay.outline.map(o=>`<li>${o}</li>`).join('')}</ol>
         </div>
       </div>
       <textarea class="essay-textarea" id="es-text" placeholder="Skriv ditt PM här...">${notes[essay.id]||''}</textarea>
-      <div style="display:flex;gap:8px;margin-top:8px">
-        <button class="next-btn" id="es-start" style="flex:1;background:var(--green)">Starta timer</button>
-        <button class="next-btn" id="es-reset" style="flex:1;background:var(--surface);border:1px solid rgba(255,255,255,.1)">Nollställ</button>
-      </div>`;
+      <div class="mini-list"><strong>Språkkoll</strong><ul><li>Håll inledningen kort och tydlig.</li><li>Låt varje stycke bära en egen poäng.</li><li>Avsluta med en syntes, inte en upprepning.</li></ul></div>`;
 
-    // Auto-save essay text
     const ta=document.getElementById('es-text');let saveTimer;
-    ta.addEventListener('input',()=>{clearTimeout(saveTimer);saveTimer=setTimeout(()=>{
-      const n=g(ESSAY_NOTES);n[essay.id]=ta.value;s(ESSAY_NOTES,n);},500);});
-
-    function updateTimer(){
-      const el=document.getElementById('es-timer');if(!el)return;
-      const m=Math.floor(timeLeft/60),sec=timeLeft%60;
-      el.textContent=`${String(m).padStart(2,'0')}:${String(sec).padStart(2,'0')}`;
-      el.className='timer'+(timeLeft<300?' danger':timeLeft<600?' warning':'');
-    }
-    updateTimer();
-
-    document.getElementById('es-start').addEventListener('click',()=>{
-      if(timerInterval){clearInterval(timerInterval);timerInterval=null;document.getElementById('es-start').textContent='Starta timer';return;}
-      document.getElementById('es-start').textContent='Pausa';
-      timerInterval=setInterval(()=>{timeLeft--;if(timeLeft<=0){clearInterval(timerInterval);timeLeft=0;}updateTimer();},1000);
-    });
-    document.getElementById('es-reset').addEventListener('click',()=>{
-      clearInterval(timerInterval);timerInterval=null;timeLeft=(essay.time_minutes||45)*60;
-      updateTimer();document.getElementById('es-start').textContent='Starta timer';
-    });
+    ta.addEventListener('input',()=>{clearTimeout(saveTimer);saveTimer=setTimeout(()=>{const n=g(ESSAY_NOTES);n[essay.id]=ta.value;s(ESSAY_NOTES,n);},500);});
     return;
   }
 
   // Essay list
   el.innerHTML=`
     <h1>Uppsatsövning</h1>
-    <div class="subtitle">Öva på PM-skrivning med timer och dispositionsmallar</div>
+    <div class="subtitle">Öva på PM-skrivning med dispositionsmallar och lugnt arbetsflöde</div>
     <div id="essayList"></div>`;
   const list=document.getElementById('essayList');
   ESSAYS.essays.forEach(e=>{
@@ -1406,7 +1350,7 @@ function renderEssay(essayId){
     card.innerHTML=`
       <h2>${e.prompt.slice(0,80)}${e.prompt.length>80?'...':''}</h2>
       <div class="themes" style="margin-top:6px">${e.themes.map(t=>`<span class="theme">${t}</span>`).join('')}</div>
-      <span class="badge" style="background:rgba(167,139,250,.15);color:var(--purple);margin-top:6px">${langBadge} &middot; ${e.time_minutes} min</span>`;
+      <span class="badge" style="background:rgba(167,139,250,.15);color:var(--purple);margin-top:6px">${langBadge} &middot; skrivövning</span>`;
     list.appendChild(card);
   });
 }

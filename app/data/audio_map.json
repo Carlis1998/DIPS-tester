@@ -24,7 +24,7 @@
         "es"
       ],
       "topic": "T02",
-      "description": "EU-institutionerna, FN-systemet, NATO:s struktur, OSSE, Europaradet, WTO. Nyckelpersoner och mandat.",
+      "description": "EU-institutionerna, FN-systemet, NATO:s struktur, OSSE, Europarådet, WTO. Nyckelpersoner och mandat.",
       "target_duration_min": 8,
       "files": {
         "sv": "SV/audio/A02-internationella-org.mp3",
@@ -40,7 +40,7 @@
         "es"
       ],
       "topic": "T03",
-      "description": "Wienkonventionerna, folkrättens grundprinciper, ICJ, ICC, R2P, humanitar ratt, flyktingratt.",
+      "description": "Wienkonventionerna, folkrättens grundprinciper, ICJ, ICC, R2P, humanitar rätt, flyktingrätt.",
       "target_duration_min": 7,
       "files": {
         "sv": "SV/audio/A03-folkrätt-mr.mp3",
@@ -56,7 +56,7 @@
         "es"
       ],
       "topic": "T04",
-      "description": "Ukraina, Mellanostern, Afrika, Indo-Stilla havet. Sveriges NATO-medlemskap, nationell säkerhetsstrategi.",
+      "description": "Ukraina, Mellanöstern, Afrika, Indo-Stilla havet. Sveriges NATO-medlemskap, nationell säkerhetsstrategi.",
       "target_duration_min": 8,
       "files": {
         "sv": "SV/audio/A04-konflikter-säkerhet.mp3",
@@ -72,7 +72,7 @@
         "es"
       ],
       "topic": "T05",
-      "description": "BNP, handelsbalans, exportvåror, Riksbanken, bistand, EU:s ekonomiska politik, WTO, frihandelsavtal.",
+      "description": "BNP, handelsbalans, exportvaror, Riksbanken, bistånd, EU:s ekonomiska politik, WTO, frihandelsavtal.",
       "target_duration_min": 6,
       "files": {
         "sv": "SV/audio/A05-ekonomi-handel.mp3",
@@ -88,7 +88,7 @@
         "es"
       ],
       "topic": "T06",
-      "description": "Svensk historia, varldskrigen, kalla kriget, avkolonisering, EU:s historia. Huvudstader, kartor, geopolitik.",
+      "description": "Svensk historia, varldskrigen, kalla kriget, avkolonisering, EU:s historia. Huvudstäder, kartor, geopolitik.",
       "target_duration_min": 8,
       "files": {
         "sv": "SV/audio/A06-historia-geografi.mp3",
