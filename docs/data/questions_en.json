@@ -1,0 +1,89 @@
+{
+  "questions": [
+    {
+      "id": "EN001",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Which body within the EU has the sole right to propose legislation?",
+      "options": {
+        "A": "European Parliament",
+        "B": "European Commission",
+        "C": "Council of the European Union",
+        "D": "European Council"
+      },
+      "answer": "B",
+      "explanation": "The European Commission has the sole right of legislative initiative in most policy areas. The Parliament and Council act as co-legislators.",
+      "source": "official",
+      "source_id": "eu_treaty_teu",
+      "exam_year": null
+    },
+    {
+      "id": "EN002",
+      "topics": ["T03"],
+      "difficulty": 2,
+      "stem": "Under the Vienna Convention on Diplomatic Relations (1961), which of the following is NOT a category of diplomatic agent?",
+      "options": {
+        "A": "Ambassador",
+        "B": "Envoy",
+        "C": "Charge d'affaires",
+        "D": "Consul General"
+      },
+      "answer": "D",
+      "explanation": "The Vienna Convention on Diplomatic Relations recognizes three classes: ambassadors/nuncios, envoys/ministers, and charges d'affaires. Consuls are governed by the separate 1963 Vienna Convention on Consular Relations.",
+      "source": "official",
+      "source_id": "vienna_diplomatic_1961",
+      "exam_year": null
+    },
+    {
+      "id": "EN003",
+      "topics": ["T08"],
+      "difficulty": 2,
+      "stem": "Which UN conference framework oversees global climate negotiations?",
+      "options": {
+        "A": "UNEP",
+        "B": "UNFCCC",
+        "C": "UNDP",
+        "D": "IPCC"
+      },
+      "answer": "B",
+      "explanation": "The UNFCCC (UN Framework Convention on Climate Change) is the treaty body under which COP meetings and the Paris Agreement operate. IPCC produces scientific assessments but does not negotiate.",
+      "source": "official",
+      "source_id": "paris_agreement",
+      "exam_year": null
+    },
+    {
+      "id": "EN004",
+      "topics": ["T02"],
+      "difficulty": 1,
+      "stem": "How many permanent members does the UN Security Council have?",
+      "options": {
+        "A": "3",
+        "B": "5",
+        "C": "10",
+        "D": "15"
+      },
+      "answer": "B",
+      "explanation": "The UN Security Council has 5 permanent members (P5): USA, UK, France, Russia, and China. They each hold veto power. The Council also has 10 non-permanent rotating members.",
+      "source": "official",
+      "source_id": "un_charter",
+      "exam_year": null
+    },
+    {
+      "id": "EN005",
+      "topics": ["T04"],
+      "difficulty": 2,
+      "stem": "Article 5 of the North Atlantic Treaty establishes:",
+      "options": {
+        "A": "The right of member states to maintain nuclear arsenals",
+        "B": "The principle of collective defense",
+        "C": "The structure of NATO's military command",
+        "D": "The procedure for admitting new members"
+      },
+      "answer": "B",
+      "explanation": "Article 5 states that an armed attack against one member is considered an attack against all members — the collective defense clause. Article 10 covers membership admission.",
+      "source": "official",
+      "source_id": "nato_treaty",
+      "exam_year": null
+    }
+  ]
+}

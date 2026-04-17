@@ -1,0 +1,195 @@
+{
+  "resources": {
+    "test_material": {
+      "description": "Sources used directly for test questions, flashcards, and exam preparation",
+      "items": [
+        {
+          "id": "res_exams",
+          "title": "Gamla skriftliga prov (2019-2025)",
+          "url": "https://www.regeringen.se/jobba-hos-oss/praktik/skriftliga-prov-for-diplomatprogrammet/",
+          "source_class": "official",
+          "purpose": "Direkt ovning pa gamla prov, essay prompts och faktadelar."
+        },
+        {
+          "id": "res_qa",
+          "title": "Officiell Q&A om diplomatprogrammet",
+          "url": "https://www.regeringen.se/globalassets/regeringen/dokument/utrikesdepartementet/qa---vanliga-fragor-om-diplomatprogrammet.pdf",
+          "source_class": "official",
+          "purpose": "Format, forvantan, process och officiell vagledning."
+        },
+        {
+          "id": "res_grundlagar",
+          "title": "Sveriges grundlagar (riksdagen.se)",
+          "urls": [
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/kungorelse-1974152-om-beslutad-ny-regeringsform_sfs-1974-152/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/successionsordning-181026_sfs-1810-0926/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/tryckfrihetsforordning-19491105_sfs-1949-105/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/yttrandefrihetsgrundlag-19911469_sfs-1991-1469/"
+          ],
+          "source_class": "official",
+          "purpose": "Direkt testbar svensk statsratt och offentlighetsratt."
+        },
+        {
+          "id": "res_un_charter",
+          "title": "FN-stadgan",
+          "url": "https://www.un.org/en/about-us/un-charter/full-text",
+          "source_class": "official",
+          "purpose": "FN-systemet, fred och sakerhet, SC, GA, ICJ."
+        },
+        {
+          "id": "res_vienna",
+          "title": "Wienkonventionerna (1961, 1963, 1969)",
+          "urls": [
+            "https://legal.un.org/ilc/texts/instruments/english/conventions/9_1_1961.pdf",
+            "https://legal.un.org/ilc/texts/instruments/english/conventions/9_2_1963.pdf",
+            "https://legal.un.org/ilc/texts/instruments/english/conventions/1_1_1969.pdf"
+          ],
+          "source_class": "official",
+          "purpose": "Karnmaterial for diplomatisk och folkrattslig begreppsforstaelse."
+        },
+        {
+          "id": "res_utrikesdeklarationen",
+          "title": "Utrikesdeklarationen 2025 och 2026",
+          "urls": [
+            "https://www.regeringen.se/tal/2025/02/utrikesdeklarationen-2025/",
+            "https://www.regeringen.se/tal/2026/02/utrikesdeklarationen-2026/"
+          ],
+          "source_class": "official",
+          "purpose": "Sveriges aktuella utrikespolitiska prioriteringar."
+        },
+        {
+          "id": "res_sakerhetsstrategi",
+          "title": "Nationell sakerhetsstrategi 2024",
+          "url": "https://www.regeringen.se/informationsmaterial/2024/07/nationell-sakerhetsstrategi/",
+          "source_class": "official",
+          "purpose": "Svensk sakerhetsdoktrin, totalforsvar, motstandskraft."
+        },
+        {
+          "id": "res_paris",
+          "title": "Parisavtalet och COP-processen",
+          "url": "https://unfccc.int/sites/default/files/english_paris_agreement.pdf",
+          "source_class": "official",
+          "purpose": "Klimatdiplomati, 1.5-gradersmalet, genomforandeproblem."
+        },
+        {
+          "id": "res_nato_treaty",
+          "title": "North Atlantic Treaty",
+          "url": "https://www.nato.int/cps/en/natohq/official_texts_17120.htm",
+          "source_class": "official",
+          "purpose": "Artikel 5, medlemskap och kollektivt forsvar."
+        },
+        {
+          "id": "res_eu_treaties",
+          "title": "EU-fordragen (TEU/TFEU)",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012M/TXT",
+          "source_class": "official",
+          "purpose": "EU:s institutionella struktur, kompetenser och beslutsprocess."
+        },
+        {
+          "id": "res_echr",
+          "title": "Europakonventionen",
+          "url": "https://www.echr.coe.int/documents/d/echr/convention_eng",
+          "source_class": "official",
+          "purpose": "Europaradets MR-system och grundlaggande rattigheter."
+        }
+      ]
+    },
+    "study_podcasts": {
+      "description": "Podcasts for building allmanbildning and current-affairs range",
+      "items": [
+        {
+          "id": "pod_konflikt",
+          "title": "SR Konflikt",
+          "lang": "sv",
+          "rss": "https://api.sr.se/api/rss/pod/3970",
+          "purpose": "Djupdykningar om konflikter och geopolitik.",
+          "frequency": "weekly"
+        },
+        {
+          "id": "pod_godmorgon",
+          "title": "Godmorgon, varlden!",
+          "lang": "sv",
+          "rss": "https://api.sr.se/api/rss/pod/4490",
+          "purpose": "Bred veckovis utrikesoversikt med god DIPS-nytta.",
+          "frequency": "weekly"
+        },
+        {
+          "id": "pod_utrikesbyran",
+          "title": "Utrikesbyran",
+          "lang": "sv",
+          "rss": "https://api.sr.se/api/rss/pod/4923",
+          "purpose": "Korrespondentperspektiv och forankrade analyser.",
+          "frequency": "weekly"
+        },
+        {
+          "id": "pod_ud",
+          "title": "UD-podden",
+          "lang": "sv",
+          "url": "https://www.regeringen.se/sveriges-regering/utrikesdepartementet/ud-podden/",
+          "purpose": "Nara diplomatyrket och UD:s eget perspektiv.",
+          "frequency": "irregular"
+        },
+        {
+          "id": "pod_ui_utblick",
+          "title": "UI:s Utblick",
+          "lang": "sv",
+          "url": "https://www.ui.se/utrikesmagasinet/podcast/",
+          "purpose": "Tankesmedjeanalys som ar bra for uppsatsstruktur.",
+          "frequency": "biweekly"
+        },
+        {
+          "id": "pod_studio_ett",
+          "title": "Studio Ett",
+          "lang": "sv",
+          "rss": "https://api.sr.se/api/rss/pod/3795",
+          "purpose": "Daglig nyhetsfordjupning for aktuella amnen.",
+          "frequency": "daily"
+        },
+        {
+          "id": "pod_ft_briefing",
+          "title": "FT News Briefing",
+          "lang": "en",
+          "url": "https://www.ft.com/podcasts/news-briefing",
+          "purpose": "Kompakt ekonomi- och varldsbriefing.",
+          "frequency": "daily"
+        },
+        {
+          "id": "pod_economist",
+          "title": "The Intelligence",
+          "lang": "en",
+          "url": "https://www.economist.com/podcasts",
+          "purpose": "Global analys med bra essay-vinkel pa engelska.",
+          "frequency": "daily"
+        },
+        {
+          "id": "pod_foreign_affairs",
+          "title": "Foreign Affairs Interview",
+          "lang": "en",
+          "url": "https://www.foreignaffairs.com/podcasts/foreign-affairs-interview",
+          "purpose": "Djupare internationell analys for T02/T03/T04.",
+          "frequency": "weekly"
+        },
+        {
+          "id": "pod_rest_politics",
+          "title": "The Rest Is Politics",
+          "lang": "en",
+          "url": "https://therestispolitics.com/",
+          "purpose": "Lattillganglig politisk analys som breddar allmanbildningen.",
+          "frequency": "biweekly"
+        }
+      ]
+    },
+    "databases": {
+      "description": "Reference databases for study and fact-checking",
+      "items": [
+        {"id": "db_landguiden", "title": "UI Landguiden", "url": "https://www.ui.se/landguiden/", "note": "Biblioteksinloggning eller prenumeration kravs."},
+        {"id": "db_sakerhetspolitik", "title": "Sakerhetspolitik.se", "url": "https://www.sakerhetspolitik.se/"},
+        {"id": "db_globalis", "title": "Globalis.se", "url": "https://www.globalis.se/"},
+        {"id": "db_sipri", "title": "SIPRI Databases", "url": "https://www.sipri.org/databases"},
+        {"id": "db_freedomhouse", "title": "Freedom House", "url": "https://freedomhouse.org/countries/freedom-world/scores"},
+        {"id": "db_owid", "title": "Our World in Data", "url": "https://ourworldindata.org/"},
+        {"id": "db_sieps", "title": "SIEPS Publications", "url": "https://www.sieps.se/publikationer/"}
+      ]
+    }
+  }
+}

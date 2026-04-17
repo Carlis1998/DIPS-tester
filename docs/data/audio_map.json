@@ -1,0 +1,135 @@
+{
+  "study_podcasts": [
+    {
+      "id": "A01",
+      "title": "Sverige - statsskick och institutioner",
+      "lang": ["sv", "es"],
+      "topic": "T01",
+      "description": "Riksdagen, regeringen, grundlagarna, det svenska valsystemet, kommuner och regioner. Allt som testas om Sverige.",
+      "target_duration_min": 6,
+      "files": {
+        "sv": "SV/audio/A01-sverige-statsskick.mp3",
+        "es": "ES/audio/A01-suecia-sistema-politico.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A02",
+      "title": "EU, FN, NATO och internationella organisationer",
+      "lang": ["sv", "es"],
+      "topic": "T02",
+      "description": "EU-institutionerna, FN-systemet, NATO:s struktur, OSSE, Europaradet, WTO. Nyckelpersoner och mandat.",
+      "target_duration_min": 8,
+      "files": {
+        "sv": "SV/audio/A02-internationella-org.mp3",
+        "es": "ES/audio/A02-organizaciones-internacionales.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A03",
+      "title": "Folkratt och manskliga rattigheter",
+      "lang": ["sv", "es"],
+      "topic": "T03",
+      "description": "Wienkonventionerna, folkrattens grundprinciper, ICJ, ICC, R2P, humanitar ratt, flyktingratt.",
+      "target_duration_min": 7,
+      "files": {
+        "sv": "SV/audio/A03-folkratt-mr.mp3",
+        "es": "ES/audio/A03-derecho-internacional-ddhh.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A04",
+      "title": "Aktuella konflikter och sakerhetspolitik",
+      "lang": ["sv", "es"],
+      "topic": "T04",
+      "description": "Ukraina, Mellanostern, Afrika, Indo-Stilla havet. Sveriges NATO-medlemskap, nationell sakerhetsstrategi.",
+      "target_duration_min": 8,
+      "files": {
+        "sv": "SV/audio/A04-konflikter-sakerhet.mp3",
+        "es": "ES/audio/A04-conflictos-seguridad.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A05",
+      "title": "Svensk och internationell ekonomi",
+      "lang": ["sv", "es"],
+      "topic": "T05",
+      "description": "BNP, handelsbalans, exportvaror, Riksbanken, bistand, EU:s ekonomiska politik, WTO, frihandelsavtal.",
+      "target_duration_min": 6,
+      "files": {
+        "sv": "SV/audio/A05-ekonomi-handel.mp3",
+        "es": "ES/audio/A05-economia-comercio.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A06",
+      "title": "Historia och geografi",
+      "lang": ["sv", "es"],
+      "topic": "T06",
+      "description": "Svensk historia, varldskrigen, kalla kriget, avkolonisering, EU:s historia. Huvudstader, kartor, geopolitik.",
+      "target_duration_min": 8,
+      "files": {
+        "sv": "SV/audio/A06-historia-geografi.mp3",
+        "es": "ES/audio/A06-historia-geografia.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A07",
+      "title": "Kultur, Nobel, litteratur och sprak",
+      "lang": ["sv", "es"],
+      "topic": "T07",
+      "description": "Nobelpristagare, svensk litteratur och kultur, sport, hogtider, kulturpolitik.",
+      "target_duration_min": 5,
+      "files": {
+        "sv": "SV/audio/A07-kultur-nobel.mp3",
+        "es": "ES/audio/A07-cultura-nobel.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A08",
+      "title": "Klimat och miljo - internationell diplomati",
+      "lang": ["sv", "es"],
+      "topic": "T08",
+      "description": "Parisavtalet, COP-processen, Agenda 2030, biologisk mangfald, svensk klimatpolitik.",
+      "target_duration_min": 6,
+      "files": {
+        "sv": "SV/audio/A08-klimat-miljo.mp3",
+        "es": "ES/audio/A08-clima-medioambiente.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A09",
+      "title": "Uppsatstraning - svensk PM-struktur och argumentation",
+      "lang": ["sv", "es"],
+      "topic": "T10",
+      "description": "Hur du skriver ett PM pa provet. Struktur, argumentation, avvagningar, tidsdisponering.",
+      "target_duration_min": 7,
+      "files": {
+        "sv": "SV/audio/A09-uppsats-struktur.mp3",
+        "es": "ES/audio/A09-estructura-ensayo.mp3"
+      },
+      "status": "planned"
+    },
+    {
+      "id": "A10",
+      "title": "Veckans nyhetsbrief",
+      "lang": ["sv", "es"],
+      "topic": "T04",
+      "description": "Aktuella handelser relevant for DIPS. Uppdateras veckovis baserat pa nyhetsfloden.",
+      "target_duration_min": 4,
+      "files": {
+        "sv": "SV/audio/A10-veckans-brief.mp3",
+        "es": "ES/audio/A10-resumen-semanal.mp3"
+      },
+      "status": "planned",
+      "recurring": true
+    }
+  ]
+}

@@ -1,0 +1,174 @@
+{
+  "questions": [
+    {
+      "id": "SV001",
+      "topics": ["T01"],
+      "difficulty": 1,
+      "stem": "Hur manga ledamoter har Sveriges riksdag?",
+      "options": {
+        "A": "299",
+        "B": "349",
+        "C": "399",
+        "D": "451"
+      },
+      "answer": "B",
+      "explanation": "Riksdagen har 349 ledamoter fordelade pa 29 valkretsar.",
+      "source": "official",
+      "source_id": "grundlag_rf",
+      "exam_year": null
+    },
+    {
+      "id": "SV002",
+      "topics": ["T01"],
+      "difficulty": 1,
+      "stem": "Vilka ar Sveriges fyra grundlagar?",
+      "options": {
+        "A": "Regeringsformen, Successionsordningen, Tryckfrihetsforordningen, Yttrandefrihetsgrundlagen",
+        "B": "Regeringsformen, Successionsordningen, Riksdagsordningen, Tryckfrihetsforordningen",
+        "C": "Grundlagen, Tryckfrihetsforordningen, Yttrandefrihetsgrundlagen, Offentlighetsprincipen",
+        "D": "Regeringsformen, Kommunallagen, Tryckfrihetsforordningen, Yttrandefrihetsgrundlagen"
+      },
+      "answer": "A",
+      "explanation": "De fyra grundlagarna ar: Regeringsformen (RF), Successionsordningen (SO), Tryckfrihetsforordningen (TF) och Yttrandefrihetsgrundlagen (YGL).",
+      "source": "official",
+      "source_id": "grundlag_rf",
+      "exam_year": null
+    },
+    {
+      "id": "SV003",
+      "topics": ["T02"],
+      "difficulty": 1,
+      "stem": "Hur manga medlemsstater har EU (2026)?",
+      "options": {
+        "A": "25",
+        "B": "27",
+        "C": "28",
+        "D": "30"
+      },
+      "answer": "B",
+      "explanation": "EU har 27 medlemsstater sedan Storbritanniens uttrde 2020.",
+      "source": "official",
+      "source_id": "eu_treaty_teu",
+      "exam_year": null
+    },
+    {
+      "id": "SV004",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vilken artikel i FN-stadgan reglerar Sakerhetsradets ratt att auktorisera militart vald?",
+      "options": {
+        "A": "Artikel 2",
+        "B": "Artikel 39",
+        "C": "Artikel 42",
+        "D": "Artikel 51"
+      },
+      "answer": "C",
+      "explanation": "Artikel 42 ger Sakerhetsradet ratt att vidta militara atgarder. Artikel 51 handlar om sjalvforsvarsratten. Artikel 39 faststaller att ett hot mot freden foreligger.",
+      "source": "official",
+      "source_id": "un_charter",
+      "exam_year": null
+    },
+    {
+      "id": "SV005",
+      "topics": ["T03"],
+      "difficulty": 2,
+      "stem": "Wienkonventionen om diplomatiska forbindelser antogs ar:",
+      "options": {
+        "A": "1945",
+        "B": "1949",
+        "C": "1961",
+        "D": "1969"
+      },
+      "answer": "C",
+      "explanation": "Wienkonventionen om diplomatiska forbindelser antogs 1961 och reglerar bland annat diplomatisk immunitet.",
+      "source": "official",
+      "source_id": "vienna_diplomatic_1961",
+      "exam_year": null
+    },
+    {
+      "id": "SV006",
+      "topics": ["T03"],
+      "difficulty": 2,
+      "stem": "Vilken internationell domstol handlagger tvister mellan stater?",
+      "options": {
+        "A": "ICC - Internationella brottmalsdomstolen",
+        "B": "ICJ - Internationella domstolen i Haag",
+        "C": "Europadomstolen",
+        "D": "WTO:s tvistelösningsorgan"
+      },
+      "answer": "B",
+      "explanation": "ICJ (International Court of Justice) ar FN:s huvudsakliga rattsliga organ och avgör tvister mellan stater. ICC handlagger brottmal mot individer.",
+      "source": "official",
+      "source_id": "un_charter",
+      "exam_year": null
+    },
+    {
+      "id": "SV007",
+      "topics": ["T06"],
+      "difficulty": 1,
+      "stem": "Vilket ar ar Sverige officiellt medlem i NATO?",
+      "options": {
+        "A": "2022",
+        "B": "2023",
+        "C": "2024",
+        "D": "2025"
+      },
+      "answer": "C",
+      "explanation": "Sverige blev officiellt medlem i NATO den 7 mars 2024, efter att Turkiet och Ungern ratificerat anslutningsprotokollet.",
+      "source": "official",
+      "source_id": "nato_treaty",
+      "exam_year": null
+    },
+    {
+      "id": "SV008",
+      "topics": ["T08"],
+      "difficulty": 2,
+      "stem": "Parisavtalet syftar till att begransa den globala uppvarmningen till:",
+      "options": {
+        "A": "1,0 grader over forindustriell niva",
+        "B": "1,5 grader over forindustriell niva",
+        "C": "2,0 grader over forindustriell niva",
+        "D": "2,5 grader over forindustriell niva"
+      },
+      "answer": "B",
+      "explanation": "Parisavtalet (2015) syftar till att halla uppvarmningen val under 2 grader och strava mot 1,5 grader over forindustriell niva.",
+      "source": "official",
+      "source_id": "paris_agreement",
+      "exam_year": null
+    },
+    {
+      "id": "SV009",
+      "topics": ["T05"],
+      "difficulty": 1,
+      "stem": "Vilken ar Sveriges storsta enskilda handelspartner (export)?",
+      "options": {
+        "A": "USA",
+        "B": "Norge",
+        "C": "Tyskland",
+        "D": "Finland"
+      },
+      "answer": "C",
+      "explanation": "Tyskland ar Sveriges storsta handelspartner bade for export och import, foljt av Norge och USA.",
+      "source": "secondary",
+      "source_id": null,
+      "exam_year": null
+    },
+    {
+      "id": "SV010",
+      "topics": ["T04"],
+      "difficulty": 2,
+      "stem": "Vilket FN-organ har huvudansvar for internationell fred och sakerhet?",
+      "options": {
+        "A": "Generalforsamlingen",
+        "B": "Sakerhetsradet",
+        "C": "Internationella domstolen",
+        "D": "Generalsekreteraren"
+      },
+      "answer": "B",
+      "explanation": "FN:s sakerhetsrad har enligt FN-stadgan huvudansvar for upprätthallande av internationell fred och sakerhet. Radet har 5 permanenta och 10 roterande medlemmar.",
+      "source": "official",
+      "source_id": "un_charter",
+      "exam_year": null
+    }
+  ]
+}
