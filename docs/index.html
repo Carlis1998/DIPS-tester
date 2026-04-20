@@ -379,7 +379,7 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 .region-chip{flex-shrink:0;padding:6px 12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:999px;font-size:11px;font-weight:700;color:var(--text-dim);cursor:pointer;font-family:inherit;white-space:nowrap}
 .region-chip.active{background:var(--blue);color:#0f172a;border-color:var(--blue)}
 
-.map-stage{position:relative;width:100%;height:60vh;min-height:340px;max-height:560px;background:radial-gradient(ellipse at 50% 40%,rgba(59,130,246,.12),rgba(15,23,42,.98) 75%);border:1px solid rgba(148,163,184,.15);border-radius:16px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+.map-stage{position:relative;width:100%;height:52vh;min-height:300px;max-height:520px;background:radial-gradient(ellipse at 50% 40%,rgba(59,130,246,.12),rgba(15,23,42,.98) 75%);border:1px solid rgba(148,163,184,.15);border-radius:16px;overflow:hidden;touch-action:pan-y pinch-zoom;user-select:none;-webkit-user-select:none}
 .map-stage svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
 .map-stage svg .countries path{fill:#1b2740;stroke:rgba(15,23,42,.8);stroke-width:.55;transition:fill .15s}
 .map-stage svg .countries path.dim{fill:#131c30}
@@ -1863,6 +1863,7 @@ const MAP_STATE = {
   correct: 0,
   streak: 0,
   bestStreak: +(localStorage.getItem('dips_map_best_streak')||0),
+  fallbackNotice: '',
   zoom: 1,
   tx: 0,
   ty: 0,
@@ -1910,9 +1911,22 @@ async function ensureWorldSvg(){
 }
 
 function currentPool(){
-  const all = flattenLeaders().filter(l => typeof l.mx === 'number');
+  const all = flattenLeaders().filter(l => typeof l.mx === 'number' && typeof l.my === 'number');
   const filter = MAP_REGION_FILTERS.find(f => f.key === MAP_STATE.regionKey) || MAP_REGION_FILTERS[0];
-  return all.filter(filter.test);
+  const filtered = all.filter(filter.test);
+  return filtered.length ? filtered : all;
+}
+
+function regionLabel(key){
+  return (MAP_REGION_FILTERS.find(f=>f.key===key)?.label) || 'vald region';
+}
+
+function playablePool(minCount){
+  const all = flattenLeaders().filter(l => typeof l.mx === 'number' && typeof l.my === 'number');
+  const filtered = all.filter((MAP_REGION_FILTERS.find(f=>f.key===MAP_STATE.regionKey) || MAP_REGION_FILTERS[0]).test);
+  if(filtered.length >= minCount) return {pool:filtered, fallback:false, available:filtered.length};
+  if(all.length >= minCount) return {pool:all, fallback:true, available:filtered.length};
+  return {pool:all, fallback:false, available:filtered.length};
 }
 
 async function renderMap(mode, sub){
@@ -2030,19 +2044,24 @@ function bindMapGestures(){
   const stage = document.getElementById('mapStage');
   if(!stage) return;
   let pointers = new Map();
-  let lastPinchDist = 0, lastPinchMid = null;
+  let lastPinchDist = 0;
   let dragStart = null;
   let mayTap = true;
+  let isDraggingMap = false;
 
   stage.addEventListener('pointerdown', e => {
-    stage.setPointerCapture(e.pointerId);
     pointers.set(e.pointerId, {x:e.clientX, y:e.clientY, startX:e.clientX, startY:e.clientY});
-    if(pointers.size === 1){ dragStart = {tx:MAP_STATE.tx, ty:MAP_STATE.ty, x:e.clientX, y:e.clientY}; mayTap = true; }
-    else if(pointers.size === 2){
+    if(pointers.size === 1){
+      dragStart = {tx:MAP_STATE.tx, ty:MAP_STATE.ty, x:e.clientX, y:e.clientY};
+      mayTap = true;
+      isDraggingMap = false;
+      if(MAP_STATE.zoom > 1.02) stage.setPointerCapture(e.pointerId);
+    } else if(pointers.size === 2){
+      stage.setPointerCapture(e.pointerId);
       const [a,b] = [...pointers.values()];
       lastPinchDist = Math.hypot(a.x-b.x,a.y-b.y);
-      lastPinchMid  = { x:(a.x+b.x)/2, y:(a.y+b.y)/2 };
       mayTap = false;
+      isDraggingMap = true;
     }
   });
   stage.addEventListener('pointermove', e => {
@@ -2051,10 +2070,13 @@ function bindMapGestures(){
     p.x = e.clientX; p.y = e.clientY;
     if(pointers.size === 1 && dragStart){
       const dx = e.clientX - dragStart.x, dy = e.clientY - dragStart.y;
-      if(Math.abs(dx) > 4 || Math.abs(dy) > 4) mayTap = false;
-      MAP_STATE.tx = dragStart.tx + dx;
-      MAP_STATE.ty = dragStart.ty + dy;
-      applyMapTransform();
+      if(Math.abs(dx) > 6 || Math.abs(dy) > 6) mayTap = false;
+      if(MAP_STATE.zoom > 1.02){
+        isDraggingMap = true;
+        MAP_STATE.tx = dragStart.tx + dx;
+        MAP_STATE.ty = dragStart.ty + dy;
+        applyMapTransform();
+      }
     } else if(pointers.size === 2){
       const [a,b] = [...pointers.values()];
       const d = Math.hypot(a.x-b.x,a.y-b.y);
@@ -2064,27 +2086,25 @@ function bindMapGestures(){
         const focal = { x:mid.x - rect.left, y:mid.y - rect.top };
         setMapZoom(MAP_STATE.zoom * (d/lastPinchDist), focal);
       }
-      lastPinchDist = d; lastPinchMid = mid;
+      lastPinchDist = d;
+      isDraggingMap = true;
     }
   });
   const endPtr = e => {
-    const p = pointers.get(e.pointerId);
-    if(!p) return;
+    const hadPointer = pointers.has(e.pointerId);
     const wasSingle = pointers.size === 1;
+    if(!hadPointer) return;
     pointers.delete(e.pointerId);
-    if(wasSingle && mayTap){
+    if(wasSingle && mayTap && !isDraggingMap){
       const rect = stage.getBoundingClientRect();
-      const screenX = e.clientX - rect.left;
-      const screenY = e.clientY - rect.top;
-      handleMapTap(screenX, screenY);
+      handleMapTap(e.clientX - rect.left, e.clientY - rect.top);
     }
-    if(pointers.size < 2){ lastPinchDist = 0; lastPinchMid = null; }
-    if(pointers.size === 0) dragStart = null;
+    if(pointers.size < 2) lastPinchDist = 0;
+    if(pointers.size === 0){ dragStart = null; isDraggingMap = false; }
   };
   stage.addEventListener('pointerup', endPtr);
   stage.addEventListener('pointercancel', endPtr);
 
-  // Wheel-zoom for desktop QA
   stage.addEventListener('wheel', e => {
     e.preventDefault();
     const rect = stage.getBoundingClientRect();
@@ -2223,12 +2243,13 @@ function titleCase(s){ return (s||'').toLowerCase().replace(/(^|\s|-)([\wåäö�
 
 // ---- Placera mode ----
 function startPlayRound(){
-  const pool = currentPool();
-  if(pool.length < 2){
-    document.getElementById('mapPanel').innerHTML = `<div class="empty">Inte nog med ledare i denna region.</div>`;
+  const pick = playablePool(2);
+  if(pick.pool.length < 2){
+    document.getElementById('mapPanel').innerHTML = `<div class="empty">Kartan saknar fortfarande tillräckligt många ledare för spel. Testa ledarlistan i stället.</div>`;
     return;
   }
-  MAP_STATE.pool = pool;
+  MAP_STATE.pool = pick.pool;
+  MAP_STATE.fallbackNotice = pick.fallback ? `Automatisk fallback: ${regionLabel(MAP_STATE.regionKey)} hade bara ${pick.available} spelbara ledare just nu, så kartquizet använder hela världen i stället.` : '';
   nextPlayRound(true);
 }
 function nextPlayRound(initial){
@@ -2253,6 +2274,7 @@ function nextPlayRound(initial){
   // but keep a few "decoy" markers to orient them. Showing only the target country pin.
   const panel = document.getElementById('mapPanel');
   panel.innerHTML = `
+    ${MAP_STATE.fallbackNotice ? `<div class="feedback-bar show no" style="margin-bottom:10px;background:rgba(59,130,246,.10);border-color:rgba(59,130,246,.35);color:#dbeafe"><b>${MAP_STATE.fallbackNotice}</b></div>` : ''}
     <div class="prompt-card">
       <div class="pic">
         <img src="../${pick.photo}" alt="${pick.initials}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${pick.photo}'}else{this.parentElement.textContent='${pick.initials}'}">
@@ -2278,12 +2300,13 @@ function skipPlayRound(){
 
 // ---- Gissa mode ----
 function startGuessRound(){
-  const pool = currentPool();
-  if(pool.length < 4){
-    document.getElementById('mapPanel').innerHTML = `<div class="empty">För få ledare i denna region (minst 4 behövs).</div>`;
+  const pick = playablePool(4);
+  if(pick.pool.length < 4){
+    document.getElementById('mapPanel').innerHTML = `<div class="empty">Kartan saknar fortfarande tillräckligt många ledare för gissningsläget.</div>`;
     return;
   }
-  MAP_STATE.pool = pool;
+  MAP_STATE.pool = pick.pool;
+  MAP_STATE.fallbackNotice = pick.fallback ? `Automatisk fallback: ${regionLabel(MAP_STATE.regionKey)} hade bara ${pick.available} spelbara ledare just nu, så gissningsläget använder hela världen i stället.` : '';
   nextGuessRound();
 }
 function nextGuessRound(){
@@ -2309,6 +2332,7 @@ function nextGuessRound(){
   const options = [target, ...decoys].sort(()=>Math.random()-.5);
   const panel = document.getElementById('mapPanel');
   panel.innerHTML = `
+    ${MAP_STATE.fallbackNotice ? `<div class="feedback-bar show no" style="margin-bottom:10px;background:rgba(59,130,246,.10);border-color:rgba(59,130,246,.35);color:#dbeafe"><b>${MAP_STATE.fallbackNotice}</b></div>` : ''}
     <div class="prompt-card" style="padding:10px 14px">
       <div class="pc-body" style="text-align:center">
         <div class="pc-q">Vem styr det markerade landet?</div>
@@ -2350,7 +2374,8 @@ function renderFreeMode(){
   clearPins(); clearFeedback();
   MAP_STATE.target = null;
   markTarget(null);
-  const pool = currentPool();
+  const pick = playablePool(1);
+  const pool = pick.pool;
   pool.forEach(l => {
     addPin(l, {
       classNames: 'pin ' + (l.key && ['trump','xi','putin','macron','merz','starmer','kristersson','modi'].includes(l.key) ? 'lg' : ''),
@@ -2359,9 +2384,10 @@ function renderFreeMode(){
   });
   document.getElementById('mapPanel').innerHTML = `
     <div class="feedback-bar show" style="background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.35);color:#dbeafe">
-      <b>Läromläge.</b> Tryck på en pin för att läsa om ledaren. Zooma in på Europa om det blir trångt.
+      <b>Läromläge.</b> Tryck på en pin för att läsa om ledaren. Zooma in på Europa om det blir trångt.${pick.fallback ? ` Regionen ${regionLabel(MAP_STATE.regionKey)} hade för få separata kartpunkter, så vi visar hela världen i stället.` : ``}
     </div>`;
 }
+
 
 function handleFreeTap(sx, sy){
   // In free mode, pins have their own click handlers (pointer-events:auto).
