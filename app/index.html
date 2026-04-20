@@ -488,7 +488,7 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 <nav class="bnav">
   <a href="#home" data-v="home"><span>&#127968;</span>Hem</a>
   <a href="#batteries" data-v="batteries"><span>&#128209;</span>Provarkiv</a>
-  <a href="#map" data-v="map"><span>&#127758;</span>Kartan</a>
+  <a href="#map" data-v="map"><span>&#127758;</span>Karta</a>
   <a href="#leaders" data-v="leaders"><span>&#127894;</span>Ledare</a>
   <a href="#drill" data-v="drill"><span>&#128293;</span>Drill</a>
 </nav>
@@ -1005,11 +1005,11 @@ function renderHome(){
       <a class="shortcut-tile primary" href="#map/play">
         <span class="st-ico">&#127758;</span>
         <span>Kartquiz</span>
-        <span class="st-sub">Placera ledarna</span>
+        <span class="st-sub">Länder, kartor, minne</span>
       </a>
       <a class="shortcut-tile" href="#leaders">
         <span class="st-ico">&#127894;</span>
-        <span>Ledare+</span>
+        <span>Ledare</span>
         <span class="st-sub">${(LEADERS?.regions||[]).reduce((s,r)=>s+r.leaders.length,0)} ledare + regenter</span>
       </a>
       <a class="shortcut-tile" href="#hub">
@@ -1030,7 +1030,7 @@ function renderHome(){
       <a class="shortcut-tile" href="#mock">
         <span class="st-ico">&#128337;</span>
         <span>Övningsprov</span>
-        <span class="st-sub">Provkänsla</span>
+        <span class="st-sub">Öva som på provet</span>
       </a>
       <a class="shortcut-tile cool" href="#essay">
         <span class="st-ico">&#9997;&#65039;</span>
@@ -1053,6 +1053,7 @@ function renderHome(){
         <span class="st-sub">Original-PDF, fördrag</span>
       </a>
     </div>
+    <div class="mini-list" style="margin-top:12px"><strong>Snabbnavigation</strong><ul><li><strong>Provarkiv</strong>: riktiga DIPS-frågebatterier och originalprov.</li><li><strong>Karta</strong>: världsledare på karta, placering och lärläge.</li><li><strong>Ledare</strong>: världsledare, organisationschefer, regenter och planscher.</li><li><strong>Drill</strong>: det du markerat som svårt.</li></ul></div>
     <div id="home-battery-archive" class="resource-grid"></div>`;
 
   const container = document.getElementById('home-battery-archive');

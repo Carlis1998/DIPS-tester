@@ -365,6 +365,106 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 .podcast-status{font-size:10px;padding:3px 8px;border-radius:999px;font-weight:700}
 .podcast-status.ready{background:rgba(34,197,94,.15);color:var(--green)}
 .podcast-status.planned{background:rgba(255,255,255,.06);color:var(--text-dim)}
+
+/* ============ MAP QUIZ ============ */
+.map-hero{background:linear-gradient(160deg,rgba(56,189,248,.12),rgba(167,139,250,.08));border:1px solid rgba(148,163,184,.18);border-radius:16px;padding:14px 14px 12px;margin-bottom:10px}
+.map-hero h1{font-size:19px;letter-spacing:-.3px;margin-bottom:2px}
+.map-hero p{font-size:12px;color:var(--text-dim);line-height:1.5}
+.mode-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin:10px 0 12px}
+.mode-tab{padding:9px 6px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;color:var(--text-dim);font-weight:800;font-size:11px;cursor:pointer;font-family:inherit;line-height:1.15;text-align:center}
+.mode-tab span{display:block;font-size:17px;margin-bottom:2px}
+.mode-tab.active{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 6px 20px -8px var(--accent)}
+.region-chips{display:flex;gap:6px;overflow-x:auto;margin:0 -14px 10px;padding:0 14px 2px;scrollbar-width:none}
+.region-chips::-webkit-scrollbar{display:none}
+.region-chip{flex-shrink:0;padding:6px 12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:999px;font-size:11px;font-weight:700;color:var(--text-dim);cursor:pointer;font-family:inherit;white-space:nowrap}
+.region-chip.active{background:var(--blue);color:#0f172a;border-color:var(--blue)}
+
+.map-stage{position:relative;width:100%;height:60vh;min-height:340px;max-height:560px;background:radial-gradient(ellipse at 50% 40%,rgba(59,130,246,.12),rgba(15,23,42,.98) 75%);border:1px solid rgba(148,163,184,.15);border-radius:16px;overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none}
+.map-stage svg{position:absolute;top:0;left:0;width:100%;height:100%;pointer-events:none}
+.map-stage svg .countries path{fill:#1b2740;stroke:rgba(15,23,42,.8);stroke-width:.55;transition:fill .15s}
+.map-stage svg .countries path.dim{fill:#131c30}
+.map-stage svg .countries path.target{fill:rgba(251,191,36,.38);stroke:var(--orange);stroke-width:1.3;animation:tgtpulse 1.6s ease-in-out infinite}
+.map-stage svg .countries path.correct{fill:rgba(34,197,94,.55);stroke:var(--green);stroke-width:1.1}
+.map-stage svg .countries path.wrong{fill:rgba(239,68,68,.45);stroke:var(--red);stroke-width:1.1}
+.map-stage svg .countries path.hilite{fill:rgba(56,189,248,.35);stroke:var(--blue);stroke-width:1}
+.map-stage svg .graticule path{stroke:rgba(148,163,184,.1);stroke-width:.35}
+@keyframes tgtpulse{0%,100%{filter:drop-shadow(0 0 0 rgba(251,191,36,.0))}50%{filter:drop-shadow(0 0 10px rgba(251,191,36,.7))}}
+
+.pin{position:absolute;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.55);cursor:pointer;transition:transform .12s}
+.pin.lg{width:30px;height:30px;margin:-15px 0 0 -15px}
+.pin.small{width:12px;height:12px;margin:-6px 0 0 -6px;border-width:1.5px}
+.pin.ghost{background:rgba(148,163,184,.25);border-color:rgba(255,255,255,.45)}
+.pin.hit{background:var(--green);animation:ping .5s ease-out}
+.pin.miss{background:var(--red)}
+.pin .pin-photo{position:absolute;inset:2px;border-radius:50%;overflow:hidden;background:#334155}
+.pin .pin-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.pin .pin-label{position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:4px;font-size:9px;font-weight:800;color:#fff;background:rgba(15,23,42,.88);padding:2px 6px;border-radius:4px;white-space:nowrap;pointer-events:none;letter-spacing:.2px}
+@keyframes ping{0%{transform:scale(.7)}50%{transform:scale(1.35)}100%{transform:scale(1)}}
+
+.map-tap-ring{position:absolute;width:56px;height:56px;margin:-28px 0 0 -28px;border-radius:50%;border:2px solid var(--accent);pointer-events:none;animation:tapfade .8s ease-out forwards}
+.map-tap-ring.hit{border-color:var(--green)}
+.map-tap-ring.miss{border-color:var(--red)}
+@keyframes tapfade{0%{transform:scale(.4);opacity:1}100%{transform:scale(1.8);opacity:0}}
+
+.map-hud{position:absolute;top:10px;left:10px;right:10px;display:flex;justify-content:space-between;align-items:center;gap:10px;pointer-events:none;z-index:3}
+.map-hud .hud-card{background:rgba(15,23,42,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:6px 10px;font-size:11px;font-weight:700;color:var(--text);pointer-events:auto}
+.map-hud .hud-card strong{font-size:14px;color:var(--accent);letter-spacing:.3px}
+.map-hud .hud-card.right{text-align:right}
+.map-zoom{position:absolute;bottom:12px;right:12px;display:flex;flex-direction:column;gap:6px;z-index:3}
+.map-zoom button{width:34px;height:34px;border-radius:10px;background:rgba(15,23,42,.8);border:1px solid rgba(255,255,255,.1);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.map-zoom button:active{background:var(--accent)}
+
+/* Prompt card (current leader to place) */
+.prompt-card{display:flex;align-items:center;gap:12px;background:linear-gradient(180deg,rgba(30,41,59,.98),rgba(24,34,54,.98));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:12px 14px;margin-top:10px;box-shadow:0 10px 30px -15px rgba(0,0,0,.6)}
+.prompt-card .pic{width:58px;height:58px;border-radius:14px;overflow:hidden;background:#334155;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--accent)}
+.prompt-card .pic img{width:100%;height:100%;object-fit:cover}
+.prompt-card .pc-body{flex:1;min-width:0}
+.prompt-card .pc-q{font-size:10px;color:var(--text-dim);text-transform:uppercase;letter-spacing:.9px;font-weight:800}
+.prompt-card .pc-name{font-size:16px;font-weight:800;color:var(--text);line-height:1.2;display:flex;align-items:center;gap:6px}
+.prompt-card .pc-sub{font-size:11px;color:var(--text-dim);margin-top:2px}
+.prompt-card .flag{font-size:18px}
+.prompt-card .pc-skip{padding:6px 10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--text-dim);border-radius:8px;font-weight:700;font-size:11px;cursor:pointer;font-family:inherit}
+
+.feedback-bar{margin-top:10px;padding:12px 14px;border-radius:14px;font-size:13px;line-height:1.45;border:1px solid transparent;display:none}
+.feedback-bar.show{display:block}
+.feedback-bar.ok{background:rgba(34,197,94,.14);border-color:rgba(34,197,94,.4);color:#bbf7d0}
+.feedback-bar.no{background:rgba(239,68,68,.12);border-color:rgba(239,68,68,.4);color:#fecaca}
+.feedback-bar b{color:#fff;font-weight:800}
+
+/* Guess-mode choice strip */
+.choice-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.choice-card{background:var(--surface);border:1.5px solid rgba(255,255,255,.08);border-radius:14px;padding:8px;text-align:center;cursor:pointer;transition:.15s;font-family:inherit;color:var(--text)}
+.choice-card:active{transform:scale(.96)}
+.choice-card.correct{border-color:var(--green);background:rgba(34,197,94,.15)}
+.choice-card.wrong{border-color:var(--red);background:rgba(239,68,68,.15);opacity:.7}
+.choice-card .cc-photo{width:100%;aspect-ratio:1;border-radius:10px;overflow:hidden;background:#334155;margin-bottom:4px;display:flex;align-items:center;justify-content:center;font-weight:900;color:var(--accent)}
+.choice-card .cc-photo img{width:100%;height:100%;object-fit:cover}
+.choice-card .cc-name{font-size:10.5px;font-weight:700;line-height:1.2}
+
+/* Study / free mode info sheet */
+.map-sheet{position:fixed;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(15,23,42,.98),rgba(24,34,54,.99));border-top:1px solid rgba(255,255,255,.1);padding:18px 16px calc(20px + env(safe-area-inset-bottom,0px));border-radius:20px 20px 0 0;transform:translateY(110%);transition:transform .22s cubic-bezier(.4,0,.2,1);z-index:100;box-shadow:0 -20px 60px -10px rgba(0,0,0,.7)}
+.map-sheet.open{transform:translateY(0)}
+.map-sheet .sheet-grip{width:40px;height:4px;background:rgba(255,255,255,.25);border-radius:2px;margin:0 auto 12px}
+.map-sheet .ms-head{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.map-sheet .ms-photo{width:62px;height:62px;border-radius:14px;overflow:hidden;background:#334155;flex-shrink:0}
+.map-sheet .ms-photo img{width:100%;height:100%;object-fit:cover}
+.map-sheet .ms-name{font-size:18px;font-weight:900;color:var(--text);line-height:1.15}
+.map-sheet .ms-country{font-size:12px;color:var(--text-dim);font-weight:700;letter-spacing:.4px}
+.map-sheet .ms-role{display:inline-block;margin-top:2px;padding:2px 7px;border-radius:999px;background:rgba(59,130,246,.2);color:var(--blue);font-size:10px;font-weight:800;letter-spacing:.3px}
+.map-sheet .ms-details{font-size:12px;color:var(--text-dim);line-height:1.6}
+.map-sheet .ms-close{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--text-dim);font-size:22px;cursor:pointer;line-height:1}
+.sheet-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.35);opacity:0;pointer-events:none;transition:opacity .22s;z-index:99}
+.sheet-backdrop.open{opacity:1;pointer-events:auto}
+
+/* Home shortcut grid */
+.shortcut-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0 16px}
+.shortcut-tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;padding:14px 6px;background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:14px;color:var(--text);text-decoration:none;text-align:center;font-weight:700;font-size:11.5px;line-height:1.25;transition:.15s}
+.shortcut-tile:active{transform:scale(.96);border-color:var(--accent)}
+.shortcut-tile .st-ico{font-size:24px;line-height:1}
+.shortcut-tile .st-sub{font-size:10px;color:var(--text-dim);font-weight:500}
+.shortcut-tile.primary{background:linear-gradient(145deg,rgba(59,130,246,.25),rgba(56,189,248,.16));border-color:rgba(59,130,246,.5)}
+.shortcut-tile.warm{background:linear-gradient(145deg,rgba(245,158,11,.18),rgba(239,68,68,.1));border-color:rgba(245,158,11,.35)}
+.shortcut-tile.cool{background:linear-gradient(145deg,rgba(167,139,250,.18),rgba(56,189,248,.08));border-color:rgba(167,139,250,.35)}
 </style>
 </head>
 <body>
@@ -380,15 +480,16 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 <div id="v-resources" class="view"></div>
 <div id="v-batteries" class="view"></div>
 <div id="v-leaders" class="view"></div>
+<div id="v-map" class="view"></div>
 <div id="v-translate" class="view"></div>
 <div id="v-podcasts" class="view"></div>
 
 <!-- Bottom nav -->
 <nav class="bnav">
   <a href="#home" data-v="home"><span>&#127968;</span>Hem</a>
-  <a href="#hub" data-v="hub"><span>&#128218;</span>Ämnen</a>
   <a href="#batteries" data-v="batteries"><span>&#128209;</span>Provarkiv</a>
-  <a href="#essay" data-v="essay"><span>&#9997;&#65039;</span>Uppsats</a>
+  <a href="#map" data-v="map"><span>&#127758;</span>Karta</a>
+  <a href="#leaders" data-v="leaders"><span>&#127894;</span>Ledare</a>
   <a href="#drill" data-v="drill"><span>&#128293;</span>Drill</a>
 </nav>
 
@@ -858,6 +959,7 @@ function navigate(hash){
     else if(view==='resources')renderResources();
     else if(view==='batteries')renderBatteries(param);
     else if(view==='leaders')renderLeaders(param);
+    else if(view==='map')renderMap(param, parts[2]||null);
     else if(view==='translate')renderTranslate(param);
     else if(view==='podcasts')renderPodcasts();
     else renderHome();
@@ -899,24 +1001,59 @@ function renderHome(){
         <li>Öppna original-PDF när du vill jämföra formulering, layout och helhetskänsla.</li>
       </ul>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0">
-      <a class="card" href="#podcasts" style="margin:0">
-        <h2 style="font-size:14px">Studiepoddar</h2>
-        <p>${(AUDIO_MAP?.study_podcasts||[]).filter(p=>p.status==='ready').length} avsnitt redo</p>
+    <div class="shortcut-grid">
+      <a class="shortcut-tile primary" href="#map/play">
+        <span class="st-ico">&#127758;</span>
+        <span>Kartquiz</span>
+        <span class="st-sub">Länder, kartor, minne</span>
       </a>
-      <a class="card" href="#leaders" style="margin:0">
-        <h2 style="font-size:14px">Världsledare</h2>
-        <p>${(LEADERS?.regions||[]).reduce((s,r)=>s+r.leaders.length,0)} ledare + quiz</p>
+      <a class="shortcut-tile" href="#leaders">
+        <span class="st-ico">&#127894;</span>
+        <span>Ledare</span>
+        <span class="st-sub">${(LEADERS?.regions||[]).reduce((s,r)=>s+r.leaders.length,0)} ledare + regenter</span>
       </a>
-      <a class="card" href="#translate" style="margin:0">
-        <h2 style="font-size:14px">Språkprov</h2>
-        <p>Översätt SV till tredjespråk</p>
+      <a class="shortcut-tile" href="#hub">
+        <span class="st-ico">&#128218;</span>
+        <span>Ämnen</span>
+        <span class="st-sub">Block & drill</span>
       </a>
-      <a class="card" href="#essay" style="margin:0">
-        <h2 style="font-size:14px">Uppsats</h2>
-        <p>${ESSAYS?.essays?.length||0} övningar</p>
+      <a class="shortcut-tile" href="#batteries">
+        <span class="st-ico">&#128209;</span>
+        <span>Provarkiv</span>
+        <span class="st-sub">Riktiga prov</span>
+      </a>
+      <a class="shortcut-tile warm" href="#drill">
+        <span class="st-ico">&#128293;</span>
+        <span>Svårt-drill</span>
+        <span class="st-sub">Markerat svårt</span>
+      </a>
+      <a class="shortcut-tile" href="#mock">
+        <span class="st-ico">&#128337;</span>
+        <span>Övningsprov</span>
+        <span class="st-sub">Öva som på provet</span>
+      </a>
+      <a class="shortcut-tile cool" href="#essay">
+        <span class="st-ico">&#9997;&#65039;</span>
+        <span>Uppsats</span>
+        <span class="st-sub">${ESSAYS?.essays?.length||0} övningar</span>
+      </a>
+      <a class="shortcut-tile cool" href="#translate">
+        <span class="st-ico">&#127760;</span>
+        <span>Språkprov</span>
+        <span class="st-sub">SV &rarr; tredjespr.</span>
+      </a>
+      <a class="shortcut-tile" href="#podcasts">
+        <span class="st-ico">&#127911;</span>
+        <span>Poddar</span>
+        <span class="st-sub">${(AUDIO_MAP?.study_podcasts||[]).filter(p=>p.status==='ready').length} redo</span>
+      </a>
+      <a class="shortcut-tile" href="#resources" style="grid-column:span 3;flex-direction:row;justify-content:flex-start;gap:12px;padding:10px 14px">
+        <span class="st-ico" style="font-size:20px">&#128279;</span>
+        <span style="flex:1;text-align:left">Resurser &amp; källor</span>
+        <span class="st-sub">Original-PDF, fördrag</span>
       </a>
     </div>
+    <div class="mini-list" style="margin-top:12px"><strong>Snabbnavigation</strong><ul><li><strong>Provarkiv</strong>: riktiga DIPS-frågebatterier och originalprov.</li><li><strong>Karta</strong>: världsledare på karta, placering och lärläge.</li><li><strong>Ledare</strong>: världsledare, organisationschefer, regenter och planscher.</li><li><strong>Drill</strong>: det du markerat som svårt.</li></ul></div>
     <div id="home-battery-archive" class="resource-grid"></div>`;
 
   const container = document.getElementById('home-battery-archive');
@@ -1711,6 +1848,568 @@ function checkLeaderAnswer(btn,correctKey,askCountry){
   if(isCorrect)hist._correct=(hist._correct||0)+1;
   s(LEADER_QUIZ_HISTORY,hist);
   setTimeout(()=>renderLeaderQuiz(document.getElementById('v-leaders')),1200);
+}
+
+// ============ MAP QUIZ (Världskarta) ============
+const MAP_VIEW_W = 1000;
+const MAP_VIEW_H = 520;
+let WORLD_SVG_MARKUP = null;
+const MAP_STATE = {
+  mode: 'play',         // 'play' | 'guess' | 'free'
+  regionKey: 'europa-oecd',
+  pool: [],
+  target: null,
+  answered: 0,
+  correct: 0,
+  streak: 0,
+  bestStreak: +(localStorage.getItem('dips_map_best_streak')||0),
+  zoom: 1,
+  tx: 0,
+  ty: 0,
+};
+
+const MAP_REGION_FILTERS = [
+  { key:'europa-oecd', label:'Europa & OECD', test:l=>EUROPA_OECD_KEYS.has(l.key) },
+  { key:'norden',      label:'Norden',         test:l=>NORDIC_KEYS.has(l.key) },
+  { key:'europa',      label:'Hela Europa',    test:l=>EUROPE_ALL_KEYS.has(l.key) },
+  { key:'varlden',     label:'Hela världen',   test:()=>true },
+  { key:'asien',       label:'Asien & Pac.',   test:l=>l.regionId==='asien' },
+  { key:'mena',        label:'MENA',           test:l=>l.regionId==='mena' },
+  { key:'afrika',      label:'Afrika',         test:l=>l.regionId==='afrika' },
+  { key:'latam',       label:'Latinamerika',   test:l=>l.regionId==='latam' },
+];
+const NORDIC_KEYS = new Set(['kristersson','orpo','store','frederiksen','frostadottir','michal','silina','ruginiene']);
+const EUROPA_OECD_KEYS = new Set([
+  // Norden + Baltikum
+  'kristersson','orpo','store','frederiksen','frostadottir','michal','silina','ruginiene',
+  // Stora EU + UK
+  'merz','macron','starmer','meloni','sanchez','jetten','tusk','dewever',
+  // Övriga EU
+  'zelensky','babis','orban','bolojan','stocker','montenegro','mitsotakis','martin','gyurov',
+]);
+const EUROPE_ALL_KEYS = new Set([...EUROPA_OECD_KEYS, 'putin','lukashenko','sandu','erdogan','vucic','plenkovic']);
+
+function flattenLeaders(){
+  const regions = LEADERS?.regions || [];
+  return regions.flatMap(r => r.leaders.map(l => ({...l, regionId:r.id, regionTitle:r.title})));
+}
+
+async function ensureWorldSvg(){
+  if(WORLD_SVG_MARKUP) return WORLD_SVG_MARKUP;
+  const candidates = ['./data/world-map.svg', '../data/world-map.svg', 'data/world-map.svg'];
+  for(const p of candidates){
+    try{
+      const r = await fetch(p, {cache:'force-cache'});
+      if(!r.ok) continue;
+      WORLD_SVG_MARKUP = await r.text();
+      return WORLD_SVG_MARKUP;
+    }catch(e){}
+  }
+  WORLD_SVG_MARKUP = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${MAP_VIEW_W} ${MAP_VIEW_H}"><text x="50%" y="50%" fill="#94a3b8" text-anchor="middle" font-family="sans-serif" font-size="16">Kunde inte ladda kartan.</text></svg>`;
+  return WORLD_SVG_MARKUP;
+}
+
+function currentPool(){
+  const all = flattenLeaders().filter(l => typeof l.mx === 'number');
+  const filter = MAP_REGION_FILTERS.find(f => f.key === MAP_STATE.regionKey) || MAP_REGION_FILTERS[0];
+  return all.filter(filter.test);
+}
+
+async function renderMap(mode, sub){
+  const el = document.getElementById('v-map');
+  MAP_STATE.mode = ['play','guess','free'].includes(mode) ? mode : 'play';
+  await ensureWorldSvg();
+
+  el.innerHTML = `
+    <div class="top">
+      <button class="back" onclick="location.hash='#home'">&larr; Hem</button>
+      <h1 style="font-size:18px;flex:1">Kartquiz</h1>
+      <button class="back" onclick="location.hash='#leaders'" style="color:var(--text-dim)">Lista&rarr;</button>
+    </div>
+    <div class="map-hero">
+      <h1>Placera världsledarna</h1>
+      <p>Välj ett läge. Tryck på kartan — den hittar närmaste ledare. Zooma med två fingrar eller <b>+</b> / <b>−</b>.</p>
+    </div>
+    <div class="mode-tabs" id="mapModeTabs">
+      <button class="mode-tab ${MAP_STATE.mode==='play'?'active':''}" data-mode="play"><span>&#127919;</span>Placera</button>
+      <button class="mode-tab ${MAP_STATE.mode==='guess'?'active':''}" data-mode="guess"><span>&#128269;</span>Gissa</button>
+      <button class="mode-tab ${MAP_STATE.mode==='free'?'active':''}" data-mode="free"><span>&#128218;</span>Lär</button>
+    </div>
+    <div class="region-chips" id="mapRegionChips">
+      ${MAP_REGION_FILTERS.map(f => `
+        <button class="region-chip ${MAP_STATE.regionKey===f.key?'active':''}" data-rkey="${f.key}">${f.label}</button>
+      `).join('')}
+    </div>
+    <div class="map-stage" id="mapStage">
+      <div class="map-wrap" id="mapWrap" style="position:absolute;inset:0;transform-origin:0 0">
+        <div class="map-svg-holder" id="mapSvgHolder" style="position:absolute;inset:0"></div>
+        <div class="map-pins" id="mapPins" style="position:absolute;inset:0"></div>
+        <div class="map-fx" id="mapFx" style="position:absolute;inset:0;pointer-events:none"></div>
+      </div>
+      <div class="map-hud">
+        <div class="hud-card" id="hudLeft"></div>
+        <div class="hud-card right" id="hudRight"></div>
+      </div>
+      <div class="map-zoom">
+        <button data-z="in" aria-label="Zooma in">+</button>
+        <button data-z="out" aria-label="Zooma ut">−</button>
+        <button data-z="reset" aria-label="Återställ" style="font-size:12px">&#8634;</button>
+      </div>
+    </div>
+    <div id="mapPanel"></div>
+    <div class="sheet-backdrop" id="sheetBackdrop"></div>
+    <div class="map-sheet" id="mapSheet" aria-hidden="true"></div>
+  `;
+
+  document.getElementById('mapSvgHolder').innerHTML = WORLD_SVG_MARKUP;
+
+  // Mode tabs
+  el.querySelector('#mapModeTabs').addEventListener('click', ev => {
+    const b = ev.target.closest('[data-mode]'); if(!b) return;
+    location.hash = '#map/' + b.dataset.mode;
+  });
+  el.querySelector('#mapRegionChips').addEventListener('click', ev => {
+    const b = ev.target.closest('[data-rkey]'); if(!b) return;
+    MAP_STATE.regionKey = b.dataset.rkey;
+    renderMap(MAP_STATE.mode);
+  });
+  el.querySelector('.map-zoom').addEventListener('click', ev => {
+    const b = ev.target.closest('[data-z]'); if(!b) return;
+    if(b.dataset.z==='in')  setMapZoom(MAP_STATE.zoom * 1.35, null);
+    if(b.dataset.z==='out') setMapZoom(MAP_STATE.zoom / 1.35, null);
+    if(b.dataset.z==='reset'){ MAP_STATE.zoom=1; MAP_STATE.tx=0; MAP_STATE.ty=0; applyMapTransform(); }
+  });
+  document.getElementById('sheetBackdrop').addEventListener('click', closeMapSheet);
+
+  MAP_STATE.answered = 0; MAP_STATE.correct = 0; MAP_STATE.streak = 0;
+  MAP_STATE.zoom = 1; MAP_STATE.tx = 0; MAP_STATE.ty = 0;
+  applyMapTransform();
+  bindMapGestures();
+  refreshHud();
+
+  if(MAP_STATE.mode === 'play')  startPlayRound();
+  else if(MAP_STATE.mode === 'guess') startGuessRound();
+  else renderFreeMode();
+}
+
+function refreshHud(){
+  const left = document.getElementById('hudLeft');
+  const right = document.getElementById('hudRight');
+  if(!left || !right) return;
+  if(MAP_STATE.mode === 'free'){
+    left.innerHTML = `<strong>${currentPool().length}</strong> ledare`;
+    right.innerHTML = `Tryck på en pin`;
+  } else {
+    left.innerHTML  = `<strong>${MAP_STATE.correct}</strong>/${MAP_STATE.answered} rätt`;
+    right.innerHTML = `Streak <strong>${MAP_STATE.streak}</strong> · bäst ${MAP_STATE.bestStreak}`;
+  }
+}
+
+function applyMapTransform(){
+  const wrap = document.getElementById('mapWrap');
+  if(!wrap) return;
+  wrap.style.transform = `translate(${MAP_STATE.tx}px,${MAP_STATE.ty}px) scale(${MAP_STATE.zoom})`;
+}
+
+function setMapZoom(newZoom, focal){
+  const stage = document.getElementById('mapStage'); if(!stage) return;
+  const z = Math.max(.9, Math.min(6, newZoom));
+  const rect = stage.getBoundingClientRect();
+  const fx = focal ? focal.x : rect.width/2;
+  const fy = focal ? focal.y : rect.height/2;
+  // Keep focal point stable on zoom
+  const relX = (fx - MAP_STATE.tx) / MAP_STATE.zoom;
+  const relY = (fy - MAP_STATE.ty) / MAP_STATE.zoom;
+  MAP_STATE.zoom = z;
+  MAP_STATE.tx = fx - relX * z;
+  MAP_STATE.ty = fy - relY * z;
+  applyMapTransform();
+}
+
+function bindMapGestures(){
+  const stage = document.getElementById('mapStage');
+  if(!stage) return;
+  let pointers = new Map();
+  let lastPinchDist = 0, lastPinchMid = null;
+  let dragStart = null;
+  let mayTap = true;
+
+  stage.addEventListener('pointerdown', e => {
+    stage.setPointerCapture(e.pointerId);
+    pointers.set(e.pointerId, {x:e.clientX, y:e.clientY, startX:e.clientX, startY:e.clientY});
+    if(pointers.size === 1){ dragStart = {tx:MAP_STATE.tx, ty:MAP_STATE.ty, x:e.clientX, y:e.clientY}; mayTap = true; }
+    else if(pointers.size === 2){
+      const [a,b] = [...pointers.values()];
+      lastPinchDist = Math.hypot(a.x-b.x,a.y-b.y);
+      lastPinchMid  = { x:(a.x+b.x)/2, y:(a.y+b.y)/2 };
+      mayTap = false;
+    }
+  });
+  stage.addEventListener('pointermove', e => {
+    const p = pointers.get(e.pointerId);
+    if(!p) return;
+    p.x = e.clientX; p.y = e.clientY;
+    if(pointers.size === 1 && dragStart){
+      const dx = e.clientX - dragStart.x, dy = e.clientY - dragStart.y;
+      if(Math.abs(dx) > 4 || Math.abs(dy) > 4) mayTap = false;
+      MAP_STATE.tx = dragStart.tx + dx;
+      MAP_STATE.ty = dragStart.ty + dy;
+      applyMapTransform();
+    } else if(pointers.size === 2){
+      const [a,b] = [...pointers.values()];
+      const d = Math.hypot(a.x-b.x,a.y-b.y);
+      const mid = { x:(a.x+b.x)/2, y:(a.y+b.y)/2 };
+      if(lastPinchDist){
+        const rect = stage.getBoundingClientRect();
+        const focal = { x:mid.x - rect.left, y:mid.y - rect.top };
+        setMapZoom(MAP_STATE.zoom * (d/lastPinchDist), focal);
+      }
+      lastPinchDist = d; lastPinchMid = mid;
+    }
+  });
+  const endPtr = e => {
+    const p = pointers.get(e.pointerId);
+    if(!p) return;
+    const wasSingle = pointers.size === 1;
+    pointers.delete(e.pointerId);
+    if(wasSingle && mayTap){
+      const rect = stage.getBoundingClientRect();
+      const screenX = e.clientX - rect.left;
+      const screenY = e.clientY - rect.top;
+      handleMapTap(screenX, screenY);
+    }
+    if(pointers.size < 2){ lastPinchDist = 0; lastPinchMid = null; }
+    if(pointers.size === 0) dragStart = null;
+  };
+  stage.addEventListener('pointerup', endPtr);
+  stage.addEventListener('pointercancel', endPtr);
+
+  // Wheel-zoom for desktop QA
+  stage.addEventListener('wheel', e => {
+    e.preventDefault();
+    const rect = stage.getBoundingClientRect();
+    setMapZoom(MAP_STATE.zoom * (e.deltaY < 0 ? 1.12 : 1/1.12), {x:e.clientX-rect.left, y:e.clientY-rect.top});
+  }, {passive:false});
+}
+
+function stageToViewBox(sx, sy){
+  // stage px -> .map-wrap local px (wrap is inset:0) -> SVG viewBox units
+  const stage = document.getElementById('mapStage');
+  const rect = stage.getBoundingClientRect();
+  const localX = (sx - MAP_STATE.tx) / MAP_STATE.zoom;
+  const localY = (sy - MAP_STATE.ty) / MAP_STATE.zoom;
+  // Map-wrap spans the full stage; SVG inside is preserveAspectRatio meet -> compute uniform scale
+  const vbScale = Math.min(rect.width / MAP_VIEW_W, rect.height / MAP_VIEW_H);
+  const padX = (rect.width - MAP_VIEW_W * vbScale) / 2;
+  const padY = (rect.height - MAP_VIEW_H * vbScale) / 2;
+  return { x:(localX - padX) / vbScale, y:(localY - padY) / vbScale };
+}
+
+function vbToStage(vx, vy){
+  const stage = document.getElementById('mapStage');
+  const rect = stage.getBoundingClientRect();
+  const vbScale = Math.min(rect.width / MAP_VIEW_W, rect.height / MAP_VIEW_H);
+  const padX = (rect.width - MAP_VIEW_W * vbScale) / 2;
+  const padY = (rect.height - MAP_VIEW_H * vbScale) / 2;
+  return { x:(vx * vbScale + padX), y:(vy * vbScale + padY) };
+}
+
+function handleMapTap(sx, sy){
+  if(MAP_STATE.mode === 'free') { handleFreeTap(sx, sy); return; }
+  if(MAP_STATE.mode !== 'play') return;
+  if(!MAP_STATE.target) return;
+  const vb = stageToViewBox(sx, sy);
+  // Tolerance: scale with zoom so high-zoom = stricter in screen pixels
+  const tolerancePx = 70; // generous on small phones
+  const tolerance = tolerancePx / MAP_STATE.zoom / Math.min(document.getElementById('mapStage').getBoundingClientRect().width / MAP_VIEW_W, 1);
+  // Find nearest leader in the pool
+  const pool = currentPool();
+  let best = null, bestD = Infinity;
+  for(const l of pool){
+    const d = Math.hypot(l.mx - vb.x, l.my - vb.y);
+    if(d < bestD){ bestD = d; best = l; }
+  }
+  const tgt = MAP_STATE.target;
+  const hit = best && best.key === tgt.key && bestD <= tolerance * 1.5;
+  showTapRing(sx, sy, hit);
+  if(hit){
+    MAP_STATE.answered++; MAP_STATE.correct++; MAP_STATE.streak++;
+    if(MAP_STATE.streak > MAP_STATE.bestStreak){ MAP_STATE.bestStreak = MAP_STATE.streak; localStorage.setItem('dips_map_best_streak', MAP_STATE.bestStreak); }
+    revealTargetPath(tgt, 'correct');
+    showFeedback(true, `Helt rätt! <b>${tgt.flag} ${titleCase(tgt.country)}</b>.`);
+    setTimeout(nextPlayRound, 900);
+  } else {
+    MAP_STATE.answered++; MAP_STATE.streak = 0;
+    revealTargetPath(tgt, 'wrong');
+    showFeedback(false, best
+      ? `Nästan — du valde <b>${titleCase(best.country)}</b>. <b>${tgt.name}</b> styr <b>${tgt.flag} ${titleCase(tgt.country)}</b>.`
+      : `Ingen ledare i närheten. <b>${tgt.name}</b> styr <b>${tgt.flag} ${titleCase(tgt.country)}</b>.`);
+    // Place a guide pin on correct country
+    addPin(MAP_STATE.target, { classNames:'pin lg hit', label: titleCase(tgt.country) });
+    setTimeout(nextPlayRound, 1800);
+  }
+  refreshHud();
+}
+
+function showTapRing(sx, sy, hit){
+  const fx = document.getElementById('mapFx'); if(!fx) return;
+  // Convert stage-px back to wrap coordinates (inverse of transform)
+  const lx = (sx - MAP_STATE.tx) / MAP_STATE.zoom;
+  const ly = (sy - MAP_STATE.ty) / MAP_STATE.zoom;
+  const ring = document.createElement('div');
+  ring.className = 'map-tap-ring ' + (hit ? 'hit' : 'miss');
+  ring.style.left = lx + 'px';
+  ring.style.top  = ly + 'px';
+  ring.style.width = ring.style.height = (56 / MAP_STATE.zoom) + 'px';
+  ring.style.margin = (-28 / MAP_STATE.zoom) + 'px 0 0 ' + (-28 / MAP_STATE.zoom) + 'px';
+  fx.appendChild(ring);
+  setTimeout(()=>ring.remove(), 900);
+}
+
+function revealTargetPath(leader, cls){
+  const svg = document.querySelector('#mapSvgHolder svg'); if(!svg) return;
+  const path = svg.querySelector(`[data-iso="${leader.iso_num}"]`);
+  if(path){
+    path.classList.add(cls);
+    setTimeout(()=>path.classList.remove(cls), 1800);
+  }
+}
+
+function markTarget(leader){
+  const svg = document.querySelector('#mapSvgHolder svg'); if(!svg) return;
+  svg.querySelectorAll('.countries .target').forEach(p => p.classList.remove('target'));
+  if(!leader) return;
+  const path = svg.querySelector(`[data-iso="${leader.iso_num}"]`);
+  if(path) path.classList.add('target');
+}
+
+function addPin(leader, {classNames='pin', label=null, onTap=null}={}){
+  const pins = document.getElementById('mapPins'); if(!pins) return null;
+  const stage = document.getElementById('mapStage').getBoundingClientRect();
+  const vbScale = Math.min(stage.width / MAP_VIEW_W, stage.height / MAP_VIEW_H);
+  const padX = (stage.width - MAP_VIEW_W * vbScale) / 2;
+  const padY = (stage.height - MAP_VIEW_H * vbScale) / 2;
+  const left = leader.mx * vbScale + padX;
+  const top  = leader.my * vbScale + padY;
+  const pin = document.createElement('div');
+  pin.className = classNames;
+  pin.style.left = left + 'px';
+  pin.style.top  = top + 'px';
+  const photoPath = leader.photo || '';
+  pin.innerHTML = `
+    <div class="pin-photo"><img src="../${photoPath}" alt="${leader.initials||''}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${photoPath}'}else{this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${leader.initials||''}',style:'font-size:9px;font-weight:900;color:#fff'}))}"></div>
+    ${label?`<div class="pin-label">${label}</div>`:''}
+  `;
+  if(onTap){ pin.style.pointerEvents='auto'; pin.addEventListener('click', e=>{e.stopPropagation(); onTap(leader);}); }
+  else { pin.style.pointerEvents='none'; }
+  pins.appendChild(pin);
+  return pin;
+}
+
+function clearPins(){
+  const pins = document.getElementById('mapPins'); if(pins) pins.innerHTML = '';
+}
+
+function showFeedback(ok, html){
+  const panel = document.getElementById('mapPanel'); if(!panel) return;
+  let bar = panel.querySelector('.feedback-bar');
+  if(!bar){ bar = document.createElement('div'); bar.className = 'feedback-bar'; panel.appendChild(bar); }
+  bar.className = 'feedback-bar show ' + (ok ? 'ok' : 'no');
+  bar.innerHTML = html;
+}
+function clearFeedback(){ const b = document.querySelector('.feedback-bar'); if(b) b.className='feedback-bar'; }
+
+function titleCase(s){ return (s||'').toLowerCase().replace(/(^|\s|-)([\wåäöüáéíóúñß])/g, (_,a,b)=>a+b.toUpperCase()); }
+
+// ---- Placera mode ----
+function startPlayRound(){
+  const pool = currentPool();
+  if(pool.length < 2){
+    document.getElementById('mapPanel').innerHTML = `<div class="empty">Inte nog med ledare i denna region.</div>`;
+    return;
+  }
+  MAP_STATE.pool = pool;
+  nextPlayRound(true);
+}
+function nextPlayRound(initial){
+  clearPins(); clearFeedback();
+  const pool = MAP_STATE.pool;
+  if(pool.length >= 12 && MAP_STATE.answered >= 12 && !initial){
+    // Session summary after 12 rounds
+    const panel = document.getElementById('mapPanel');
+    const acc = Math.round(100 * MAP_STATE.correct / MAP_STATE.answered);
+    panel.innerHTML = `
+      <div class="feedback-bar show ok" style="text-align:center">
+        <b>Omgång klar!</b> ${MAP_STATE.correct}/${MAP_STATE.answered} rätt (${acc}%). Bästa streak: ${MAP_STATE.bestStreak}.<br>
+        <button class="next-btn" style="margin-top:10px" onclick="renderMap('play')">Kör en till</button>
+      </div>`;
+    markTarget(null);
+    return;
+  }
+  const pick = pool[Math.floor(Math.random()*pool.length)];
+  MAP_STATE.target = pick;
+  markTarget(pick);
+  // Draw small ghost pins of non-target leaders so users can't cheat by memorising positions,
+  // but keep a few "decoy" markers to orient them. Showing only the target country pin.
+  const panel = document.getElementById('mapPanel');
+  panel.innerHTML = `
+    <div class="prompt-card">
+      <div class="pic">
+        <img src="../${pick.photo}" alt="${pick.initials}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${pick.photo}'}else{this.parentElement.textContent='${pick.initials}'}">
+      </div>
+      <div class="pc-body">
+        <div class="pc-q">Placera på kartan</div>
+        <div class="pc-name"><span class="flag">${pick.flag}</span> ${pick.name}</div>
+        <div class="pc-sub">${pick.role} · ${titleCase(pick.country)}</div>
+      </div>
+      <button class="pc-skip" onclick="skipPlayRound()">Hoppa&rarr;</button>
+    </div>
+  `;
+}
+function skipPlayRound(){
+  if(!MAP_STATE.target) return;
+  MAP_STATE.answered++; MAP_STATE.streak = 0;
+  revealTargetPath(MAP_STATE.target, 'correct');
+  addPin(MAP_STATE.target, { classNames:'pin lg ghost', label: titleCase(MAP_STATE.target.country) });
+  showFeedback(false, `Hoppade över. <b>${MAP_STATE.target.name}</b> styr <b>${MAP_STATE.target.flag} ${titleCase(MAP_STATE.target.country)}</b>.`);
+  refreshHud();
+  setTimeout(nextPlayRound, 1200);
+}
+
+// ---- Gissa mode ----
+function startGuessRound(){
+  const pool = currentPool();
+  if(pool.length < 4){
+    document.getElementById('mapPanel').innerHTML = `<div class="empty">För få ledare i denna region (minst 4 behövs).</div>`;
+    return;
+  }
+  MAP_STATE.pool = pool;
+  nextGuessRound();
+}
+function nextGuessRound(){
+  clearPins(); clearFeedback();
+  const pool = MAP_STATE.pool;
+  if(MAP_STATE.answered >= 10 && pool.length >= 10){
+    const panel = document.getElementById('mapPanel');
+    const acc = Math.round(100 * MAP_STATE.correct / MAP_STATE.answered);
+    panel.innerHTML = `
+      <div class="feedback-bar show ok" style="text-align:center">
+        <b>10 rundor klara!</b> ${MAP_STATE.correct}/${MAP_STATE.answered} rätt (${acc}%).
+        <button class="next-btn" style="margin-top:10px" onclick="renderMap('guess')">Kör igen</button>
+      </div>`;
+    markTarget(null);
+    return;
+  }
+  const target = pool[Math.floor(Math.random()*pool.length)];
+  MAP_STATE.target = target;
+  markTarget(target);
+  // Glowing pin on map to make target country obvious
+  addPin(target, { classNames:'pin lg ghost' });
+  const decoys = pool.filter(l => l.key !== target.key).sort(()=>Math.random()-.5).slice(0,3);
+  const options = [target, ...decoys].sort(()=>Math.random()-.5);
+  const panel = document.getElementById('mapPanel');
+  panel.innerHTML = `
+    <div class="prompt-card" style="padding:10px 14px">
+      <div class="pc-body" style="text-align:center">
+        <div class="pc-q">Vem styr det markerade landet?</div>
+        <div class="pc-name" style="justify-content:center"><span class="flag">${target.flag}</span> ${titleCase(target.country)}</div>
+      </div>
+    </div>
+    <div class="choice-strip" id="choiceStrip">
+      ${options.map(o => `
+        <button class="choice-card" data-key="${o.key}">
+          <div class="cc-photo"><img src="../${o.photo}" alt="${o.initials}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${o.photo}'}else{this.parentElement.textContent='${o.initials}'}"></div>
+          <div class="cc-name">${o.name.split(' ').slice(-1)[0]}</div>
+        </button>`).join('')}
+    </div>
+  `;
+  panel.querySelector('#choiceStrip').addEventListener('click', ev => {
+    const b = ev.target.closest('[data-key]'); if(!b) return;
+    const key = b.dataset.key;
+    const right = key === target.key;
+    panel.querySelectorAll('.choice-card').forEach(c => {
+      c.disabled = true;
+      if(c.dataset.key === target.key) c.classList.add('correct');
+      else if(c === b) c.classList.add('wrong');
+    });
+    MAP_STATE.answered++;
+    if(right){ MAP_STATE.correct++; MAP_STATE.streak++;
+      if(MAP_STATE.streak > MAP_STATE.bestStreak){ MAP_STATE.bestStreak = MAP_STATE.streak; localStorage.setItem('dips_map_best_streak', MAP_STATE.bestStreak); }
+      showFeedback(true, `Korrekt! <b>${target.name}</b> — ${target.role}.`);
+    } else {
+      MAP_STATE.streak = 0;
+      showFeedback(false, `Fel. Rätt svar: <b>${target.name}</b> (${target.role}).`);
+    }
+    refreshHud();
+    setTimeout(nextGuessRound, 1400);
+  });
+}
+
+// ---- Lär / free explore ----
+function renderFreeMode(){
+  clearPins(); clearFeedback();
+  MAP_STATE.target = null;
+  markTarget(null);
+  const pool = currentPool();
+  pool.forEach(l => {
+    addPin(l, {
+      classNames: 'pin ' + (l.key && ['trump','xi','putin','macron','merz','starmer','kristersson','modi'].includes(l.key) ? 'lg' : ''),
+      onTap: openSheet,
+    });
+  });
+  document.getElementById('mapPanel').innerHTML = `
+    <div class="feedback-bar show" style="background:rgba(59,130,246,.1);border-color:rgba(59,130,246,.35);color:#dbeafe">
+      <b>Läromläge.</b> Tryck på en pin för att läsa om ledaren. Zooma in på Europa om det blir trångt.
+    </div>`;
+}
+
+function handleFreeTap(sx, sy){
+  // In free mode, pins have their own click handlers (pointer-events:auto).
+  // A stage tap that missed a pin simply highlights the nearest one briefly.
+  if(!currentPool().length) return;
+  const vb = stageToViewBox(sx, sy);
+  let best = null, bestD = Infinity;
+  for(const l of currentPool()){
+    const d = Math.hypot(l.mx - vb.x, l.my - vb.y);
+    if(d < bestD){ bestD = d; best = l; }
+  }
+  if(best && bestD < 60) openSheet(best);
+}
+
+function openSheet(leader){
+  const sheet = document.getElementById('mapSheet');
+  const back  = document.getElementById('sheetBackdrop');
+  if(!sheet || !leader) return;
+  sheet.innerHTML = `
+    <div class="sheet-grip"></div>
+    <button class="ms-close" onclick="closeMapSheet()">&times;</button>
+    <div class="ms-head">
+      <div class="ms-photo">
+        <img src="../${leader.photo}" alt="${leader.initials}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${leader.photo}'}else{this.parentElement.textContent='${leader.initials}'}">
+      </div>
+      <div>
+        <div class="ms-country">${leader.flag} ${titleCase(leader.country)}</div>
+        <div class="ms-name">${leader.name}</div>
+        <span class="ms-role">${leader.role}</span>
+      </div>
+    </div>
+    <div class="ms-details">${leader.details||''}</div>
+    ${leader.note ? `<div class="leader-note" style="margin-top:10px;padding:8px;background:rgba(59,130,246,.1);border-radius:10px;font-size:12px;color:#93c5fd">${leader.note}</div>`:''}
+    ${leader.alert ? `<div class="leader-alert" style="margin-top:10px;padding:8px;background:rgba(239,68,68,.1);border-radius:10px;font-size:12px;color:#fca5a5">${leader.alert}</div>`:''}
+    <div style="margin-top:14px;display:flex;gap:8px">
+      <button class="next-btn" style="flex:1" onclick="location.hash='#map/play'">Testa placera</button>
+      <button class="ghost-btn" style="flex:1;padding:10px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:var(--text);border-radius:10px;font-weight:700;font-family:inherit" onclick="closeMapSheet()">Stäng</button>
+    </div>
+  `;
+  sheet.classList.add('open');
+  sheet.setAttribute('aria-hidden','false');
+  back.classList.add('open');
+}
+function closeMapSheet(){
+  const sheet = document.getElementById('mapSheet');
+  const back  = document.getElementById('sheetBackdrop');
+  if(sheet){ sheet.classList.remove('open'); sheet.setAttribute('aria-hidden','true'); }
+  if(back) back.classList.remove('open');
 }
 
 // ============ TRANSLATE / SPRÅKPROV ============

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'dips-tester-v8';
+const CACHE_NAME = 'dips-tester-v9';
 const URLS_TO_CACHE = [
   './',
   './index.html',
@@ -17,6 +17,7 @@ const URLS_TO_CACHE = [
   './data/translations.json',
   './data/regents.json',
   './data/world-110m.json',
+  './data/world-map.svg',
   './data/world-map.svg',
   '../data/topics.json',
   '../data/questions_sv.json',
