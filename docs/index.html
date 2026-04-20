@@ -390,7 +390,7 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 .map-stage svg .graticule path{stroke:rgba(148,163,184,.1);stroke-width:.35}
 @keyframes tgtpulse{0%,100%{filter:drop-shadow(0 0 0 rgba(251,191,36,.0))}50%{filter:drop-shadow(0 0 10px rgba(251,191,36,.7))}}
 
-.pin{position:absolute;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.55);cursor:pointer;transition:transform .12s}
+.map-pins{pointer-events:none;z-index:4}.pin{position:absolute;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:var(--accent);border:2px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.55);cursor:pointer;transition:transform .12s;pointer-events:auto}
 .pin.lg{width:30px;height:30px;margin:-15px 0 0 -15px}
 .pin.small{width:12px;height:12px;margin:-6px 0 0 -6px;border-width:1.5px}
 .pin.ghost{background:rgba(148,163,184,.25);border-color:rgba(255,255,255,.45)}
@@ -1957,7 +1957,7 @@ async function renderMap(mode, sub){
     <div class="map-stage" id="mapStage">
       <div class="map-wrap" id="mapWrap" style="position:absolute;inset:0;transform-origin:0 0">
         <div class="map-svg-holder" id="mapSvgHolder" style="position:absolute;inset:0"></div>
-        <div class="map-pins" id="mapPins" style="position:absolute;inset:0"></div>
+        <div class="map-pins" id="mapPins" style="position:absolute;left:0;top:0;width:960px;height:480px"></div>
         <div class="map-fx" id="mapFx" style="position:absolute;inset:0;pointer-events:none"></div>
       </div>
       <div class="map-hud">
@@ -2204,17 +2204,11 @@ function markTarget(leader){
 }
 
 function addPin(leader, {classNames='pin', label=null, onTap=null}={}){
-  const pins = document.getElementById('mapPins'); if(!pins) return null;
-  const stage = document.getElementById('mapStage').getBoundingClientRect();
-  const vbScale = Math.min(stage.width / MAP_VIEW_W, stage.height / MAP_VIEW_H);
-  const padX = (stage.width - MAP_VIEW_W * vbScale) / 2;
-  const padY = (stage.height - MAP_VIEW_H * vbScale) / 2;
-  const left = leader.mx * vbScale + padX;
-  const top  = leader.my * vbScale + padY;
+  const pins = document.getElementById('mapPins'); if(!pins || !leader || leader.mx == null || leader.my == null) return null;
   const pin = document.createElement('div');
   pin.className = classNames;
-  pin.style.left = left + 'px';
-  pin.style.top  = top + 'px';
+  pin.style.left = leader.mx + 'px';
+  pin.style.top  = leader.my + 'px';
   const photoPath = leader.photo || '';
   pin.innerHTML = `
     <div class="pin-photo"><img src="../${photoPath}" alt="${leader.initials||''}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${photoPath}'}else{this.replaceWith(Object.assign(document.createElement('span'),{textContent:'${leader.initials||''}',style:'font-size:9px;font-weight:900;color:#fff'}))}"></div>
