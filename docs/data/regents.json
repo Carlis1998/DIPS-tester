@@ -1,0 +1,210 @@
+{
+  "regents": [
+    {
+      "key": "gustav_vasa",
+      "name": "Gustav Vasa",
+      "reign": "1523–1560",
+      "house": "Vasa",
+      "era": "Statsbygge",
+      "focus": "Bröt Kalmarunionen och lade grunden för den svenska nationalstaten.",
+      "photo": "plancher+Världsledare/photos_regenter/gustav_vasa.jpg"
+    },
+    {
+      "key": "erik_xiv",
+      "name": "Erik XIV",
+      "reign": "1560–1568",
+      "house": "Vasa",
+      "era": "Vasa",
+      "focus": "Son till Gustav Vasa; förknippad med maktkamp och instabilitet."
+    },
+    {
+      "key": "johan_iii",
+      "name": "Johan III",
+      "reign": "1568–1592",
+      "house": "Vasa",
+      "era": "Vasa",
+      "focus": "Försökte balansera Sverige mellan katolska och protestantiska strömningar.",
+      "photo": "plancher+Världsledare/photos_regenter/johan_iii.jpg"
+    },
+    {
+      "key": "sigismund",
+      "name": "Sigismund",
+      "reign": "1592–1599",
+      "house": "Vasa",
+      "era": "Dynastisk konflikt",
+      "focus": "Var också kung av Polen; störtades efter konflikt om religion och makt.",
+      "photo": "plancher+Världsledare/photos_regenter/sigismund.jpg"
+    },
+    {
+      "key": "karl_ix",
+      "name": "Karl IX",
+      "reign": "1604–1611",
+      "house": "Vasa",
+      "era": "Vasa",
+      "focus": "Konsoliderade makten efter Sigismund och banade väg för stormaktstiden.",
+      "photo": "plancher+Världsledare/photos_regenter/karl_ix.jpg"
+    },
+    {
+      "key": "gustav_ii_adolf",
+      "name": "Gustav II Adolf",
+      "reign": "1611–1632",
+      "house": "Vasa",
+      "era": "Stormaktstid",
+      "focus": "Förknippad med trettioåriga kriget och Sveriges uppgång som stormakt.",
+      "photo": "plancher+Världsledare/photos_regenter/gustav_ii_adolf.jpg"
+    },
+    {
+      "key": "kristina",
+      "name": "Kristina",
+      "reign": "1632–1654",
+      "house": "Vasa",
+      "era": "Stormaktstid",
+      "focus": "Abdikerade 1654; ofta testbar som kulturell och politisk särgestalt.",
+      "photo": "plancher+Världsledare/photos_regenter/kristina.jpg"
+    },
+    {
+      "key": "karl_x_gustav",
+      "name": "Karl X Gustav",
+      "reign": "1654–1660",
+      "house": "Pfalz-Zweibrücken",
+      "era": "Stormaktstid",
+      "focus": "Känd för tåget över Bält och expansion av det svenska riket.",
+      "photo": "plancher+Världsledare/photos_regenter/karl_x_gustav.jpg"
+    },
+    {
+      "key": "karl_xi",
+      "name": "Karl XI",
+      "reign": "1660–1697",
+      "house": "Pfalz-Zweibrücken",
+      "era": "Stormaktstid",
+      "focus": "Stärkte kungamakten genom reduktionen och ett mer centraliserat styre.",
+      "photo": "plancher+Världsledare/photos_regenter/karl_xi.jpg"
+    },
+    {
+      "key": "karl_xii",
+      "name": "Karl XII",
+      "reign": "1697–1718",
+      "house": "Pfalz-Zweibrücken",
+      "era": "Stormaktstid",
+      "focus": "Stora nordiska kriget; hans död markerar stormaktstidens slutskede.",
+      "photo": "plancher+Världsledare/photos_regenter/karl_xii.jpg"
+    },
+    {
+      "key": "ulrika_eleonora",
+      "name": "Ulrika Eleonora",
+      "reign": "1718–1720",
+      "house": "Pfalz-Zweibrücken",
+      "era": "Frihetstid",
+      "focus": "Kort regeringstid i övergången till frihetstiden.",
+      "photo": "plancher+Världsledare/photos_regenter/ulrika_eleonora.jpg"
+    },
+    {
+      "key": "fredrik_i",
+      "name": "Fredrik I",
+      "reign": "1720–1751",
+      "house": "Hessen",
+      "era": "Frihetstid",
+      "focus": "Kung under frihetstiden när riksdagen och partierna fick större makt.",
+      "photo": "plancher+Världsledare/photos_regenter/fredrik_i.jpg"
+    },
+    {
+      "key": "adolf_fredrik",
+      "name": "Adolf Fredrik",
+      "reign": "1751–1771",
+      "house": "Holstein-Gottorp",
+      "era": "Frihetstid",
+      "focus": "Kung med begränsad faktisk makt under frihetstiden.",
+      "photo": "plancher+Världsledare/photos_regenter/adolf_fredrik.jpg"
+    },
+    {
+      "key": "gustav_iii",
+      "name": "Gustav III",
+      "reign": "1771–1792",
+      "house": "Holstein-Gottorp",
+      "era": "Gustaviansk tid",
+      "focus": "Statskuppen 1772, kulturell profil och starkare kungamakt.",
+      "photo": "plancher+Världsledare/photos_regenter/gustav_iii.jpg"
+    },
+    {
+      "key": "gustav_iv_adolf",
+      "name": "Gustav IV Adolf",
+      "reign": "1792–1809",
+      "house": "Holstein-Gottorp",
+      "era": "Krisår",
+      "focus": "Förlorade Finland 1809; central person för en klassisk DIPS-fråga.",
+      "photo": "plancher+Världsledare/photos_regenter/gustav_iv_adolf.jpg"
+    },
+    {
+      "key": "karl_xiii",
+      "name": "Karl XIII",
+      "reign": "1809–1818",
+      "house": "Holstein-Gottorp",
+      "era": "1800-talsövergång",
+      "focus": "Kung efter 1809 års statsvälvning och under ny regeringsform.",
+      "photo": "plancher+Världsledare/photos_regenter/karl_xiii.jpg"
+    },
+    {
+      "key": "karl_xiv_johan",
+      "name": "Karl XIV Johan",
+      "reign": "1818–1844",
+      "house": "Bernadotte",
+      "era": "Bernadotte",
+      "focus": "Grundade den nuvarande dynastin; tidigare fransk marskalk.",
+      "photo": "plancher+Världsledare/photos_regenter/karl_xiv_johan.jpg"
+    },
+    {
+      "key": "oscar_i",
+      "name": "Oscar I",
+      "reign": "1844–1859",
+      "house": "Bernadotte",
+      "era": "Bernadotte",
+      "focus": "Tidigt Bernadotte-styre under industrialiseringens förspel.",
+      "photo": "plancher+Världsledare/photos_regenter/oscar_i.jpg"
+    },
+    {
+      "key": "karl_xv",
+      "name": "Karl XV",
+      "reign": "1859–1872",
+      "house": "Bernadotte",
+      "era": "Bernadotte",
+      "focus": "Kung under unionen med Norge och ett mer liberalt 1800-tal.",
+      "photo": "plancher+Världsledare/photos_regenter/karl_xv.jpg"
+    },
+    {
+      "key": "oscar_ii",
+      "name": "Oscar II",
+      "reign": "1872–1907",
+      "house": "Bernadotte",
+      "era": "Bernadotte",
+      "focus": "Sista unionskungen för Sverige-Norge; unionen upplöstes 1905.",
+      "photo": "plancher+Världsledare/photos_regenter/oscar_ii.jpg"
+    },
+    {
+      "key": "gustaf_v",
+      "name": "Gustaf V",
+      "reign": "1907–1950",
+      "house": "Bernadotte",
+      "era": "1900-tal",
+      "focus": "Kung under demokratisering, världskrigen och mellankrigstiden.",
+      "photo": "plancher+Världsledare/photos_regenter/gustaf_v.jpg"
+    },
+    {
+      "key": "gustaf_vi_adolf",
+      "name": "Gustaf VI Adolf",
+      "reign": "1950–1973",
+      "house": "Bernadotte",
+      "era": "1900-tal",
+      "focus": "Kung under välfärdsstatens uppbyggnad och före den nya RF 1974.",
+      "photo": "plancher+Världsledare/photos_regenter/gustaf_vi_adolf.jpg"
+    },
+    {
+      "key": "carl_xvi_gustaf",
+      "name": "Carl XVI Gustaf",
+      "reign": "1973–",
+      "house": "Bernadotte",
+      "era": "Nutid",
+      "focus": "Nuvarande statschef; regeringformen 1974 gjorde monarkin huvudsakligen ceremoniell.",
+      "photo": "plancher+Världsledare/photos_regenter/carl_xvi_gustaf.jpg"
+    }
+  ]
+}

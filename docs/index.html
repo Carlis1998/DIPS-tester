@@ -287,6 +287,20 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 
 /* Leaders */
 .leaders-grid{display:grid;gap:10px}
+.leader-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:14px 0 16px}
+.visual-card{background:linear-gradient(180deg,rgba(59,130,246,.10),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.1);border-radius:16px;padding:14px}
+.visual-card h3{font-size:15px;margin-bottom:4px;color:var(--text)}
+.visual-card p{font-size:12px;color:var(--text-dim);line-height:1.45}
+.visual-links{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.visual-links a{display:inline-flex;align-items:center;justify-content:center;padding:9px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:11px;font-weight:800;color:var(--text)}
+.regent-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}
+.regent-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:12px;display:flex;gap:10px;align-items:flex-start}
+.regent-photo{width:54px;height:54px;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:900;flex-shrink:0;border:1px solid rgba(255,255,255,.1)}
+.regent-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.regent-meta{font-size:11px;color:var(--text-dim);margin-top:3px}
+.regent-era{display:inline-block;margin-top:6px;padding:3px 8px;border-radius:999px;background:rgba(245,158,11,.16);color:var(--orange);font-size:10px;font-weight:800}
+.regent-focus{font-size:12px;color:var(--text);margin-top:6px;line-height:1.45}
+@media(max-width:760px){.leader-tools,.regent-grid{grid-template-columns:1fr}}
 .leader-region{background:var(--surface);border-radius:var(--radius);padding:14px;border:1px solid rgba(255,255,255,.06)}
 .leader-region-title{font-size:14px;font-weight:800;color:var(--accent);margin-bottom:4px;display:flex;align-items:center;gap:8px}
 .leader-region-tag{font-size:10px;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--text-dim);font-weight:700}
@@ -380,7 +394,7 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 
 <script>
 // === DATA LOADING ===
-let TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS;
+let TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS, REGENTS;
 const TOPIC_MAP = {};
 const SOURCE_MAP = {};
 
@@ -424,8 +438,9 @@ async function loadData() {
     SOURCE_INDEX = window.DIPS_DATA.source_index;
     LEADERS = window.DIPS_DATA.leaders || {regions:[],org_chiefs:[]};
     TRANSLATIONS = window.DIPS_DATA.translations || {translations:[]};
+    REGENTS = window.DIPS_DATA.regents || {regents:[]};
   } else {
-    [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS] = await Promise.all([
+    [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS, REGENTS] = await Promise.all([
       fetchJsonWithFallback(['./data/topics.json', '../data/topics.json']),
       fetchJsonWithFallback(['./data/questions_sv.json', '../data/questions_sv.json']),
       fetchJsonWithFallback(['./data/questions_en.json', '../data/questions_en.json']),
@@ -438,9 +453,10 @@ async function loadData() {
       fetchJsonOptional(['./data/source_index.json', '../data/source_index.json'], []),
       fetchJsonOptional(['./data/leaders.json', '../data/leaders.json'], {regions:[],org_chiefs:[]}),
       fetchJsonOptional(['./data/translations.json', '../data/translations.json'], {translations:[]}),
+      fetchJsonOptional(['./data/regents.json', '../data/regents.json'], {regents:[]}),
     ]);
   }
-  [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS] = [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS].map(normalizeDisplayData);
+  [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS, REGENTS] = [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS, REGENTS].map(normalizeDisplayData);
   TOPICS.topics.forEach(t => TOPIC_MAP[t.code] = t);
   (SOURCE_INDEX || []).forEach(s => SOURCE_MAP[s.id] = s);
 }
@@ -1530,6 +1546,7 @@ function renderLeaders(mode){
   }
   const regions=LEADERS?.regions||[];
   const orgs=LEADERS?.org_chiefs||[];
+  const regents=REGENTS?.regents||[];
   const roleClass=r=>{
     const base=r.split('(')[0].trim();
     if(['PM','KANSLER','TAOISEACH'].includes(base))return 'pm';
@@ -1539,19 +1556,66 @@ function renderLeaders(mode){
     if(base==='ÖVERGÅNG')return 'trans';
     return 'pm';
   };
+  const leaderCount = regions.reduce((sum,r)=>sum + (r.leaders||[]).length, 0);
   el.innerHTML=`
     <div class="top">
       <button class="back" onclick="location.hash='#home'">&larr; Hem</button>
-      <h1 style="font-size:18px;flex:1">Världsledare 2026</h1>
+      <h1 style="font-size:18px;flex:1">Världsledare + regenter</h1>
     </div>
-    <div class="subtitle">Samtliga stats- och regeringschefer plus organisationschefer som testas på DIPS. Baserat på plansch verifierad april 2026.</div>
-    <div style="display:flex;gap:8px;margin-bottom:14px">
-      <button class="next-btn" style="flex:1;padding:10px" onclick="location.hash='#leaders/quiz'">Starta ledarquiz</button>
+    <div class="subtitle">En visuell studieyta för DIPS: världsledare, organisationschefer, svenska regenter, planscher och kartor i samma flöde.</div>
+    <div class="hero-grid" style="margin-bottom:14px">
+      <div class="hero-stat"><strong>${leaderCount}</strong><span>världsledare</span></div>
+      <div class="hero-stat"><strong>${orgs.length}</strong><span>organisationschefer</span></div>
+      <div class="hero-stat"><strong>${regents.length}</strong><span>svenska regenter</span></div>
+      <div class="hero-stat"><strong>3</strong><span>visuella spår</span></div>
     </div>
+    <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap">
+      <button class="next-btn" style="flex:1;padding:10px;min-width:180px" onclick="location.hash='#leaders/quiz'">Starta ledarquiz</button>
+      <button class="ghost-btn" style="min-width:180px" onclick="location.hash='#map/play'">Öppna kartquiz</button>
+    </div>
+    <div class="leader-tools">
+      <div class="visual-card">
+        <h3>Världsledar-plansch</h3>
+        <p>Öppna planschen som snabb repetition, eller skriv ut PDF-versionen inför provveckan.</p>
+        <div class="visual-links">
+          <a href="plancher+Världsledare/plansch_v3.html" target="_blank" rel="noopener noreferrer">Öppna HTML</a>
+          <a href="plancher+Världsledare/DIPS_2026_Varldsledare_v3.pdf" target="_blank" rel="noopener noreferrer">Öppna PDF</a>
+        </div>
+      </div>
+      <div class="visual-card">
+        <h3>Världskartor</h3>
+        <p>Använd kartquizet i appen eller öppna den färdiga kart-PDF:en när du vill plugga visuellt utan interaktion.</p>
+        <div class="visual-links">
+          <a href="#map/play">Kartquiz i appen</a>
+          <a href="plancher+Världsledare/VärldskartoPlacement/varldskartor_varldsledare_oecd_europa.pdf" target="_blank" rel="noopener noreferrer">Kart-PDF</a>
+        </div>
+      </div>
+      <div class="visual-card">
+        <h3>Svenska regenter</h3>
+        <p>Från Gustav Vasa till Carl XVI Gustaf. Bra för historia, årtal, 1809, stormaktstid och klassiska provfällor.</p>
+        <div class="visual-links">
+          <a href="plancher+Världsledare/svenska_regenter.html" target="_blank" rel="noopener noreferrer">Öppna HTML</a>
+          <a href="plancher+Världsledare/Svenska_Regenter_plansch.pdf" target="_blank" rel="noopener noreferrer">Öppna PDF</a>
+        </div>
+      </div>
+      <div class="visual-card">
+        <h3>Så använder du delen</h3>
+        <p>1. Kör quiz på ledare. 2. Växla till kartan. 3. Avsluta med regenterna och planscherna som snabb repetition.</p>
+        <div class="visual-links">
+          <a href="#leaders/quiz">Quiz</a>
+          <a href="#map/free">Lärläge på karta</a>
+        </div>
+      </div>
+    </div>
+    <h2 class="section-head">Världsledare efter region</h2>
     <div id="leaderList" class="leaders-grid"></div>
     ${orgs.length?`
     <h2 class="section-head" style="margin-top:18px">Internationella organisationer</h2>
-    <div class="org-grid" id="orgGrid"></div>`:''}`;
+    <div class="org-grid" id="orgGrid"></div>`:''}
+    ${regents.length?`
+    <h2 class="section-head" style="margin-top:18px">Svenska regenter</h2>
+    <div class="mini-list" style="margin-bottom:12px"><strong>Provrelevant användning</strong><ul><li>Lär dig särskilt 1523, 1611, 1632, 1718, 1772, 1809, 1818, 1905, 1974.</li><li>Knyt varje regent till en historisk vändpunkt, inte bara ett namn.</li></ul></div>
+    <div class="regent-grid" id="regentGrid"></div>`:''}`;
   const list=document.getElementById('leaderList');
   regions.forEach(region=>{
     const div=document.createElement('div');
@@ -1579,6 +1643,22 @@ function renderLeaders(mode){
         <div class="leader-photo"><img src="../${o.photo}" alt="${o.initials}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${o.photo}'}else{this.parentElement.textContent='${o.initials}'}"></div>
         <span class="org-tag">${o.org}</span>
         <span class="org-name">${o.name}</span>`;
+      grid.appendChild(div);
+    });
+  }
+  if(regents.length){
+    const grid=document.getElementById('regentGrid');
+    regents.forEach(r=>{
+      const div=document.createElement('div');
+      div.className='regent-card';
+      div.innerHTML=`
+        <div class="regent-photo"><img src="../${r.photo}" alt="${r.name}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${r.photo}'}else{this.parentElement.textContent='${(r.name||'').split(' ').map(x=>x[0]).slice(0,2).join('')}' }"></div>
+        <div style="flex:1;min-width:0">
+          <div style="font-size:14px;font-weight:800;color:var(--text)">${r.name}</div>
+          <div class="regent-meta">${r.reign} · ${r.house}</div>
+          <span class="regent-era">${r.era}</span>
+          <div class="regent-focus">${r.focus}</div>
+        </div>`;
       grid.appendChild(div);
     });
   }
