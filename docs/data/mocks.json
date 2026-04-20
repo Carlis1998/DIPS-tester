@@ -3,69 +3,91 @@
     {
       "id": "MOCK2026A",
       "title": "DIPS Övningsprov 1 — Fullständigt",
-      "description": "Simulerar det skriftliga provets struktur med faktafrågor, kortsvar och uppsats.",
+      "description": "Simulerar det skriftliga provets struktur med faktafrågor, ordförståelse och uppsats. Baserat på riktiga provfrågor 2023–2025.",
       "duration_minutes": 180,
-      "source_exam_years": [
-        2023,
-        2024,
-        2025
-      ],
+      "source_exam_years": [2023, 2024, 2025],
       "sections": [
         {
           "type": "mcq",
-          "title": "Del 1: Faktafrågor (flervalsfrågor)",
-          "description": "30 frågor, 60 minuter. Alla ämnesområden.",
-          "time_minutes": 60,
-          "question_ids": [
-            "SV001",
-            "SV002",
-            "SV003",
-            "SV004",
-            "SV005",
-            "SV006",
-            "SV007",
-            "SV008",
-            "SV009",
-            "SV010"
-          ]
+          "title": "Del 1: Samhällsorientering — Sverige",
+          "description": "10 frågor om svenska institutioner, myndigheter och politik.",
+          "time_minutes": 15,
+          "question_ids": ["SV001", "SV002", "SV048", "SV049", "SV095", "SV096", "SV099", "SV100", "SV101", "SV111"]
+        },
+        {
+          "type": "mcq",
+          "title": "Del 2: Samhällsorientering — Globalt",
+          "description": "10 frågor om internationella organisationer, EU, FN och NATO.",
+          "time_minutes": 15,
+          "question_ids": ["SV003", "SV004", "SV010", "SV052", "SV053", "SV054", "SV063", "SV064", "SV065", "SV089"]
+        },
+        {
+          "type": "mcq",
+          "title": "Del 3: Historia och geografi",
+          "description": "10 frågor om historiska händelser, årtal, huvudstäder och geografi.",
+          "time_minutes": 15,
+          "question_ids": ["SV043", "SV055", "SV056", "SV058", "SV060", "SV068", "SV073", "SV075", "SV097", "SV098"]
+        },
+        {
+          "type": "mcq",
+          "title": "Del 4: Kultur",
+          "description": "8 frågor om konst, litteratur, musik, sport och allmänbildning.",
+          "time_minutes": 10,
+          "question_ids": ["SV044", "SV045", "SV046", "SV077", "SV079", "SV080", "SV081", "SV084"]
+        },
+        {
+          "type": "mcq",
+          "title": "Del 5: Ordförståelse",
+          "description": "12 frågor i ordförståelse — typiska DIPS-format med 4 alternativ.",
+          "time_minutes": 15,
+          "question_ids": ["SV011", "SV012", "SV013", "SV016", "SV017", "SV021", "SV024", "SV026", "SV027", "SV030", "SV033", "SV038"]
         },
         {
           "type": "essay",
-          "title": "Del 2: Uppsatsdel",
-          "description": "Välj en av tre uppsatsfrågor. Skriv ett PM på 2-3 sidor.",
+          "title": "Del 6: Uppsatsdel",
+          "description": "Välj en av tre uppsatsfrågor. Skriv ett PM på 2–3 sidor.",
           "time_minutes": 90,
-          "essay_ids": [
-            "E001",
-            "E002",
-            "E004"
-          ]
+          "essay_ids": ["E001", "E002", "E004"]
         }
       ]
     },
     {
       "id": "MOCK2026B",
-      "title": "DIPS Snabbprov — Bara fakta",
-      "description": "Bara flervalsfrågor för snabb övning.",
-      "duration_minutes": 30,
-      "source_exam_years": [
-        2023,
-        2024,
-        2025
-      ],
+      "title": "DIPS Snabbprov — Blandad quiz",
+      "description": "20 blandade frågor från alla sektioner. Perfekt som daglig träning.",
+      "duration_minutes": 25,
+      "source_exam_years": [2023, 2024, 2025],
       "sections": [
         {
           "type": "mcq",
-          "title": "Faktafrågor",
-          "description": "10 frågor, blandade ämnen.",
-          "time_minutes": 30,
+          "title": "Blandade faktafrågor",
+          "description": "20 frågor från alla ämnesområden.",
+          "time_minutes": 25,
           "question_ids": [
-            "SV001",
-            "SV003",
-            "SV005",
-            "SV007",
-            "SV008",
-            "SV009",
-            "SV010"
+            "SV007", "SV008", "SV039", "SV040", "SV041", "SV042",
+            "SV050", "SV057", "SV062", "SV066", "SV067", "SV071",
+            "SV074", "SV076", "SV082", "SV085", "SV087", "SV090",
+            "SV093", "SV106"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "MOCK2026C",
+      "title": "DIPS Ordförståelse — Alla ord",
+      "description": "Alla ordförståelsefrågor från 2023 och 2024 års prov samlade.",
+      "duration_minutes": 20,
+      "source_exam_years": [2023, 2024],
+      "sections": [
+        {
+          "type": "mcq",
+          "title": "Ordförståelse",
+          "description": "Samtliga ordförståelsefrågor med 4 alternativ.",
+          "time_minutes": 20,
+          "question_ids": [
+            "SV011", "SV012", "SV013", "SV014", "SV015", "SV016", "SV017", "SV018", "SV019", "SV020",
+            "SV021", "SV022", "SV023", "SV024", "SV025", "SV026", "SV027", "SV028", "SV029", "SV030",
+            "SV031", "SV032", "SV033", "SV034", "SV035", "SV036", "SV037", "SV038", "SV116"
           ]
         }
       ]

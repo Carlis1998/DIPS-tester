@@ -2,193 +2,1261 @@
   "questions": [
     {
       "id": "SV001",
-      "topics": [
-        "T01"
-      ],
+      "topics": ["T01"],
       "difficulty": 1,
       "stem": "Hur många ledamöter har Sveriges riksdag?",
-      "options": {
-        "A": "299",
-        "B": "349",
-        "C": "399",
-        "D": "451"
-      },
+      "options": {"A": "299", "B": "349", "C": "399", "D": "451"},
       "answer": "B",
       "explanation": "Riksdagen har 349 ledamöter fördelade på 29 valkretsar.",
-      "source": "official",
-      "source_id": "grundlag_rf",
-      "exam_year": null
+      "source": "official", "source_id": "grundlag_rf", "exam_year": null
     },
     {
       "id": "SV002",
-      "topics": [
-        "T01"
-      ],
+      "topics": ["T01"],
       "difficulty": 1,
-      "stem": "Vilka ar Sveriges fyra grundlagar?",
+      "stem": "Vilka är Sveriges fyra grundlagar?",
       "options": {
-        "A": "Regeringsformen, Successionsordningen, Tryckfrihetsforordningen, Yttrandefrihetsgrundlagen",
-        "B": "Regeringsformen, Successionsordningen, Riksdagsordningen, Tryckfrihetsforordningen",
-        "C": "Grundlagen, Tryckfrihetsforordningen, Yttrandefrihetsgrundlagen, Offentlighetsprincipen",
-        "D": "Regeringsformen, Kommunallagen, Tryckfrihetsforordningen, Yttrandefrihetsgrundlagen"
+        "A": "Regeringsformen, Successionsordningen, Tryckfrihetsförordningen, Yttrandefrihetsgrundlagen",
+        "B": "Regeringsformen, Successionsordningen, Riksdagsordningen, Tryckfrihetsförordningen",
+        "C": "Grundlagen, Tryckfrihetsförordningen, Yttrandefrihetsgrundlagen, Offentlighetsprincipen",
+        "D": "Regeringsformen, Kommunallagen, Tryckfrihetsförordningen, Yttrandefrihetsgrundlagen"
       },
       "answer": "A",
-      "explanation": "De fyra grundlagarna ar: Regeringsformen (RF), Successionsordningen (SO), Tryckfrihetsforordningen (TF) och Yttrandefrihetsgrundlagen (YGL).",
-      "source": "official",
-      "source_id": "grundlag_rf",
-      "exam_year": null
+      "explanation": "De fyra grundlagarna är: Regeringsformen (RF), Successionsordningen (SO), Tryckfrihetsförordningen (TF) och Yttrandefrihetsgrundlagen (YGL).",
+      "source": "official", "source_id": "grundlag_rf", "exam_year": null
     },
     {
       "id": "SV003",
-      "topics": [
-        "T02"
-      ],
+      "topics": ["T02"],
       "difficulty": 1,
       "stem": "Hur många medlemsstater har EU (2026)?",
-      "options": {
-        "A": "25",
-        "B": "27",
-        "C": "28",
-        "D": "30"
-      },
+      "options": {"A": "25", "B": "27", "C": "28", "D": "30"},
       "answer": "B",
       "explanation": "EU har 27 medlemsstater sedan Storbritanniens utträde 2020.",
-      "source": "official",
-      "source_id": "eu_treaty_teu",
-      "exam_year": null
+      "source": "official", "source_id": "eu_treaty_teu", "exam_year": null
     },
     {
       "id": "SV004",
-      "topics": [
-        "T02"
-      ],
+      "topics": ["T02"],
       "difficulty": 2,
-      "stem": "Vilken artikel i FN-stadgan reglerar Sakerhetsradets ratt att auktorisera militart vald?",
-      "options": {
-        "A": "Artikel 2",
-        "B": "Artikel 39",
-        "C": "Artikel 42",
-        "D": "Artikel 51"
-      },
+      "stem": "Vilken artikel i FN-stadgan reglerar Säkerhetsrådets rätt att auktorisera militärt våld?",
+      "options": {"A": "Artikel 2", "B": "Artikel 39", "C": "Artikel 42", "D": "Artikel 51"},
       "answer": "C",
-      "explanation": "Artikel 42 ger Sakerhetsradet ratt att vidta militara atgarder. Artikel 51 handlar om självförsvarsrätten. Artikel 39 faststaller att ett hot mot freden foreligger.",
-      "source": "official",
-      "source_id": "un_charter",
-      "exam_year": null
+      "explanation": "Artikel 42 ger Säkerhetsrådet rätt att vidta militära åtgärder. Artikel 51 handlar om självförsvarsrätten. Artikel 39 fastställer att ett hot mot freden föreligger.",
+      "source": "official", "source_id": "un_charter", "exam_year": null
     },
     {
       "id": "SV005",
-      "topics": [
-        "T03"
-      ],
+      "topics": ["T03"],
       "difficulty": 2,
-      "stem": "Wienkonventionen om diplomatiska forbindelser antogs ar:",
-      "options": {
-        "A": "1945",
-        "B": "1949",
-        "C": "1961",
-        "D": "1969"
-      },
+      "stem": "Wienkonventionen om diplomatiska förbindelser antogs år:",
+      "options": {"A": "1945", "B": "1949", "C": "1961", "D": "1969"},
       "answer": "C",
-      "explanation": "Wienkonventionen om diplomatiska forbindelser antogs 1961 och reglerar bland annat diplomatisk immunitet.",
-      "source": "official",
-      "source_id": "vienna_diplomatic_1961",
-      "exam_year": null
+      "explanation": "Wienkonventionen om diplomatiska förbindelser antogs 1961 och reglerar bland annat diplomatisk immunitet.",
+      "source": "official", "source_id": "vienna_diplomatic_1961", "exam_year": null
     },
     {
       "id": "SV006",
-      "topics": [
-        "T03"
-      ],
+      "topics": ["T03"],
       "difficulty": 2,
-      "stem": "Vilken internationell domstol handlagger tvister mellan stater?",
+      "stem": "Vilken internationell domstol handlägger tvister mellan stater?",
       "options": {
-        "A": "ICC - Internationella brottmalsdomstolen",
-        "B": "ICJ - Internationella domstolen i Haag",
+        "A": "ICC — Internationella brottmålsdomstolen",
+        "B": "ICJ — Internationella domstolen i Haag",
         "C": "Europadomstolen",
-        "D": "WTO:s tvistelösningsorgan"
+        "D": "WTO:s tvistlösningsorgan"
       },
       "answer": "B",
-      "explanation": "ICJ (International Court of Justice) ar FN:s huvudsakliga rattsliga organ och avgör tvister mellan stater. ICC handlagger brottmal mot individer.",
-      "source": "official",
-      "source_id": "un_charter",
-      "exam_year": null
+      "explanation": "ICJ (International Court of Justice) är FN:s huvudsakliga rättsliga organ och avgör tvister mellan stater. ICC handlägger brottmål mot individer.",
+      "source": "official", "source_id": "un_charter", "exam_year": null
     },
     {
       "id": "SV007",
-      "topics": [
-        "T06"
-      ],
+      "topics": ["T06"],
       "difficulty": 1,
-      "stem": "Vilket ar ar Sverige officiellt medlem i NATO?",
-      "options": {
-        "A": "2022",
-        "B": "2023",
-        "C": "2024",
-        "D": "2025"
-      },
+      "stem": "Vilket år blev Sverige officiellt medlem i NATO?",
+      "options": {"A": "2022", "B": "2023", "C": "2024", "D": "2025"},
       "answer": "C",
       "explanation": "Sverige blev officiellt medlem i NATO den 7 mars 2024, efter att Turkiet och Ungern ratificerat anslutningsprotokollet.",
-      "source": "official",
-      "source_id": "nato_treaty",
-      "exam_year": null
+      "source": "official", "source_id": "nato_treaty", "exam_year": null
     },
     {
       "id": "SV008",
-      "topics": [
-        "T08"
-      ],
+      "topics": ["T08"],
       "difficulty": 2,
-      "stem": "Parisavtalet syftar till att begransa den globala uppvärmningen till:",
+      "stem": "Parisavtalet syftar till att begränsa den globala uppvärmningen till:",
       "options": {
-        "A": "1,0 grader over förindustriell niva",
-        "B": "1,5 grader over förindustriell niva",
-        "C": "2,0 grader over förindustriell niva",
-        "D": "2,5 grader over förindustriell niva"
+        "A": "1,0 grader över förindustriell nivå",
+        "B": "1,5 grader över förindustriell nivå",
+        "C": "2,0 grader över förindustriell nivå",
+        "D": "2,5 grader över förindustriell nivå"
       },
       "answer": "B",
-      "explanation": "Parisavtalet (2015) syftar till att halla uppvärmningen val under 2 grader och strava mot 1,5 grader over förindustriell niva.",
-      "source": "official",
-      "source_id": "paris_agreement",
-      "exam_year": null
+      "explanation": "Parisavtalet (2015) syftar till att hålla uppvärmningen väl under 2 grader och sträva mot 1,5 grader över förindustriell nivå.",
+      "source": "official", "source_id": "paris_agreement", "exam_year": null
     },
     {
       "id": "SV009",
-      "topics": [
-        "T05"
-      ],
+      "topics": ["T05"],
       "difficulty": 1,
-      "stem": "Vilken ar Sveriges storsta enskilda handelspartner (export)?",
-      "options": {
-        "A": "USA",
-        "B": "Norge",
-        "C": "Tyskland",
-        "D": "Finland"
-      },
+      "stem": "Vilken är Sveriges största enskilda handelspartner (export)?",
+      "options": {"A": "USA", "B": "Norge", "C": "Tyskland", "D": "Finland"},
       "answer": "C",
-      "explanation": "Tyskland ar Sveriges storsta handelspartner bade för export och import, foljt av Norge och USA.",
-      "source": "secondary",
-      "source_id": null,
-      "exam_year": null
+      "explanation": "Tyskland är Sveriges största handelspartner både för export och import, följt av Norge och USA.",
+      "source": "secondary", "source_id": null, "exam_year": null
     },
     {
       "id": "SV010",
-      "topics": [
-        "T04"
-      ],
+      "topics": ["T04"],
       "difficulty": 2,
       "stem": "Vilket FN-organ har huvudansvar för internationell fred och säkerhet?",
+      "options": {"A": "Generalförsamlingen", "B": "Säkerhetsrådet", "C": "Internationella domstolen", "D": "Generalsekreteraren"},
+      "answer": "B",
+      "explanation": "FN:s säkerhetsråd har enligt FN-stadgan huvudansvar för upprätthållande av internationell fred och säkerhet. Rådet har 5 permanenta och 10 roterande medlemmar.",
+      "source": "official", "source_id": "un_charter", "exam_year": null
+    },
+
+    {
+      "id": "SV011",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'ratificera'?",
+      "options": {"A": "Avgiftsbelägga", "B": "Godkänna", "C": "Klassificera", "D": "Sterilisera"},
+      "answer": "B",
+      "explanation": "Ratificera innebär att formellt godkänna eller stadfästa, t.ex. ett internationellt avtal.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV012",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'annullera'?",
+      "options": {"A": "Åldersbestämma", "B": "Framföra ursäkt", "C": "Presentera", "D": "Ogiltigförklara"},
+      "answer": "D",
+      "explanation": "Annullera betyder att ogiltigförklara, t.ex. ett avtal eller äktenskap.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV013",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'tariff'?",
+      "options": {"A": "Taxa", "B": "Diplomatisk skriftväxling", "C": "Diplomatisk titel", "D": "Avtal"},
+      "answer": "A",
+      "explanation": "En tariff är en taxa eller tullavgift, ofta i handelssammanhang.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV014",
+      "topics": ["T09"],
+      "difficulty": 1,
+      "stem": "Vad står förkortningen OSA för?",
+      "options": {"A": "Officiell skriftlig ansökan", "B": "Om svar anhålles", "C": "Organisatorisk strukturanalys", "D": "Oroväckande säkerhetsavvikelse"},
+      "answer": "B",
+      "explanation": "OSA = Om svar anhålles. Används i inbjudningar.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV015",
+      "topics": ["T09", "T05"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'depreciering'?",
+      "options": {"A": "Nedskrivning", "B": "Uppskrivning", "C": "Territoriellt avstående", "D": "Territoriellt anspråk"},
+      "answer": "A",
+      "explanation": "Depreciering innebär nedskrivning av ett värde, t.ex. en valutas köpkraft.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV016",
+      "topics": ["T09", "T03"],
+      "difficulty": 3,
+      "stem": "Vad betyder 'parafera'?",
+      "options": {"A": "Framföra", "B": "Deklarera", "C": "Inofficiellt föreslå", "D": "Signera"},
+      "answer": "D",
+      "explanation": "Parafera innebär att signera med initialer. Används i diplomatin som preliminär signering av avtal.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV017",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'inhibera'?",
+      "options": {"A": "Ställa in", "B": "Försvåra", "C": "Befria", "D": "Bekräfta"},
+      "answer": "A",
+      "explanation": "Inhibera betyder att ställa in eller tillfälligt stoppa ett beslut.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV018",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad är en framställan?",
+      "options": {"A": "En avbildning", "B": "En begäran", "C": "Att skjuta upp något", "D": "En förklaring"},
+      "answer": "B",
+      "explanation": "En framställan är en formell begäran, t.ex. från en myndighet till en annan.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV019",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'generisk'? (2023 års prov)",
+      "options": {"A": "Ovanlig", "B": "Allmängiltig", "C": "Inneboende", "D": "Sjuklig"},
+      "answer": "B",
+      "explanation": "Generisk betyder allmängiltig eller icke-specifik, t.ex. ett generiskt läkemedel.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV020",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Hur mycket är ett gross?",
+      "options": {"A": "12", "B": "20", "C": "144", "D": "240"},
+      "answer": "C",
+      "explanation": "Ett gross = 144 stycken (12 dussin). Äldre måttenhet.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV021",
+      "topics": ["T09", "T01"],
+      "difficulty": 2,
+      "stem": "Vad är en interpellation?",
       "options": {
-        "A": "Generalforsamlingen",
-        "B": "Sakerhetsradet",
-        "C": "Internationella domstolen",
-        "D": "Generalsekreteraren"
+        "A": "En internationell arresteringsorder",
+        "B": "Ett förslag till ny lag från regeringen till riksdagen",
+        "C": "En fråga från en riksdagsledamot till ett statsråd, som besvaras muntligt",
+        "D": "Ett förslag till beslut från en eller flera riksdagsledamöter"
+      },
+      "answer": "C",
+      "explanation": "En interpellation är en fråga från en riksdagsledamot till ett statsråd som besvaras muntligt vid en särskild debatt i kammaren.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV022",
+      "topics": ["T09"],
+      "difficulty": 1,
+      "stem": "Vad innebär vetorätt?",
+      "options": {"A": "Inresetillstånd", "B": "Rätt att delta i omröstning", "C": "Importrättighet", "D": "Rätt att vägra godkännande"},
+      "answer": "D",
+      "explanation": "Vetorätt innebär rätten att vägra godkännande och därmed blockera ett beslut, t.ex. i FN:s säkerhetsråd.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV023",
+      "topics": ["T09", "T01"],
+      "difficulty": 3,
+      "stem": "Vad betyder 'hovstat'?",
+      "options": {"A": "Monarki", "B": "Hovets organisation och budget", "C": "Samverkansorgan mellan hovet och regeringen", "D": "Konselj"},
+      "answer": "B",
+      "explanation": "Hovstaten är hovets organisation och budget, dvs. den apparat som omger monarken.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV024",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'bibliofil'?",
+      "options": {"A": "Bokälskare", "B": "Bibliotekarie", "C": "Bokbindare", "D": "Lektör"},
+      "answer": "A",
+      "explanation": "En bibliofil är en person som älskar och samlar böcker.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV025",
+      "topics": ["T09"],
+      "difficulty": 3,
+      "stem": "Vilket ord betyder folklivsforskning?",
+      "options": {"A": "Etiologi", "B": "Etologi", "C": "Etnologi", "D": "Otologi"},
+      "answer": "C",
+      "explanation": "Etnologi är studiet av folkkultur och folklig tradition. Etiologi = läran om orsaker, etologi = djurbeteende, otologi = öronmedicin.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV026",
+      "topics": ["T09", "T03"],
+      "difficulty": 1,
+      "stem": "Vilken är den korrekta diplomatiska termen för 'icke önskvärd person'?",
+      "options": {"A": "Persona non accepta", "B": "Persona non odium", "C": "Persona non grata", "D": "Persona non abigere"},
+      "answer": "C",
+      "explanation": "Persona non grata — regleras i Wienkonventionen om diplomatiska förbindelser. Värdlandet behöver inte ange skäl.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV027",
+      "topics": ["T09", "T03"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'reciprocitet'?",
+      "options": {"A": "Återtagande", "B": "Ömsesidighet", "C": "Övervåld", "D": "Folkrättsligt hävdvunnen rättighet"},
+      "answer": "B",
+      "explanation": "Reciprocitet innebär ömsesidighet — en viktig princip i diplomatin och folkrätten.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV028",
+      "topics": ["T09"],
+      "difficulty": 1,
+      "stem": "Vad betyder 'apartheid'?",
+      "options": {"A": "Rasförtryck", "B": "Rasåtskillnad", "C": "Rashierarki", "D": "Rasmotstånd"},
+      "answer": "B",
+      "explanation": "Apartheid betyder ordagrant 'åtskillnad' på afrikaans. Sydafrikas officiella politiska system 1948–1994.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV029",
+      "topics": ["T09"],
+      "difficulty": 3,
+      "stem": "Vad är en typograf?",
+      "options": {"A": "Meteorologiskt instrument", "B": "Radient", "C": "Stillbildsvisning", "D": "Sättare"},
+      "answer": "D",
+      "explanation": "En typograf är en sättare, dvs. en person som sätter text i tryckformat.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV030",
+      "topics": ["T09", "T06"],
+      "difficulty": 2,
+      "stem": "Vad menas med 'Occidenten'?",
+      "options": {"A": "Motsats till zenit", "B": "Västerlandet", "C": "Mindre Asien", "D": "Sydostasien"},
+      "answer": "B",
+      "explanation": "Occidenten = västerlandet, från latinets 'occidens'. Motsatsen är Orienten.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV031",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad är en oktagon?",
+      "options": {"A": "Ockuperat område", "B": "Getto", "C": "Portal", "D": "Åttkanting"},
+      "answer": "D",
+      "explanation": "En oktagon är en åttkanting — en geometrisk form med åtta sidor.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV032",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'ambulerande'?",
+      "options": {"A": "Brådskande", "B": "Kringresande", "C": "Blinkande", "D": "Förvirrande"},
+      "answer": "B",
+      "explanation": "Ambulerande = kringresande, som rör sig mellan platser (t.ex. en ambulerande ambassadör).",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV033",
+      "topics": ["T09"],
+      "difficulty": 3,
+      "stem": "Vad är en chimär?",
+      "options": {"A": "En grekisk krigsgud", "B": "Råsilke", "C": "Svårighet", "D": "Illusion"},
+      "answer": "D",
+      "explanation": "En chimär är en illusion eller inbillning. I grekisk mytologi ett eldsprutande sagodjur.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV034",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'lapsus'?",
+      "options": {"A": "Fel", "B": "Brist", "C": "Koja", "D": "Språng"},
+      "answer": "A",
+      "explanation": "Lapsus = ett (oavsiktligt) fel eller misstag, från latinets 'labi' (halka).",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV035",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'adekvat'?",
+      "options": {"A": "Överlägsen", "B": "Tråkig", "C": "Fullt motsvarig", "D": "Orimlig"},
+      "answer": "C",
+      "explanation": "Adekvat = fullt motsvarig, lämplig, tillräcklig.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV036",
+      "topics": ["T09"],
+      "difficulty": 3,
+      "stem": "Vad betyder 'tradera'?",
+      "options": {"A": "Föra vidare", "B": "Köpslå", "C": "Parodiera", "D": "Kassera"},
+      "answer": "A",
+      "explanation": "Tradera = föra vidare, överföra muntligt eller skriftligt (från latin 'tradere').",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV037",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'härröra'?",
+      "options": {"A": "Form av militär reträtt", "B": "Finsk maträtt", "C": "Ha sitt ursprung i", "D": "Ort i Småland"},
+      "answer": "C",
+      "explanation": "Härröra = ha sitt ursprung i, härstamma från.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV038",
+      "topics": ["T09", "T03"],
+      "difficulty": 3,
+      "stem": "Vad betyder 'kodifiera'?",
+      "options": {"A": "Avsluta", "B": "Ge skriftlig form åt", "C": "Hemlighålla", "D": "Pryda"},
+      "answer": "B",
+      "explanation": "Kodifiera = ge skriftlig form åt, samla regler i en kodex. Viktig term i folkrätten.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+
+    {
+      "id": "SV039",
+      "topics": ["T05", "T01"],
+      "difficulty": 2,
+      "stem": "Hur stor är Sveriges BNP?",
+      "options": {"A": "Ca 5 400 miljarder kronor", "B": "Ca 2 500 miljarder kronor", "C": "Ca 1 600 miljarder kronor", "D": "Ca 3 000 miljarder kronor"},
+      "answer": "A",
+      "explanation": "Sveriges BNP var ca 5 400 miljarder kronor. Frågan ställdes på 2023 års DIPS-prov.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV040",
+      "topics": ["T03"],
+      "difficulty": 2,
+      "stem": "Vad innebär principen om non-refoulement?",
+      "options": {
+        "A": "Principen om icke-inblandning i länders inre angelägenheter",
+        "B": "Princip som förbjuder utvisning av asylsökande till länder där de riskerar förföljelse",
+        "C": "Principen om skydd av civila i konflikter",
+        "D": "Principen om fri rörlighet över gränser"
       },
       "answer": "B",
-      "explanation": "FN:s säkerhetsrad har enligt FN-stadgan huvudansvar för upprätthallande av internationell fred och säkerhet. Radet har 5 permanenta och 10 roterande medlemmar.",
-      "source": "official",
-      "source_id": "un_charter",
-      "exam_year": null
+      "explanation": "Non-refoulement förbjuder att utvisa eller återsända en person till ett land där denne riskerar förföljelse. Central i flyktingrätten.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV041",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Ungefär hur många muslimer finns det i världen?",
+      "options": {"A": "Ca 800 miljoner", "B": "Ca 1,6 miljarder", "C": "Ca 2,8 miljarder", "D": "Ca 3,4 miljarder"},
+      "answer": "B",
+      "explanation": "Det finns ungefär 1,6–1,8 miljarder muslimer i världen, vilket gör islam till världens näst största religion.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV042",
+      "topics": ["T04", "T06"],
+      "difficulty": 2,
+      "stem": "Vad är Abrahamavtalen?",
+      "options": {
+        "A": "Fredsavtal mellan Egypten och Israel från 1978",
+        "B": "Normaliseringsavtal mellan Israel och bl.a. Förenade Arabemiraten och Bahrain från 2020",
+        "C": "Fredsavtal mellan Israel och Palestina från 1993",
+        "D": "Samarbetsavtal mellan Gulfstaterna från 2015"
+      },
+      "answer": "B",
+      "explanation": "Abrahamavtalen (2020) normaliserade relationerna mellan Israel och flera arabstater, däribland UAE och Bahrain. Camp David-avtalet (1978) gällde Egypten, Osloavtalet (1993) gällde PLO.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV043",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år avslutades det svenska styret över Finland?",
+      "options": {"A": "1721", "B": "1809", "C": "1905", "D": "1814"},
+      "answer": "B",
+      "explanation": "1809 fick Sverige avstå Finland till Ryssland genom freden i Fredrikshamn. 1905 upplöstes unionen med Norge.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV044",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "Vad heter det internationellt prisbelönta kulturhuset i Skellefteå, beläget i ett av världens högsta trähus?",
+      "options": {"A": "Skellefteå kulturhus", "B": "Sara kulturhus", "C": "Kulturhuset Trappan", "D": "Kulturhuset Batteriet"},
+      "answer": "B",
+      "explanation": "Sara kulturhus i Skellefteå invigdes 2021 och är ett av världens högsta träbyggnader.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV045",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "Vilken svensk kompositör tilldelades en Oscar 2019 för musiken till filmen Black Panther?",
+      "options": {"A": "Ludwig Göransson", "B": "Max Martin", "C": "Tim Bergling", "D": "Benny Andersson"},
+      "answer": "A",
+      "explanation": "Ludwig Göransson fick Oscar för bästa filmmusik 2019 (Black Panther). Han har sedan också vunnit för Oppenheimer.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV046",
+      "topics": ["T07"],
+      "difficulty": 1,
+      "stem": "Vilken barnbokskaraktär skapades av Gunilla Bergström?",
+      "options": {"A": "Pettson och Findus", "B": "Greta Gris", "C": "Lasse-Majas detektivbyrå", "D": "Alfons Åberg"},
+      "answer": "D",
+      "explanation": "Alfons Åberg skapades av Gunilla Bergström. Pettson och Findus är av Sven Nordqvist.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV047",
+      "topics": ["T07"],
+      "difficulty": 3,
+      "stem": "Vilket nordiskt land har en så kallad kulturkanon?",
+      "options": {"A": "Danmark", "B": "Danmark och Norge", "C": "Finland och Norge", "D": "Sverige och Danmark"},
+      "answer": "A",
+      "explanation": "Danmark har en kulturkanon — en officiell lista med centrala danska kulturverk. Sverige har ingen formell kulturkanon.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+
+    {
+      "id": "SV048",
+      "topics": ["T01"],
+      "difficulty": 2,
+      "stem": "Hur många kommuner har Sverige?",
+      "options": {"A": "140", "B": "210", "C": "290", "D": "320"},
+      "answer": "C",
+      "explanation": "Sverige är indelat i 290 kommuner och 21 regioner. Fråga från 2024 års DIPS-prov.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV049",
+      "topics": ["T01"],
+      "difficulty": 1,
+      "stem": "Vilket år blev Sverige medlem i EU?",
+      "options": {"A": "1992", "B": "1994", "C": "1995", "D": "1998"},
+      "answer": "C",
+      "explanation": "Sverige blev medlem i EU den 1 januari 1995 efter folkomröstningen 1994.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV050",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilka tre länder ingick i Kalmarunionen?",
+      "options": {
+        "A": "Sverige, Norge, Finland",
+        "B": "Sverige, Danmark, Norge",
+        "C": "Sverige, Danmark, Island",
+        "D": "Danmark, Norge, Finland"
+      },
+      "answer": "B",
+      "explanation": "Kalmarunionen (1397–1523) förenade Sverige, Danmark och Norge under en monark.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV051",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år upplöstes unionen mellan Sverige och Norge?",
+      "options": {"A": "1895", "B": "1905", "C": "1917", "D": "1920"},
+      "answer": "B",
+      "explanation": "Unionsupplösningen skedde 1905 då Norge förklarade sig självständigt.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV052",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Hur många globala mål (SDG) finns det i Agenda 2030?",
+      "options": {"A": "12", "B": "15", "C": "17", "D": "21"},
+      "answer": "C",
+      "explanation": "Agenda 2030 har 17 globala mål (Sustainable Development Goals). De ska vara uppfyllda till 2030.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV053",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vilket år bildades NATO?",
+      "options": {"A": "1945", "B": "1949", "C": "1955", "D": "1961"},
+      "answer": "B",
+      "explanation": "NATO bildades 1949 genom Nordatlantiska fördraget. Sverige blev medlem 2024.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV054",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vad står förkortningen NATO för?",
+      "options": {
+        "A": "Northern Atlantic Treaty Organization",
+        "B": "North Atlantic Treaty Organization",
+        "C": "North American Treaty Organization",
+        "D": "Nordic Atlantic Treaty Organization"
+      },
+      "answer": "B",
+      "explanation": "NATO = North Atlantic Treaty Organization (Nordatlantiska fördragsorganisationen).",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV055",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år utropades Folkrepubliken Kina?",
+      "options": {"A": "1945", "B": "1949", "C": "1953", "D": "1957"},
+      "answer": "B",
+      "explanation": "Folkrepubliken Kina utropades den 1 oktober 1949 av Mao Zedong.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV056",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vad hette Indiens första premiärminister?",
+      "options": {"A": "Mahatma Gandhi", "B": "Jawaharlal Nehru", "C": "Indira Gandhi", "D": "Rajendra Prasad"},
+      "answer": "B",
+      "explanation": "Jawaharlal Nehru var Indiens första premiärminister (1947–1964). Mahatma Gandhi var frihetsrörelsens ledare men blev aldrig premiärminister.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV057",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "I vilken stad antogs den amerikanska självständighetsförklaringen?",
+      "options": {"A": "Washington D.C.", "B": "New York", "C": "Philadelphia", "D": "Boston"},
+      "answer": "C",
+      "explanation": "Självständighetsförklaringen antogs i Philadelphia 1776. Washington D.C. grundades som huvudstad 1790.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV058",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "I vilken stad hölls FN:s första miljökonferens 1972?",
+      "options": {"A": "New York", "B": "Genève", "C": "Stockholm", "D": "Rio de Janeiro"},
+      "answer": "C",
+      "explanation": "FN:s första miljökonferens hölls i Stockholm 1972 — en milstolpe för internationell miljöpolitik.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV059",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "I vilken stad hölls Sveriges första riksdag (enligt traditionen, 1435)?",
+      "options": {"A": "Stockholm", "B": "Arboga", "C": "Uppsala", "D": "Kalmar"},
+      "answer": "B",
+      "explanation": "Arboga anses traditionellt vara platsen för Sveriges första riksdag 1435 under Engelbrekt Engelbrektsson.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV060",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilken är jordens längsta flod?",
+      "options": {"A": "Amazonas", "B": "Nilen", "C": "Yangtze", "D": "Mississippi"},
+      "answer": "B",
+      "explanation": "Nilen är traditionellt den längsta floden (ca 6 650 km), även om Amazonas ibland mäts längre beroende på mätmetod.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV061",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vad heter jordens största havsdjup?",
+      "options": {"A": "Kermadecgraven", "B": "Marianergraven", "C": "Tongagraven", "D": "Sundagraven"},
+      "answer": "B",
+      "explanation": "Marianergraven i Stilla havet är jordens djupaste punkt (ca 11 034 meter).",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV062",
+      "topics": ["T06"],
+      "difficulty": 1,
+      "stem": "Vilket är jordens till ytan minsta land?",
+      "options": {"A": "Monaco", "B": "Vatikanstaten", "C": "San Marino", "D": "Liechtenstein"},
+      "answer": "B",
+      "explanation": "Vatikanstaten (0,44 km²) är världens minsta land till ytan. Monaco (2,02 km²) är näst minst.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV063",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "I vilken stad har UNEP (FN:s miljöprogram) sitt huvudsäte?",
+      "options": {"A": "Genève", "B": "Nairobi", "C": "New York", "D": "Paris"},
+      "answer": "B",
+      "explanation": "UNEP har sitt huvudsäte i Nairobi, Kenya — det enda FN-organet med huvudsäte i det globala syd.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV064",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "I vilken stad har UNESCO sitt säte?",
+      "options": {"A": "New York", "B": "Genève", "C": "Paris", "D": "Rom"},
+      "answer": "C",
+      "explanation": "UNESCO (FN:s organisation för utbildning, vetenskap och kultur) har sitt säte i Paris.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV065",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "I vilken stad har IAEA (Internationella atomenergiorganet) sitt säte?",
+      "options": {"A": "Genève", "B": "Wien", "C": "Bryssel", "D": "New York"},
+      "answer": "B",
+      "explanation": "IAEA har sitt säte i Wien, Österrike.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV066",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år dog Stalin?",
+      "options": {"A": "1949", "B": "1953", "C": "1956", "D": "1961"},
+      "answer": "B",
+      "explanation": "Josef Stalin dog 1953. Nikita Chrusjtjov efterträdde honom och inledde avstaliniseringen.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV067",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år inträffade Kubakrisen?",
+      "options": {"A": "1956", "B": "1960", "C": "1962", "D": "1968"},
+      "answer": "C",
+      "explanation": "Kubakrisen ägde rum i oktober 1962 och anses vara kalla krigets farligaste stund.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV068",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "I vilken stad finns det antika templet Parthenon?",
+      "options": {"A": "Rom", "B": "Aten", "C": "Istanbul", "D": "Alexandria"},
+      "answer": "B",
+      "explanation": "Parthenon ligger på Akropolis i Aten och byggdes på 400-talet f.Kr.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV069",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "I vilken stad finns Pantheon?",
+      "options": {"A": "Aten", "B": "Rom", "C": "Paris", "D": "London"},
+      "answer": "B",
+      "explanation": "Pantheon i Rom är ett antikt tempel, byggt ca 125 e.Kr. Det finns även ett Panthéon i Paris.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV070",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "I vilket land finns Hadrianus mur?",
+      "options": {"A": "Italien", "B": "Turkiet", "C": "England", "D": "Skottland"},
+      "answer": "C",
+      "explanation": "Hadrianus mur byggdes av romarna i norra England (inte Skottland) ca 122 e.Kr.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV071",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "I vilket land ligger Godahoppsudden?",
+      "options": {"A": "Namibia", "B": "Sydafrika", "C": "Moçambique", "D": "Argentina"},
+      "answer": "B",
+      "explanation": "Godahoppsudden (Cape of Good Hope) ligger i Sydafrika, nära Kapstaden.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV072",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "I vilket land ligger Kap Horn?",
+      "options": {"A": "Argentina", "B": "Chile", "C": "Brasilien", "D": "Peru"},
+      "answer": "B",
+      "explanation": "Kap Horn ligger på ön Isla Hornos i Chile, sydligaste punkten i Sydamerika (exkl. Antarktis).",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV073",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år byggdes Berlinmuren?",
+      "options": {"A": "1949", "B": "1953", "C": "1961", "D": "1968"},
+      "answer": "C",
+      "explanation": "Berlinmuren byggdes 1961 och föll 1989. Den delade Berlin i ett öst- och västberlin.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV074",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vad hette huvudstaden i det dåvarande Västtyskland (BRD)?",
+      "options": {"A": "Hamburg", "B": "Frankfurt", "C": "München", "D": "Bonn"},
+      "answer": "D",
+      "explanation": "Bonn var Västtysklands huvudstad 1949–1990. Efter återföreningen blev Berlin åter Tysklands huvudstad.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV075",
+      "topics": ["T06"],
+      "difficulty": 1,
+      "stem": "Vilket är till folkmängden Afrikas största land?",
+      "options": {"A": "Etiopien", "B": "Sydafrika", "C": "Nigeria", "D": "Egypten"},
+      "answer": "C",
+      "explanation": "Nigeria har ca 220 miljoner invånare och är Afrikas folkrikaste land.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV076",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år upplöstes Sovjetunionen?",
+      "options": {"A": "1989", "B": "1991", "C": "1993", "D": "1995"},
+      "answer": "B",
+      "explanation": "Sovjetunionen upplöstes formellt den 26 december 1991.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV077",
+      "topics": ["T07"],
+      "difficulty": 1,
+      "stem": "Vem grundade Svenska Akademien?",
+      "options": {"A": "Carl XVI Gustaf", "B": "Gustav III", "C": "Axel Oxenstierna", "D": "Alfred Nobel"},
+      "answer": "B",
+      "explanation": "Svenska Akademien grundades av Gustav III 1786. Den har 18 ledamöter.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV078",
+      "topics": ["T07"],
+      "difficulty": 1,
+      "stem": "Hur många ledamöter har Svenska Akademien?",
+      "options": {"A": "13", "B": "15", "C": "18", "D": "20"},
+      "answer": "C",
+      "explanation": "Svenska Akademien har 18 ledamöter — 'De aderton'.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV079",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "Vem skapade konstverket 'Guernica'?",
+      "options": {"A": "Salvador Dalí", "B": "Pablo Picasso", "C": "Claude Monet", "D": "Joan Miró"},
+      "answer": "B",
+      "explanation": "Pablo Picasso målade Guernica 1937 som protest mot bombningen av staden Guernica under spanska inbördeskriget.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV080",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "Vem målade Mona Lisa (La Joconde)?",
+      "options": {"A": "Michelangelo", "B": "Raphael", "C": "Leonardo da Vinci", "D": "Botticelli"},
+      "answer": "C",
+      "explanation": "Leonardo da Vinci målade Mona Lisa (ca 1503–1519). Tavlan hänger i Louvren, Paris.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV081",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "I vilken stad arrangerades de olympiska sommarspelen 2024?",
+      "options": {"A": "London", "B": "Tokyo", "C": "Paris", "D": "Los Angeles"},
+      "answer": "C",
+      "explanation": "Paris var värd för de olympiska sommarspelen 2024. Los Angeles arrangerar 2028.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV082",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "Vilket år var Stockholm värd för olympiska sommarspelen?",
+      "options": {"A": "1896", "B": "1908", "C": "1912", "D": "1924"},
+      "answer": "C",
+      "explanation": "Stockholm var värd för OS 1912 — de femte moderna sommarspelen.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV083",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "I vilken stad hölls de första moderna olympiska spelen 1896?",
+      "options": {"A": "Paris", "B": "London", "C": "Aten", "D": "Rom"},
+      "answer": "C",
+      "explanation": "De första moderna olympiska spelen hölls i Aten 1896, organiserade av Pierre de Coubertin.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV084",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "Vem är författare till 'Den gudomliga komedin'?",
+      "options": {"A": "Giovanni Boccaccio", "B": "Dante Alighieri", "C": "Francesco Petrarca", "D": "Niccolò Machiavelli"},
+      "answer": "B",
+      "explanation": "Dante Alighieri skrev Den gudomliga komedin (Divina Commedia) på 1300-talet.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV085",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "Vem skrev 'Fursten'?",
+      "options": {"A": "Dante Alighieri", "B": "Thomas Hobbes", "C": "Niccolò Machiavelli", "D": "Jean-Jacques Rousseau"},
+      "answer": "C",
+      "explanation": "Niccolò Machiavelli skrev Fursten (Il Principe, 1513) — ett klassiskt verk om politisk makt.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV086",
+      "topics": ["T07"],
+      "difficulty": 3,
+      "stem": "Vilken arkitekt ritade Operahuset i Sydney?",
+      "options": {"A": "Frank Lloyd Wright", "B": "Le Corbusier", "C": "Jørn Utzon", "D": "Oscar Niemeyer"},
+      "answer": "C",
+      "explanation": "Jørn Utzon (dansk arkitekt) ritade Sydneys operahus, invigt 1973. UNESCO-världsarv sedan 2007.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV087",
+      "topics": ["T07"],
+      "difficulty": 2,
+      "stem": "Vilken arkitekt ritade Sagrada Familia i Barcelona?",
+      "options": {"A": "Santiago Calatrava", "B": "Antoni Gaudí", "C": "Le Corbusier", "D": "Frank Gehry"},
+      "answer": "B",
+      "explanation": "Antoni Gaudí påbörjade Sagrada Familia 1882. Byggnaden är fortfarande under konstruktion.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV088",
+      "topics": ["T07"],
+      "difficulty": 3,
+      "stem": "Vilken konstnär skapade konstverket 'Girl with Balloon'?",
+      "options": {"A": "Banksy", "B": "Damien Hirst", "C": "Jeff Koons", "D": "Ai Weiwei"},
+      "answer": "A",
+      "explanation": "Banksy skapade Girl with Balloon. Ett exemplar strimlade sig självt vid en Sotheby's-auktion 2018.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV089",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vilket fördrag omvandlade EG till Europeiska unionen (EU) 1992?",
+      "options": {"A": "Romfördraget", "B": "Maastrichtfördraget", "C": "Lissabonfördraget", "D": "Nicefördraget"},
+      "answer": "B",
+      "explanation": "Maastrichtfördraget (1992) skapade EU och införde de tre pelarna: EG, GUSP, och rättsligt samarbete.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV090",
+      "topics": ["T02"],
+      "difficulty": 3,
+      "stem": "Vilka sex länder grundade den europeiska kol- och stålgemenskapen (EKSG) 1951?",
+      "options": {
+        "A": "Frankrike, Tyskland, Italien, Belgien, Nederländerna, Luxemburg",
+        "B": "Frankrike, Tyskland, Italien, Spanien, Nederländerna, Belgien",
+        "C": "Frankrike, Tyskland, Storbritannien, Italien, Belgien, Nederländerna",
+        "D": "Frankrike, Tyskland, Italien, Belgien, Danmark, Nederländerna"
+      },
+      "answer": "A",
+      "explanation": "EKSG grundades av Frankrike, Västtyskland, Italien och Benelux-länderna (Belgien, Nederländerna, Luxemburg).",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV091",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vad kallas Rysslands parlament?",
+      "options": {"A": "Riksduma", "B": "Duman", "C": "Kreml", "D": "Förbundsrådet"},
+      "answer": "B",
+      "explanation": "Rysslands parlament kallas Duman (Statsduman). Duman och Federationsrådet utgör Federala församlingen.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV092",
+      "topics": ["T02"],
+      "difficulty": 3,
+      "stem": "Vad kallas Islands parlament?",
+      "options": {"A": "Riksdagen", "B": "Alltinget", "C": "Stortinget", "D": "Lagtinget"},
+      "answer": "B",
+      "explanation": "Alltinget (Alþingi) grundades 930 och anses vara ett av världens äldsta parlament.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV093",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vad kallas Norges parlament?",
+      "options": {"A": "Riksdagen", "B": "Folketinget", "C": "Stortinget", "D": "Alltinget"},
+      "answer": "C",
+      "explanation": "Norges parlament heter Stortinget. Danmarks heter Folketinget.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV094",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vad heter det nordiska samarbetsorganet för parlamentariker?",
+      "options": {"A": "Nordiska ministerrådet", "B": "Nordiska rådet", "C": "NB8", "D": "Helsingforsavtalet"},
+      "answer": "B",
+      "explanation": "Nordiska rådet är det interparlamentariska organet. Nordiska ministerrådet är regeringssamarbetet.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV095",
+      "topics": ["T01"],
+      "difficulty": 2,
+      "stem": "Vad kallas samernas folkvalda församling?",
+      "options": {"A": "Samernas riksdag", "B": "Sametinget", "C": "Samiska folkförsamlingen", "D": "Norrlandstinget"},
+      "answer": "B",
+      "explanation": "Sametinget är samernas folkvalda församling i Sverige, inrättat 1993.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV096",
+      "topics": ["T01"],
+      "difficulty": 1,
+      "stem": "Vad heter en kommuns högsta beslutande organ?",
+      "options": {"A": "Kommunstyrelsen", "B": "Kommunfullmäktige", "C": "Kommunalnämnden", "D": "Kommunrådet"},
+      "answer": "B",
+      "explanation": "Kommunfullmäktige är en kommuns högsta beslutande organ — beslutar om budget, skatt och övergripande mål.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV097",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år fick kvinnor för första gången rösta i riksdagsvalet i Sverige?",
+      "options": {"A": "1909", "B": "1917", "C": "1921", "D": "1925"},
+      "answer": "C",
+      "explanation": "Kvinnor fick rösta för första gången i riksdagsvalet 1921 (kommunalvalen redan 1919).",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV098",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket år slöts Westfaliska freden?",
+      "options": {"A": "1618", "B": "1648", "C": "1660", "D": "1713"},
+      "answer": "B",
+      "explanation": "Westfaliska freden 1648 avslutade trettioåriga kriget och anses grunda det moderna statssystemet.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV099",
+      "topics": ["T01"],
+      "difficulty": 2,
+      "stem": "Vad står förkortningen SKR för?",
+      "options": {"A": "Svenska Kommunalreformen", "B": "Sveriges Kommuner och Regioner", "C": "Svenska Kronans Råd", "D": "Statens Kommunala Revisorer"},
+      "answer": "B",
+      "explanation": "SKR = Sveriges Kommuner och Regioner (tidigare SKL — Sveriges Kommuner och Landsting).",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV100",
+      "topics": ["T01"],
+      "difficulty": 1,
+      "stem": "Vad står förkortningen MSB för?",
+      "options": {
+        "A": "Myndigheten för Samhällsskydd och Beredskap",
+        "B": "Militära Säkerhetsbyrån",
+        "C": "Myndigheten för Social Bistånd",
+        "D": "Migrationsverkets Stödbureau"
+      },
+      "answer": "A",
+      "explanation": "MSB = Myndigheten för samhällsskydd och beredskap. Central myndighet för krishantering i Sverige.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV101",
+      "topics": ["T01"],
+      "difficulty": 1,
+      "stem": "Vad står förkortningen JO för?",
+      "options": {"A": "Justitieombudsmannen", "B": "Juridiska Ordningen", "C": "Justitieövervakaren", "D": "Juristkåren Ordförande"},
+      "answer": "A",
+      "explanation": "JO = Justitieombudsmannen — riksdagens ombudsman som granskar myndigheternas verksamhet.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV102",
+      "topics": ["T01"],
+      "difficulty": 2,
+      "stem": "Vilken militär enhet är störst: bataljon, brigad eller kompani?",
+      "options": {"A": "Kompani", "B": "Bataljon", "C": "Brigad", "D": "De är lika stora"},
+      "answer": "C",
+      "explanation": "Brigad (ca 3 000–5 000 soldater) > bataljon (ca 400–800) > kompani (ca 100–200).",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV103",
+      "topics": ["T08"],
+      "difficulty": 2,
+      "stem": "Vad står förkortningen IPCC för?",
+      "options": {
+        "A": "International Panel on Climate Cooperation",
+        "B": "Intergovernmental Panel on Climate Change",
+        "C": "International Programme for Carbon Control",
+        "D": "Intergovernmental Protocol on Carbon Capture"
+      },
+      "answer": "B",
+      "explanation": "IPCC = Intergovernmental Panel on Climate Change — FN:s klimatpanel.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV104",
+      "topics": ["T08"],
+      "difficulty": 2,
+      "stem": "Vilket år ska EU vara klimatneutralt enligt den europeiska klimatlagen?",
+      "options": {"A": "2030", "B": "2040", "C": "2050", "D": "2060"},
+      "answer": "C",
+      "explanation": "EU ska vara klimatneutralt senast 2050 enligt den europeiska klimatlagen. Delmålet är 55% minskning till 2030.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV105",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vad kallades de globala utvecklingsmålen som föregick SDG (de Globala målen)?",
+      "options": {"A": "Rioagenda", "B": "Millenniemålen (MDGs)", "C": "Kyotoprotokollen", "D": "Marshallplanen"},
+      "answer": "B",
+      "explanation": "Millenniemålen (Millennium Development Goals, MDGs) gällde 2000–2015 och föregick Agenda 2030.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV106",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vad heter huvudstaden i Senegal?",
+      "options": {"A": "Abidjan", "B": "Bamako", "C": "Dakar", "D": "Ouagadougou"},
+      "answer": "C",
+      "explanation": "Dakar är Senegals huvudstad, belägen på Cap-Vert-halvön.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV107",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vad heter huvudstaden i Nigeria?",
+      "options": {"A": "Lagos", "B": "Abuja", "C": "Kano", "D": "Port Harcourt"},
+      "answer": "B",
+      "explanation": "Abuja är Nigerias huvudstad sedan 1991. Lagos var tidigare huvudstad och är fortfarande den största staden.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV108",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "Vad heter huvudstaden i Belarus?",
+      "options": {"A": "Minsk", "B": "Brest", "C": "Grodno", "D": "Gomel"},
+      "answer": "A",
+      "explanation": "Minsk är huvudstaden i Belarus (Vitryssland).",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV109",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "Vad heter huvudstaden i Bolivia?",
+      "options": {"A": "La Paz", "B": "Sucre", "C": "Santa Cruz", "D": "Cochabamba"},
+      "answer": "B",
+      "explanation": "Sucre är Bolivias konstitutionella huvudstad. La Paz är säte för regeringen men inte formellt huvudstad.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV110",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "Vad heter huvudstaden i Malaysia?",
+      "options": {"A": "Singapore", "B": "Jakarta", "C": "Kuala Lumpur", "D": "Putrajaya"},
+      "answer": "C",
+      "explanation": "Kuala Lumpur är Malaysias huvudstad. Putrajaya är det administrativa centret.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV111",
+      "topics": ["T01"],
+      "difficulty": 2,
+      "stem": "Hur många officiella och lagskyddade minoritetsspråk finns det i Sverige?",
+      "options": {"A": "3", "B": "4", "C": "5", "D": "7"},
+      "answer": "C",
+      "explanation": "Sveriges fem nationella minoritetsspråk: finska, meänkieli, samiska, romani chib och jiddisch.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV112",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Ungefär hur många kristna finns det i världen?",
+      "options": {"A": "Ca 1,3 miljarder", "B": "Ca 2,6 miljarder", "C": "Ca 3,5 miljarder", "D": "Ca 800 miljoner"},
+      "answer": "B",
+      "explanation": "Det finns ungefär 2,4–2,6 miljarder kristna i världen, vilket gör kristendomen till den största religionen.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV113",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Ungefär hur stor är världens befolkning (2023)?",
+      "options": {"A": "Ca 6 miljarder", "B": "Ca 8 miljarder", "C": "Ca 10 miljarder", "D": "Ca 4 miljarder"},
+      "answer": "B",
+      "explanation": "Världens befolkning passerade 8 miljarder i november 2022.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV114",
+      "topics": ["T06"],
+      "difficulty": 1,
+      "stem": "Ungefär hur stor är Sveriges befolkning?",
+      "options": {"A": "8,5 miljoner", "B": "9,5 miljoner", "C": "10,5 miljoner", "D": "11,5 miljoner"},
+      "answer": "C",
+      "explanation": "Sverige har ca 10,5 miljoner invånare (2023).",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV115",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Ungefär hur stor är EU:s befolkning?",
+      "options": {"A": "Ca 300 miljoner", "B": "Ca 450 miljoner", "C": "Ca 700 miljoner", "D": "Ca 900 miljoner"},
+      "answer": "B",
+      "explanation": "EU har ca 450 miljoner invånare (efter Storbritanniens utträde). Frågan på provet hade äldre alternativ (500 milj var närmast rätt).",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV116",
+      "topics": ["T09"],
+      "difficulty": 2,
+      "stem": "Vad betyder 'ministär'?",
+      "options": {"A": "Ministerstab", "B": "Ministrarna i en regering", "C": "Ministermandat", "D": "Regeringsperiod"},
+      "answer": "B",
+      "explanation": "En ministär avser ministrarna i en regering, dvs. kabinettets sammansättning.",
+      "source": "official", "source_id": "dips_exam_2023", "exam_year": 2023
+    },
+    {
+      "id": "SV117",
+      "topics": ["T05"],
+      "difficulty": 2,
+      "stem": "Hur stor var Sveriges totala varu- och tjänsteexport 2022?",
+      "options": {"A": "Ca 1 500 miljarder SEK", "B": "Ca 3 140 miljarder SEK", "C": "Ca 5 140 miljarder SEK", "D": "Ca 9 000 miljarder SEK"},
+      "answer": "C",
+      "explanation": "Sveriges totala varu- och tjänsteexport uppgick till ca 5 140 miljarder SEK 2022.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV118",
+      "topics": ["T02"],
+      "difficulty": 2,
+      "stem": "Vad kallas priset för bästa film vid filmfestivalen i Cannes?",
+      "options": {"A": "Guldbjörnen", "B": "Guldlejonet", "C": "Gyllene Palmen", "D": "Camera d'Or"},
+      "answer": "C",
+      "explanation": "Gyllene Palmen (Palme d'Or) är Cannes huvudpris. Guldbjörnen delas ut i Berlin, Guldlejonet i Venedig.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV119",
+      "topics": ["T06"],
+      "difficulty": 2,
+      "stem": "Vilket decennium blev Indien självständigt?",
+      "options": {"A": "1920-talet", "B": "1930-talet", "C": "1940-talet", "D": "1950-talet"},
+      "answer": "C",
+      "explanation": "Indien blev självständigt 1947, efter delningen i Indien och Pakistan.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
+    },
+    {
+      "id": "SV120",
+      "topics": ["T06"],
+      "difficulty": 3,
+      "stem": "Ungefär hur stor andel av Finlands befolkning har svenska som modersmål?",
+      "options": {"A": "Ca 5 procent", "B": "Ca 8 procent", "C": "Ca 13 procent", "D": "Ca 20 procent"},
+      "answer": "A",
+      "explanation": "Ca 5 procent av Finlands befolkning har svenska som modersmål. Finska och svenska är Finlands två officiella språk.",
+      "source": "official", "source_id": "dips_exam_2024", "exam_year": 2024
     }
   ]
 }

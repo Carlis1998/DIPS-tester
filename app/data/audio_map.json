@@ -1,165 +1,139 @@
 {
   "study_podcasts": [
     {
-      "id": "A01",
-      "title": "Sverige - statsskick och institutioner",
-      "lang": [
-        "sv",
-        "es"
-      ],
+      "id": "N01",
+      "title": "Svensk utrikespolitik och Utrikesdeklarationen 2026",
+      "lang": ["en", "es"],
       "topic": "T01",
-      "description": "Riksdagen, regeringen, grundlagarna, det svenska valsystemet, kommuner och regioner. Allt som testas om Sverige.",
-      "target_duration_min": 6,
+      "description": "Den historiska utvecklingen från neutralitet till NATO-medlemskap, Utrikesdeklarationen 2026, Sveriges hållning gentemot Ukraina, Ryssland, EU och NATO.",
+      "target_duration_min": 20,
       "files": {
-        "sv": "SV/audio/A01-sverige-statsskick.mp3",
-        "es": "ES/audio/A01-suecia-sistema-politico.mp3"
+        "en": "out/notebooklm/EN/audio/DIPS_N01_en.mp4",
+        "es": "out/notebooklm/ES/audio/DIPS_N01_es.mp4"
       },
-      "status": "planned"
+      "status": "ready",
+      "source": "NotebookLM"
     },
     {
-      "id": "A02",
-      "title": "EU, FN, NATO och internationella organisationer",
-      "lang": [
-        "sv",
-        "es"
-      ],
+      "id": "N02",
+      "title": "FN-systemet och FN-stadgan",
+      "lang": ["en", "es"],
       "topic": "T02",
-      "description": "EU-institutionerna, FN-systemet, NATO:s struktur, OSSE, Europarådet, WTO. Nyckelpersoner och mandat.",
-      "target_duration_min": 8,
+      "description": "FN:s sex huvudorgan, Stadgans viktigaste principer och artiklar, Säkerhetsrådet, Sveriges historiska och aktuella roll, Agenda 2030.",
+      "target_duration_min": 20,
       "files": {
-        "sv": "SV/audio/A02-internationella-org.mp3",
-        "es": "ES/audio/A02-organizaciones-internacionales.mp3"
+        "en": "out/notebooklm/EN/audio/DIPS_N02_en.mp4",
+        "es": "out/notebooklm/ES/audio/DIPS_N02_es.mp4"
       },
-      "status": "planned"
+      "status": "ready",
+      "source": "NotebookLM"
     },
     {
-      "id": "A03",
-      "title": "Folkrätt och mänskliga rättigheter",
-      "lang": [
-        "sv",
-        "es"
-      ],
+      "id": "N03",
+      "title": "EU:s institutioner och von der Leyen II-kommissionen",
+      "lang": ["en", "es"],
+      "topic": "T02",
+      "description": "EU:s sju institutioner, aktuella kommissionärer, Sveriges plats i EU:s beslutsfattande, utvidgning och konkurrenskraft.",
+      "target_duration_min": 20,
+      "files": {
+        "en": "out/notebooklm/EN/audio/DIPS_N03_en.mp4",
+        "es": "out/notebooklm/ES/audio/DIPS_N03_es.mp4"
+      },
+      "status": "ready",
+      "source": "NotebookLM"
+    },
+    {
+      "id": "N04",
+      "title": "NATO och Sveriges medlemskap",
+      "lang": ["en", "es"],
+      "topic": "T04",
+      "description": "NATO:s syfte och struktur, artikel 5, 2022 Strategic Concept, Finland och Sveriges anslutningsprocess, avskräckning mot Ryssland.",
+      "target_duration_min": 20,
+      "files": {
+        "en": "out/notebooklm/EN/audio/DIPS_N04_en.mp4",
+        "es": "out/notebooklm/ES/audio/DIPS_N04_es.mp4"
+      },
+      "status": "ready",
+      "source": "NotebookLM"
+    },
+    {
+      "id": "N05",
+      "title": "Wienkonventionerna och diplomatisk praktik",
+      "lang": ["en", "es"],
       "topic": "T03",
-      "description": "Wienkonventionerna, folkrättens grundprinciper, ICJ, ICC, R2P, humanitar rätt, flyktingrätt.",
-      "target_duration_min": 7,
+      "description": "Diplomatiska relationer, immuniteter, persona non grata, konsulärt skydd, traktaträtt, ratificering och reservationer.",
+      "target_duration_min": 20,
       "files": {
-        "sv": "SV/audio/A03-folkrätt-mr.mp3",
-        "es": "ES/audio/A03-derecho-internacional-ddhh.mp3"
+        "en": "out/notebooklm/EN/audio/DIPS_N05_en.mp4",
+        "es": "out/notebooklm/ES/audio/DIPS_N05_es.mp4"
       },
-      "status": "planned"
+      "status": "ready",
+      "source": "NotebookLM"
     },
     {
-      "id": "A04",
-      "title": "Aktuella konflikter och säkerhetspolitik",
-      "lang": [
-        "sv",
-        "es"
-      ],
+      "id": "N06",
+      "title": "Ukraina 2022\u20132026",
+      "lang": ["en", "es"],
       "topic": "T04",
-      "description": "Ukraina, Mellanöstern, Afrika, Indo-Stilla havet. Sveriges NATO-medlemskap, nationell säkerhetsstrategi.",
-      "target_duration_min": 8,
+      "description": "Rysslands fullskaliga invasion, militära och politiska vändpunkter, Sveriges svar, EU/NATO-respons, förhandlingsfasen 2025\u20132026.",
+      "target_duration_min": 20,
       "files": {
-        "sv": "SV/audio/A04-konflikter-säkerhet.mp3",
-        "es": "ES/audio/A04-conflictos-seguridad.mp3"
+        "en": "out/notebooklm/EN/audio/DIPS_N06_en.mp4",
+        "es": "out/notebooklm/ES/audio/DIPS_N06_es.mp4"
       },
-      "status": "planned"
+      "status": "ready",
+      "source": "NotebookLM"
     },
     {
-      "id": "A05",
-      "title": "Svensk och internationell ekonomi",
-      "lang": [
-        "sv",
-        "es"
-      ],
-      "topic": "T05",
-      "description": "BNP, handelsbalans, exportvaror, Riksbanken, bistånd, EU:s ekonomiska politik, WTO, frihandelsavtal.",
-      "target_duration_min": 6,
-      "files": {
-        "sv": "SV/audio/A05-ekonomi-handel.mp3",
-        "es": "ES/audio/A05-economia-comercio.mp3"
-      },
-      "status": "planned"
-    },
-    {
-      "id": "A06",
-      "title": "Historia och geografi",
-      "lang": [
-        "sv",
-        "es"
-      ],
-      "topic": "T06",
-      "description": "Svensk historia, varldskrigen, kalla kriget, avkolonisering, EU:s historia. Huvudstäder, kartor, geopolitik.",
-      "target_duration_min": 8,
-      "files": {
-        "sv": "SV/audio/A06-historia-geografi.mp3",
-        "es": "ES/audio/A06-historia-geografia.mp3"
-      },
-      "status": "planned"
-    },
-    {
-      "id": "A07",
-      "title": "Kultur, Nobel, litteratur och språk",
-      "lang": [
-        "sv",
-        "es"
-      ],
-      "topic": "T07",
-      "description": "Nobelpristagare, svensk litteratur och kultur, sport, högtider, kulturpolitik.",
-      "target_duration_min": 5,
-      "files": {
-        "sv": "SV/audio/A07-kultur-nobel.mp3",
-        "es": "ES/audio/A07-cultura-nobel.mp3"
-      },
-      "status": "planned"
-    },
-    {
-      "id": "A08",
-      "title": "Klimat och miljö - internationell diplomati",
-      "lang": [
-        "sv",
-        "es"
-      ],
-      "topic": "T08",
-      "description": "Parisavtalet, COP-processen, Agenda 2030, biologisk mangfald, svensk klimatpolitik.",
-      "target_duration_min": 6,
-      "files": {
-        "sv": "SV/audio/A08-klimat-miljö.mp3",
-        "es": "ES/audio/A08-clima-medioambiente.mp3"
-      },
-      "status": "planned"
-    },
-    {
-      "id": "A09",
-      "title": "Uppsatstraning - svensk PM-struktur och argumentation",
-      "lang": [
-        "sv",
-        "es"
-      ],
-      "topic": "T10",
-      "description": "Hur du skriver ett PM på provet. Struktur, argumentation, avvagningar, tidsdisponering.",
-      "target_duration_min": 7,
-      "files": {
-        "sv": "SV/audio/A09-uppsats-struktur.mp3",
-        "es": "ES/audio/A09-estructura-ensayo.mp3"
-      },
-      "status": "planned"
-    },
-    {
-      "id": "A10",
-      "title": "Veckans nyhetsbrief",
-      "lang": [
-        "sv",
-        "es"
-      ],
+      "id": "N07",
+      "title": "Mellanöstern: Gaza, Iran, Libanon, Syrien efter Assad",
+      "lang": ["en", "es"],
       "topic": "T04",
-      "description": "Aktuella handelser relevant för DIPS. Uppdateras veckovis baserat på nyhetsfloden.",
-      "target_duration_min": 4,
+      "description": "7 oktober-attacken, Gaza-kriget, Hezbollah, Iran-Israel, Assads fall, ICJ/ICC, Sveriges och Europas positioner.",
+      "target_duration_min": 20,
       "files": {
-        "sv": "SV/audio/A10-veckans-brief.mp3",
-        "es": "ES/audio/A10-resumen-semanal.mp3"
+        "en": "out/notebooklm/EN/audio/DIPS_N07_en.mp4",
+        "es": "out/notebooklm/ES/audio/DIPS_N07_es.mp4"
       },
+      "status": "ready",
+      "source": "NotebookLM"
+    },
+    {
+      "id": "N08",
+      "title": "Regeringen Kristersson och svensk politik 2022\u20132026",
+      "lang": [],
+      "topic": "T01",
+      "description": "Det svenska politiska systemet, Tidöavtalet, viktiga ministrar och portföljer, inrikespolitiska frågor inför valet 2026.",
+      "target_duration_min": 20,
+      "files": {},
       "status": "planned",
-      "recurring": true
+      "source": "NotebookLM"
+    },
+    {
+      "id": "N09",
+      "title": "Trump II och den transatlantiska relationen",
+      "lang": ["en"],
+      "topic": "T04",
+      "description": "Trumps andra presidentperiod, påverkan på NATO och Ukraina, handelsfriktioner, tullkrig, konsekvenser för Sverige.",
+      "target_duration_min": 20,
+      "files": {
+        "en": "out/notebooklm/EN/audio/DIPS_N09_en.mp4"
+      },
+      "status": "ready",
+      "source": "NotebookLM"
+    },
+    {
+      "id": "N10",
+      "title": "Folkrätt: ICJ, ICC, Europadomstolen och CJEU",
+      "lang": ["en"],
+      "topic": "T03",
+      "description": "Skillnaden mellan statsansvar och individuellt straffansvar, ICJ vs ICC, ECtHR vs CJEU, aktuella mål och rättsfall.",
+      "target_duration_min": 20,
+      "files": {
+        "en": "out/notebooklm/EN/audio/DIPS_N10_en.mp4"
+      },
+      "status": "ready",
+      "source": "NotebookLM"
     }
   ]
 }

@@ -284,6 +284,73 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 .details-box summary{cursor:pointer;color:var(--accent);font-weight:700}
 .split-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 @media (max-width:640px){.battery-summary{grid-template-columns:1fr}.split-actions{grid-template-columns:1fr}}
+
+/* Leaders */
+.leaders-grid{display:grid;gap:10px}
+.leader-region{background:var(--surface);border-radius:var(--radius);padding:14px;border:1px solid rgba(255,255,255,.06)}
+.leader-region-title{font-size:14px;font-weight:800;color:var(--accent);margin-bottom:4px;display:flex;align-items:center;gap:8px}
+.leader-region-tag{font-size:10px;padding:3px 8px;border-radius:999px;background:rgba(255,255,255,.06);color:var(--text-dim);font-weight:700}
+.leader-row{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04)}
+.leader-row:last-child{border-bottom:none}
+.leader-photo{width:44px;height:44px;border-radius:50%;overflow:hidden;flex-shrink:0;background:rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:var(--accent)}
+.leader-photo img{width:100%;height:100%;object-fit:cover}
+.leader-flag{font-size:20px;margin-right:2px}
+.leader-name{font-size:13px;font-weight:700;color:var(--text)}
+.leader-role{font-size:10px;padding:2px 6px;border-radius:4px;font-weight:700;margin-left:4px}
+.leader-role.pm{background:rgba(59,130,246,.15);color:var(--accent)}
+.leader-role.pres{background:rgba(167,139,250,.15);color:var(--purple)}
+.leader-role.mon{background:rgba(245,158,11,.15);color:var(--orange)}
+.leader-role.de-facto{background:rgba(239,68,68,.15);color:var(--red)}
+.leader-role.trans{background:rgba(245,158,11,.2);color:var(--orange)}
+.leader-details{font-size:11px;color:var(--text-dim);margin-top:3px;line-height:1.4}
+.leader-note{font-size:10px;padding:4px 8px;border-radius:6px;margin-top:4px;background:rgba(245,158,11,.1);color:var(--orange);line-height:1.3}
+.leader-alert{font-size:10px;padding:4px 8px;border-radius:6px;margin-top:4px;background:rgba(239,68,68,.1);color:var(--red);line-height:1.3}
+.org-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px;margin-top:10px}
+.org-card{background:var(--surface);border-radius:10px;padding:10px;text-align:center;border:1px solid rgba(255,255,255,.06)}
+.org-card .leader-photo{margin:0 auto 6px}
+.org-card .org-tag{font-size:10px;font-weight:800;color:var(--accent);display:block}
+.org-card .org-name{font-size:11px;color:var(--text);font-weight:600}
+.leader-quiz-card{background:linear-gradient(180deg,rgba(30,41,59,.96),rgba(24,34,54,.96));border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:20px;text-align:center}
+.leader-quiz-card .leader-photo{width:80px;height:80px;margin:0 auto 12px;font-size:28px}
+.leader-quiz-options{display:grid;gap:8px;margin-top:12px}
+.leader-quiz-opt{padding:12px;background:rgba(255,255,255,.04);border:1.5px solid rgba(255,255,255,.08);border-radius:10px;cursor:pointer;font-size:13px;color:var(--text);font-family:inherit;text-align:left}
+.leader-quiz-opt.correct{background:rgba(34,197,94,.18);border-color:var(--green)}
+.leader-quiz-opt.wrong{background:rgba(239,68,68,.15);border-color:var(--red)}
+
+/* Translate */
+.translate-source{background:var(--surface);border-radius:var(--radius);padding:18px;margin-bottom:14px;border:1px solid rgba(255,255,255,.06)}
+.translate-source h3{font-size:15px;font-weight:700;color:var(--accent);margin-bottom:10px}
+.translate-source .source-body{font-size:13px;line-height:1.7;color:var(--text-dim);white-space:pre-line;max-height:300px;overflow-y:auto;padding-right:8px}
+.translate-source .source-body.expanded{max-height:none}
+.translate-expand{background:none;border:1px solid rgba(255,255,255,.1);color:var(--accent);padding:6px 12px;border-radius:8px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:8px}
+.translate-textarea{width:100%;min-height:220px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:16px;color:var(--text);font-family:'Georgia',serif;font-size:14px;line-height:1.7;resize:vertical}
+.translate-textarea:focus{outline:none;border-color:var(--accent)}
+.assess-grid{display:grid;gap:8px;margin-top:12px}
+.assess-item{display:flex;gap:10px;align-items:flex-start;padding:10px;background:rgba(255,255,255,.03);border-radius:10px;border:1px solid rgba(255,255,255,.06)}
+.assess-check{width:20px;height:20px;border-radius:50%;border:2px solid rgba(255,255,255,.15);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:11px;cursor:pointer}
+.assess-check.ok{background:var(--green);border-color:var(--green);color:#fff}
+.assess-check.warn{background:var(--orange);border-color:var(--orange);color:#fff}
+.assess-check.fail{background:var(--red);border-color:var(--red);color:#fff}
+.assess-label{font-size:12px;font-weight:700;color:var(--text)}
+.assess-desc{font-size:11px;color:var(--text-dim);margin-top:2px}
+.model-answer{background:linear-gradient(135deg,rgba(34,197,94,.08),rgba(56,189,248,.06));border:1px solid rgba(34,197,94,.2);border-radius:14px;padding:16px;margin-top:14px}
+.model-answer h4{font-size:13px;color:var(--green);margin-bottom:8px}
+.model-answer .model-text{font-size:13px;line-height:1.7;color:var(--text-dim);white-space:pre-line}
+.model-locked{text-align:center;padding:24px;color:var(--text-dim);font-size:13px}
+.model-locked button{margin-top:8px;padding:8px 16px;background:var(--accent);color:#fff;border:none;border-radius:8px;font-weight:700;cursor:pointer;font-family:inherit;font-size:12px}
+.lang-select{display:flex;gap:6px;margin-bottom:12px}
+.lang-btn{padding:6px 12px;border:1px solid rgba(255,255,255,.1);background:transparent;color:var(--text-dim);border-radius:8px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit}
+.lang-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+/* Podcasts */
+.podcast-card{background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:10px;border:1px solid rgba(255,255,255,.06)}
+.podcast-card h3{font-size:14px;font-weight:700;color:var(--accent);margin-bottom:4px}
+.podcast-card p{font-size:12px;color:var(--text-dim);line-height:1.5}
+.podcast-meta{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.podcast-player{width:100%;margin-top:10px;border-radius:8px}
+.podcast-status{font-size:10px;padding:3px 8px;border-radius:999px;font-weight:700}
+.podcast-status.ready{background:rgba(34,197,94,.15);color:var(--green)}
+.podcast-status.planned{background:rgba(255,255,255,.06);color:var(--text-dim)}
 </style>
 </head>
 <body>
@@ -298,6 +365,9 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 <div id="v-essay" class="view"></div>
 <div id="v-resources" class="view"></div>
 <div id="v-batteries" class="view"></div>
+<div id="v-leaders" class="view"></div>
+<div id="v-translate" class="view"></div>
+<div id="v-podcasts" class="view"></div>
 
 <!-- Bottom nav -->
 <nav class="bnav">
@@ -310,7 +380,7 @@ h1{font-size:22px;font-weight:800;letter-spacing:-.5px}
 
 <script>
 // === DATA LOADING ===
-let TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX;
+let TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS;
 const TOPIC_MAP = {};
 const SOURCE_MAP = {};
 
@@ -352,8 +422,10 @@ async function loadData() {
     RESOURCES = window.DIPS_DATA.resources;
     BATTERIES = window.DIPS_DATA.question_batteries;
     SOURCE_INDEX = window.DIPS_DATA.source_index;
+    LEADERS = window.DIPS_DATA.leaders || {regions:[],org_chiefs:[]};
+    TRANSLATIONS = window.DIPS_DATA.translations || {translations:[]};
   } else {
-    [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX] = await Promise.all([
+    [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS] = await Promise.all([
       fetchJsonWithFallback(['./data/topics.json', '../data/topics.json']),
       fetchJsonWithFallback(['./data/questions_sv.json', '../data/questions_sv.json']),
       fetchJsonWithFallback(['./data/questions_en.json', '../data/questions_en.json']),
@@ -364,9 +436,11 @@ async function loadData() {
       fetchJsonWithFallback(['./data/resources.json', '../data/resources.json']),
       fetchJsonWithFallback(['./data/question_batteries.json', '../data/question_batteries.json']),
       fetchJsonOptional(['./data/source_index.json', '../data/source_index.json'], []),
+      fetchJsonOptional(['./data/leaders.json', '../data/leaders.json'], {regions:[],org_chiefs:[]}),
+      fetchJsonOptional(['./data/translations.json', '../data/translations.json'], {translations:[]}),
     ]);
   }
-  [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX] = [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX].map(normalizeDisplayData);
+  [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS] = [TOPICS, Q_SV, Q_EN, CARDS, ESSAYS, MOCKS, AUDIO_MAP, RESOURCES, BATTERIES, SOURCE_INDEX, LEADERS, TRANSLATIONS].map(normalizeDisplayData);
   TOPICS.topics.forEach(t => TOPIC_MAP[t.code] = t);
   (SOURCE_INDEX || []).forEach(s => SOURCE_MAP[s.id] = s);
 }
@@ -404,6 +478,9 @@ const Q_PROGRESS='dips_q_progress', ESSAY_NOTES='dips_essay_notes';
 const MOCK_HISTORY='dips_mock_history';
 const BATTERY_RESPONSES='dips_battery_responses';
 const BATTERY_REVIEW='dips_battery_review';
+const TRANSLATE_NOTES='dips_translate_notes';
+const TRANSLATE_UNLOCKED='dips_translate_unlocked';
+const LEADER_QUIZ_HISTORY='dips_leader_quiz';
 const g=k=>{try{return JSON.parse(localStorage.getItem(k))||{}}catch{return{}}};
 const s=(k,v)=>localStorage.setItem(k,JSON.stringify(v));
 
@@ -764,6 +841,9 @@ function navigate(hash){
     else if(view==='essay')renderEssay(param);
     else if(view==='resources')renderResources();
     else if(view==='batteries')renderBatteries(param);
+    else if(view==='leaders')renderLeaders(param);
+    else if(view==='translate')renderTranslate(param);
+    else if(view==='podcasts')renderPodcasts();
     else renderHome();
   } catch (err) {
     console.error('Navigation/render failed', err);
@@ -802,6 +882,24 @@ function renderHome(){
         <li>Skriv svar direkt i appen och markera <strong>Utkast</strong>, <strong>Klar</strong> eller <strong>Självrättad</strong>.</li>
         <li>Öppna original-PDF när du vill jämföra formulering, layout och helhetskänsla.</li>
       </ul>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0">
+      <a class="card" href="#podcasts" style="margin:0">
+        <h2 style="font-size:14px">Studiepoddar</h2>
+        <p>${(AUDIO_MAP?.study_podcasts||[]).filter(p=>p.status==='ready').length} avsnitt redo</p>
+      </a>
+      <a class="card" href="#leaders" style="margin:0">
+        <h2 style="font-size:14px">Världsledare</h2>
+        <p>${(LEADERS?.regions||[]).reduce((s,r)=>s+r.leaders.length,0)} ledare + quiz</p>
+      </a>
+      <a class="card" href="#translate" style="margin:0">
+        <h2 style="font-size:14px">Språkprov</h2>
+        <p>Översätt SV till tredjespråk</p>
+      </a>
+      <a class="card" href="#essay" style="margin:0">
+        <h2 style="font-size:14px">Uppsats</h2>
+        <p>${ESSAYS?.essays?.length||0} övningar</p>
+      </a>
     </div>
     <div id="home-battery-archive" class="resource-grid"></div>`;
 
@@ -1369,6 +1467,311 @@ function renderEssay(essayId){
   });
 }
 
+// ============ PODCASTS ============
+function renderPodcasts(){
+  const el=document.getElementById('v-podcasts');
+  const pods=AUDIO_MAP?.study_podcasts||[];
+  const ready=pods.filter(p=>p.status==='ready');
+  const planned=pods.filter(p=>p.status==='planned');
+  el.innerHTML=`
+    <div class="top">
+      <button class="back" onclick="location.hash='#home'">&larr; Hem</button>
+      <h1 style="font-size:18px;flex:1">Studiepoddar</h1>
+    </div>
+    <div class="subtitle">NotebookLM-genererade djupdykningar i provrelevanta ämnen. Varje avsnitt finns på engelska och/eller spanska.</div>
+    <div class="hero-grid" style="margin-bottom:14px">
+      <div class="hero-stat"><strong>${ready.length}</strong><span>avsnitt redo</span></div>
+      <div class="hero-stat"><strong>${planned.length}</strong><span>planerade</span></div>
+    </div>
+    <div id="podList"></div>`;
+  const list=document.getElementById('podList');
+  pods.forEach(pod=>{
+    const div=document.createElement('div');
+    div.className='podcast-card';
+    const langs=Object.keys(pod.files||{});
+    const isReady=pod.status==='ready'&&langs.length>0;
+    const topicName=TOPIC_MAP[pod.topic]?.name||pod.topic;
+    let playerHtml='';
+    if(isReady){
+      langs.forEach(lang=>{
+        const filePath='../'+pod.files[lang];
+        const label=lang==='en'?'English':lang==='es'?'Español':lang==='sv'?'Svenska':lang;
+        playerHtml+=`
+          <div style="margin-top:8px">
+            <div style="font-size:11px;font-weight:700;color:var(--text-dim);margin-bottom:4px">${label}</div>
+            <audio class="podcast-player" controls preload="none">
+              <source src="${filePath}" type="audio/mp4">
+              Ljudfilen kunde inte laddas. Kontrollera att du kör appen lokalt.
+            </audio>
+          </div>`;
+      });
+    }
+    div.innerHTML=`
+      <h3>${pod.id}: ${pod.title}</h3>
+      <p>${pod.description}</p>
+      <div class="podcast-meta">
+        <span class="audio-pill">~${pod.target_duration_min} min</span>
+        <span class="podcast-status ${isReady?'ready':'planned'}">${isReady?'Redo att lyssna':'Planerad'}</span>
+        <span class="badge" style="background:rgba(255,255,255,.06)">${topicName}</span>
+        ${pod.source?`<span class="badge" style="background:rgba(255,255,255,.06)">${pod.source}</span>`:''}
+      </div>
+      ${playerHtml}
+      ${!isReady?'<div style="margin-top:8px;font-size:11px;color:var(--text-dim)">Ljudfilen har inte genererats ännu. Följ instruktionerna i <code>notebooklm/PRODUCTION_SPEC.md</code>.</div>':''}`;
+    list.appendChild(div);
+  });
+}
+
+// ============ LEADERS ============
+function renderLeaders(mode){
+  const el=document.getElementById('v-leaders');
+  if(mode==='quiz'){
+    renderLeaderQuiz(el);
+    return;
+  }
+  const regions=LEADERS?.regions||[];
+  const orgs=LEADERS?.org_chiefs||[];
+  const roleClass=r=>{
+    const base=r.split('(')[0].trim();
+    if(['PM','KANSLER','TAOISEACH'].includes(base))return 'pm';
+    if(base==='PRES')return 'pres';
+    if(base==='KUNG')return 'mon';
+    if(['DE FACTO','HÖGSTA L.'].includes(base))return 'de-facto';
+    if(base==='ÖVERGÅNG')return 'trans';
+    return 'pm';
+  };
+  el.innerHTML=`
+    <div class="top">
+      <button class="back" onclick="location.hash='#home'">&larr; Hem</button>
+      <h1 style="font-size:18px;flex:1">Världsledare 2026</h1>
+    </div>
+    <div class="subtitle">Samtliga stats- och regeringschefer plus organisationschefer som testas på DIPS. Baserat på plansch verifierad april 2026.</div>
+    <div style="display:flex;gap:8px;margin-bottom:14px">
+      <button class="next-btn" style="flex:1;padding:10px" onclick="location.hash='#leaders/quiz'">Starta ledarquiz</button>
+    </div>
+    <div id="leaderList" class="leaders-grid"></div>
+    ${orgs.length?`
+    <h2 class="section-head" style="margin-top:18px">Internationella organisationer</h2>
+    <div class="org-grid" id="orgGrid"></div>`:''}`;
+  const list=document.getElementById('leaderList');
+  regions.forEach(region=>{
+    const div=document.createElement('div');
+    div.className='leader-region';
+    div.innerHTML=`
+      <div class="leader-region-title">${region.title} <span class="leader-region-tag">${region.tag}</span></div>
+      ${region.leaders.map(l=>`
+        <div class="leader-row">
+          <div class="leader-photo"><img src="../${l.photo}" alt="${l.initials}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${l.photo}'}else{this.parentElement.textContent='${l.initials}'}"></div>
+          <div style="flex:1;min-width:0">
+            <div><span class="leader-flag">${l.flag}</span> <span class="leader-name">${l.name}</span> <span class="leader-role ${roleClass(l.role)}">${l.role}</span></div>
+            <div class="leader-details">${l.details}</div>
+            ${l.note?`<div class="leader-note">${l.note}</div>`:''}
+            ${l.alert?`<div class="leader-alert">${l.alert}</div>`:''}
+          </div>
+        </div>`).join('')}`;
+    list.appendChild(div);
+  });
+  if(orgs.length){
+    const grid=document.getElementById('orgGrid');
+    orgs.forEach(o=>{
+      const div=document.createElement('div');
+      div.className='org-card';
+      div.innerHTML=`
+        <div class="leader-photo"><img src="../${o.photo}" alt="${o.initials}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${o.photo}'}else{this.parentElement.textContent='${o.initials}'}"></div>
+        <span class="org-tag">${o.org}</span>
+        <span class="org-name">${o.name}</span>`;
+      grid.appendChild(div);
+    });
+  }
+}
+
+function renderLeaderQuiz(el){
+  const regions=LEADERS?.regions||[];
+  const allLeaders=regions.flatMap(r=>r.leaders.map(l=>({...l,regionTitle:r.title})));
+  if(allLeaders.length<4){el.innerHTML='<div class="empty">Inte tillräckligt med ledare för quiz.</div>';return;}
+  const hist=g(LEADER_QUIZ_HISTORY);
+  const idx=hist._idx||0;
+  const correct=hist._correct||0;
+  const total=hist._total||0;
+  // Pick a random leader
+  const target=allLeaders[Math.floor(Math.random()*allLeaders.length)];
+  // Pick 3 wrong answers
+  const others=allLeaders.filter(l=>l.key!==target.key);
+  const shuffled=others.sort(()=>Math.random()-.5).slice(0,3);
+  const options=[target,...shuffled].sort(()=>Math.random()-.5);
+  // Random question type: name->country or country->name
+  const askCountry=Math.random()>.5;
+  el.innerHTML=`
+    <div class="top">
+      <button class="back" onclick="location.hash='#leaders'">&larr; Alla ledare</button>
+      <h1 style="font-size:16px;flex:1">Ledarquiz</h1>
+    </div>
+    <div class="progress-row"><span>${correct}/${total} rätt</span><div class="pbar"><div style="width:${total?Math.round(correct/total*100):0}%"></div></div></div>
+    <div class="leader-quiz-card">
+      <div class="leader-photo"><img src="../${target.photo}" alt="${target.initials}" onerror="if(!this.dataset.retry){this.dataset.retry='1';this.src='${target.photo}'}else{this.parentElement.textContent='${target.initials}'}"></div>
+      <h3 style="font-size:16px;margin:8px 0 4px;color:var(--text)">${askCountry?target.name:`${target.flag} ${target.country}`}</h3>
+      <p style="font-size:13px;color:var(--text-dim)">${askCountry?'Vilket land representerar denna ledare?':'Vem är stats-/regeringschef?'}</p>
+      <div class="leader-quiz-options" id="quizOpts">
+        ${options.map(o=>`
+          <button class="leader-quiz-opt" data-key="${o.key}" onclick="checkLeaderAnswer(this,'${target.key}',${askCountry})">
+            ${askCountry?`${o.flag} ${o.country}`:`${o.name} (${o.role})`}
+          </button>`).join('')}
+      </div>
+    </div>`;
+}
+function checkLeaderAnswer(btn,correctKey,askCountry){
+  const opts=document.querySelectorAll('.leader-quiz-opt');
+  opts.forEach(o=>{
+    o.disabled=true;
+    if(o.dataset.key===correctKey)o.classList.add('correct');
+  });
+  const isCorrect=btn.dataset.key===correctKey;
+  if(!isCorrect)btn.classList.add('wrong');
+  const hist=g(LEADER_QUIZ_HISTORY);
+  hist._total=(hist._total||0)+1;
+  if(isCorrect)hist._correct=(hist._correct||0)+1;
+  s(LEADER_QUIZ_HISTORY,hist);
+  setTimeout(()=>renderLeaderQuiz(document.getElementById('v-leaders')),1200);
+}
+
+// ============ TRANSLATE / SPRÅKPROV ============
+function renderTranslate(trId){
+  const el=document.getElementById('v-translate');
+  const translations=TRANSLATIONS?.translations||[];
+  if(trId){
+    const tr=translations.find(t=>t.id===trId);
+    if(!tr){el.innerHTML='<div class="empty">Övningen hittades inte.</div>';return;}
+    const notes=g(TRANSLATE_NOTES);
+    const unlocked=g(TRANSLATE_UNLOCKED);
+    const isUnlocked=tr.unlocked||unlocked[tr.id];
+    const savedLang=notes[tr.id+'_lang']||'es';
+    const langNames={es:'Spanska',fr:'Franska',de:'Tyska',en:'Engelska'};
+    el.innerHTML=`
+      <div class="top">
+        <button class="back" onclick="location.hash='#translate'">&larr; Alla övningar</button>
+        <h1 style="font-size:16px;flex:1">${tr.title}</h1>
+      </div>
+      ${tr.exam_year?`<div class="badge" style="background:rgba(59,130,246,.15);color:var(--accent);margin-bottom:10px">Från ${tr.exam_year} års prov</div>`:''}
+      <div class="mini-list" style="margin-bottom:14px">
+        <strong>Instruktion</strong>
+        <p style="margin-top:4px">${tr.instructions}</p>
+      </div>
+      <div class="translate-source">
+        <h3>Svensk källtext</h3>
+        <div class="source-body" id="trSourceBody">${tr.source_text}</div>
+        <button class="translate-expand" id="trExpandBtn" onclick="document.getElementById('trSourceBody').classList.toggle('expanded');this.textContent=this.textContent==='Visa mer'?'Visa mindre':'Visa mer'">Visa mer</button>
+      </div>
+      <h3 class="section-head">Välj målspråk</h3>
+      <div class="lang-select" id="langSelect">
+        ${tr.target_langs.map(lang=>`<button class="lang-btn${lang===savedLang?' active':''}" data-lang="${lang}" onclick="selectTranslateLang('${tr.id}','${lang}')">${langNames[lang]||lang}</button>`).join('')}
+      </div>
+      <h3 class="section-head">Din sammanfattning</h3>
+      <textarea class="translate-textarea" id="trText" placeholder="Skriv din sammanfattning på ${langNames[savedLang]||savedLang} här (ca 200 ord)...">${notes[tr.id+'_'+savedLang]||''}</textarea>
+      <div id="trWordCount" style="font-size:11px;color:var(--text-dim);margin-top:4px;text-align:right"></div>
+      <h3 class="section-head">Bedömning</h3>
+      <div class="assess-grid" id="assessGrid">
+        ${(tr.assessment_criteria||[]).map((c,i)=>`
+          <div class="assess-item">
+            <div class="assess-check" id="ac${i}" onclick="toggleAssess(${i})">&nbsp;</div>
+            <div>
+              <div class="assess-label">${c.label}</div>
+              <div class="assess-desc">${c.description}</div>
+            </div>
+          </div>`).join('')}
+      </div>
+      <h3 class="section-head" style="margin-top:18px">Modellsvar</h3>
+      <div id="modelArea">
+        ${isUnlocked?renderModelAnswer(tr,savedLang):`
+          <div class="model-locked">
+            <p>Skriv din egen sammanfattning först. Sedan kan du låsa upp modellsvaret för att jämföra.</p>
+            <button onclick="unlockModel('${tr.id}')">Lås upp modellsvar</button>
+          </div>`}
+      </div>
+      <div class="mini-list" style="margin-top:14px">
+        <strong>Nyckelkoncept att täcka</strong>
+        <ul>${(tr.key_concepts||[]).map(c=>`<li>${c}</li>`).join('')}</ul>
+      </div>`;
+    // Word counter + auto-save
+    const ta=document.getElementById('trText');
+    const wc=document.getElementById('trWordCount');
+    function updateWordCount(){
+      const words=ta.value.trim().split(/\s+/).filter(w=>w).length;
+      wc.textContent=words+' ord';
+      wc.style.color=words>=130&&words<=240?'var(--green)':words>240?'var(--orange)':'var(--text-dim)';
+    }
+    updateWordCount();
+    let saveTimer;
+    ta.addEventListener('input',()=>{
+      updateWordCount();
+      clearTimeout(saveTimer);
+      saveTimer=setTimeout(()=>{const n=g(TRANSLATE_NOTES);n[tr.id+'_'+savedLang]=ta.value;s(TRANSLATE_NOTES,n);},500);
+    });
+    return;
+  }
+  // List all translation exercises
+  el.innerHTML=`
+    <div class="top">
+      <button class="back" onclick="location.hash='#home'">&larr; Hem</button>
+      <h1 style="font-size:18px;flex:1">Språkprov — Tredjespråk</h1>
+    </div>
+    <div class="subtitle">Del 4 av DIPS-provet: läs en svensk artikel och skriv en sammanfattning på ditt tredjespråk (ca 200 ord).</div>
+    <div class="mini-list" style="margin-bottom:14px">
+      <strong>Så fungerar det på provet</strong>
+      <ul>
+        <li>Du får en svensk artikel (ca 800 ord) som bilaga.</li>
+        <li>Du ska sammanfatta den på franska, spanska, tyska (eller ryska/arabiska/mandarin).</li>
+        <li>Sammanfattningen bedöms på innehåll, struktur och språk.</li>
+        <li>Max ca 200 ord.</li>
+      </ul>
+    </div>
+    <div id="trList"></div>`;
+  const list=document.getElementById('trList');
+  translations.forEach(tr=>{
+    const notes=g(TRANSLATE_NOTES);
+    const unlocked=g(TRANSLATE_UNLOCKED);
+    const isUnlocked=tr.unlocked||unlocked[tr.id];
+    const hasWork=tr.target_langs.some(l=>(notes[tr.id+'_'+l]||'').trim());
+    const card=document.createElement('div');card.className='card';
+    card.onclick=()=>location.hash='#translate/'+tr.id;
+    card.innerHTML=`
+      <h2>${tr.title}</h2>
+      <p>${tr.instructions}</p>
+      <div class="resource-meta" style="margin-top:6px">
+        ${tr.exam_year?`<span class="badge" style="background:rgba(59,130,246,.15);color:var(--accent)">${tr.exam_year} års prov</span>`:'<span class="badge" style="background:rgba(167,139,250,.15);color:var(--purple)">Övning</span>'}
+        ${isUnlocked?'<span class="badge" style="background:rgba(34,197,94,.15);color:var(--green)">Upplåst</span>':''}
+        ${hasWork?'<span class="badge" style="background:rgba(245,158,11,.15);color:var(--orange)">Påbörjad</span>':''}
+        <span class="badge" style="background:rgba(255,255,255,.06)">${tr.target_langs.map(l=>l.toUpperCase()).join(' / ')}</span>
+      </div>`;
+    list.appendChild(card);
+  });
+}
+function selectTranslateLang(trId,lang){
+  const n=g(TRANSLATE_NOTES);n[trId+'_lang']=lang;s(TRANSLATE_NOTES,n);
+  renderTranslate(trId);
+}
+function unlockModel(trId){
+  const u=g(TRANSLATE_UNLOCKED);u[trId]=true;s(TRANSLATE_UNLOCKED,u);
+  renderTranslate(trId);
+}
+function renderModelAnswer(tr,lang){
+  const answer=tr.model_answers?.[lang];
+  if(!answer)return '<div style="font-size:12px;color:var(--text-dim)">Inget modellsvar tillgängligt för detta språk ännu.</div>';
+  return `
+    <div class="model-answer">
+      <h4>${answer.title} (${answer.word_count} ord)</h4>
+      <div class="model-text">${answer.text}</div>
+    </div>`;
+}
+function toggleAssess(idx){
+  const el=document.getElementById('ac'+idx);
+  const states=['','ok','warn','fail'];
+  const symbols=['&nbsp;','&#10003;','~','&#10007;'];
+  const cur=el.dataset.state||'';
+  const next=states[(states.indexOf(cur)+1)%states.length];
+  el.dataset.state=next;
+  el.className='assess-check'+(next?' '+next:'');
+  el.innerHTML=symbols[states.indexOf(next)];
+}
+
 // ============ RESOURCES ============
 function renderResources(){
   const resources = RESOURCES?.resources || {};
@@ -1395,14 +1798,18 @@ function renderResources(){
 
   const testEl=document.getElementById('res-test');
   testEl.className='resource-grid';
-  testItems.forEach(item=>{
+  testItems.sort((a,b)=>(a.priority||9)-(b.priority||9)).forEach(item=>{
     const urls = item.urls || (item.url ? [item.url] : []);
     const div=document.createElement('div');div.className='link-card';
+    const prioLabel = item.priority===1?'Prio 1 — Läs först':item.priority===2?'Prio 2 — Viktigt':'Prio 3 — Komplement';
+    const prioColor = item.priority===1?'var(--green)':item.priority===2?'var(--orange)':'var(--text-dim)';
     div.innerHTML=`
       <h3>${item.title}</h3>
       <p>${item.purpose||''}</p>
+      ${item.study_tip?`<div style="margin-top:6px;padding:8px 10px;background:rgba(59,130,246,.08);border-radius:8px;font-size:11px;color:var(--blue);line-height:1.5"><strong>Studietips:</strong> ${item.study_tip}</div>`:''}
       <div class="resource-meta">
         <span class="source-badge ${item.source_class||'official'}">${item.source_class||'official'}</span>
+        <span class="badge" style="background:rgba(255,255,255,.06);color:${prioColor}">${prioLabel}</span>
       </div>
       <div class="resource-note">${urls.map((u,i)=>externalLink(u, urls.length===1 ? 'Öppna källa' : `Öppna länk ${i+1}`)).join(' &middot; ')}</div>`;
     testEl.appendChild(div);

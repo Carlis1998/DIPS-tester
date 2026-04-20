@@ -1,0 +1,75 @@
+{
+  "translations": [
+    {
+      "id": "TR001",
+      "title": "Wien har blivit diplomatins första försvarslinje",
+      "exam_year": 2019,
+      "source_lang": "sv",
+      "target_langs": ["es", "fr", "de"],
+      "instructions": "Läs den svenska artikeln nedan och skriv en sammanfattning på ditt tredje språk. Sammanfattningen bör vara max ca 200 ord.",
+      "unlocked": true,
+      "source_text": "Wien har blivit diplomatins första försvarslinje\n(Regeringen.se den 15 november 2018)\n\nUnder hösten har Sverige ordförandeskapet i FSC, Forumet för säkerhetssamarbete inom OSSE. Efter några lugnare år under 1990-talet har OSSE återigen blivit en scen för världspolitiken.\n\n– För svensk del handlar det om vår nationella säkerhet. Den vilar på den europeiska säkerhetsordningen, och vi, som litet och militärt alliansfritt land, måste stå fast vid principerna och åtagandena. Vi står vid frontlinjen här, säger Ulrika Funered, ambassadör och chef för Sveriges OSSE-delegation i Wien.\n\nVid slottet Hofburg mitt i Wien finns kapell, museer, det kejserliga biblioteket, skattkammaren, nationalbiblioteket, nationalteatern och Spanska ridskolan. Men de 57 flaggorna ute på gården står för något annat. De symboliserar de 57 deltagande staterna i OSSE, Organisationen för säkerhet och samarbete i Europa, som håller sina möten, förhandlingar och diskussioner här.\n\nOSSE har sina rötter i kalla kriget och spänningarna mellan öst och väst, men organisationen formades med visionen \"Europe whole, free and at peace\".\n\nOrganisationen bildades 1973 som Europeiska säkerhetskonferensen (ESK). Ända sedan 1950-talet hade det talats om att en europeisk säkerhetsorganisation behövdes, men kalla kriget hindrade viktigare framsteg innan samtal påbörjades i november 1972. Det första viktiga dokumentet, Helsingforsslutakten, undertecknades i augusti 1975 med namn som Helmut Schmidt, Erich Honecker, Gerald Ford och Bruno Kreisky.\n\nEfter några lugnare år under 1990-talet har OSSE återigen blivit en scen för världspolitiken:\n– Ligger Europas gränser fast? Eller går det att ändra dem med militärt våld? Det är huvudfrågan, säger överste Johan Huovinen, militärrådgivare vid OSSE-delegationen.\n\nOSSE har alltså 57 deltagarstater. Inte bara europeiska länder är med. Även USA, Kanada och länder i norra och centrala Asien är en del av OSSE. De 57 staterna täcker stora delar av norra halvklotet. Om beslut ska fattas krävs konsensus. Alla 57 stater ska enas. Det kärva säkerhetspolitiska läget i Europa återspeglas tydligt i ett allt kärvare samarbetsklimat i OSSE. Låsningarna är genomgående, och det är nästan omöjligt att komma överens om någonting.\n\n– OSSE:s normativa roll utmanas. Då menar jag regelverket vi har – Helsingforsslutakten och Parisstadgan – om territoriell integritet, gränsers okränkbarhet och att varje land själv bestämmer om sin egen säkerhetspolitiska tillhörighet. Det står under hot. Men också det unikt breda säkerhetsbegreppet utmanas! Där ingår intern och extern säkerhet, demokratifrågor och mänskliga rättigheter samt miljö och klimat, berättar ambassadör Ulrika Funered.\n\nFör svensk del handlar det om vår nationella säkerhet. Den vilar på ett internationellt regelverk som även inkluderar den europeiska säkerhetsordningen. Och som ett militärt alliansfritt land måste vi stå fast vid det internationella regelverket, principer och åtaganden.\n\n– Sverige uppfattas som väldigt konsekventa och principfasta. Vi är en tydlig röst för att hålla fast vid en regelbaserad världsordning, principer och åtaganden.\n\nNyligen arrangerade Sverige en högaktuell säkerhetsdialog om icke-spridning av massförstörelsevapen till icke-statliga aktörer. Huvudtalare var Jan Eliasson, FN:s vice generalsekreterare 2012–2016. Han lyfte fram utvecklingen mot jämställdhet som ett särskilt viktigt hopp inför framtiden.",
+      "key_concepts": [
+        "OSSE/OSCE — 57 deltagande stater",
+        "Sverige hade ordförandeskapet i FSC hösten 2018",
+        "Helsingforsslutakten 1975",
+        "Konsensuskrav för beslut",
+        "Territoriell integritet och gränsers okränkbarhet utmanas",
+        "Hofburg i Wien som mötesplats",
+        "Kalla krigets rötter — ESK bildades 1973",
+        "Jan Eliasson om jämställdhet"
+      ],
+      "model_answers": {
+        "es": {
+          "title": "Modellanswer — Spanska",
+          "text": "Viena se ha convertido en la primera línea de defensa de la diplomacia\n\nDurante el otoño de 2018, Suecia presidió el Foro de Cooperación en Seguridad (FSC) de la OSCE, la Organización para la Seguridad y la Cooperación en Europa. Esta organización, que reúne a 57 Estados participantes en el palacio de Hofburg en Viena, tiene sus raíces en la Guerra Fría y fue fundada en 1973 como la Conferencia sobre la Seguridad en Europa.\n\nLa embajadora Ulrika Funered destaca que la seguridad nacional sueca descansa en el orden de seguridad europeo y en el respeto a los principios internacionales. Sin embargo, el marco normativo de la OSCE — el Acta Final de Helsinki y la Carta de París — está bajo presión: la integridad territorial y la inviolabilidad de las fronteras se ven cuestionadas.\n\nLas decisiones en la OSCE requieren consenso entre los 57 Estados, lo que resulta cada vez más difícil dado el clima de seguridad tenso. Suecia es percibida como un actor consistente y firme en la defensa de un orden mundial basado en reglas.\n\nDurante la presidencia sueca, se organizó un diálogo sobre la no proliferación de armas de destrucción masiva, donde Jan Eliasson, ex vicesecretario general de la ONU, señaló la igualdad de género como una de las grandes promesas del futuro.",
+          "word_count": 190
+        }
+      },
+      "assessment_criteria": [
+        {"label": "Ordantal", "description": "Sammanfattningen bör vara ca 150–220 ord", "type": "word_count", "min": 130, "max": 240},
+        {"label": "Huvudpoäng: OSSE:s struktur", "description": "Nämner du att OSSE har 57 deltagande stater och kräver konsensus?", "type": "concept"},
+        {"label": "Huvudpoäng: Sveriges roll", "description": "Nämner du Sveriges ordförandeskap i FSC 2018?", "type": "concept"},
+        {"label": "Huvudpoäng: Historiskt ursprung", "description": "Nämner du Helsingforsslutakten 1975 eller kalla krigets rötter?", "type": "concept"},
+        {"label": "Huvudpoäng: Utmaningar", "description": "Nämner du att territoriell integritet och principer utmanas?", "type": "concept"},
+        {"label": "Struktur", "description": "Är texten logiskt uppbyggd med inledning, huvuddel och avslutning?", "type": "manual"},
+        {"label": "Språk", "description": "Är språket korrekt och diplomatiskt i stil?", "type": "manual"}
+      ]
+    },
+    {
+      "id": "TR002",
+      "title": "Övning: Sveriges feministiska utrikespolitik",
+      "exam_year": null,
+      "source_lang": "sv",
+      "target_langs": ["es", "fr", "de"],
+      "instructions": "Läs den svenska texten nedan och skriv en sammanfattning på ditt tredje språk. Sammanfattningen bör vara max ca 200 ord.",
+      "unlocked": false,
+      "source_text": "Sveriges feministiska utrikespolitik\n\nSverige var det första landet i världen att lansera en feministisk utrikespolitik, år 2014. Syftet var att systematiskt integrera ett jämställdhetsperspektiv i alla delar av utrikespolitiken: diplomati, utvecklingssamarbete, handel och säkerhetspolitik.\n\nDen feministiska utrikespolitiken vilade på tre pelare: rättigheter, representation och resurser. Det handlade om att stärka kvinnors och flickors fulla åtnjutande av mänskliga rättigheter, öka kvinnors deltagande i beslutsfattande på alla nivåer, och säkerställa att resurser fördelas mer jämställt.\n\nUnder åren 2014–2022 blev den feministiska utrikespolitiken ett av Sveriges mest uppmärksammade utrikespolitiska initiativ internationellt. Flera andra länder följde efter, bland dem Kanada, Frankrike, Mexiko och Luxemburg. FN:s resolution 1325 om kvinnor, fred och säkerhet från år 2000 utgjorde en viktig rättslig grund.\n\nI oktober 2022 tillträdde en ny regering under Ulf Kristersson. Den nya regeringen valde att inte längre använda beteckningen \"feministisk utrikespolitik\", men betonade att jämställdhetsarbetet skulle fortsätta som en integrerad del av utrikespolitiken. Utrikesminister Tobias Billström förklarade att Sverige skulle behålla sina åtaganden men utan etiketten.\n\nDebatten kring beslutet var intensiv, både i Sverige och internationellt. Kritiker menade att namnbytet skickade en signal om minskat engagemang, medan regeringen argumenterade att substansen var viktigare än beteckningen.\n\nSverige fortsätter att vara en stark röst för jämställdhet i multilaterala forum, inklusive FN, EU och OSSE. Arbetet med FN:s handlingsplan för resolution 1325 och Agenda 2030:s mål 5 om jämställdhet kvarstår som prioriterade områden i svensk utrikespolitik.",
+      "key_concepts": [
+        "Sverige — första landet med feministisk utrikespolitik 2014",
+        "Tre pelare: rättigheter, representation, resurser",
+        "Andra länder följde: Kanada, Frankrike, Mexiko, Luxemburg",
+        "FN:s resolution 1325 om kvinnor, fred och säkerhet",
+        "Regeringen Kristersson 2022 — tog bort beteckningen",
+        "Substans vs etikett — debatten",
+        "Agenda 2030 mål 5 om jämställdhet"
+      ],
+      "model_answers": {
+        "es": {
+          "title": "Modellanswer — Spanska",
+          "text": "La política exterior feminista de Suecia\n\nEn 2014, Suecia se convirtió en el primer país del mundo en lanzar una política exterior feminista, con el objetivo de integrar la perspectiva de igualdad de género en todas las áreas de la política exterior: diplomacia, cooperación al desarrollo, comercio y seguridad.\n\nLa política se basaba en tres pilares: derechos, representación y recursos. Varios países siguieron el ejemplo sueco, entre ellos Canadá, Francia, México y Luxemburgo. La Resolución 1325 del Consejo de Seguridad de la ONU sobre mujeres, paz y seguridad constituyó una base jurídica importante.\n\nEn octubre de 2022, el nuevo gobierno de Ulf Kristersson decidió abandonar la denominación \"política exterior feminista\", aunque subrayó que el trabajo por la igualdad de género continuaría como parte integral de la política exterior. El debate fue intenso: los críticos argumentaban que el cambio de nombre señalaba un menor compromiso, mientras que el gobierno sostenía que lo importante era la sustancia, no la etiqueta.\n\nSuecia sigue siendo una voz fuerte por la igualdad en foros multilaterales como la ONU, la UE y la OSCE, y mantiene sus compromisos con la Agenda 2030 y la Resolución 1325.",
+          "word_count": 185
+        }
+      },
+      "assessment_criteria": [
+        {"label": "Ordantal", "description": "Sammanfattningen bör vara ca 150–220 ord", "type": "word_count", "min": 130, "max": 240},
+        {"label": "Huvudpoäng: Lanseringen 2014", "description": "Nämner du att Sverige var det första landet 2014?", "type": "concept"},
+        {"label": "Huvudpoäng: Tre pelare", "description": "Nämner du rättigheter, representation och resurser?", "type": "concept"},
+        {"label": "Huvudpoäng: Internationell spridning", "description": "Nämner du att andra länder följde efter?", "type": "concept"},
+        {"label": "Huvudpoäng: Regeringsskiftet 2022", "description": "Nämner du att den nya regeringen tog bort beteckningen?", "type": "concept"},
+        {"label": "Struktur", "description": "Är texten logiskt uppbyggd med inledning, huvuddel och avslutning?", "type": "manual"},
+        {"label": "Språk", "description": "Är språket korrekt och diplomatiskt i stil?", "type": "manual"}
+      ]
+    }
+  ]
+}

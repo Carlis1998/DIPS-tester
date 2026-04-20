@@ -1,40 +1,48 @@
 {
   "resources": {
     "test_material": {
-      "description": "Sources used directly för test questions, flashcards, and exam preparation",
+      "description": "Källor som används direkt för provfrågor och tentamensförberedelser",
       "items": [
         {
           "id": "res_exams",
-          "title": "Gamla skriftliga prov (2019-2025)",
+          "title": "Gamla skriftliga prov (2019–2025)",
           "url": "https://www.regeringen.se/jobba-hos-oss/praktik/skriftliga-prov-for-diplomatprogrammet/",
           "source_class": "official",
-          "purpose": "Direct exam practice — extract MCQs, essay prompts, fact checks"
+          "purpose": "Direktövning — extrahera frågor, uppsatsämnen, kolla format",
+          "priority": 1,
+          "study_tip": "Börja alltid här. Gör 2025 och 2024 under tidspress, sen 2023 som drill. Spara 2019–2022 för sista veckan."
         },
         {
           "id": "res_qa",
           "title": "Officiell Q&A om diplomatprogrammet",
-          "url": "https://www.regeringen.se/globalassets/regeringen/dokument/utrikesdepartementet/qa---vanliga-frågor-om-diplomatprogrammet.pdf",
+          "url": "https://www.regeringen.se/globalassets/regeringen/dokument/utrikesdepartementet/qa---vanliga-fragor-om-diplomatprogrammet.pdf",
           "source_class": "official",
-          "purpose": "Exam format info, what to expect, official guidance"
+          "purpose": "Provformat, vad man kan förvänta sig, officiella råd",
+          "priority": 1,
+          "study_tip": "Läs en gång tidigt för att förstå provets upplägg. Återläs veckan innan provet."
         },
         {
           "id": "res_grundlagar",
           "title": "Sveriges grundlagar (riksdagen.se)",
           "urls": [
-            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfåttningssamling/kungorelse-1974152-om-beslutad-ny-regeringsform_sfs-1974-152/",
-            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfåttningssamling/successionsordning-181026_sfs-1810-0926/",
-            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfåttningssamling/tryckfrihetsforordning-19491105_sfs-1949-105/",
-            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfåttningssamling/yttrandefrihetsgrundlag-19911469_sfs-1991-1469/"
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/kungorelse-1974152-om-beslutad-ny-regeringsform_sfs-1974-152/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/successionsordning-181026_sfs-1810-0926/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/tryckfrihetsforordning-19491105_sfs-1949-105/",
+            "https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/yttrandefrihetsgrundlag-19911469_sfs-1991-1469/"
           ],
           "source_class": "official",
-          "purpose": "Constitutional law — direct test questions"
+          "purpose": "Konstitutionell rätt — direkt testbart",
+          "priority": 2,
+          "study_tip": "Fokusera på RF kap 1–2 (statsformen, grundläggande fri- och rättigheter). Vet vad de fyra grundlagarna heter."
         },
         {
           "id": "res_un_charter",
           "title": "FN-stadgan",
           "url": "https://www.un.org/en/about-us/un-charter/full-text",
           "source_class": "official",
-          "purpose": "International law — Security Council, GA, ICJ structure"
+          "purpose": "Folkrätt — Säkerhetsrådets struktur, GA, ICJ",
+          "priority": 2,
+          "study_tip": "Kunna artiklarna 1–2 (syfte och principer), 39–42 (fredshot), 51 (självförsvar). Vem har veto?"
         },
         {
           "id": "res_vienna",
@@ -45,7 +53,9 @@
             "https://legal.un.org/ilc/texts/instruments/english/conventions/1_1_1969.pdf"
           ],
           "source_class": "official",
-          "purpose": "Diplomatic law — core DIPS knowledge"
+          "purpose": "Diplomatisk rätt — kärnan i DIPS",
+          "priority": 1,
+          "study_tip": "1961 = diplomatiska förbindelser (immunitet, okränkbarhet). 1963 = konsulära förbindelser. 1969 = traktaträtt. Kunna skillnaden!"
         },
         {
           "id": "res_utrikesdeklarationen",
@@ -55,168 +65,282 @@
             "https://www.regeringen.se/tal/2026/02/utrikesdeklarationen-2026/"
           ],
           "source_class": "official",
-          "purpose": "Sweden's current foreign policy priorities — directly testable"
+          "purpose": "Sveriges aktuella utrikespolitiska prioriteringar — direkt testbart",
+          "priority": 1,
+          "study_tip": "Läs 2026 noga — sannolikt provfrågor på aktuella prioriteringar. Jämför med 2025 för att se skiften."
         },
         {
-          "id": "res_säkerhetsstrategi",
+          "id": "res_sakerhetsstrategi",
           "title": "Nationell säkerhetsstrategi 2024",
-          "url": "https://www.regeringen.se/informationsmaterial/2024/07/nationell-säkerhetsstrategi/",
+          "url": "https://www.regeringen.se/informationsmaterial/2024/07/nationell-sakerhetsstrategi/",
           "source_class": "official",
-          "purpose": "Sweden's security doctrine — NATO, defense, resilience"
+          "purpose": "Sveriges säkerhetsdoktrin — NATO, försvar, motståndskraft",
+          "priority": 2,
+          "study_tip": "Fokusera på hur Sverige beskriver hotbilden och prioriteringarna efter NATO-inträdet."
         },
         {
           "id": "res_paris",
-          "title": "Paris Agreement + COP process",
+          "title": "Parisavtalet + COP-processen",
           "url": "https://unfccc.int/sites/default/files/english_paris_agreement.pdf",
           "source_class": "official",
-          "purpose": "Climate diplomacy — essay and MCQ material"
+          "purpose": "Klimatdiplomati — uppsats- och faktafrågematerial",
+          "priority": 2,
+          "study_tip": "Kunna: 1,5-gradersmålet, NDC:er, finansieringsmekanismer. Vad hände på senaste COP?"
         },
         {
           "id": "res_nato_treaty",
-          "title": "North Atlantic Treaty",
+          "title": "Nordatlantiska fördraget",
           "url": "https://www.nato.int/cps/en/natohq/official_texts_17120.htm",
           "source_class": "official",
-          "purpose": "Article 5, collective defense — frequently tested"
+          "purpose": "Artikel 5, kollektivt försvar — ofta testat",
+          "priority": 2,
+          "study_tip": "Artikel 5 (kollektivt försvar), artikel 4 (konsultation). Bildades 1949. Sverige 2024."
         },
         {
           "id": "res_eu_treaties",
-          "title": "EU Treaties (TEU/TFEU)",
+          "title": "EU-fördragen (TEU/TFEU)",
           "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:12012M/TXT",
           "source_class": "official",
-          "purpose": "EU institutional structure and competences"
+          "purpose": "EU:s institutionella struktur och kompetenser",
+          "priority": 3,
+          "study_tip": "Kunna institutionerna: Rådet, Kommissionen, Parlamentet, Europeiska rådet. GUSP-mekanismer."
         },
         {
           "id": "res_echr",
-          "title": "European Convention on Human Rights",
+          "title": "Europakonventionen om de mänskliga rättigheterna",
           "url": "https://www.echr.coe.int/documents/d/echr/convention_eng",
           "source_class": "official",
-          "purpose": "Human rights system — Council of Europe"
+          "purpose": "Mänskliga rättigheter — Europarådet",
+          "priority": 3,
+          "study_tip": "Kunna: rätten till liv, tortyrförbud, yttrandefrihet. Europadomstolen i Strasbourg."
         }
       ]
     },
     "study_podcasts": {
-      "description": "Podcasts för building allmanbildning — categorized by language",
+      "description": "Podcasts för att bygga allmänbildning — sorterade efter relevans för DIPS",
       "items": [
         {
           "id": "pod_konflikt",
           "title": "SR Konflikt",
           "lang": "sv",
           "rss": "https://api.sr.se/api/rss/pod/3970",
-          "purpose": "Deep dives on current conflicts — directly relevant för T04",
-          "frequency": "weekly"
+          "purpose": "Fördjupning i aktuella konflikter — direkt relevant för T04",
+          "frequency": "weekly",
+          "priority": 1,
+          "study_tip": "Lyssna varje vecka. Perfekt under pendling. Fokusera på Ukraina, Mellanöstern, Sahel."
         },
         {
           "id": "pod_godmorgon",
-          "title": "Godmorgon, varlden! (SR)",
+          "title": "Godmorgon, världen! (SR)",
           "lang": "sv",
           "rss": "https://api.sr.se/api/rss/pod/4490",
-          "purpose": "Sunday morning international review — broad allmanbildning",
-          "frequency": "weekly"
+          "purpose": "Söndagsöversikt av internationella händelser — bred allmänbildning",
+          "frequency": "weekly",
+          "priority": 1,
+          "study_tip": "Söndagar. Ger den breda bilden av veckans händelser. Bra att lyssna under brunch/promenad."
         },
         {
           "id": "pod_utrikesbyran",
-          "title": "Utrikesbyran (SR)",
+          "title": "Utrikesbyrån (SR)",
           "lang": "sv",
           "rss": "https://api.sr.se/api/rss/pod/4923",
-          "purpose": "Swedish foreign correspondents — nuanced perspectives",
-          "frequency": "weekly"
+          "purpose": "Utrikeskorrespondenters perspektiv — nyanserade analyser",
+          "frequency": "weekly",
+          "priority": 2,
+          "study_tip": "Bra komplement till Konflikt. Mer reportage, mindre analys."
         },
         {
           "id": "pod_ud",
           "title": "UD-podden",
           "lang": "sv",
           "url": "https://www.regeringen.se/sveriges-regering/utrikesdepartementet/ud-podden/",
-          "purpose": "Official UD perspective — diplomats discuss their work",
-          "frequency": "irregular"
+          "purpose": "Officiellt UD-perspektiv — diplomater berättar om sitt arbete",
+          "frequency": "irregular",
+          "priority": 1,
+          "study_tip": "Ovärderligt: hör riktiga diplomater beskriva vardagen. Nämn gärna UD-podden om du skriver uppsats om svensk diplomati."
         },
         {
           "id": "pod_ui_utblick",
           "title": "UI:s Utblick",
           "lang": "sv",
           "url": "https://www.ui.se/utrikesmagasinet/podcast/",
-          "purpose": "Think-tank analysis — essay structure inspiration",
-          "frequency": "biweekly"
+          "purpose": "Tankesmedjeanalys — bra uppsatsstruktur och argumentation",
+          "frequency": "biweekly",
+          "priority": 2,
+          "study_tip": "Lyssna för att träna uppsatsstrukturen: hur ställer de upp argument? Vilka avvägningar gör de?"
         },
         {
           "id": "pod_studio_ett",
           "title": "SR Studio Ett",
           "lang": "sv",
           "rss": "https://api.sr.se/api/rss/pod/3795",
-          "purpose": "Daily Swedish news depth — current affairs för T04/T05",
-          "frequency": "daily"
+          "purpose": "Dagliga svenska nyheter — aktuella händelser för T04/T05",
+          "frequency": "daily",
+          "priority": 3,
+          "study_tip": "Lyssna när du vill hänga med i svensk debatt. Inte nödvändigt dagligen — varannan dag räcker."
         },
         {
           "id": "pod_ft_briefing",
           "title": "FT News Briefing",
           "lang": "en",
           "url": "https://www.ft.com/podcasts/news-briefing",
-          "purpose": "Global economic briefing — T05 and T02",
-          "frequency": "daily"
+          "purpose": "Global ekonomisk briefing — T05 och T02",
+          "frequency": "daily",
+          "priority": 2,
+          "study_tip": "10 minuter varje morgon. Bra för ekonomiska termer och global handelsöversikt."
         },
         {
           "id": "pod_economist",
-          "title": "The Economist - The Intelligence",
+          "title": "The Economist — The Intelligence",
           "lang": "en",
           "url": "https://www.economist.com/podcasts",
-          "purpose": "Global affairs analysis — essay practice in English",
-          "frequency": "daily"
+          "purpose": "Global analys — bra för uppsatsövning på engelska",
+          "frequency": "daily",
+          "priority": 2,
+          "study_tip": "Lyssna för analysstruktur och argumentation — hur bygger de upp en poäng?"
         },
         {
           "id": "pod_foreign_affairs",
           "title": "Foreign Affairs Interview",
           "lang": "en",
           "url": "https://www.foreignaffairs.com/podcasts/foreign-affairs-interview",
-          "purpose": "Deep analysis of international relations — T02/T03/T04",
-          "frequency": "weekly"
+          "purpose": "Djupanalys av internationella relationer — T02/T03/T04",
+          "frequency": "weekly",
+          "priority": 2,
+          "study_tip": "För fördjupning i specifika ämnen. Välj avsnitt som matchar dina svaga ämnen."
         },
         {
           "id": "pod_rest_politics",
           "title": "The Rest Is Politics",
           "lang": "en",
           "url": "https://therestispolitics.com/",
-          "purpose": "Accessible political analysis — allmanbildning in English",
-          "frequency": "biweekly"
+          "purpose": "Tillgänglig politisk analys — allmänbildning på engelska",
+          "frequency": "biweekly",
+          "priority": 3,
+          "study_tip": "Avkopplande format. Bra för att plocka upp geopolitiska sammanhang utan att det känns som plugg."
         }
       ]
     },
     "databases": {
-      "description": "Reference databases för ongoing study and fact-checking",
+      "description": "Referensdatabaser för löpande studier och faktakontroll",
       "items": [
         {
           "id": "db_landguiden",
           "title": "UI Landguiden",
           "url": "https://www.ui.se/landguiden/",
-          "note": "Requires library subscription"
+          "note": "Kräver biblioteksprenumeration",
+          "priority": 1,
+          "study_tip": "Slå upp varje land som kommer upp i en provfråga. Perfekt som faktakontroll efter provövning."
         },
         {
-          "id": "db_säkerhetspolitik",
-          "title": "Sakerhetspolitik.se",
-          "url": "https://www.säkerhetspolitik.se/"
+          "id": "db_sakerhetspolitik",
+          "title": "Säkerhetspolitik.se",
+          "url": "https://www.sakerhetspolitik.se/",
+          "priority": 1,
+          "study_tip": "Använd för att bygga förståelse av konflikter och säkerhetspolitik. Bra sammanfattningar."
         },
         {
           "id": "db_globalis",
           "title": "Globalis.se (FN)",
-          "url": "https://www.globalis.se/"
+          "url": "https://www.globalis.se/",
+          "priority": 2,
+          "study_tip": "Interaktiva kartor och statistik. Bra för geografi och befolkningsdata."
         },
         {
           "id": "db_sipri",
           "title": "SIPRI Databases",
-          "url": "https://www.sipri.org/databases"
+          "url": "https://www.sipri.org/databases",
+          "priority": 3,
+          "study_tip": "Försvarsutgifter, vapenhandel, fredsinsatser. Använd siffror i uppsatser."
         },
         {
           "id": "db_freedomhouse",
           "title": "Freedom House Scores",
-          "url": "https://freedomhouse.org/countries/freedom-world/scores"
+          "url": "https://freedomhouse.org/countries/freedom-world/scores",
+          "priority": 3,
+          "study_tip": "Demokrati och frihetsmått per land. Bra att hänvisa till i uppsatser."
         },
         {
           "id": "db_owid",
           "title": "Our World in Data",
-          "url": "https://ourworldindata.org/"
+          "url": "https://ourworldindata.org/",
+          "priority": 2,
+          "study_tip": "Visualiserad data om allt från klimat till fattigdom. Använd grafer för att förstå trender."
         },
         {
           "id": "db_sieps",
           "title": "SIEPS Publications",
-          "url": "https://www.sieps.se/publikationer/"
+          "url": "https://www.sieps.se/publikationer/",
+          "priority": 3,
+          "study_tip": "EU-analys på svenska. Relevant om du skriver uppsats om EU."
+        }
+      ]
+    },
+    "study_schedule": {
+      "description": "Rekommenderad studieplan baserad på provets struktur. Anpassa efter hur lång tid du har kvar.",
+      "weekly_plan": [
+        {
+          "day": "Måndag",
+          "focus": "Samhällsorientering — Sverige (T01)",
+          "activities": [
+            "Kör ett frågebatteri Sverige (2024 eller 2025)",
+            "Lyssna: UD-podden eller Studio Ett",
+            "Slå upp okända myndighetsförkortningar"
+          ]
+        },
+        {
+          "day": "Tisdag",
+          "focus": "Samhällsorientering — Globalt (T02)",
+          "activities": [
+            "Kör ett frågebatteri Globalt",
+            "Lyssna: Godmorgon, världen! (om söndag)",
+            "Kolla aktuella regeringschefer i nyckelländer"
+          ]
+        },
+        {
+          "day": "Onsdag",
+          "focus": "Historia, geografi och folkrätt (T03, T06)",
+          "activities": [
+            "Kör frågebatteri Historia/Geografi",
+            "Lyssna: Konflikt (SR)",
+            "Öva huvudstäder och flaggor via Globalis.se"
+          ]
+        },
+        {
+          "day": "Torsdag",
+          "focus": "Kultur och ordförståelse (T07, T09)",
+          "activities": [
+            "Kör ordförståelsefrågor (appen eller originalprov)",
+            "Läs en kultursida (DN, SvD kultur)",
+            "Kolla Nobelpristagare senaste 5 åren"
+          ]
+        },
+        {
+          "day": "Fredag",
+          "focus": "Ekonomi och klimat (T05, T08)",
+          "activities": [
+            "Lyssna: FT News Briefing",
+            "Gör quiz om ekonomi och klimat",
+            "Läs Utrikesdeklarationen 2026"
+          ]
+        },
+        {
+          "day": "Lördag",
+          "focus": "Mockprov och uppsatsövning (T10)",
+          "activities": [
+            "Kör ett fullständigt mockprov under tidspress",
+            "Skriv en uppsats på 45 min",
+            "Rätta och reflektera"
+          ]
+        },
+        {
+          "day": "Söndag",
+          "focus": "Repetition och luckor",
+          "activities": [
+            "Gå igenom svåra frågor i drill-läget",
+            "Lyssna: The Economist eller Foreign Affairs",
+            "Planera nästa veckas fokus baserat på var du har luckor"
+          ]
         }
       ]
     }

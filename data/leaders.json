@@ -1,0 +1,800 @@
+{
+  "regions": [
+    {
+      "id": "norden_baltikum",
+      "title": "Norden & Baltikum",
+      "tag": "Högsta prioritet — sitta perfekt",
+      "region_class": "norden",
+      "leaders": [
+        {
+          "key": "kristersson",
+          "initials": "UK",
+          "flag": "🇸🇪",
+          "country": "SVERIGE",
+          "name": "Ulf Kristersson",
+          "role": "PM",
+          "details": "<b>Parti:</b> Moderaterna (M) · <b>UM:</b> Maria Malmer Stenergard (M)",
+          "photo": "plancher+Världsledare/photos/kristersson.jpg"
+        },
+        {
+          "key": "orpo",
+          "initials": "PO",
+          "flag": "🇫🇮",
+          "country": "FINLAND",
+          "name": "Petteri Orpo",
+          "role": "PM",
+          "details": "<b>Parti:</b> Samlingspartiet / Kansallinen Kokoomus (Kok.) · <b>Pres:</b> Alexander Stubb · <b>UM:</b> Elina Valtonen",
+          "photo": "plancher+Världsledare/photos/orpo.jpg",
+          "note": "Dubbelspårigt: PM + pres båda provrelevanta"
+        },
+        {
+          "key": "store",
+          "initials": "JS",
+          "flag": "🇳🇴",
+          "country": "NORGE",
+          "name": "Jonas Gahr Støre",
+          "role": "PM",
+          "details": "<b>Parti:</b> Arbeiderpartiet (Ap) · <b>UM:</b> Espen Barth Eide (Ap)",
+          "photo": "plancher+Världsledare/photos/store.jpg"
+        },
+        {
+          "key": "frederiksen",
+          "initials": "MF",
+          "flag": "🇩🇰",
+          "country": "DANMARK",
+          "name": "Mette Frederiksen",
+          "role": "PM",
+          "details": "<b>Parti:</b> Socialdemokratiet (S) · <b>UM:</b> Lars Løkke Rasmussen (M)",
+          "photo": "plancher+Världsledare/photos/frederiksen.jpg"
+        },
+        {
+          "key": "frostadottir",
+          "initials": "KF",
+          "flag": "🇮🇸",
+          "country": "ISLAND",
+          "name": "Kristrún Frostadóttir",
+          "role": "PM",
+          "details": "<b>Parti:</b> Samfylkingin / Social Democratic Alliance (S) · <b>Pres:</b> Halla Tómasdóttir",
+          "photo": "plancher+Världsledare/photos/frostadottir.jpg"
+        },
+        {
+          "key": "michal",
+          "initials": "KM",
+          "flag": "🇪🇪",
+          "country": "ESTLAND",
+          "name": "Kristen Michal",
+          "role": "PM",
+          "details": "<b>Parti:</b> Reformierakond / Reformpartiet (RE) · <b>UM:</b> Margus Tsahkna",
+          "photo": "plancher+Världsledare/photos/michal.jpg"
+        },
+        {
+          "key": "silina",
+          "initials": "ES",
+          "flag": "🇱🇻",
+          "country": "LETTLAND",
+          "name": "Evika Siliņa",
+          "role": "PM",
+          "details": "<b>Parti:</b> Jaunā Vienotība / New Unity (JV) · <b>UM:</b> Baiba Braže",
+          "photo": "plancher+Världsledare/photos/silina.jpg"
+        },
+        {
+          "key": "ruginiene",
+          "initials": "IR",
+          "flag": "🇱🇹",
+          "country": "LITAUEN",
+          "name": "Inga Ruginienė",
+          "role": "PM",
+          "details": "<b>Parti:</b> Lietuvos socialdemokratų partija (LSDP) · <b>Pres:</b> Nausėda · <b>UM:</b> K. Budrys",
+          "photo": "plancher+Världsledare/photos/ruginiene.jpg",
+          "note": "Ny PM sedan 25 sep 2025 (efter Paluckas)"
+        }
+      ]
+    },
+    {
+      "id": "nordamerika",
+      "title": "Nordamerika",
+      "tag": "Stormakt",
+      "region_class": "nordam",
+      "leaders": [
+        {
+          "key": "trump",
+          "initials": "DT",
+          "flag": "🇺🇸",
+          "country": "USA",
+          "name": "Donald J. Trump",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Republican Party (GOP) · <b>VP:</b> JD Vance · <b>State:</b> Marco Rubio · <b>Försv:</b> Hegseth",
+          "photo": "plancher+Världsledare/photos/trump.jpg"
+        },
+        {
+          "key": "carney",
+          "initials": "MC",
+          "flag": "🇨🇦",
+          "country": "KANADA",
+          "name": "Mark Carney",
+          "role": "PM",
+          "details": "<b>Parti:</b> Liberal Party of Canada (LPC) · sedan mars 2025 · majoritet apr 2026",
+          "photo": "plancher+Världsledare/photos/carney.jpg"
+        },
+        {
+          "key": "sheinbaum",
+          "initials": "CS",
+          "flag": "🇲🇽",
+          "country": "MEXIKO",
+          "name": "Claudia Sheinbaum",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Movimiento Regeneración Nacional (Morena) · första kvinnan",
+          "photo": "plancher+Världsledare/photos/sheinbaum.jpg"
+        }
+      ]
+    },
+    {
+      "id": "stora_eu_uk",
+      "title": "Stora EU & UK",
+      "tag": "Må-sitta-absolut",
+      "region_class": "storm",
+      "leaders": [
+        {
+          "key": "merz",
+          "initials": "FM",
+          "flag": "🇩🇪",
+          "country": "TYSKLAND",
+          "name": "Friedrich Merz",
+          "role": "KANSLER",
+          "details": "<b>Parti:</b> Christlich Demokratische Union (CDU) · sedan maj 2025 · koalition m. SPD",
+          "photo": "plancher+Världsledare/photos/merz.jpg"
+        },
+        {
+          "key": "macron",
+          "initials": "EM",
+          "flag": "🇫🇷",
+          "country": "FRANKRIKE",
+          "name": "Emmanuel Macron",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Renaissance (RE) · <b>PM:</b> Sébastien Lecornu · <b>UM:</b> JN Barrot",
+          "photo": "plancher+Världsledare/photos/macron.jpg",
+          "note": "Provfälla: pres styr UP, INTE PM"
+        },
+        {
+          "key": "starmer",
+          "initials": "KS",
+          "flag": "🇬🇧",
+          "country": "UK",
+          "name": "Keir Starmer",
+          "role": "PM",
+          "details": "<b>Parti:</b> Labour Party (Lab) · sedan juli 2024 · <b>UM:</b> David Lammy",
+          "photo": "plancher+Världsledare/photos/starmer.jpg"
+        },
+        {
+          "key": "meloni",
+          "initials": "GM",
+          "flag": "🇮🇹",
+          "country": "ITALIEN",
+          "name": "Giorgia Meloni",
+          "role": "PM",
+          "details": "<b>Parti:</b> Fratelli d'Italia (FdI) · sedan okt 2022",
+          "photo": "plancher+Världsledare/photos/meloni.jpg"
+        },
+        {
+          "key": "sanchez",
+          "initials": "PS",
+          "flag": "🇪🇸",
+          "country": "SPANIEN",
+          "name": "Pedro Sánchez",
+          "role": "PM",
+          "details": "<b>Parti:</b> Partido Socialista Obrero Español (PSOE) · minoritetsregering",
+          "photo": "plancher+Världsledare/photos/sanchez.jpg"
+        },
+        {
+          "key": "jetten",
+          "initials": "RJ",
+          "flag": "🇳🇱",
+          "country": "NEDERLÄNDERNA",
+          "name": "Rob Jetten",
+          "role": "PM",
+          "details": "<b>Parti:</b> Democrats 66 (D66) · sedan 23 feb 2026",
+          "photo": "plancher+Världsledare/photos/jetten.jpg",
+          "note": "NY: efterträdde Schoof (PVV-krasch juni 2025)"
+        },
+        {
+          "key": "tusk",
+          "initials": "DT2",
+          "flag": "🇵🇱",
+          "country": "POLEN",
+          "name": "Donald Tusk",
+          "role": "PM",
+          "details": "<b>Parti:</b> Platforma Obywatelska / Civic Platform (PO) · <b>Pres:</b> Karol Nawrocki · <b>UM:</b> R. Sikorski",
+          "photo": "plancher+Världsledare/photos/tusk.jpg",
+          "note": "Provfälla: olika läger PM vs pres"
+        },
+        {
+          "key": "dewever",
+          "initials": "BD",
+          "flag": "🇧🇪",
+          "country": "BELGIEN",
+          "name": "Bart De Wever",
+          "role": "PM",
+          "details": "<b>Parti:</b> Nieuw-Vlaamse Alliantie (N-VA) · sedan feb 2025",
+          "photo": "plancher+Världsledare/photos/dewever.jpg"
+        }
+      ]
+    },
+    {
+      "id": "ovriga_eu",
+      "title": "Övriga EU + Ukraina",
+      "tag": "Viktiga",
+      "region_class": "ovriga",
+      "leaders": [
+        {
+          "key": "zelensky",
+          "initials": "VZ",
+          "flag": "🇺🇦",
+          "country": "UKRAINA",
+          "name": "Volodymyr Zelensky",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Sluha Narodu / Servant of the People (SN) · <b>UM:</b> Andrii Sybiha · <b>PM:</b> Yulia Svyrydenko",
+          "photo": "plancher+Världsledare/photos/zelensky.jpg"
+        },
+        {
+          "key": "babis",
+          "initials": "AB",
+          "flag": "🇨🇿",
+          "country": "TJECKIEN",
+          "name": "Andrej Babiš",
+          "role": "PM",
+          "details": "<b>Parti:</b> ANO 2011 (ANO) · sedan 9 dec 2025 (INTE Fiala)",
+          "photo": "plancher+Världsledare/photos/babis.jpg",
+          "alert": "NYTT: skifte fr. Fiala, EU/Ukr-skeptisk"
+        },
+        {
+          "key": "orban",
+          "initials": "VO",
+          "flag": "🇭🇺",
+          "country": "UNGERN",
+          "name": "Viktor Orbán",
+          "role": "PM (AVGÅR)",
+          "details": "<b>Parti:</b> Fidesz - Magyar Polgari Szovetseg (Fidesz) · <b>Tillträder:</b> Péter Magyar (Tisza)",
+          "photo": "plancher+Världsledare/photos/orban.jpg",
+          "alert": "⚠ MAKTSKIFTE: Tisza vann 2/3 majoritet 12 apr 2026"
+        },
+        {
+          "key": "bolojan",
+          "initials": "IB",
+          "flag": "🇷🇴",
+          "country": "RUMÄNIEN",
+          "name": "Ilie Bolojan",
+          "role": "PM",
+          "details": "<b>Parti:</b> Partidul National Liberal (PNL) · <b>Pres:</b> Nicusor Dan",
+          "photo": "plancher+Världsledare/photos/bolojan.jpg"
+        },
+        {
+          "key": "stocker",
+          "initials": "CS2",
+          "flag": "🇦🇹",
+          "country": "ÖSTERRIKE",
+          "name": "Christian Stocker",
+          "role": "KANSLER",
+          "details": "<b>Parti:</b> Osterreichische Volkspartei (OVP) · OVP-SPO-NEOS sedan mars 2025",
+          "photo": "plancher+Världsledare/photos/stocker.jpg"
+        },
+        {
+          "key": "montenegro",
+          "initials": "LM",
+          "flag": "🇵🇹",
+          "country": "PORTUGAL",
+          "name": "Luís Montenegro",
+          "role": "PM",
+          "details": "<b>Parti:</b> Partido Social Democrata (PSD) · <b>Pres:</b> Antonio Jose Seguro (PS)",
+          "photo": "plancher+Världsledare/photos/montenegro.jpg"
+        },
+        {
+          "key": "mitsotakis",
+          "initials": "KM2",
+          "flag": "🇬🇷",
+          "country": "GREKLAND",
+          "name": "Kyriakos Mitsotakis",
+          "role": "PM",
+          "details": "<b>Parti:</b> Nea Dimokratia / New Democracy (ND)",
+          "photo": "plancher+Världsledare/photos/mitsotakis.jpg"
+        },
+        {
+          "key": "martin",
+          "initials": "MM",
+          "flag": "🇮🇪",
+          "country": "IRLAND",
+          "name": "Micheál Martin",
+          "role": "TAOISEACH",
+          "details": "<b>Parti:</b> Fianna Fail (FF) · sedan jan 2025",
+          "photo": "plancher+Världsledare/photos/martin.jpg"
+        },
+        {
+          "key": "gyurov",
+          "initials": "AG",
+          "flag": "🇧🇬",
+          "country": "BULGARIEN",
+          "name": "Andrey Gyurov",
+          "role": "PM (tillf.)",
+          "details": "<b>Parti:</b> Prodalzhavame Promyanata / We Continue the Change (PP) · <b>Pres:</b> Iliana Yotova",
+          "photo": "plancher+Världsledare/photos/gyurov.jpg",
+          "alert": "⚠ VAL IDAG 19 APR 2026 — Radev favorit"
+        }
+      ]
+    },
+    {
+      "id": "ryssland_balkan",
+      "title": "Ryssland & Balkan",
+      "tag": "Spänning",
+      "region_class": "russ",
+      "leaders": [
+        {
+          "key": "putin",
+          "initials": "VP",
+          "flag": "🇷🇺",
+          "country": "RYSSLAND",
+          "name": "Vladimir Putin",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Yedinaya Rossiya / United Russia (UR) · <b>UM:</b> Sergej Lavrov · <b>PM:</b> Misjustin",
+          "photo": "plancher+Världsledare/photos/putin.jpg"
+        },
+        {
+          "key": "lukashenko",
+          "initials": "AL",
+          "flag": "🇧🇾",
+          "country": "BELARUS",
+          "name": "Aleksandr Lukasjenko",
+          "role": "PRES",
+          "details": "<b>Parti:</b> ingen formell partibindning · nära Moskva",
+          "photo": "plancher+Världsledare/photos/lukashenko.jpg"
+        },
+        {
+          "key": "sandu",
+          "initials": "MS",
+          "flag": "🇲🇩",
+          "country": "MOLDAVIEN",
+          "name": "Maia Sandu",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Partidul Actiune si Solidaritate (PAS) · EU-orienterad",
+          "photo": "plancher+Världsledare/photos/sandu.jpg"
+        },
+        {
+          "key": "erdogan",
+          "initials": "RE",
+          "flag": "🇹🇷",
+          "country": "TURKIET",
+          "name": "Recep Tayyip Erdoğan",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Adalet ve Kalkinma Partisi (AKP) · presidentstyre",
+          "photo": "plancher+Världsledare/photos/erdogan.jpg"
+        },
+        {
+          "key": "vucic",
+          "initials": "AV",
+          "flag": "🇷🇸",
+          "country": "SERBIEN",
+          "name": "Aleksandar Vučić",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Srpska napredna stranka (SNS) · dominerande figur",
+          "photo": "plancher+Världsledare/photos/vucic.jpg"
+        },
+        {
+          "key": "plenkovic",
+          "initials": "AP",
+          "flag": "🇭🇷",
+          "country": "KROATIEN",
+          "name": "Andrej Plenković",
+          "role": "PM",
+          "details": "<b>Parti:</b> Hrvatska demokratska zajednica (HDZ) · EU/NATO-kurs",
+          "photo": "plancher+Världsledare/photos/plenkovic.jpg"
+        }
+      ]
+    },
+    {
+      "id": "asien",
+      "title": "Asien & Pacific",
+      "tag": "Strategiska tyngdpunkter",
+      "region_class": "asien",
+      "leaders": [
+        {
+          "key": "xi",
+          "initials": "XJ",
+          "flag": "🇨🇳",
+          "country": "KINA",
+          "name": "Xi Jinping",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Communist Party of China (CPC/CCP) · <b>PM:</b> Li Qiang · <b>UM:</b> Wang Yi",
+          "photo": "plancher+Världsledare/photos/xi.jpg",
+          "note": "Triaden: Xi först, PM + UM nivå 2"
+        },
+        {
+          "key": "takaichi",
+          "initials": "ST",
+          "flag": "🇯🇵",
+          "country": "JAPAN",
+          "name": "Sanae Takaichi",
+          "role": "PM",
+          "details": "<b>Parti:</b> Liberal Democratic Party (LDP) · första kvinnan · sedan okt 2025",
+          "photo": "plancher+Världsledare/photos/takaichi.jpg"
+        },
+        {
+          "key": "lee",
+          "initials": "LJ",
+          "flag": "🇰🇷",
+          "country": "SYDKOREA",
+          "name": "Lee Jae-myung",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Democratic Party of Korea (DPK) · sedan juni 2025",
+          "photo": "plancher+Världsledare/photos/lee.jpg"
+        },
+        {
+          "key": "kim",
+          "initials": "KJ",
+          "flag": "🇰🇵",
+          "country": "NORDKOREA",
+          "name": "Kim Jong-un",
+          "role": "HÖGSTA L.",
+          "details": "<b>Parti:</b> Workers' Party of Korea (WPK) · generalsekr.",
+          "photo": "plancher+Världsledare/photos/kim.jpg"
+        },
+        {
+          "key": "modi",
+          "initials": "NM",
+          "flag": "🇮🇳",
+          "country": "INDIEN",
+          "name": "Narendra Modi",
+          "role": "PM",
+          "details": "<b>Parti:</b> Bharatiya Janata Party (BJP) · <b>UM:</b> S. Jaishankar · <b>Pres:</b> Murmu",
+          "photo": "plancher+Världsledare/photos/modi.jpg"
+        },
+        {
+          "key": "sharif",
+          "initials": "SS",
+          "flag": "🇵🇰",
+          "country": "PAKISTAN",
+          "name": "Shehbaz Sharif",
+          "role": "PM",
+          "details": "<b>Parti:</b> Pakistan Muslim League (N) (PML-N) · <b>Pres:</b> Asif Ali Zardari",
+          "photo": "plancher+Världsledare/photos/sharif.jpg"
+        },
+        {
+          "key": "prabowo",
+          "initials": "PS2",
+          "flag": "🇮🇩",
+          "country": "INDONESIEN",
+          "name": "Prabowo Subianto",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Gerindra / Great Indonesia Movement Party · sedan okt 2024",
+          "photo": "plancher+Världsledare/photos/prabowo.jpg"
+        },
+        {
+          "key": "albanese",
+          "initials": "AA",
+          "flag": "🇦🇺",
+          "country": "AUSTRALIEN",
+          "name": "Anthony Albanese",
+          "role": "PM",
+          "details": "<b>Parti:</b> Australian Labor Party (ALP) · omvald maj 2025",
+          "photo": "plancher+Världsledare/photos/albanese.jpg"
+        }
+      ]
+    },
+    {
+      "id": "mena",
+      "title": "Mellanöstern & MENA",
+      "tag": "Provkritisk",
+      "region_class": "mena",
+      "leaders": [
+        {
+          "key": "netanyahu",
+          "initials": "BN",
+          "flag": "🇮🇱",
+          "country": "ISRAEL",
+          "name": "Benjamin Netanyahu",
+          "role": "PM",
+          "details": "<b>Parti:</b> Likud · <b>Pres:</b> Isaac Herzog",
+          "photo": "plancher+Världsledare/photos/netanyahu.jpg"
+        },
+        {
+          "key": "abbas",
+          "initials": "MA",
+          "flag": "🇵🇸",
+          "country": "PALESTINA",
+          "name": "Mahmoud Abbas",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Fatah / Palestinian National Liberation Movement · PA / Ramallah",
+          "photo": "plancher+Världsledare/photos/abbas.jpg"
+        },
+        {
+          "key": "pezeshkian",
+          "initials": "MP",
+          "flag": "🇮🇷",
+          "country": "IRAN",
+          "name": "Masoud Pezeshkian",
+          "role": "PRES",
+          "details": "<b>Block:</b> reformistisk oberoende · <b>Rahbar:</b> Ali Khamenei (HÖGSTA)",
+          "photo": "plancher+Världsledare/photos/pezeshkian.jpg",
+          "note": "Provfälla: Khamenei styr, ej pres."
+        },
+        {
+          "key": "mbs",
+          "initials": "MB",
+          "flag": "🇸🇦",
+          "country": "SAUDIARABIEN",
+          "name": "Mohammed bin Salman",
+          "role": "DE FACTO",
+          "details": "Kungahus: Al Saud · Kronprins & PM · <b>Kung:</b> Salman",
+          "photo": "plancher+Världsledare/photos/mbs.jpg",
+          "note": "Provfälla: MBS styr i praktiken"
+        },
+        {
+          "key": "sisi",
+          "initials": "AS2",
+          "flag": "🇪🇬",
+          "country": "EGYPTEN",
+          "name": "Abdel Fattah al-Sisi",
+          "role": "PRES",
+          "details": "Partilos militärbakgrund · sedan 2014",
+          "photo": "plancher+Världsledare/photos/sisi.jpg"
+        },
+        {
+          "key": "sharaa",
+          "initials": "AS3",
+          "flag": "🇸🇾",
+          "country": "SYRIEN",
+          "name": "Ahmad al-Sharaa",
+          "role": "ÖVERGÅNG",
+          "details": "HTS-bakgrund · president under overgång (PM-post avskaffad)",
+          "photo": "plancher+Världsledare/photos/sharaa.jpg",
+          "alert": "Assad föll 8 dec 2024 · al-Sharaa pres 29 jan 2025"
+        },
+        {
+          "key": "aoun",
+          "initials": "JA",
+          "flag": "🇱🇧",
+          "country": "LIBANON",
+          "name": "Joseph Aoun",
+          "role": "PRES",
+          "details": "Partilos / armebakgrund · <b>PM:</b> Nawaf Salam · konfessionell",
+          "photo": "plancher+Världsledare/photos/aoun.jpg"
+        },
+        {
+          "key": "abdullah",
+          "initials": "AII",
+          "flag": "🇯🇴",
+          "country": "JORDANIEN",
+          "name": "Abdullah II",
+          "role": "KUNG",
+          "details": "Hashemitiska dynastin",
+          "photo": "plancher+Världsledare/photos/abdullah.jpg"
+        },
+        {
+          "key": "akhannouch",
+          "initials": "AA2",
+          "flag": "🇲🇦",
+          "country": "MAROCKO",
+          "name": "Aziz Akhannouch",
+          "role": "PM",
+          "details": "<b>Parti:</b> Rassemblement National des Independants (RNI) · <b>Kung:</b> Mohammed VI",
+          "photo": "plancher+Världsledare/photos/akhannouch.jpg"
+        }
+      ]
+    },
+    {
+      "id": "afrika",
+      "title": "Afrika",
+      "tag": "Urval",
+      "region_class": "afrika",
+      "leaders": [
+        {
+          "key": "ramaphosa",
+          "initials": "CR",
+          "flag": "🇿🇦",
+          "country": "SYDAFRIKA",
+          "name": "Cyril Ramaphosa",
+          "role": "PRES",
+          "details": "<b>Parti:</b> African National Congress (ANC) · G20-ordf. 2025",
+          "photo": "plancher+Världsledare/photos/ramaphosa.jpg"
+        },
+        {
+          "key": "tinubu",
+          "initials": "BT",
+          "flag": "🇳🇬",
+          "country": "NIGERIA",
+          "name": "Bola Tinubu",
+          "role": "PRES",
+          "details": "<b>Parti:</b> All Progressives Congress (APC) · sedan maj 2023",
+          "photo": "plancher+Världsledare/photos/tinubu.jpg"
+        },
+        {
+          "key": "ruto",
+          "initials": "WR",
+          "flag": "🇰🇪",
+          "country": "KENYA",
+          "name": "William Ruto",
+          "role": "PRES",
+          "details": "<b>Parti:</b> United Democratic Alliance (UDA)",
+          "photo": "plancher+Världsledare/photos/ruto.jpg"
+        },
+        {
+          "key": "abiy",
+          "initials": "AA3",
+          "flag": "🇪🇹",
+          "country": "ETIOPIEN",
+          "name": "Abiy Ahmed",
+          "role": "PM",
+          "details": "<b>Parti:</b> Prosperity Party (PP) · Nobels fredspris 2019",
+          "photo": "plancher+Världsledare/photos/abiy.jpg"
+        },
+        {
+          "key": "kagame",
+          "initials": "PK",
+          "flag": "🇷🇼",
+          "country": "RWANDA",
+          "name": "Paul Kagame",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Rwandan Patriotic Front (RPF)",
+          "photo": "plancher+Världsledare/photos/kagame.jpg"
+        },
+        {
+          "key": "tshisekedi",
+          "initials": "FT",
+          "flag": "🇨🇩",
+          "country": "DR KONGO",
+          "name": "Félix Tshisekedi",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Union for Democracy and Social Progress (UDPS) · M23/Rwanda-spänning",
+          "photo": "plancher+Världsledare/photos/tshisekedi.jpg"
+        },
+        {
+          "key": "burhan",
+          "initials": "AB2",
+          "flag": "🇸🇩",
+          "country": "SUDAN",
+          "name": "Abdel Fattah al-Burhan",
+          "role": "DE FACTO",
+          "details": "Sudanese Armed Forces (SAF) · krig mot RSF sedan 2023",
+          "photo": "plancher+Världsledare/photos/burhan.jpg"
+        }
+      ]
+    },
+    {
+      "id": "latam",
+      "title": "Latinamerika",
+      "tag": "Presidentstyrt",
+      "region_class": "latam",
+      "leaders": [
+        {
+          "key": "lula",
+          "initials": "LL",
+          "flag": "🇧🇷",
+          "country": "BRASILIEN",
+          "name": "Luiz Inácio Lula da Silva",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Partido dos Trabalhadores (PT) · COP30-värd 2025",
+          "photo": "plancher+Världsledare/photos/lula.jpg"
+        },
+        {
+          "key": "milei",
+          "initials": "JM",
+          "flag": "🇦🇷",
+          "country": "ARGENTINA",
+          "name": "Javier Milei",
+          "role": "PRES",
+          "details": "<b>Parti:</b> La Libertad Avanza (LLA) · libertarian",
+          "photo": "plancher+Världsledare/photos/milei.jpg"
+        },
+        {
+          "key": "boric",
+          "initials": "GB",
+          "flag": "🇨🇱",
+          "country": "CHILE",
+          "name": "Gabriel Boric",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Frente Amplio (FA)",
+          "photo": "plancher+Världsledare/photos/boric.jpg"
+        },
+        {
+          "key": "petro",
+          "initials": "GP",
+          "flag": "🇨🇴",
+          "country": "COLOMBIA",
+          "name": "Gustavo Petro",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Pacto Histórico (PH)",
+          "photo": "plancher+Världsledare/photos/petro.jpg"
+        },
+        {
+          "key": "maduro",
+          "initials": "NM2",
+          "flag": "🇻🇪",
+          "country": "VENEZUELA",
+          "name": "Nicolás Maduro",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Partido Socialista Unido de Venezuela (PSUV) · omstridd",
+          "photo": "plancher+Världsledare/photos/maduro.jpg"
+        },
+        {
+          "key": "diazcanel",
+          "initials": "MD",
+          "flag": "🇨🇺",
+          "country": "KUBA",
+          "name": "Miguel Díaz-Canel",
+          "role": "PRES",
+          "details": "<b>Parti:</b> Partido Comunista de Cuba (PCC)",
+          "photo": "plancher+Världsledare/photos/diazcanel.jpg"
+        }
+      ]
+    }
+  ],
+  "org_chiefs": [
+    {
+      "key": "guterres",
+      "initials": "AG2",
+      "org": "FN",
+      "name": "António Guterres",
+      "photo": "plancher+Världsledare/photos/guterres.jpg"
+    },
+    {
+      "key": "rutte",
+      "initials": "MR",
+      "org": "NATO",
+      "name": "Mark Rutte",
+      "photo": "plancher+Världsledare/photos/rutte.jpg"
+    },
+    {
+      "key": "vdl",
+      "initials": "UvL",
+      "org": "EU-kom.",
+      "name": "Ursula von der Leyen",
+      "photo": "plancher+Världsledare/photos/vdl.jpg"
+    },
+    {
+      "key": "costa",
+      "initials": "AC",
+      "org": "Eur.rådet",
+      "name": "António Costa",
+      "photo": "plancher+Världsledare/photos/costa.jpg"
+    },
+    {
+      "key": "kallas",
+      "initials": "KK",
+      "org": "HR/VP",
+      "name": "Kaja Kallas",
+      "photo": "plancher+Världsledare/photos/kallas.jpg"
+    },
+    {
+      "key": "metsola",
+      "initials": "RM",
+      "org": "Europarl.",
+      "name": "Roberta Metsola",
+      "photo": "plancher+Världsledare/photos/metsola.jpg"
+    },
+    {
+      "key": "lagarde",
+      "initials": "CL",
+      "org": "ECB",
+      "name": "Christine Lagarde",
+      "photo": "plancher+Världsledare/photos/lagarde.jpg"
+    },
+    {
+      "key": "okonjo",
+      "initials": "NO",
+      "org": "WTO",
+      "name": "N. Okonjo-Iweala",
+      "photo": "plancher+Världsledare/photos/okonjo.jpg"
+    },
+    {
+      "key": "georgieva",
+      "initials": "KG",
+      "org": "IMF",
+      "name": "Kristalina Georgieva",
+      "photo": "plancher+Världsledare/photos/georgieva.jpg"
+    },
+    {
+      "key": "banga",
+      "initials": "AjB",
+      "org": "VB",
+      "name": "Ajay Banga",
+      "photo": "plancher+Världsledare/photos/banga.jpg"
+    }
+  ]
+}
