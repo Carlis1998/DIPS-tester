@@ -1621,6 +1621,22 @@ function renderEssay(essayId){
 }
 
 // ============ PODCASTS ============
+function handlePodcastError(audio){
+  if(!audio.dataset.retry && audio.dataset.secondary){
+    audio.dataset.retry='1';
+    audio.src=audio.dataset.secondary;
+    audio.load();
+    return;
+  }
+  const wrap=audio.closest('[data-audio-wrap]');
+  if(wrap && !wrap.querySelector('.audio-err')){
+    const div=document.createElement('div');
+    div.className='audio-err';
+    div.style.cssText='font-size:11px;color:var(--red);margin-top:4px;line-height:1.4';
+    div.innerHTML='Ljudet kunde inte läsas in. <a style="color:var(--accent)" href="'+(audio.dataset.primary||'#')+'" target="_blank">Öppna direkt</a>';
+    wrap.appendChild(div);
+  }
+}
 function renderPodcasts(){
   const el=document.getElementById('v-podcasts');
   const pods=AUDIO_MAP?.study_podcasts||[];
@@ -1650,12 +1666,15 @@ function renderPodcasts(){
         const filePath='../'+pod.files[lang];
         const label=lang==='en'?'English':lang==='es'?'Español':lang==='sv'?'Svenska':lang;
         playerHtml+=`
-          <div style="margin-top:8px">
-            <div style="font-size:11px;font-weight:700;color:var(--text-dim);margin-bottom:4px">${label}</div>
-            <audio class="podcast-player" controls preload="none">
-              <source src="${filePath}" type="audio/mp4">
-              Ljudfilen kunde inte laddas. Kontrollera att du kör appen lokalt.
-            </audio>
+          <div style="margin-top:10px" data-audio-wrap="pod_${pod.id}_${lang}">
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;color:var(--text-dim);margin-bottom:4px">
+              <span>${label}</span>
+              <a href="${filePath}" download style="color:var(--accent);font-size:10px;text-decoration:none">Ladda ner</a>
+            </div>
+            <audio class="podcast-player" controls preload="metadata"
+              data-primary="${filePath}" data-secondary="/${pod.files[lang]}"
+              onerror="handlePodcastError(this)"
+              src="${filePath}"></audio>
           </div>`;
       });
     }
